@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="1298"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qew-0J-58E">
+                                <color key="backgroundColor" red="0.039180301129817963" green="0.015859108418226242" blue="0.0067462348379194736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Recircle" prompt="" id="FDG-Qq-HdO"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKE-Xm-GKj">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People renting from people" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6c-XR-0Nj">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="99" id="hG5-OQ-hzG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qom-nf-vUn" customClass="SearchTextField" customModule="SearchTextField">
+                                        <frame key="frameInset" minX="20" minY="143" width="343" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Austin, Texas" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Yd-um-f1e">
+                                        <frame key="frameInset" minX="20" minY="188" width="343" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6r-wb-i0H">
+                                        <frame key="frameInset" minX="20" minY="234" width="343" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <segue destination="iJg-lo-rWQ" kind="show" identifier="datepicker" id="qlR-fk-I8U"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-y0-CoT">
+                                        <frame key="frameInset" minX="159" minY="280" width="65" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.1944766640663147" green="0.47505581378936768" blue="0.73823267221450806" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Own Less. Access More." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgF-CD-Qpa">
+                                        <frame key="frameInset" minX="20" minY="114" width="343" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="f6c-XR-0Nj" secondAttribute="trailing" constant="20" id="9hF-gG-S6X"/>
+                                    <constraint firstAttribute="height" constant="330" id="XoO-iD-1K2"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="f6c-XR-0Nj" secondAttribute="trailing" constant="12" id="aAd-pp-MyG"/>
+                                    <constraint firstItem="f6c-XR-0Nj" firstAttribute="top" secondItem="qKE-Xm-GKj" secondAttribute="top" constant="20" id="aWn-Uv-h5D"/>
+                                    <constraint firstItem="f6c-XR-0Nj" firstAttribute="leading" secondItem="qKE-Xm-GKj" secondAttribute="leading" constant="20" id="gHk-pH-0qf"/>
+                                    <constraint firstAttribute="leadingMargin" secondItem="f6c-XR-0Nj" secondAttribute="leading" constant="-12" id="kkE-Dw-PCd"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wh-fI-Vgj">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2P-sO-ld9">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Use Recircle ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHn-Ng-eib">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="46" id="4vP-u2-kFj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We offer protection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ki9-Oz-KQu">
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJc-QE-8ug">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="154" id="Vl8-PF-se8"/>
+                                                </constraints>
+                                                <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWg-pr-IiM">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="19" id="0TU-Bb-8Lz"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="19" id="Oe2-nu-wGG"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="19" id="QVg-SR-p93"/>
+                                                    <constraint firstAttribute="height" constant="18" id="VqM-Ke-47o"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="collapse_arrow"/>
+                                                <connections>
+                                                    <action selector="clickArrowProtection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2q-NS-IPt"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="boA-1M-9s2">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="78" id="UVV-xZ-urP"/>
+                                                    <constraint firstAttribute="width" constant="88" id="hnU-qc-t5I"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store" translatesAutoresizingMaskIntoConstraints="NO" id="C9y-Jd-ifa">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="Eh1-fW-j1g"/>
+                                                    <constraint firstAttribute="width" constant="88" id="efm-qA-agI"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick-up / drop-off at the Recircle Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coF-B1-wBQ">
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19w-2x-e3a">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="154" id="rDu-eS-XOg"/>
+                                                </constraints>
+                                                <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_card" translatesAutoresizingMaskIntoConstraints="NO" id="qoI-ju-NEe">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88" id="OIY-O2-Had"/>
+                                                    <constraint firstAttribute="height" constant="80" id="VVo-5M-Mod"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We handle payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpd-Cc-GGx">
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2x-Ol-l5G">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="154" id="gvN-is-SCb"/>
+                                                </constraints>
+                                                <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="eJc-QE-8ug" secondAttribute="trailing" constant="8" id="3Te-te-JYD"/>
+                                            <constraint firstAttribute="trailing" secondItem="19w-2x-e3a" secondAttribute="trailing" constant="8" id="4bC-0i-X56"/>
+                                            <constraint firstItem="Qpd-Cc-GGx" firstAttribute="top" secondItem="qoI-ju-NEe" secondAttribute="bottom" constant="-11" id="79m-jN-cwG"/>
+                                            <constraint firstAttribute="trailing" secondItem="hHn-Ng-eib" secondAttribute="trailing" id="8O5-eG-6lR"/>
+                                            <constraint firstAttribute="trailing" secondItem="B2x-Ol-l5G" secondAttribute="trailing" constant="8" id="E9z-LX-JPF"/>
+                                            <constraint firstItem="Qpd-Cc-GGx" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" id="ExF-hE-jXF"/>
+                                            <constraint firstAttribute="trailing" secondItem="hHn-Ng-eib" secondAttribute="trailing" id="K5e-To-IDd"/>
+                                            <constraint firstItem="eJc-QE-8ug" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" constant="8" id="K5g-Qb-rh2"/>
+                                            <constraint firstItem="19w-2x-e3a" firstAttribute="top" secondItem="tWg-pr-IiM" secondAttribute="bottom" constant="1" id="LOq-79-UaD"/>
+                                            <constraint firstItem="hHn-Ng-eib" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" id="LbU-Kc-JpW"/>
+                                            <constraint firstItem="qoI-ju-NEe" firstAttribute="top" secondItem="tWg-pr-IiM" secondAttribute="bottom" constant="158" id="OkP-VZ-eto"/>
+                                            <constraint firstItem="19w-2x-e3a" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" constant="8" id="Oxg-sC-1Fo"/>
+                                            <constraint firstItem="ki9-Oz-KQu" firstAttribute="top" secondItem="boA-1M-9s2" secondAttribute="bottom" constant="21" id="Rih-VM-hOI"/>
+                                            <constraint firstAttribute="trailing" secondItem="eJc-QE-8ug" secondAttribute="trailing" constant="8" id="SyM-Qp-eba"/>
+                                            <constraint firstItem="boA-1M-9s2" firstAttribute="centerX" secondItem="J2P-sO-ld9" secondAttribute="centerX" id="TGS-n4-Arm"/>
+                                            <constraint firstItem="eJc-QE-8ug" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" constant="8" id="VYx-vC-I7r"/>
+                                            <constraint firstAttribute="trailing" secondItem="coF-B1-wBQ" secondAttribute="trailing" id="WoY-S0-WmS"/>
+                                            <constraint firstItem="B2x-Ol-l5G" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" constant="8" id="YM8-1e-P5s"/>
+                                            <constraint firstItem="boA-1M-9s2" firstAttribute="top" secondItem="hHn-Ng-eib" secondAttribute="bottom" constant="-5" id="ckk-bJ-LLo"/>
+                                            <constraint firstItem="coF-B1-wBQ" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" id="d4E-CW-40w"/>
+                                            <constraint firstItem="coF-B1-wBQ" firstAttribute="top" secondItem="C9y-Jd-ifa" secondAttribute="bottom" constant="-14" id="f5e-jx-Hec"/>
+                                            <constraint firstItem="C9y-Jd-ifa" firstAttribute="centerX" secondItem="J2P-sO-ld9" secondAttribute="centerX" id="fAQ-ke-m31"/>
+                                            <constraint firstItem="hHn-Ng-eib" firstAttribute="top" secondItem="J2P-sO-ld9" secondAttribute="top" constant="20" id="gzh-wf-us6"/>
+                                            <constraint firstItem="qoI-ju-NEe" firstAttribute="centerX" secondItem="J2P-sO-ld9" secondAttribute="centerX" id="haw-TV-1OL"/>
+                                            <constraint firstItem="hHn-Ng-eib" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" id="jk5-Eh-Jf5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qpd-Cc-GGx" secondAttribute="trailing" id="kL2-ua-GMY"/>
+                                            <constraint firstItem="boA-1M-9s2" firstAttribute="centerX" secondItem="J2P-sO-ld9" secondAttribute="centerX" id="lFA-3F-SXO"/>
+                                            <constraint firstItem="ki9-Oz-KQu" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" id="rdO-Fd-vXl"/>
+                                            <constraint firstItem="coF-B1-wBQ" firstAttribute="leading" secondItem="J2P-sO-ld9" secondAttribute="leading" id="rhP-5v-7Ly"/>
+                                            <constraint firstAttribute="trailing" secondItem="ki9-Oz-KQu" secondAttribute="trailing" id="u4A-ra-OOV"/>
+                                            <constraint firstAttribute="trailing" secondItem="coF-B1-wBQ" secondAttribute="trailing" id="xgX-hj-Z05"/>
+                                            <constraint firstItem="tWg-pr-IiM" firstAttribute="top" secondItem="coF-B1-wBQ" secondAttribute="bottom" constant="2" id="yPo-oZ-tTb"/>
+                                            <constraint firstItem="tWg-pr-IiM" firstAttribute="centerX" secondItem="J2P-sO-ld9" secondAttribute="centerX" id="ynh-Ex-O2f"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-bi-n8P">
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="19" id="e1p-FB-B3d"/>
+                                            <constraint firstAttribute="height" constant="18" id="eDL-Id-ptF"/>
+                                            <constraint firstAttribute="width" constant="19" id="hUm-JA-e97"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="19" id="jFl-lI-VxU"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="collapse_arrow"/>
+                                        <connections>
+                                            <action selector="clickArrowPayment:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQZ-S3-CRP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyL-cn-MZk">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="7Vq-3E-KY1"/>
+                                            <constraint firstAttribute="width" constant="19" id="7yk-3I-pIF"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="19" id="Q5y-Na-1zD"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="19" id="jmm-Qg-Zvo"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="collapse_arrow"/>
+                                        <connections>
+                                            <action selector="clickArrowPickDrop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p43-8H-vsm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="J2P-sO-ld9" firstAttribute="centerY" secondItem="3Wh-fI-Vgj" secondAttribute="centerY" id="4D8-EV-Ouo"/>
+                                    <constraint firstItem="TuK-bi-n8P" firstAttribute="top" secondItem="Qpd-Cc-GGx" secondAttribute="bottom" constant="6" id="B9O-r6-vld"/>
+                                    <constraint firstItem="J2P-sO-ld9" firstAttribute="top" secondItem="3Wh-fI-Vgj" secondAttribute="top" id="FVF-1b-GZP"/>
+                                    <constraint firstAttribute="trailing" secondItem="J2P-sO-ld9" secondAttribute="trailing" id="NFK-EX-eOX"/>
+                                    <constraint firstItem="qyL-cn-MZk" firstAttribute="top" secondItem="ki9-Oz-KQu" secondAttribute="bottom" constant="5" id="Tje-6C-giR"/>
+                                    <constraint firstItem="J2P-sO-ld9" firstAttribute="centerX" secondItem="3Wh-fI-Vgj" secondAttribute="centerX" id="Uxe-er-qlb"/>
+                                    <constraint firstAttribute="bottom" secondItem="J2P-sO-ld9" secondAttribute="bottom" id="XFI-K8-ecd"/>
+                                    <constraint firstItem="J2P-sO-ld9" firstAttribute="leading" secondItem="3Wh-fI-Vgj" secondAttribute="leading" id="XMB-6p-H3q"/>
+                                    <constraint firstAttribute="trailing" secondItem="J2P-sO-ld9" secondAttribute="trailing" id="f48-LT-5MX"/>
+                                    <constraint firstItem="TuK-bi-n8P" firstAttribute="centerX" secondItem="3Wh-fI-Vgj" secondAttribute="centerX" id="hOs-5t-1Gr"/>
+                                    <constraint firstItem="J2P-sO-ld9" firstAttribute="leading" secondItem="3Wh-fI-Vgj" secondAttribute="leading" id="kwC-JC-bOG"/>
+                                    <constraint firstItem="C9y-Jd-ifa" firstAttribute="top" secondItem="qyL-cn-MZk" secondAttribute="bottom" constant="150" id="n4d-m1-dpC"/>
+                                    <constraint firstItem="B2x-Ol-l5G" firstAttribute="top" secondItem="TuK-bi-n8P" secondAttribute="bottom" constant="2" id="ocy-QK-WmP"/>
+                                    <constraint firstItem="eJc-QE-8ug" firstAttribute="top" secondItem="qyL-cn-MZk" secondAttribute="bottom" constant="-5" id="pny-Dq-P7c"/>
+                                    <constraint firstItem="qyL-cn-MZk" firstAttribute="centerX" secondItem="3Wh-fI-Vgj" secondAttribute="centerX" id="xC5-sr-ag1"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Wh-fI-Vgj" firstAttribute="leading" secondItem="Qew-0J-58E" secondAttribute="leading" id="1GU-IO-I9u"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3Wh-fI-Vgj" secondAttribute="bottom" constant="8" id="2Ib-ho-4sp"/>
+                            <constraint firstAttribute="trailing" secondItem="3Wh-fI-Vgj" secondAttribute="trailing" id="6ee-tO-hyt"/>
+                            <constraint firstItem="Qew-0J-58E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="G9t-Oa-7C2"/>
+                            <constraint firstAttribute="trailing" secondItem="qKE-Xm-GKj" secondAttribute="trailing" id="P8p-mv-YlU"/>
+                            <constraint firstItem="qKE-Xm-GKj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qvx-H6-Yru"/>
+                            <constraint firstItem="3Wh-fI-Vgj" firstAttribute="top" secondItem="Qew-0J-58E" secondAttribute="bottom" constant="300" id="UwG-fx-MrT"/>
+                            <constraint firstItem="qKE-Xm-GKj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="WFM-8l-IeY"/>
+                            <constraint firstItem="3Wh-fI-Vgj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="co4-Tw-vtT"/>
+                            <constraint firstAttribute="trailing" secondItem="3Wh-fI-Vgj" secondAttribute="trailing" id="gA6-lq-1e6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3Wh-fI-Vgj" secondAttribute="bottom" constant="8" id="jRw-wJ-bsB"/>
+                            <constraint firstItem="3Wh-fI-Vgj" firstAttribute="trailing" secondItem="Qew-0J-58E" secondAttribute="trailing" id="rS3-wt-3UY"/>
+                            <constraint firstItem="3Wh-fI-Vgj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ww4-Yc-7Xt"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="413" height="1298"/>
+                    <connections>
+                        <outlet property="arrowPayment" destination="TuK-bi-n8P" id="0V4-LY-sqw"/>
+                        <outlet property="arrowPickDrop" destination="qyL-cn-MZk" id="GZA-hu-tk0"/>
+                        <outlet property="arrowProtection" destination="tWg-pr-IiM" id="POJ-qY-cWu"/>
+                        <outlet property="buttonSearch" destination="0eZ-y0-CoT" id="OGK-Lr-xfe"/>
+                        <outlet property="dateTextField" destination="O6r-wb-i0H" id="BKt-xz-DZ9"/>
+                        <outlet property="locationTextField" destination="4Yd-um-f1e" id="0kc-Wa-0Zr"/>
+                        <outlet property="navigationBar" destination="Qew-0J-58E" id="TT4-85-9ir"/>
+                        <outlet property="prodSearchTextField" destination="qom-nf-vUn" id="ghm-A9-e24"/>
+                        <outlet property="scrollView" destination="3Wh-fI-Vgj" id="BB1-Ae-3M5"/>
+                        <outlet property="textPayment" destination="B2x-Ol-l5G" id="STw-sT-kV7"/>
+                        <outlet property="textPickDrop" destination="19w-2x-e3a" id="NjI-6f-M8k"/>
+                        <outlet property="textProtection" destination="eJc-QE-8ug" id="IYz-J1-bgn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="-428"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="ZEi-0R-3Mq">
+            <objects>
+                <viewController id="iJg-lo-rWQ" customClass="DatePickerViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gs7-DW-oRQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xwU-Sa-rcE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7ht-ys-e5i">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="1298"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiH-vm-A3n" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                <frame key="frameInset" minX="20" minY="28" width="374" height="688"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="calendarView" destination="TiH-vm-A3n" id="t8y-fG-kaH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hs5-kD-I8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279.7101449275362" y="-658.69565217391312"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="collapse_arrow" width="16" height="16"/>
+        <image name="credit_card" width="36" height="36"/>
+        <image name="shield" width="36" height="36"/>
+        <image name="store" width="36" height="36"/>
+    </resources>
+</document>
