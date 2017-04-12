@@ -9,7 +9,9 @@ pod 'SearchTextField'
 pod 'Alamofire', '~> 4.4'
 pod 'SwiftyJSON'
 pod 'JTAppleCalendar', '~> 6.1'
-
+pod 'FSCalendar'
+pod 'CVCalendar', '~> 1.5.0'
+pod 'GLCalendarView', '~> 1.2.1'
   # Pods for Recircle
 
 end

@@ -9,7 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DayCellView" customModule="Recircle" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="109" height="102"/>
+            <rect key="frame" x="0.0" y="0.0" width="59" height="62"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-Dp-QNL">
@@ -39,7 +39,7 @@
                 <outlet property="selectedView" destination="O8m-Dp-QNL" id="NOW-ug-dUc"/>
                 <outlet property="textDate" destination="DyE-Yu-ujV" id="Kgs-1N-fow"/>
             </connections>
-            <point key="canvasLocation" x="-99.5" y="-228"/>
+            <point key="canvasLocation" x="-124.5" y="-248"/>
         </view>
     </objects>
 </document>

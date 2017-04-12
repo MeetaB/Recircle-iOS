@@ -29,22 +29,21 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var textProtection: UILabel!
     
-    @IBOutlet weak var arrowProtection: UIButton!
-    
-    @IBOutlet weak var arrowPickDrop: UIButton!
-    
-    @IBOutlet weak var arrowPayment: UIButton!
-    
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+    @IBOutlet weak var textProtectionSpacing: NSLayoutConstraint!
+    @IBOutlet weak var heightTextProtection: NSLayoutConstraint!
+    @IBOutlet weak var arrowProtection: UIButton!
+    @IBOutlet weak var arrowPickDrop: UIButton!
+    @IBOutlet weak var arrowPayment: UIButton!
     
     var prodNames : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scrollView.contentSize=CGSize(width : 1280,height : 960);
-        
-        
+       
 //        self.navigationBar.backgroundColor = UIColor(cgColor: UIColor.black as! CGColor)
         self.navigationItem.title = "New"
         locationTextField.leftViewMode = UITextFieldViewMode.always
@@ -56,14 +55,15 @@ class SearchViewController: UIViewController {
         imageViewLocation.image = image
         locationTextField.leftView = imageViewLocation
         
-        let imageViewDate = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let imageViewDate = UIImageView(frame: CGRect(x: 5, y: 0, width: 20, height: 20))
         image = UIImage(named : "calendar")
         imageViewDate.image = image
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "calendar"), for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: CGFloat(25), height: CGFloat(25))
-        button.addTarget(self, action: #selector(self.refresh), for: .touchUpInside)
-        dateTextField.leftView = button
+        let tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(self.showCalendar))
+        tapRecogniser.numberOfTapsRequired = 1;
+        imageViewDate.addGestureRecognizer(tapRecogniser)
+        imageViewDate.isUserInteractionEnabled = true
+        dateTextField.leftView = imageViewDate
+        
         
         let imageViewSearch = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         image = UIImage(named : "search")
@@ -117,7 +117,15 @@ class SearchViewController: UIViewController {
         
     }
     
-    func refresh () {
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.isScrollEnabled = true
+        scrollView.contentSize=CGSize(width : 400,height : 2300);
+        
+        
+    }
+    
+    func showCalendar () {
         print("refresh")
         performSegue(withIdentifier: "datepicker", sender: nil)
     }
@@ -138,46 +146,107 @@ class SearchViewController: UIViewController {
     }
     */
     
-    // click handling of arrow Protection
+    
+    
     @IBAction func clickArrowProtection(_ sender: AnyObject) {
         
         if arrowProtection.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
             arrowProtection.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
             textProtection.isHidden = true
-        }
+
+                   }
         else{
             arrowProtection.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
             textProtection.isHidden = false
         }
         
+        UIView.animate(withDuration: 0.3) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
+
+
     }
     
-    
-    // click handling of arrow Pick-up/drop-off
     @IBAction func clickArrowPickDrop(_ sender: AnyObject) {
         
         if arrowPickDrop.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
             arrowPickDrop.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
             textPickDrop.isHidden = true
+            
         }
         else{
             arrowPickDrop.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
             textPickDrop.isHidden = false
         }
+        
+        UIView.animate(withDuration: 0.3) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
+        
 
     }
     
     
-    // click handling of arrow Payment
+    
     @IBAction func clickArrowPayment(_ sender: AnyObject) {
         
         if arrowPayment.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
             arrowPayment.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
             textPayment.isHidden = true
+            
         }
         else{
             arrowPayment.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
             textPayment.isHidden = false
         }
+        
+        UIView.animate(withDuration: 0.3) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
+        
+
     }
+    
+//    // click handling of arrow Protection
+//    @IBAction func clickArrowProtection(_ sender: AnyObject) {
+//        
+//        if arrowPickUpDropOff.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
+//            arrowPickUpDropOff.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
+//            textProtection.isHidden = true
+//        }
+//        else{
+//            arrowPickUpDropOff.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
+//            textProtection.isHidden = false
+//        }
+//        
+//    }
+//    
+//    
+//    // click handling of arrow Pick-up/drop-off
+//    @IBAction func clickArrowPickDrop(_ sender: AnyObject) {
+//        
+//        if arrowProtection.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
+//            arrowProtection.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
+//            textPickDrop.isHidden = true
+//        }
+//        else{
+//            arrowProtection.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
+//            textPickDrop.isHidden = false
+//        }
+//
+//    }
+//    
+//    
+//    // click handling of arrow Payment
+//    @IBAction func clickArrowPayment(_ sender: AnyObject) {
+//        
+//        if arrowPayment.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
+//            arrowPayment.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
+//            textPayment.isHidden = true
+//        }
+//        else{
+//            arrowPayment.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
+//            textPayment.isHidden = false
+//        }
+//    }
 }

@@ -1,21 +1,30 @@
 PODS:
   - Alamofire (4.4.0)
+  - CVCalendar (1.5.0)
+  - FSCalendar (2.7.4)
+  - GLCalendarView (1.2.1)
   - JTAppleCalendar (6.1.6)
   - SearchTextField (1.0.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - CVCalendar (~> 1.5.0)
+  - FSCalendar
+  - GLCalendarView (~> 1.2.1)
   - JTAppleCalendar (~> 6.1)
   - SearchTextField
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  CVCalendar: 5d51a7bda1b9439b612de69d86a91a73befa1936
+  FSCalendar: e95995a746acae531c4a7dd636b8393233125ec5
+  GLCalendarView: 9d0be9a332bc09f556a79600a0d2d1404806f719
   JTAppleCalendar: 560fb46421880f53ad54123295072de24bca2b18
   SearchTextField: c0dacdec13dbf9951ceeaf7f340ece9a98a45014
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 9d84bd2830ee851b86a80e1f0b9e2c7aa4112893
+PODFILE CHECKSUM: d92e6c361099b7c5406a2354631338b43b59bfa3
 
 COCOAPODS: 1.1.1
