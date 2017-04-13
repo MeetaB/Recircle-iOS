@@ -88,7 +88,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         buttonSearch.layer.borderColor = UIColor.black.cgColor
         
         //testing
-        Alamofire.request(URL(string: "http://7c5a25cc.ngrok.io/api/products/prodNames")!,
+        Alamofire.request(URL(string: "http://c670b036.ngrok.io/api/products/prodNames")!,
                           method: .get)
              .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -116,19 +116,65 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             }
         }
         
-    }
+        //
+        
+        
+        Alamofire.request(URL(string: "http://c670b036.ngrok.io/api/products")!,
+                          method: .get)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let dataResponse = response.result.value {
+                    let json = JSON(dataResponse)
+                    print("JSON: \(json)")
+//                    print("name : \(json["productsData"].arrayValue.map({$0["product_manufacturer_name"].stringValue}))")
+//                    
+//                    for item in json["productsData"].arrayValue {
+//                        print(item["product_manufacturer_name"].stringValue)
+//                        let manufacturerName = item["product_manufacturer_name"].stringValue
+//                        self.prodNames.append(manufacturerName)
+//                        for subitem in item["products"].arrayValue {
+//                            print(subitem["product_title"].stringValue)
+//                            self.prodNames.append(manufacturerName + " " + subitem["product_title"].stringValue)
+//                        }
+//                        
+//                    }
+//                    self.prodSearchTextField.filterStrings(self.prodNames)
+                }
+        }
+
+        
+           }
     
     
     override func viewDidLayoutSubviews() {
         scrollView.isScrollEnabled = true
         scrollView.contentSize=CGSize(width : 400,height : 2300);
         
+        tableRecentItems.frame = CGRect(x: tableRecentItems.frame.origin.x, y: tableRecentItems.frame.origin.y, width: tableRecentItems.frame.size.width, height: tableRecentItems.contentSize.height)
         
+        tableRecentItems.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+     //   let bounds = tableRecentItems.bounds
+        
+//        tableRecentItems.bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height)
+        
+        tableRecentItems.frame = CGRect(x: tableRecentItems.frame.origin.x, y: tableRecentItems.frame.origin.y, width: tableRecentItems.frame.size.width, height: tableRecentItems.contentSize.height)
+
+
+    }
     func showCalendar () {
         print("refresh")
         performSegue(withIdentifier: "datepicker", sender: nil)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
