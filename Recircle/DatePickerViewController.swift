@@ -8,11 +8,8 @@
 
 import UIKit
 import JTAppleCalendar
-import FSCalendar
-import CVCalendar
 
-class DatePickerViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
-{
+class DatePickerViewController: UIViewController{
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     

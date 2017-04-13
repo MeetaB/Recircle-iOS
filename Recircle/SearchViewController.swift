@@ -11,7 +11,7 @@ import SearchTextField
 import Alamofire
 import SwiftyJSON
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     
@@ -31,18 +31,24 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
-    @IBOutlet weak var textProtectionSpacing: NSLayoutConstraint!
-    @IBOutlet weak var heightTextProtection: NSLayoutConstraint!
     @IBOutlet weak var arrowProtection: UIButton!
     @IBOutlet weak var arrowPickDrop: UIButton!
     @IBOutlet weak var arrowPayment: UIButton!
+    
+    @IBOutlet weak var tablePopularItems: UITableView!
+  
+    @IBOutlet weak var tableRecentItems: UITableView!
     
     var prodNames : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableRecentItems.dataSource = self
+        tableRecentItems.delegate = self
+        
+        tablePopularItems.dataSource = self
+        tablePopularItems.delegate = self
        
 //        self.navigationBar.backgroundColor = UIColor(cgColor: UIColor.black as! CGColor)
         self.navigationItem.title = "New"
@@ -109,11 +115,6 @@ class SearchViewController: UIViewController {
                 self.prodSearchTextField.filterStrings(self.prodNames)
             }
         }
-        
-    //
-
-        
-
         
     }
     
@@ -186,8 +187,6 @@ class SearchViewController: UIViewController {
 
     }
     
-    
-    
     @IBAction func clickArrowPayment(_ sender: AnyObject) {
         
         if arrowPayment.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
@@ -207,46 +206,44 @@ class SearchViewController: UIViewController {
 
     }
     
-//    // click handling of arrow Protection
-//    @IBAction func clickArrowProtection(_ sender: AnyObject) {
-//        
-//        if arrowPickUpDropOff.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
-//            arrowPickUpDropOff.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
-//            textProtection.isHidden = true
-//        }
-//        else{
-//            arrowPickUpDropOff.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
-//            textProtection.isHidden = false
-//        }
-//        
-//    }
-//    
-//    
-//    // click handling of arrow Pick-up/drop-off
-//    @IBAction func clickArrowPickDrop(_ sender: AnyObject) {
-//        
-//        if arrowProtection.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
-//            arrowProtection.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
-//            textPickDrop.isHidden = true
-//        }
-//        else{
-//            arrowProtection.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
-//            textPickDrop.isHidden = false
-//        }
-//
-//    }
-//    
-//    
-//    // click handling of arrow Payment
-//    @IBAction func clickArrowPayment(_ sender: AnyObject) {
-//        
-//        if arrowPayment.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
-//            arrowPayment.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
-//            textPayment.isHidden = true
-//        }
-//        else{
-//            arrowPayment.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
-//            textPayment.isHidden = false
-//        }
-//    }
-}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductCell
+        
+        if tableView == self.tableRecentItems {
+            
+        cell.textProductName.text = "Sony"
+        cell.textOwnerName.text = "Mark"
+        cell.viewRating.text = "(3)"
+        cell.imageProduct.image = UIImage(named: "calendar")
+            
+        }
+
+        if tableView == self.tablePopularItems {
+            
+            cell.textProductName.text = "Sony EOS"
+            cell.textOwnerName.text = "Mark Linder"
+            cell.viewRating.text = "(4)"
+            cell.imageProduct.image = UIImage(named: "calendar")
+            
+        }
+
+        return cell
+    
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.tableRecentItems {
+
+            return 2
+        } else {
+            return 3
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90.0
+    }
+    
+    }

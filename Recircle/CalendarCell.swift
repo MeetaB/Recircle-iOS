@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import FSCalendar
 
 enum SelectionType : Int {
     case none

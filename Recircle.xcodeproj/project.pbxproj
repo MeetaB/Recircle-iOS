@@ -18,7 +18,7 @@
 		7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA077131E964FD8001024FF /* DatePickerViewController.swift */; };
 		7EA077161E966A69001024FF /* DateCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EA077151E966A69001024FF /* DateCellView.xib */; };
 		7EA077181E966AF4001024FF /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA077171E966AF4001024FF /* DayCellView.swift */; };
-		7EA0771A1E977399001024FF /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA077191E977399001024FF /* CalendarCell.swift */; };
+		7EB486331E9F905900656270 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486321E9F905900656270 /* ProductCell.swift */; };
 		7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */; };
 		7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */; };
 		7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */; };
@@ -38,7 +38,7 @@
 		7EA077131E964FD8001024FF /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		7EA077151E966A69001024FF /* DateCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCellView.xib; sourceTree = "<group>"; };
 		7EA077171E966AF4001024FF /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
-		7EA077191E977399001024FF /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		7EB486321E9F905900656270 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAPICall.swift; sourceTree = "<group>"; };
 		7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				7EA077171E966AF4001024FF /* DayCellView.swift */,
 				7E8B359D1E926590000B5FF0 /* SearchViewController.swift */,
 				7EA077131E964FD8001024FF /* DatePickerViewController.swift */,
-				7EA077191E977399001024FF /* CalendarCell.swift */,
+				7EB486321E9F905900656270 /* ProductCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -257,12 +257,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */,
-				7EA0771A1E977399001024FF /* CalendarCell.swift in Sources */,
 				7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */,
 				7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */,
 				7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */,
 				7E8B35901E924F46000B5FF0 /* Recircle.xcdatamodeld in Sources */,
 				7E8B359E1E926590000B5FF0 /* SearchViewController.swift in Sources */,
+				7EB486331E9F905900656270 /* ProductCell.swift in Sources */,
 				7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */,
 				7EA077181E966AF4001024FF /* DayCellView.swift in Sources */,
 			);

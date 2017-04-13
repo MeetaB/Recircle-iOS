@@ -5,13 +5,12 @@ target 'Recircle' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
  use_frameworks!
 
+# Pods for Recircle
 pod 'SearchTextField'
 pod 'Alamofire', '~> 4.4'
 pod 'SwiftyJSON'
 pod 'JTAppleCalendar', '~> 6.1'
-pod 'FSCalendar'
-pod 'CVCalendar', '~> 1.5.0'
-pod 'GLCalendarView', '~> 1.2.1'
-  # Pods for Recircle
+pod 'Cosmos'
+
 
 end
