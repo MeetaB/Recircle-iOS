@@ -39,6 +39,13 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
   
     @IBOutlet weak var tableRecentItems: UITableView!
     
+    var productDetails : ProductDetails!
+    
+    var popularProducts : [Product] = []
+    
+    var recentProducts : [Product] = []
+
+    
     var prodNames : [String] = []
     
     override func viewDidLoad() {
@@ -88,7 +95,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         buttonSearch.layer.borderColor = UIColor.black.cgColor
         
         //testing
-        Alamofire.request(URL(string: "http://c670b036.ngrok.io/api/products/prodNames")!,
+        Alamofire.request(URL(string: "http://e82462ca.ngrok.io/api/products/prodNames")!,
                           method: .get)
              .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -99,8 +106,8 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             
             if let dataResponse = response.result.value {
                let json = JSON(dataResponse)
-               print("JSON: \(json)")
-               print("name : \(json["productsData"].arrayValue.map({$0["product_manufacturer_name"].stringValue}))")
+            //   print("JSON: \(json)")
+//               print("name : \(json["productsData"].arrayValue.map({$0["product_manufacturer_name"].stringValue}))")
                
                 for item in json["productsData"].arrayValue {
                     print(item["product_manufacturer_name"].stringValue)
@@ -119,7 +126,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         //
         
         
-        Alamofire.request(URL(string: "http://c670b036.ngrok.io/api/products")!,
+        Alamofire.request(URL(string: "http://e82462ca.ngrok.io/api/products")!,
                           method: .get)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -129,21 +136,30 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 print(response.result)   // result of response serialization
                 
                 if let dataResponse = response.result.value {
+                    
+               //     self.productDetails = dataResponse as! ProductDetails
                     let json = JSON(dataResponse)
-                    print("JSON: \(json)")
-//                    print("name : \(json["productsData"].arrayValue.map({$0["product_manufacturer_name"].stringValue}))")
-//                    
-//                    for item in json["productsData"].arrayValue {
-//                        print(item["product_manufacturer_name"].stringValue)
-//                        let manufacturerName = item["product_manufacturer_name"].stringValue
-//                        self.prodNames.append(manufacturerName)
-//                        for subitem in item["products"].arrayValue {
-//                            print(subitem["product_title"].stringValue)
-//                            self.prodNames.append(manufacturerName + " " + subitem["product_title"].stringValue)
-//                        }
+                    print("JSON All Products: \(json)")
+                    
+                    
+                    self.productDetails = ProductDetails(dictionary: json.object as! NSDictionary)
+                    
+                    if (self.productDetails != nil ) {
+                        
+                    self.popularProducts =  self.productDetails.popularProducts!
+                    
+                    self.recentProducts =  self.productDetails.productDetails!
+                    
+                    self.tableRecentItems.reloadData()
+                    
+                    self.tablePopularItems.reloadData()
+                        
+                    }
+//                    else {
+//                        self.tablePopularItems.isHidden = true
+//                        self.tableRecentItems.isHidden = true
 //                        
 //                    }
-//                    self.prodSearchTextField.filterStrings(self.prodNames)
                 }
         }
 
@@ -154,10 +170,10 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     override func viewDidLayoutSubviews() {
         scrollView.isScrollEnabled = true
         scrollView.contentSize=CGSize(width : 400,height : 2300);
-        
-        tableRecentItems.frame = CGRect(x: tableRecentItems.frame.origin.x, y: tableRecentItems.frame.origin.y, width: tableRecentItems.frame.size.width, height: tableRecentItems.contentSize.height)
-        
-        tableRecentItems.reloadData()
+
+//        tableRecentItems.frame = CGRect(x: tableRecentItems.frame.origin.x, y: tableRecentItems.frame.origin.y, width: tableRecentItems.frame.size.width, height: tableRecentItems.contentSize.height)
+//        
+//        tableRecentItems.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -166,7 +182,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
 //        tableRecentItems.bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height)
         
-        tableRecentItems.frame = CGRect(x: tableRecentItems.frame.origin.x, y: tableRecentItems.frame.origin.y, width: tableRecentItems.frame.size.width, height: tableRecentItems.contentSize.height)
+//        tableRecentItems.frame = CGRect(x: tableRecentItems.frame.origin.x, y: tableRecentItems.frame.origin.y, width: tableRecentItems.frame.size.width, height: tableRecentItems.contentSize.height)
 
 
     }
@@ -256,21 +272,37 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductCell
         
+        let index = indexPath.row
+        
+        if self.productDetails != nil {
+            
+        print(self.productDetails.popularProducts?[index].product_info?.product_title)
+        
+        cell.textProductName.text = self.productDetails.popularProducts?[index].product_info?.product_title
+            
+        }
+        
         if tableView == self.tableRecentItems {
             
-        cell.textProductName.text = "Sony"
-        cell.textOwnerName.text = "Mark"
-        cell.viewRating.text = "(3)"
-        cell.imageProduct.image = UIImage(named: "calendar")
-            
+            if (self.recentProducts.count > 0) {
+                
+                cell.textProductName.text = self.recentProducts[index].product_info?.product_title
+                cell.textOwnerName.text = (self.recentProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
+                cell.viewRating.text =  String(describing: self.recentProducts[index].user_product_info?.product_avg_rating!)
+                cell.imageProduct.setImageFromURl(stringImageUrl: (self.recentProducts[index].product_info?.product_image_url)!)
+            }
+       
         }
 
         if tableView == self.tablePopularItems {
             
-            cell.textProductName.text = "Sony EOS"
-            cell.textOwnerName.text = "Mark Linder"
-            cell.viewRating.text = "(4)"
-            cell.imageProduct.image = UIImage(named: "calendar")
+            if (self.popularProducts.count > 0) {
+                
+                cell.textProductName.text = self.popularProducts[index].product_info?.product_title
+                cell.textOwnerName.text = (self.popularProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
+                cell.viewRating.text =  String(describing: self.popularProducts[index].user_product_info?.product_avg_rating!)
+                cell.imageProduct.setImageFromURl(stringImageUrl: (self.popularProducts[index].product_info?.product_image_url)!)
+            }
             
         }
 
@@ -281,9 +313,9 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.tableRecentItems {
 
-            return 2
+            return self.recentProducts.count
         } else {
-            return 3
+            return self.popularProducts.count
         }
         
     }

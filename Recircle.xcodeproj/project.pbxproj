@@ -19,6 +19,14 @@
 		7EA077161E966A69001024FF /* DateCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EA077151E966A69001024FF /* DateCellView.xib */; };
 		7EA077181E966AF4001024FF /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA077171E966AF4001024FF /* DayCellView.swift */; };
 		7EB486331E9F905900656270 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486321E9F905900656270 /* ProductCell.swift */; };
+		7EB486361EA4AAA300656270 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486351EA4AAA300656270 /* ProductDetails.swift */; };
+		7EB486381EA4AAD600656270 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486371EA4AAD600656270 /* Product.swift */; };
+		7EB4863A1EA4ABF300656270 /* UserProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486391EA4ABF300656270 /* UserProductInfo.swift */; };
+		7EB4863C1EA4AC4100656270 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB4863B1EA4AC4100656270 /* ProductInfo.swift */; };
+		7EB4863E1EA4B3A400656270 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB4863D1EA4B3A400656270 /* UserInfo.swift */; };
+		7EB486401EA4B42300656270 /* UserAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB4863F1EA4B42300656270 /* UserAddresses.swift */; };
+		7EB486421EA4BE1C00656270 /* UserProdImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486411EA4BE1C00656270 /* UserProdImages.swift */; };
+		7EB486451EA4DBEC00656270 /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486441EA4DBEC00656270 /* ImageUtility.swift */; };
 		7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */; };
 		7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */; };
 		7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */; };
@@ -39,6 +47,14 @@
 		7EA077151E966A69001024FF /* DateCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCellView.xib; sourceTree = "<group>"; };
 		7EA077171E966AF4001024FF /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
 		7EB486321E9F905900656270 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		7EB486351EA4AAA300656270 /* ProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
+		7EB486371EA4AAD600656270 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7EB486391EA4ABF300656270 /* UserProductInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProductInfo.swift; sourceTree = "<group>"; };
+		7EB4863B1EA4AC4100656270 /* ProductInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
+		7EB4863D1EA4B3A400656270 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		7EB4863F1EA4B42300656270 /* UserAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAddresses.swift; sourceTree = "<group>"; };
+		7EB486411EA4BE1C00656270 /* UserProdImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProdImages.swift; sourceTree = "<group>"; };
+		7EB486441EA4DBEC00656270 /* ImageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
 		7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAPICall.swift; sourceTree = "<group>"; };
 		7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -96,6 +112,8 @@
 		7E8B35861E924F45000B5FF0 /* Recircle */ = {
 			isa = PBXGroup;
 			children = (
+				7EB486431EA4DBD200656270 /* Utilities */,
+				7EB486341EA4AA6000656270 /* Models */,
 				7ED4F3DE1E97C25D00E75C53 /* API */,
 				7EA077151E966A69001024FF /* DateCellView.xib */,
 				7E8B359C1E926556000B5FF0 /* ViewControllers */,
@@ -121,6 +139,28 @@
 				7EB486321E9F905900656270 /* ProductCell.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7EB486341EA4AA6000656270 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7EB486351EA4AAA300656270 /* ProductDetails.swift */,
+				7EB486371EA4AAD600656270 /* Product.swift */,
+				7EB486391EA4ABF300656270 /* UserProductInfo.swift */,
+				7EB4863B1EA4AC4100656270 /* ProductInfo.swift */,
+				7EB4863D1EA4B3A400656270 /* UserInfo.swift */,
+				7EB4863F1EA4B42300656270 /* UserAddresses.swift */,
+				7EB486411EA4BE1C00656270 /* UserProdImages.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7EB486431EA4DBD200656270 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7EB486441EA4DBEC00656270 /* ImageUtility.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		7ED4F3DE1E97C25D00E75C53 /* API */ = {
@@ -256,14 +296,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB486381EA4AAD600656270 /* Product.swift in Sources */,
 				7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */,
 				7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */,
+				7EB486361EA4AAA300656270 /* ProductDetails.swift in Sources */,
+				7EB4863A1EA4ABF300656270 /* UserProductInfo.swift in Sources */,
+				7EB486451EA4DBEC00656270 /* ImageUtility.swift in Sources */,
 				7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */,
 				7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */,
 				7E8B35901E924F46000B5FF0 /* Recircle.xcdatamodeld in Sources */,
+				7EB4863C1EA4AC4100656270 /* ProductInfo.swift in Sources */,
+				7EB486421EA4BE1C00656270 /* UserProdImages.swift in Sources */,
 				7E8B359E1E926590000B5FF0 /* SearchViewController.swift in Sources */,
 				7EB486331E9F905900656270 /* ProductCell.swift in Sources */,
 				7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */,
+				7EB4863E1EA4B3A400656270 /* UserInfo.swift in Sources */,
+				7EB486401EA4B42300656270 /* UserAddresses.swift in Sources */,
 				7EA077181E966AF4001024FF /* DayCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
