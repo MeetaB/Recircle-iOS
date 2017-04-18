@@ -64,7 +64,18 @@ class DatePickerViewController: UIViewController{
     @IBAction func resetButtonPressed(_ sender: AnyObject) {
         calendarView.deselectAllDates()
         rangeSelectedDates.removeAll()
+        textStartDate.text = "Start Date"
+        textEndDate.text = "End Date"
     }
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        let searchVC = segue.destination as! SearchViewController
+        searchVC.dateText = textStartDate.text! + " - " + textEndDate.text!
+    }
+    
+    
     
     var rangeSelectedDates: [Date] = []
     func didStartRangeSelecting(gesture: UILongPressGestureRecognizer) {

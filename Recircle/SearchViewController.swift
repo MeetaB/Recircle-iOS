@@ -11,8 +11,8 @@ import SearchTextField
 import Alamofire
 import SwiftyJSON
 
-class SearchViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
-
+class SearchViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+    
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     @IBOutlet weak var locationTextField: UITextField!
@@ -29,35 +29,48 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     @IBOutlet weak var textProtection: UILabel!
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var arrowProtection: UIButton!
     @IBOutlet weak var arrowPickDrop: UIButton!
     @IBOutlet weak var arrowPayment: UIButton!
     
     @IBOutlet weak var tablePopularItems: UITableView!
-  
+    
     @IBOutlet weak var tableRecentItems: UITableView!
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var productDetails : ProductDetails!
     
     var popularProducts : [Product] = []
     
     var recentProducts : [Product] = []
-
+    
+    @IBOutlet weak var labelRecentProds: UILabel!
+    
+    @IBOutlet weak var labelPopularProds: UILabel!
+    
+    let screenHeight = UIScreen.main.bounds.height
     
     var prodNames : [String] = []
     
+    var dateText : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableRecentItems.dataSource = self
         tableRecentItems.delegate = self
         
         tablePopularItems.dataSource = self
         tablePopularItems.delegate = self
-       
-//        self.navigationBar.backgroundColor = UIColor(cgColor: UIColor.black as! CGColor)
+        
+        scrollView.delegate = self
+        
+        
+        
+        
+        //        self.navigationBar.backgroundColor = UIColor(cgColor: UIColor.black as! CGColor)
         self.navigationItem.title = "New"
         locationTextField.leftViewMode = UITextFieldViewMode.always
         dateTextField.leftViewMode = UITextFieldViewMode.always
@@ -82,7 +95,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         image = UIImage(named : "search")
         imageViewSearch.image = image
         prodSearchTextField.leftView = imageViewSearch
-
+        
         prodSearchTextField.theme.font = UIFont.systemFont(ofSize: 16)
         prodSearchTextField.theme.bgColor = UIColor (red: 1, green: 1, blue: 1, alpha: 1)
         prodSearchTextField.theme.borderColor = UIColor (red: 0, green: 0, blue: 0, alpha: 1)
@@ -95,38 +108,38 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         buttonSearch.layer.borderColor = UIColor.black.cgColor
         
         //testing
-        Alamofire.request(URL(string: "http://e82462ca.ngrok.io/api/products/prodNames")!,
+        Alamofire.request(URL(string: RecircleWebConstants.ProdNamesApi)!,
                           method: .get)
-             .validate(contentType: ["application/json"])
+            .validate(contentType: ["application/json"])
             .responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
-            if let dataResponse = response.result.value {
-               let json = JSON(dataResponse)
-            //   print("JSON: \(json)")
-//               print("name : \(json["productsData"].arrayValue.map({$0["product_manufacturer_name"].stringValue}))")
-               
-                for item in json["productsData"].arrayValue {
-                    print(item["product_manufacturer_name"].stringValue)
-                    let manufacturerName = item["product_manufacturer_name"].stringValue
-                    self.prodNames.append(manufacturerName)
-                    for subitem in item["products"].arrayValue {
-                        print(subitem["product_title"].stringValue)
-                        self.prodNames.append(manufacturerName + " " + subitem["product_title"].stringValue)
-                    }
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let dataResponse = response.result.value {
+                    let json = JSON(dataResponse)
+                    //   print("JSON: \(json)")
+                    //               print("name : \(json["productsData"].arrayValue.map({$0["product_manufacturer_name"].stringValue}))")
                     
+                    for item in json["productsData"].arrayValue {
+                        print(item["product_manufacturer_name"].stringValue)
+                        let manufacturerName = item["product_manufacturer_name"].stringValue
+                        self.prodNames.append(manufacturerName)
+                        for subitem in item["products"].arrayValue {
+                            print(subitem["product_title"].stringValue)
+                            self.prodNames.append(manufacturerName + " " + subitem["product_title"].stringValue)
+                        }
+                        
+                    }
+                    self.prodSearchTextField.filterStrings(self.prodNames)
                 }
-                self.prodSearchTextField.filterStrings(self.prodNames)
-            }
         }
         
         //
         
         
-        Alamofire.request(URL(string: "http://e82462ca.ngrok.io/api/products")!,
+        Alamofire.request(URL(string: RecircleWebConstants.ProductsApi)!,
                           method: .get)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -137,7 +150,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 
                 if let dataResponse = response.result.value {
                     
-               //     self.productDetails = dataResponse as! ProductDetails
+                    //     self.productDetails = dataResponse as! ProductDetails
                     let json = JSON(dataResponse)
                     print("JSON All Products: \(json)")
                     
@@ -146,68 +159,104 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                     
                     if (self.productDetails != nil ) {
                         
-                    self.popularProducts =  self.productDetails.popularProducts!
-                    
-                    self.recentProducts =  self.productDetails.productDetails!
-                    
-                    self.tableRecentItems.reloadData()
-                    
-                    self.tablePopularItems.reloadData()
+                        self.popularProducts =  self.productDetails.popularProducts!
+                        
+                        self.recentProducts =  self.productDetails.productDetails!
+                        
+                        self.tableRecentItems.reloadData()
+                        
+                        self.tablePopularItems.reloadData()
                         
                     }
-//                    else {
-//                        self.tablePopularItems.isHidden = true
-//                        self.tableRecentItems.isHidden = true
-//                        
-//                    }
+                }
+                    
+                else {
+                    self.labelRecentProds.isHidden = true
+                    self.tablePopularItems.isHidden = true
+                    self.labelPopularProds.isHidden = true
+                    self.tableRecentItems.isHidden = true
+                    
                 }
         }
-
         
-           }
+        
+        
+    }
+    
+    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        
+//        let yOffset = scrollView.contentOffset.y
+//        
+//        let scrollViewContentHeight : CGFloat = 2300
+//        
+//        print("scroll y offset "+String(describing: yOffset))
+//        
+//        print("tableRecent offset "+String(describing: tableRecentItems.frame.minY))
+//        
+//        
+//        print("tableRecent content height "+String(describing: tableRecentItems.contentSize.height))
+//
+//        let tableYOffset = tableRecentItems.frame.minY
+//        
+//     //   if scrollView == self.scrollView {
+//            
+//            if (yOffset >= tableYOffset && yOffset <= tableYOffset + 540 ){
+//                scrollView.isScrollEnabled = false
+//                scrollView.resignFirstResponder()
+//                tableRecentItems.isScrollEnabled = true
+//                tableRecentItems.isUserInteractionEnabled = true
+//            }
+//            
+//            else {
+//                scrollView.isScrollEnabled = true
+//                tableRecentItems.isScrollEnabled = false
+//            }
+//       // }
+//        
+////        if scrollView == self.tableRecentItems {
+////            if yOffset <= 0 {
+////                scrollView.isScrollEnabled = true
+////                tableRecentItems.isScrollEnabled = false
+////            }
+////        }
+//        
+//        if scrollView == tableRecentItems {
+//            print("recent Items")
+//        }
+//    }
     
     
     override func viewDidLayoutSubviews() {
-        scrollView.isScrollEnabled = true
-        scrollView.contentSize=CGSize(width : 400,height : 2300);
+        
+        dateTextField.text = dateText
 
-//        tableRecentItems.frame = CGRect(x: tableRecentItems.frame.origin.x, y: tableRecentItems.frame.origin.y, width: tableRecentItems.frame.size.width, height: tableRecentItems.contentSize.height)
-//        
-//        tableRecentItems.reloadData()
+        scrollView.isScrollEnabled = true
+        scrollView.contentSize=CGSize(width : self.view.frame.width,height : 2300);
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-     //   let bounds = tableRecentItems.bounds
-        
-//        tableRecentItems.bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height)
-        
-//        tableRecentItems.frame = CGRect(x: tableRecentItems.frame.origin.x, y: tableRecentItems.frame.origin.y, width: tableRecentItems.frame.size.width, height: tableRecentItems.contentSize.height)
-
-
-    }
+    
     func showCalendar () {
         print("refresh")
         performSegue(withIdentifier: "datepicker", sender: nil)
-        
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
     
@@ -216,8 +265,8 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         if arrowProtection.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
             arrowProtection.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
             textProtection.isHidden = true
-
-                   }
+            
+        }
         else{
             arrowProtection.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
             textProtection.isHidden = false
@@ -226,8 +275,8 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         UIView.animate(withDuration: 0.3) { () -> Void in
             self.view.layoutIfNeeded()
         }
-
-
+        
+        
     }
     
     @IBAction func clickArrowPickDrop(_ sender: AnyObject) {
@@ -246,7 +295,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             self.view.layoutIfNeeded()
         }
         
-
+        
     }
     
     @IBAction func clickArrowPayment(_ sender: AnyObject) {
@@ -265,20 +314,20 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             self.view.layoutIfNeeded()
         }
         
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductCell
         
         let index = indexPath.row
         
         if self.productDetails != nil {
             
-        print(self.productDetails.popularProducts?[index].product_info?.product_title)
-        
-        cell.textProductName.text = self.productDetails.popularProducts?[index].product_info?.product_title
+            print(self.productDetails.popularProducts?[index].product_info?.product_title)
+            
+            cell.textProductName.text = self.productDetails.popularProducts?[index].product_info?.product_title
             
         }
         
@@ -291,9 +340,9 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 cell.viewRating.text =  String(describing: self.recentProducts[index].user_product_info?.product_avg_rating!)
                 cell.imageProduct.setImageFromURl(stringImageUrl: (self.recentProducts[index].product_info?.product_image_url)!)
             }
-       
+            
         }
-
+        
         if tableView == self.tablePopularItems {
             
             if (self.popularProducts.count > 0) {
@@ -305,14 +354,19 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             }
             
         }
-
+        
         return cell
-    
+        
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.tableRecentItems {
-
+          //  TODO : changes to be done
+//            let oldFrame = tableView.frame
+//            let newHeight = self.recentProducts.count * 90
+//        
+//            tableView.frame = CGRect(x: oldFrame.origin.x, y: oldFrame.origin.y, width: oldFrame.size.width, height: CGFloat(newHeight))
             return self.recentProducts.count
         } else {
             return self.popularProducts.count
@@ -321,7 +375,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90.0
+        return 80.0
     }
     
-    }
+}

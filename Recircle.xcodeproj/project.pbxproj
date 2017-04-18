@@ -27,6 +27,7 @@
 		7EB486401EA4B42300656270 /* UserAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB4863F1EA4B42300656270 /* UserAddresses.swift */; };
 		7EB486421EA4BE1C00656270 /* UserProdImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486411EA4BE1C00656270 /* UserProdImages.swift */; };
 		7EB486451EA4DBEC00656270 /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486441EA4DBEC00656270 /* ImageUtility.swift */; };
+		7EB486471EA5E79100656270 /* RecircleWebConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486461EA5E79100656270 /* RecircleWebConstants.swift */; };
 		7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */; };
 		7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */; };
 		7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */; };
@@ -55,6 +56,7 @@
 		7EB4863F1EA4B42300656270 /* UserAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAddresses.swift; sourceTree = "<group>"; };
 		7EB486411EA4BE1C00656270 /* UserProdImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProdImages.swift; sourceTree = "<group>"; };
 		7EB486441EA4DBEC00656270 /* ImageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
+		7EB486461EA5E79100656270 /* RecircleWebConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecircleWebConstants.swift; sourceTree = "<group>"; };
 		7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAPICall.swift; sourceTree = "<group>"; };
 		7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				7EB486441EA4DBEC00656270 /* ImageUtility.swift */,
+				7EB486461EA5E79100656270 /* RecircleWebConstants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB486381EA4AAD600656270 /* Product.swift in Sources */,
+				7EB486471EA5E79100656270 /* RecircleWebConstants.swift in Sources */,
 				7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */,
 				7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */,
 				7EB486361EA4AAA300656270 /* ProductDetails.swift in Sources */,
