@@ -10,7 +10,9 @@
 **SearchTextField** is a subclass of UITextField, written in Swift that makes really easy the ability to show an autocomplete suggestions list.   
 You can decide wether to show the list as soon as the field is focused or when the user starts typing.   
 You can also detects when the user stops typing, very useful when you can get a suggestion list from a remote server.   
-   
+
+**New Feature!**
+Now you can make suggestions "inline", showing the first matched result as the placeholder (instead of the results list) and selecting it when the user touches the enter key.
    
 ------   
 ![alt_tag](https://raw.githubusercontent.com/apasccon/SearchTextField/master/Example/SearchTextField/SearchTextField_Demo.gif)
@@ -70,6 +72,9 @@ mySearchTextField.theme.borderColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, 
 mySearchTextField.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
 mySearchTextField.theme.cellHeight = 50
 
+// Set specific comparision options - Default: .caseInsensitive
+mySearchTextField.comparisonOptions = [.caseInsensitive]
+
 // Set the max number of results. By default it's not limited
 mySearchTextField.maxNumberOfResults = 5
 
@@ -80,7 +85,7 @@ mySearchTextField.maxResultsListHeight = 200
 mySearchTextField.highlightAttributes = [NSBackgroundColorAttributeName: UIColor.yellowColor(), NSFontAttributeName:UIFont.boldSystemFontOfSize(12)]
 
 // Handle what happens when the user picks an item. By default the title is set to the text field
-mySearchTextField.itemSelectionHandler = {item in
+mySearchTextField.itemSelectionHandler = {item, itemPosition in
     mySearchTextField.text = item.title
 }
 
@@ -105,7 +110,25 @@ mySearchTextField.userStoppedTypingHandler = {
         }
     }
 }
+
 ```
+
+### New feature: show the first matched result as placeholder (inline mode)
+
+```swift
+// Set the array of strings you want to suggest
+mySearchTextField.filterStrings(["Red", "Blue", "Yellow"])
+
+// Then set the inline mode in true
+mySearchTextField.inlineMode = true
+```
+
+
+## Swift Versions
+
+Install v1.0.0 if you need to support Swift 2.3.
+
+Install v1.0.2 and above if you want to support Swift 3.
 
 
 ## Demo

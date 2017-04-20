@@ -53,8 +53,18 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     let screenHeight = UIScreen.main.bounds.height
     
     var prodNames : [String] = []
-    
+
+    var prodDetails : [Product] = []
+
     var dateText : String!
+    
+    var productId : String = ""
+    
+    var manufactureId : String = ""
+    
+    var searchFromDate : String = ""
+    
+    var searchToDate : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,13 +72,13 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         tableRecentItems.dataSource = self
         tableRecentItems.delegate = self
         
+        tableRecentItems.allowsSelection = true
+        
         tablePopularItems.dataSource = self
         tablePopularItems.delegate = self
         
         scrollView.delegate = self
-        
-        
-        
+    
         
         //        self.navigationBar.backgroundColor = UIColor(cgColor: UIColor.black as! CGColor)
         self.navigationItem.title = "New"
@@ -90,18 +100,26 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         imageViewDate.isUserInteractionEnabled = true
         dateTextField.leftView = imageViewDate
         
+        tapRecogniser.cancelsTouchesInView = false
         
         let imageViewSearch = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         image = UIImage(named : "search")
         imageViewSearch.image = image
         prodSearchTextField.leftView = imageViewSearch
         
+        prodSearchTextField.startVisible = true
         prodSearchTextField.theme.font = UIFont.systemFont(ofSize: 16)
         prodSearchTextField.theme.bgColor = UIColor (red: 1, green: 1, blue: 1, alpha: 1)
         prodSearchTextField.theme.borderColor = UIColor (red: 0, green: 0, blue: 0, alpha: 1)
         prodSearchTextField.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
         prodSearchTextField.theme.cellHeight = 50
         prodSearchTextField.filterStrings(["Red", "Blue", "Yellow"])
+        
+//        prodSearchTextField.itemSelectionHandler = { item , itemPosition in
+//            
+//            print(itemPosition)
+//        }
+        
         
         buttonSearch.layer.cornerRadius = 5
         buttonSearch.layer.borderWidth = 1
@@ -119,20 +137,33 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 
                 if let dataResponse = response.result.value {
                     let json = JSON(dataResponse)
-                    //   print("JSON: \(json)")
+                      print("JSON searchText: \(json)")
                     //               print("name : \(json["productsData"].arrayValue.map({$0["product_manufacturer_name"].stringValue}))")
                     
-                    for item in json["productsData"].arrayValue {
-                        print(item["product_manufacturer_name"].stringValue)
-                        let manufacturerName = item["product_manufacturer_name"].stringValue
-                        self.prodNames.append(manufacturerName)
-                        for subitem in item["products"].arrayValue {
-                            print(subitem["product_title"].stringValue)
-                            self.prodNames.append(manufacturerName + " " + subitem["product_title"].stringValue)
-                        }
+                    let prodName = ProdNames(dictionary: json.object as! NSDictionary)
+                    
+                    for item in (prodName?.productsData)! {
+                        self.prodNames.append(item.product_manufacturer_name!)
+                        print(item.product_manufacturer_name)
                         
+                        for itemProd in item.products! {
+                            print(itemProd.product_title)
+                            self.prodNames.append(itemProd.product_title!)
+                        }
                     }
-                    self.prodSearchTextField.filterStrings(self.prodNames)
+                   // self.prodSearchTextField.filterStrings(self.prodNames)
+
+//                    for item in json["productsData"].arrayValue {
+//                        print(item["product_manufacturer_name"].stringValue)
+//                        let manufacturerName = item["product_manufacturer_name"].stringValue
+//                      //  self.prodNames.append(manufacturerName)
+//                        for subitem in item["products"].arrayValue {
+//                          //  print(subitem["product_title"].stringValue)
+//                         //   self.prodNames.append(manufacturerName + " " + subitem["product_title"].stringValue)
+//                        }
+//                        
+//                    }
+                   // self.prodSearchTextField.filterStrings(self.prodNames)
                 }
         }
         
@@ -317,6 +348,44 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
     }
     
+    @IBAction func searchProduct(_ sender: AnyObject) {
+        
+        var searchText : String!
+        
+        if productId == nil || productId.isEmpty || manufactureId == nil || manufactureId.isEmpty {
+            searchText = prodSearchTextField.text
+        }
+//
+        
+        let parameters : [String : AnyObject] = ["manufacturerId" : manufactureId as AnyObject ,
+                                                 "productId" : productId as AnyObject ,
+                                                 "searchText" : searchText as AnyObject,
+                                                 "searchFromDate" : searchFromDate as AnyObject,
+                                                 "searchToDate" : searchToDate as AnyObject
+                                                 ]
+        
+        Alamofire.request(URL(string: RecircleWebConstants.SearchApi)!,
+                          method: .get, parameters: parameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let dataResponse = response.result.value {
+                    let json = JSON(dataResponse)
+                    print("JSON SearchApi: \(json)")
+                }
+                    
+                else {
+                    
+                }
+        }
+
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProductCell
@@ -357,6 +426,12 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+            print("table row selected ")
+            performSegue(withIdentifier: "searchResult", sender: nil)
     }
 
     

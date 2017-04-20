@@ -2,23 +2,23 @@ PODS:
   - Alamofire (4.4.0)
   - Cosmos (8.0.2)
   - JTAppleCalendar (6.1.6)
-  - SearchTextField (1.0.3)
+  - SearchTextField (1.0.10)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - Cosmos
   - JTAppleCalendar (~> 6.1)
-  - SearchTextField
+  - SearchTextField (~> 1.0.5)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   JTAppleCalendar: 560fb46421880f53ad54123295072de24bca2b18
-  SearchTextField: c0dacdec13dbf9951ceeaf7f340ece9a98a45014
+  SearchTextField: e271b2719880f907045e30ed3bef02fc4418c877
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 7a91dda4b586d73bd85cf4c8c15f3400bfed5324
+PODFILE CHECKSUM: a1484c53b3a552ce2efde990c8f8584fe7e17aba
 
 COCOAPODS: 1.1.1
