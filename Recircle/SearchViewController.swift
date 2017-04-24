@@ -69,6 +69,11 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x2C3140)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        
         tableRecentItems.dataSource = self
         tableRecentItems.delegate = self
         
@@ -80,8 +85,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         scrollView.delegate = self
     
         
-        //        self.navigationBar.backgroundColor = UIColor(cgColor: UIColor.black as! CGColor)
-        self.navigationItem.title = "New"
         locationTextField.leftViewMode = UITextFieldViewMode.always
         dateTextField.leftViewMode = UITextFieldViewMode.always
         prodSearchTextField.leftViewMode = UITextFieldViewMode.always
@@ -279,15 +282,22 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     }
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "searchResult" {
+       // let vc = segue.destination as SearchResultViewController
+        
+        }
+            
+        
      }
-     */
+ 
     
     
     
@@ -376,6 +386,15 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 if let dataResponse = response.result.value {
                     let json = JSON(dataResponse)
                     print("JSON SearchApi: \(json)")
+                    
+                    let arr : NSArray = json["products"].arrayValue as NSArray
+                    
+                    
+                    let prods = Product.modelsFromDictionaryArray(array: arr)
+                    
+                    print(prods.count)
+                    
+                    
                 }
                     
                 else {

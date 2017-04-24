@@ -33,6 +33,7 @@
 		7EB4864D1EA78B0000656270 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB4864C1EA78B0000656270 /* Products.swift */; };
 		7EB4864F1EA78B4600656270 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB4864E1EA78B4600656270 /* ProductDetail.swift */; };
 		7EBD78B41EA8DAE300B80E20 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD78B31EA8DAE300B80E20 /* SearchResultViewController.swift */; };
+		7EBD78B61EAE259A00B80E20 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD78B51EAE259A00B80E20 /* ColorUtils.swift */; };
 		7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */; };
 		7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */; };
 		7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */; };
@@ -67,6 +68,7 @@
 		7EB4864C1EA78B0000656270 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		7EB4864E1EA78B4600656270 /* ProductDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		7EBD78B31EA8DAE300B80E20 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		7EBD78B51EAE259A00B80E20 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAPICall.swift; sourceTree = "<group>"; };
 		7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				7EB486441EA4DBEC00656270 /* ImageUtility.swift */,
 				7EB486461EA5E79100656270 /* RecircleWebConstants.swift */,
+				7EBD78B51EAE259A00B80E20 /* ColorUtils.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				7EB486381EA4AAD600656270 /* Product.swift in Sources */,
 				7EBD78B41EA8DAE300B80E20 /* SearchResultViewController.swift in Sources */,
 				7EB486471EA5E79100656270 /* RecircleWebConstants.swift in Sources */,
+				7EBD78B61EAE259A00B80E20 /* ColorUtils.swift in Sources */,
 				7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */,
 				7EB4864D1EA78B0000656270 /* Products.swift in Sources */,
 				7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */,

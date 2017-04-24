@@ -71,8 +71,12 @@ class DatePickerViewController: UIViewController{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-        let searchVC = segue.destination as! SearchViewController
-        searchVC.dateText = textStartDate.text! + " - " + textEndDate.text!
+        if segue.identifier == "searchResult" {
+        
+            let searchVC = segue.destination as! SearchViewController
+            searchVC.dateText = textStartDate.text! + " - " + textEndDate.text!
+            
+        }
     }
     
     
