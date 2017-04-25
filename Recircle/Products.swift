@@ -13,6 +13,11 @@ public class Products {
     public var product_id : String?
     public var product_detail : ProductDetail?
     
+    //Adding vars for internal logic
+    public var manufacturer_id : String?
+    public var manufacturer_name : String?
+    //
+    
     /**
      Returns an array of models based on given dictionary.
      
@@ -50,6 +55,9 @@ public class Products {
         if (dictionary["product_detail"] != nil) { product_detail = ProductDetail(dictionary: dictionary["product_detail"] as! NSDictionary) }
     }
     
+    public init() {
+        
+    }
     
     /**
      Returns the dictionary representation for the current instance.

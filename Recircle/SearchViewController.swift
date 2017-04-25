@@ -53,6 +53,8 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     let screenHeight = UIScreen.main.bounds.height
     
     var prodNames : [String] = []
+    
+    var autoCompleteProducts : [Products] = []
 
     var prodDetails : [Product] = []
 
@@ -65,6 +67,8 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     var searchFromDate : String = ""
     
     var searchToDate : String = ""
+    
+    var searchProducts : [Product]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +114,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         imageViewSearch.image = image
         prodSearchTextField.leftView = imageViewSearch
         
-        prodSearchTextField.startVisible = true
+       
         prodSearchTextField.theme.font = UIFont.systemFont(ofSize: 16)
         prodSearchTextField.theme.bgColor = UIColor (red: 1, green: 1, blue: 1, alpha: 1)
         prodSearchTextField.theme.borderColor = UIColor (red: 0, green: 0, blue: 0, alpha: 1)
@@ -118,10 +122,17 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         prodSearchTextField.theme.cellHeight = 50
         prodSearchTextField.filterStrings(["Red", "Blue", "Yellow"])
         
-//        prodSearchTextField.itemSelectionHandler = { item , itemPosition in
-//            
-//            print(itemPosition)
-//        }
+        // Set the max number of results. By default it's not limited
+        prodSearchTextField.maxNumberOfResults = 5
+        
+        // You can also limit the max height of the results list
+        prodSearchTextField.maxResultsListHeight = 200
+        
+        prodSearchTextField.itemSelectionHandler = { item , itemPosition in
+            
+            self.prodSearchTextField.text = item.title
+            print(itemPosition)
+        }
         
         
         buttonSearch.layer.cornerRadius = 5
@@ -146,10 +157,17 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                     let prodName = ProdNames(dictionary: json.object as! NSDictionary)
                     
                     for item in (prodName?.productsData)! {
+                        
                         self.prodNames.append(item.product_manufacturer_name!)
                         print(item.product_manufacturer_name)
                         
                         for itemProd in item.products! {
+                         //   let product : Products!
+//                            product.manufacturer_id = item.product_manufacturer_id
+//                            product.manufacturer_name = item.product_manufacturer_name
+//                            product.product_id = itemProd.product_id
+//                            product.product_title = itemProd.product_title
+//                            self.autoCompleteProducts.append(product)
                             print(itemProd.product_title)
                             self.prodNames.append(itemProd.product_title!)
                         }
@@ -166,7 +184,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
 //                        }
 //                        
 //                    }
-                   // self.prodSearchTextField.filterStrings(self.prodNames)
+                    self.prodSearchTextField.filterStrings(self.prodNames)
                 }
         }
         
@@ -291,13 +309,27 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
      // Pass the selected object to the new view controller.
         
         if segue.identifier == "searchResult" {
-       // let vc = segue.destination as SearchResultViewController
-        
+            
+            let vc = segue.destination as! SearchResultViewController
+            vc.products = searchProducts
+            searchProducts.removeAll()
         }
             
         
      }
  
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "searchResult" {
+            
+            if searchProducts != nil && searchProducts.count > 0 {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
     
     
     
@@ -362,6 +394,10 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
         var searchText : String!
         
+        if searchProducts != nil && searchProducts.count > 0 {
+            searchProducts.removeAll()
+        }
+        
         if productId == nil || productId.isEmpty || manufactureId == nil || manufactureId.isEmpty {
             searchText = prodSearchTextField.text
         }
@@ -387,13 +423,20 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                     let json = JSON(dataResponse)
                     print("JSON SearchApi: \(json)")
                     
-                    let arr : NSArray = json["products"].arrayValue as NSArray
+                    let searchResult = SearchResultProducts(dictionary: json.object as! NSDictionary)
+
+//                    let arr : NSArray = searchResult?.products as NSArray
+//                    
                     
+                 //   print(arr.count)
                     
-                    let prods = Product.modelsFromDictionaryArray(array: arr)
+                   
+                    if let prods = searchResult?.products {
+                        self.searchProducts = prods
+                        print(prods.count)
+                    }
                     
-                    print(prods.count)
-                    
+                    self.performSegue(withIdentifier: "searchResult", sender: nil)
                     
                 }
                     
@@ -425,7 +468,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 
                 cell.textProductName.text = self.recentProducts[index].product_info?.product_title
                 cell.textOwnerName.text = (self.recentProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
-                cell.viewRating.text =  String(describing: self.recentProducts[index].user_product_info?.product_avg_rating!)
+                cell.viewRating.text =  String(describing: self.recentProducts[index].user_product_info?.product_avg_rating)
                 cell.imageProduct.setImageFromURl(stringImageUrl: (self.recentProducts[index].product_info?.product_image_url)!)
             }
             
@@ -437,7 +480,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 
                 cell.textProductName.text = self.popularProducts[index].product_info?.product_title
                 cell.textOwnerName.text = (self.popularProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
-                cell.viewRating.text =  String(describing: self.popularProducts[index].user_product_info?.product_avg_rating!)
+                cell.viewRating.text =  String(describing: self.popularProducts[index].user_product_info?.product_avg_rating)
                 cell.imageProduct.setImageFromURl(stringImageUrl: (self.popularProducts[index].product_info?.product_image_url)!)
             }
             

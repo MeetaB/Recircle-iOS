@@ -12,6 +12,24 @@ import Cosmos
 class ProductCell: UITableViewCell {
 
     
+    @IBOutlet weak var prodImage: UIImageView!
+    
+    
+    @IBOutlet weak var prodName: UILabel!
+    
+    
+    @IBOutlet weak var prodPrice: UILabel!
+    
+    
+    @IBOutlet weak var prodOwner: UILabel!
+    
+    @IBOutlet weak var prodRating: CosmosView!
+    
+    
+    @IBOutlet weak var prodFavourite: UIButton!
+    
+    //
+    
     @IBOutlet weak var imageProduct: UIImageView!
     
     @IBOutlet weak var textProductName: UILabel!
