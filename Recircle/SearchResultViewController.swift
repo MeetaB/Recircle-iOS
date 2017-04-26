@@ -14,6 +14,10 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
 
     @IBOutlet weak var tableProducts: UITableView!
     
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    @IBOutlet weak var searchView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,16 +35,30 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         
         // Do any additional setup after loading the view.
         
-        let view = Bundle.main.loadNibNamed("SearchView", owner: self, options: nil)?.first as! UIView
-      //  self.view.addSubview(view)
+        searchTextField.addTarget(self, action: #selector(self.openSearchView), for: UIControlEvents.touchDown)
         
-        self.view.insertSubview(view, at: 1)
+        searchView.isHidden = true
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func openSearchView () {
+        searchTextField.isHidden = true
+        
+//        let view = Bundle.main.loadNibNamed("SearchView", owner: self, options: nil)?.first as! UIView
+//        //  self.view.addSubview(view)
+//        
+////        view.frame = CGRect(x: 0, y: 100, width: Int(self.view.frame.width), height: Int(view.frame.height))
+//        
+//       // self.stackView.insertSubview(view, at: 1)
+//        
+//        self.stackView.addSubview(view)
+
+        searchView.isHidden = false
     }
     
     

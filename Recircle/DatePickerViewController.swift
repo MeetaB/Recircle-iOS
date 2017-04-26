@@ -9,16 +9,16 @@
 import UIKit
 import JTAppleCalendar
 
-class DatePickerViewController: UIViewController{
+class DatePickerViewController: UIViewController {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    
-    
     @IBOutlet weak var textStartDate: UILabel!
     
     @IBOutlet weak var textEndDate: UILabel!
     
     var currentCalendar: Calendar?
+    
+    var delegates : SearchViewController?
     
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     fileprivate let formatter: DateFormatter = {
@@ -79,6 +79,9 @@ class DatePickerViewController: UIViewController{
         }
     }
     
+    @IBAction func unwindToView(segue : UIStoryboardSegue) {
+        print(rangeSelectedDates)
+    }
     
     
     var rangeSelectedDates: [Date] = []
@@ -122,6 +125,15 @@ class DatePickerViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func saveDates(_ sender: AnyObject) {
+        
+//        if let delegate = self.delegates {
+//            delegate.getDate(date: "sss")
+//        }
+        self.dismiss(animated: true) {
+            
+        }
+    }
     /*
     // MARK: - Navigation
 

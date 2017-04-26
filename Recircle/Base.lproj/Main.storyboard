@@ -524,7 +524,7 @@
                                     <color key="titleColor" red="0.0" green="0.59215686274509804" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DQv-ay-GDj" kind="show" identifier="searchView" id="VAk-Yz-r5K"/>
+                                    <action selector="saveDates:" destination="iJg-lo-rWQ" eventType="touchUpInside" id="OCH-iJ-R6I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -554,9 +554,11 @@
                         <outlet property="calendarView" destination="TiH-vm-A3n" id="t8y-fG-kaH"/>
                         <outlet property="textEndDate" destination="XeK-Xa-biW" id="zjr-wG-CU1"/>
                         <outlet property="textStartDate" destination="Q1O-ca-xaj" id="t0B-dp-h1e"/>
+                        <segue destination="DoP-n8-b3p" kind="unwind" identifier="unwindToView" unwindAction="unwindToViewWithSegue:" id="bIP-NB-epV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hs5-kD-I8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DoP-n8-b3p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2276" y="-1206.7466266866568"/>
         </scene>
@@ -572,13 +574,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="413" height="2109"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACJ-WH-hwD">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="J8c-VB-f44"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlX-4O-z1b">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6J-ot-5Aj">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="EWc-Mf-5VY"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jk8-FZ-xOL">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="eSB-9d-gXE"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Vl-B6-gDz">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fil-Ab-wIA"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJG-jV-jqs">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="NC2-Ng-4FQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Search"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="jk8-FZ-xOL" firstAttribute="leading" secondItem="NlX-4O-z1b" secondAttribute="leading" constant="20" id="1Lh-1k-7SS"/>
+                                    <constraint firstItem="0Vl-B6-gDz" firstAttribute="leading" secondItem="NlX-4O-z1b" secondAttribute="leading" constant="20" id="4i4-TB-aKi"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Vl-B6-gDz" secondAttribute="trailing" constant="20" id="5De-Qf-XGp"/>
+                                    <constraint firstAttribute="trailing" secondItem="p6J-ot-5Aj" secondAttribute="trailing" constant="20" id="Kgu-dX-WIH"/>
+                                    <constraint firstItem="AJG-jV-jqs" firstAttribute="centerX" secondItem="NlX-4O-z1b" secondAttribute="centerX" id="LLg-3a-xyI"/>
+                                    <constraint firstAttribute="height" constant="175" id="OlQ-4w-1wu"/>
+                                    <constraint firstItem="p6J-ot-5Aj" firstAttribute="leading" secondItem="NlX-4O-z1b" secondAttribute="leading" constant="20" id="PvV-TG-IMv"/>
+                                    <constraint firstItem="AJG-jV-jqs" firstAttribute="top" secondItem="0Vl-B6-gDz" secondAttribute="bottom" constant="8" id="Stc-8d-Mjt"/>
+                                    <constraint firstAttribute="trailing" secondItem="jk8-FZ-xOL" secondAttribute="trailing" constant="20" id="SvQ-lg-jo8"/>
+                                    <constraint firstItem="p6J-ot-5Aj" firstAttribute="top" secondItem="NlX-4O-z1b" secondAttribute="top" constant="20" id="eh4-3t-PLJ"/>
+                                    <constraint firstItem="jk8-FZ-xOL" firstAttribute="top" secondItem="p6J-ot-5Aj" secondAttribute="bottom" constant="8" id="ict-HM-SGD"/>
+                                    <constraint firstItem="0Vl-B6-gDz" firstAttribute="top" secondItem="jk8-FZ-xOL" secondAttribute="bottom" constant="13" id="rPg-7d-bPt"/>
+                                    <constraint firstItem="AJG-jV-jqs" firstAttribute="centerX" secondItem="NlX-4O-z1b" secondAttribute="centerX" id="saU-2T-bbs"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cnB-ps-dUe">
-                                <frame key="frameInset" minX="20" minY="280" width="373" height="475"/>
+                                <frame key="frameInset" minX="20" minY="306" width="373" height="550"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="129" id="cJl-Dg-wTv" customClass="ProductCell" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="373" height="129"/>
+                                        <rect key="frame" x="0.0" y="28" width="373" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJl-Dg-wTv" id="wJ9-pc-cpL">
                                             <frame key="frameInset" width="373" height="128"/>
@@ -589,9 +649,19 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ACJ-WH-hwD" firstAttribute="leading" secondItem="XTN-AJ-V4p" secondAttribute="leadingMargin" id="0jC-bk-q4z"/>
+                            <constraint firstItem="NlX-4O-z1b" firstAttribute="top" secondItem="r3e-F3-EAU" secondAttribute="bottom" constant="47" id="5xI-sA-cKo"/>
+                            <constraint firstItem="ACJ-WH-hwD" firstAttribute="trailing" secondItem="XTN-AJ-V4p" secondAttribute="trailingMargin" id="7Ie-12-K4y"/>
+                            <constraint firstItem="ACJ-WH-hwD" firstAttribute="top" secondItem="r3e-F3-EAU" secondAttribute="bottom" constant="15" id="Dfy-0N-t4L"/>
+                            <constraint firstAttribute="trailing" secondItem="NlX-4O-z1b" secondAttribute="trailing" id="k3I-WI-XMx"/>
+                            <constraint firstItem="NlX-4O-z1b" firstAttribute="leading" secondItem="XTN-AJ-V4p" secondAttribute="leading" id="tlG-hp-98x"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search Result" id="ees-xN-xfg"/>
                     <connections>
+                        <outlet property="searchTextField" destination="ACJ-WH-hwD" id="nEt-Lp-BWn"/>
+                        <outlet property="searchView" destination="NlX-4O-z1b" id="9B7-PP-nmN"/>
                         <outlet property="tableProducts" destination="cnB-ps-dUe" id="AQF-AH-snt"/>
                     </connections>
                 </viewController>
@@ -604,7 +674,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DQv-ay-GDj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AKG-IZ-81A">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AKG-IZ-81A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

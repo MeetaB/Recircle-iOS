@@ -132,6 +132,14 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             
             self.prodSearchTextField.text = item.title
             print(itemPosition)
+            print(self.autoCompleteProducts[itemPosition].product_title)
+            if (self.autoCompleteProducts[itemPosition].product_id! != nil) {
+                self.productId = self.autoCompleteProducts[itemPosition].product_id!
+            }
+            
+            if (self.autoCompleteProducts[itemPosition].manufacturer_id! != nil) {
+                self.manufactureId = self.autoCompleteProducts[itemPosition].manufacturer_id!
+            }
         }
         
         
@@ -158,18 +166,24 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                     
                     for item in (prodName?.productsData)! {
                         
+                        let product = Products()
+                        product.manufacturer_id = item.product_manufacturer_id
+                        product.manufacturer_name = item.product_manufacturer_name
+                        self.autoCompleteProducts.append(product)
+                        
                         self.prodNames.append(item.product_manufacturer_name!)
                         print(item.product_manufacturer_name)
                         
                         for itemProd in item.products! {
-                         //   let product : Products!
-//                            product.manufacturer_id = item.product_manufacturer_id
-//                            product.manufacturer_name = item.product_manufacturer_name
-//                            product.product_id = itemProd.product_id
-//                            product.product_title = itemProd.product_title
-//                            self.autoCompleteProducts.append(product)
+                            let product = Products()
+                            product.manufacturer_id = item.product_manufacturer_id
+                            product.manufacturer_name = item.product_manufacturer_name
+                            product.product_id = itemProd.product_id
+                            product.product_title = itemProd.product_title
+                            self.autoCompleteProducts.append(product)
                             print(itemProd.product_title)
-                            self.prodNames.append(itemProd.product_title!)
+                            let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
+                            self.prodNames.append(prodName)
                         }
                     }
                    // self.prodSearchTextField.filterStrings(self.prodNames)
@@ -202,7 +216,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 
                 if let dataResponse = response.result.value {
                     
-                    //     self.productDetails = dataResponse as! ProductDetails
                     let json = JSON(dataResponse)
                     print("JSON All Products: \(json)")
                     
@@ -291,7 +304,17 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     func showCalendar () {
         print("refresh")
+//        let dateVC = DatePickerViewController()
+//        dateVC.delegates = self
+//        present(dateVC, animated: true) {
+//        
+//        }
+    
         performSegue(withIdentifier: "datepicker", sender: nil)
+    }
+    
+    func getDate(date:String) {
+        print(date)
     }
     
     override func didReceiveMemoryWarning() {
@@ -392,14 +415,14 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     @IBAction func searchProduct(_ sender: AnyObject) {
         
-        var searchText : String!
+        var searchText : String = ""
         
         if searchProducts != nil && searchProducts.count > 0 {
             searchProducts.removeAll()
         }
         
-        if productId == nil || productId.isEmpty || manufactureId == nil || manufactureId.isEmpty {
-            searchText = prodSearchTextField.text
+        if productId.isEmpty && manufactureId.isEmpty {
+            searchText = prodSearchTextField.text!
         }
 //
         
