@@ -13,7 +13,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-Dp-QNL">
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.16981003489999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyE-Yu-ujV">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -23,23 +23,25 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="DyE-Yu-ujV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4Lm-PU-dKE"/>
-                <constraint firstItem="O8m-Dp-QNL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Kx-XU-ZUC"/>
+                <constraint firstItem="DyE-Yu-ujV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="24v-9l-tdE"/>
                 <constraint firstItem="O8m-Dp-QNL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5qp-ij-TV8"/>
-                <constraint firstItem="DyE-Yu-ujV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="AHj-5J-iEc"/>
-                <constraint firstItem="O8m-Dp-QNL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AT4-ov-RDf"/>
+                <constraint firstAttribute="bottom" secondItem="DyE-Yu-ujV" secondAttribute="bottom" id="5wi-wK-Tb3"/>
                 <constraint firstItem="O8m-Dp-QNL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ckn-6Q-SE1"/>
-                <constraint firstItem="DyE-Yu-ujV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EBV-dn-apW"/>
-                <constraint firstAttribute="trailing" secondItem="O8m-Dp-QNL" secondAttribute="trailing" id="GQQ-Zj-UCO"/>
-                <constraint firstAttribute="bottom" secondItem="O8m-Dp-QNL" secondAttribute="bottom" id="jeY-uf-cBe"/>
-                <constraint firstAttribute="trailing" secondItem="DyE-Yu-ujV" secondAttribute="trailing" id="pUy-Gc-djX"/>
+                <constraint firstAttribute="trailing" secondItem="DyE-Yu-ujV" secondAttribute="trailing" id="Epx-jh-eLA"/>
+                <constraint firstItem="O8m-Dp-QNL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ho8-qY-NP6"/>
+                <constraint firstAttribute="bottom" secondItem="O8m-Dp-QNL" secondAttribute="bottom" id="KWa-kI-w1Q"/>
+                <constraint firstAttribute="trailing" secondItem="O8m-Dp-QNL" secondAttribute="trailing" id="Q6O-fd-9HY"/>
+                <constraint firstItem="O8m-Dp-QNL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fKT-HB-qe9"/>
+                <constraint firstItem="O8m-Dp-QNL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gxk-9P-l7P"/>
+                <constraint firstItem="O8m-Dp-QNL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yft-oe-3IP"/>
+                <constraint firstItem="DyE-Yu-ujV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yji-TM-YyY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="selectedView" destination="O8m-Dp-QNL" id="NOW-ug-dUc"/>
                 <outlet property="textDate" destination="DyE-Yu-ujV" id="Kgs-1N-fow"/>
             </connections>
-            <point key="canvasLocation" x="-124.5" y="-248"/>
+            <point key="canvasLocation" x="-126.5" y="-277"/>
         </view>
     </objects>
 </document>

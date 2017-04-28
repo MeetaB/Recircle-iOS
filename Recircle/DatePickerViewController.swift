@@ -21,11 +21,14 @@ class DatePickerViewController: UIViewController {
     var delegates : SearchViewController?
     
     fileprivate let gregorian = Calendar(identifier: .gregorian)
+    
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+
+    var calendarColor : UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +54,14 @@ class DatePickerViewController: UIViewController {
         
         calendarView.isHidden = false
         
+        calendarColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+        
+        
         
     }
     
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         self.dismiss(animated: true) { 
-            //
         }
     }
     
@@ -71,6 +76,20 @@ class DatePickerViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
+        print("segue prepare datepicker")
+        print(segue.identifier)
+        
+        
+        if segue.identifier == "goBack" {
+           let vc = segue.destination as! SearchViewController
+                
+            vc.searchFromDate = rangeSelectedDates.first
+            vc.searchToDate = rangeSelectedDates.last
+            
+
+        }
+        
+        
         if segue.identifier == "searchResult" {
         
             let searchVC = segue.destination as! SearchViewController
@@ -78,11 +97,6 @@ class DatePickerViewController: UIViewController {
             
         }
     }
-    
-    @IBAction func unwindToView(segue : UIStoryboardSegue) {
-        print(rangeSelectedDates)
-    }
-    
     
     var rangeSelectedDates: [Date] = []
     func didStartRangeSelecting(gesture: UILongPressGestureRecognizer) {
@@ -113,9 +127,9 @@ class DatePickerViewController: UIViewController {
             //
         }
         
-        if gesture.state == .ended {
-            rangeSelectedDates.removeAll()
-        }
+//        if gesture.state == .ended {
+//            rangeSelectedDates.removeAll()
+//        }
     }
     
 
@@ -125,14 +139,30 @@ class DatePickerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        
+        print("unwind for datepicker")
+
+        if unwindSegue.identifier == "datePicker" {
+            print("data")
+        }
+        
+    }
+    
+    @IBAction func unwindToSearch(segue: UIStoryboardSegue){
+        print("unwind datepicker")
+    }
+
+    
     @IBAction func saveDates(_ sender: AnyObject) {
         
 //        if let delegate = self.delegates {
 //            delegate.getDate(date: "sss")
 //        }
-        self.dismiss(animated: true) {
+        performSegue(withIdentifier: "goBack", sender: self)
+        //self.dismiss(animated: true) {
             
-        }
+        //}
     }
     /*
     // MARK: - Navigation
@@ -161,53 +191,118 @@ class DatePickerViewController: UIViewController {
             headerCell?.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
             headerCell?.title.textColor = UIColor.white
             headerCell?.title.text = formatter.string(from: range.end)
-                    }
+        }
         
         func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
-            let myCustomCell = cell as! DayCellView
             
-            myCustomCell.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
-            // Setup Cell text
+            
+            
+//            
+//            if cellState.isSelected {
+//                myCustomCell.selectedView.backgroundColor = UIColor.white
+//                myCustomCell.textDate.textColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+//            } else {
+//                myCustomCell.textDate.textColor = UIColor.white
+//            }
+          
+            handleCellTextColor(view: cell, cellState: cellState)
+            handleCellSelection(view: cell, cellState: cellState)
+            let myCustomCell = cell as! DayCellView
+            //
+            myCustomCell.backgroundColor = calendarColor
+            //            // Setup Cell text
             myCustomCell.textDate.text = cellState.text
             
-            
-            
             // Setup text color
-            if cellState.dateBelongsTo == .thisMonth {
-                myCustomCell.textDate.textColor = UIColor.white
-            } else {
-                myCustomCell.textDate.textColor = UIColor.gray
-            }
+//            if cellState.dateBelongsTo == .thisMonth {
+//                myCustomCell.textDate.textColor = UIColor.white
+//            } else {
+//                myCustomCell.textDate.textColor = UIColor.gray
+//            }
         }
 
         func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         
-            let myCustomCell = cell as! DayCellView
-            
-             myCustomCell.selectedView.layer.cornerRadius =  10
-            
+//            let myCustomCell = cell as! DayCellView
+//            
+//             myCustomCell.selectedView.layer.cornerRadius =  20
+//            
 //            if cellState.isSelected {
+////                myCustomCell.textDate.textColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
 //                myCustomCell.selectedView.isHidden = false
+//                
+//
 //            }
+            handleCellSelection(view: cell, cellState: cellState)
+            handleCellTextColor(view: cell, cellState: cellState)
             
-            switch cellState.selectedPosition() {
-            case .full, .left, .right:
+            
+//            switch cellState.selectedPosition() {
+//            case .full, .left, .right:
+//                myCustomCell.selectedView.isHidden = false
+//                
+//               // myCustomCell.selectedView.backgroundColor = UIColor.white // Or you can put what ever you like for your rounded corners, and your stand-alone selected cell
+//                myCustomCell.textDate.textColor = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0)
+//            case .middle:
+//                myCustomCell.selectedView.isHidden = false
+//                myCustomCell.selectedView.backgroundColor = UIColor.blue // Or what ever you want for your dates that land in the middle
+//            default:
+//                myCustomCell.selectedView.isHidden = true
+//                myCustomCell.selectedView.backgroundColor = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0) // Have no selection when a cell is not selected
+//            }
+//            
+//            if cellState.isSelected {
+//                myCustomCell.bringSubview(toFront: myCustomCell.textDate)
+//                myCustomCell.selectedView.layer.cornerRadius =  13
+//                myCustomCell.textDate.textColor = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0)
+//                myCustomCell.selectedView.backgroundColor = UIColor.white
+//                //myCustomCell. = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0)
+//                
+//                myCustomCell.selectedView.isHidden = false
+//            } else {
+//                myCustomCell.selectedView.isHidden = true
+//            }
+
+        }
+        
+        // Function to handle the text color of the calendar
+        func handleCellTextColor(view: JTAppleDayCellView?, cellState: CellState) {
+            
+            guard let myCustomCell = view as? DayCellView  else {
+                return
+            }
+            
+            if cellState.isSelected {
+                myCustomCell.textDate.textColor = UIColor.black
+            } else {
+                if cellState.dateBelongsTo == .thisMonth {
+                    myCustomCell.textDate.textColor = UIColor.white
+                } else {
+                    myCustomCell.textDate.textColor = UIColor.gray
+                }
+            }
+        }
+        
+        // Function to handle the calendar selection
+        func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
+            guard let myCustomCell = view as? DayCellView  else {
+                return
+            }
+            if cellState.isSelected {
+                myCustomCell.selectedView.layer.cornerRadius =  10
                 myCustomCell.selectedView.isHidden = false
-                
-                myCustomCell.selectedView.backgroundColor = UIColor.white // Or you can put what ever you like for your rounded corners, and your stand-alone selected cell
-                myCustomCell.textDate.textColor = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0)
-            case .middle:
-                myCustomCell.selectedView.isHidden = false
-                myCustomCell.selectedView.backgroundColor = UIColor.blue // Or what ever you want for your dates that land in the middle
-            default:
+            } else {
                 myCustomCell.selectedView.isHidden = true
-                myCustomCell.selectedView.backgroundColor = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0) // Have no selection when a cell is not selected
             }
         }
         
         func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-            let myCustomCell = cell as! DayCellView
-            myCustomCell.selectedView.isHidden = true
+        //    let myCustomCell = cell as! DayCellView
+           // myCustomCell.selectedView.isHidden = true
+            
+            handleCellSelection(view: cell, cellState: cellState)
+            handleCellTextColor(view: cell, cellState: cellState)
+            
         }
         
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {

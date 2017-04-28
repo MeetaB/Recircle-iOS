@@ -11,7 +11,7 @@ import SearchTextField
 import Alamofire
 import SwiftyJSON
 
-class SearchViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+class SearchViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     
@@ -64,9 +64,13 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     var manufactureId : String = ""
     
-    var searchFromDate : String = ""
+    var searchFromDateString : String = ""
     
-    var searchToDate : String = ""
+    var searchToDateString : String = ""
+    
+    var searchFromDate : Date!
+    
+    var searchToDate : Date!
     
     var searchProducts : [Product]!
     
@@ -77,7 +81,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        
         tableRecentItems.dataSource = self
         tableRecentItems.delegate = self
         
@@ -87,7 +90,11 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         tablePopularItems.delegate = self
         
         scrollView.delegate = self
+        
+        dateTextField.delegate = self
     
+        
+        dateTextField.tag = 2
         
         locationTextField.leftViewMode = UITextFieldViewMode.always
         dateTextField.leftViewMode = UITextFieldViewMode.always
@@ -120,7 +127,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         prodSearchTextField.theme.borderColor = UIColor (red: 0, green: 0, blue: 0, alpha: 1)
         prodSearchTextField.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
         prodSearchTextField.theme.cellHeight = 50
-        prodSearchTextField.filterStrings(["Red", "Blue", "Yellow"])
         
         // Set the max number of results. By default it's not limited
         prodSearchTextField.maxNumberOfResults = 5
@@ -140,6 +146,9 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             if (self.autoCompleteProducts[itemPosition].manufacturer_id! != nil) {
                 self.manufactureId = self.autoCompleteProducts[itemPosition].manufacturer_id!
             }
+            
+            self.prodSearchTextField.resignFirstResponder()
+            
         }
         
         
@@ -248,6 +257,11 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 2 {
+            dateTextField.resignFirstResponder()
+        }
+    }
     
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        
@@ -291,16 +305,65 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
 //        }
 //    }
     
-    
-    override func viewDidLayoutSubviews() {
-        
-        dateTextField.text = dateText
-
-        scrollView.isScrollEnabled = true
-        scrollView.contentSize=CGSize(width : self.view.frame.width,height : 2300);
+    override func viewWillAppear(_ animated: Bool) {
+        setUpDate()
         
     }
     
+  
+    func setUpDate() {
+        
+        if searchFromDate != nil && searchToDate != nil {
+            
+            let formatter  = DateFormatter()
+            formatter.dateFormat = "dd MMM,yyyy"
+            
+            let fromDate = formatter.string(from: searchFromDate)
+            let endDate = formatter.string(from: searchToDate)
+            
+            formatter.dateFormat = "yyyy-MM-dd'T'00:00:00Z"
+            searchFromDateString = formatter.string(from: searchFromDate)
+            searchToDateString = formatter.string(from: searchToDate)
+            
+            let calendar = NSCalendar.current
+            var components = calendar.dateComponents([.day,.month,.year], from: searchFromDate)
+            
+            let startYear =  components.year
+            let startMonth = components.month
+            let startDay = components.day
+            
+            components = calendar.dateComponents([.day,.month,.year], from: searchToDate)
+            let endYear =  components.year
+            let endMonth = components.month
+            
+            let months = formatter.monthSymbols
+            let monthSymbol = months?[startMonth!-1]
+            
+            if startYear == endYear {
+                if startMonth == endMonth {
+                    dateTextField.text = String(describing: startDay!) + " - " + endDate
+                } else {
+                    dateTextField.text = String(describing: startDay!) + " " + monthSymbol! + " - " + endDate
+                }
+            } else {
+                dateTextField.text = fromDate + " - " + endDate
+                
+            }
+            
+        }
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+       // dateTextField.text = dateText
+
+        scrollView.isScrollEnabled = true
+        scrollView.contentSize=CGSize(width : self.view.frame.width,height : 2000);
+        
+    }
+    
+        
     
     func showCalendar () {
         print("refresh")
@@ -336,10 +399,16 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             let vc = segue.destination as! SearchResultViewController
             vc.products = searchProducts
             searchProducts.removeAll()
+            vc.searchString = prodSearchTextField.text
         }
             
         
      }
+    
+    @IBAction func unwindToSearch(segue: UIStoryboardSegue){
+        print("unwind Search")
+        
+    }
  
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
@@ -424,13 +493,17 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         if productId.isEmpty && manufactureId.isEmpty {
             searchText = prodSearchTextField.text!
         }
-//
+        
+        print(searchFromDateString)
+        
+        print(searchToDateString)
+
         
         let parameters : [String : AnyObject] = ["manufacturerId" : manufactureId as AnyObject ,
                                                  "productId" : productId as AnyObject ,
                                                  "searchText" : searchText as AnyObject,
-                                                 "searchFromDate" : searchFromDate as AnyObject,
-                                                 "searchToDate" : searchToDate as AnyObject
+                                                 "searchFromDate" : searchFromDateString as AnyObject,
+                                                 "searchToDate" : searchToDateString as AnyObject
                                                  ]
         
         Alamofire.request(URL(string: RecircleWebConstants.SearchApi)!,
@@ -460,7 +533,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                     }
                     
                     self.performSegue(withIdentifier: "searchResult", sender: nil)
-                    
                 }
                     
                 else {
@@ -491,7 +563,11 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 
                 cell.textProductName.text = self.recentProducts[index].product_info?.product_title
                 cell.textOwnerName.text = (self.recentProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
-                cell.viewRating.text =  String(describing: self.recentProducts[index].user_product_info?.product_avg_rating)
+                
+                if let rating = self.recentProducts[index].user_product_info?.product_avg_rating
+                {
+                    cell.viewRating.text =  "(" + " " + String(rating) + ")"
+                }
                 cell.imageProduct.setImageFromURl(stringImageUrl: (self.recentProducts[index].product_info?.product_image_url)!)
             }
             
@@ -502,8 +578,13 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             if (self.popularProducts.count > 0) {
                 
                 cell.textProductName.text = self.popularProducts[index].product_info?.product_title
+                
                 cell.textOwnerName.text = (self.popularProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
-                cell.viewRating.text =  String(describing: self.popularProducts[index].user_product_info?.product_avg_rating)
+                
+                if let rating = self.popularProducts[index].user_product_info?.product_avg_rating
+                {
+                    cell.viewRating.text =  "(" + " " + String(rating) + ")"
+                }
                 cell.imageProduct.setImageFromURl(stringImageUrl: (self.popularProducts[index].product_info?.product_image_url)!)
             }
             

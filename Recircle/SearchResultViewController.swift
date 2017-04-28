@@ -18,6 +18,8 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet weak var searchView: UIView!
     
+    public var searchString : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,8 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         searchTextField.addTarget(self, action: #selector(self.openSearchView), for: UIControlEvents.touchDown)
         
         searchView.isHidden = true
+        
+        searchTextField.text = searchString
         
     }
 
@@ -100,9 +104,12 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
 
         cell.prodImage.setImageFromURl(stringImageUrl: (products[indexPath.row].product_info?.product_image_url)!)
         
+        
         cell.prodRating.rating = Double((products[indexPath.row].user_product_info?.product_avg_rating)!)
         
-        cell.prodRating.text = String(describing: products[indexPath.row].user_product_info?.product_avg_rating)
+        if let rating = (products[indexPath.row].user_product_info?.product_avg_rating) {
+            cell.prodRating.text = "(" + String(describing: rating) + ")"
+        }
         
         return cell
     }
