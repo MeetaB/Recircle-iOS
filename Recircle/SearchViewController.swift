@@ -74,6 +74,12 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     var searchProducts : [Product]!
     
+    var progressBar : MBProgressHUD!
+    
+    var searchItems : [SearchTextFieldItem] =  []
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -137,14 +143,19 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         prodSearchTextField.itemSelectionHandler = { item , itemPosition in
             
             self.prodSearchTextField.text = item.title
+            
             print(itemPosition)
+            
             print(self.autoCompleteProducts[itemPosition].product_title)
-            if (self.autoCompleteProducts[itemPosition].product_id! != nil) {
-                self.productId = self.autoCompleteProducts[itemPosition].product_id!
+            
+            if let productId = self.autoCompleteProducts[itemPosition].product_id {
+                
+                    self.productId = productId
             }
             
-            if (self.autoCompleteProducts[itemPosition].manufacturer_id! != nil) {
-                self.manufactureId = self.autoCompleteProducts[itemPosition].manufacturer_id!
+            if let manufactureId = self.autoCompleteProducts[itemPosition].manufacturer_id {
+            
+                self.manufactureId = manufactureId
             }
             
             self.prodSearchTextField.resignFirstResponder()
@@ -165,6 +176,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                 print(response.response) // HTTP URL response
                 print(response.data)     // server data
                 print(response.result)   // result of response serialization
+
                 
                 if let dataResponse = response.result.value {
                     let json = JSON(dataResponse)
@@ -180,8 +192,11 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                         product.manufacturer_name = item.product_manufacturer_name
                         self.autoCompleteProducts.append(product)
                         
+                        self.searchItems.append(SearchTextFieldItem(title: item.product_manufacturer_name!, subtitle: "", image: UIImage(named:"camera")))
+
                         self.prodNames.append(item.product_manufacturer_name!)
                         print(item.product_manufacturer_name)
+                        
                         
                         for itemProd in item.products! {
                             let product = Products()
@@ -193,6 +208,14 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                             print(itemProd.product_title)
                             let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
                             self.prodNames.append(prodName)
+                            if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
+                                if let data = NSData(contentsOf: url as URL) {
+                                    self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
+                                }
+                            }
+
+                            
+
                         }
                     }
                    // self.prodSearchTextField.filterStrings(self.prodNames)
@@ -207,7 +230,9 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
 //                        }
 //                        
 //                    }
-                    self.prodSearchTextField.filterStrings(self.prodNames)
+                  //  self.prodSearchTextField.filterStrings(self.prodNames)
+                    
+                    self.prodSearchTextField.filterItems(self.searchItems)
                 }
         }
         
@@ -399,7 +424,10 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             let vc = segue.destination as! SearchResultViewController
             vc.products = searchProducts
             searchProducts.removeAll()
-            vc.searchString = prodSearchTextField.text
+            vc.searchProdName = prodSearchTextField.text
+            vc.searchLocation = locationTextField.text
+            vc.searchDate = dateTextField.text
+            vc.searchString = prodSearchTextField.text! + " " + locationTextField.text! + " " + dateTextField.text!
         }
             
         
@@ -446,22 +474,27 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     @IBAction func clickArrowPickDrop(_ sender: AnyObject) {
         
-        if arrowPickDrop.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
-            arrowPickDrop.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
-            textPickDrop.isHidden = true
-            
-        }
-        else{
-            arrowPickDrop.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
-            textPickDrop.isHidden = false
-        }
-        
-        UIView.animate(withDuration: 0.3) { () -> Void in
-            self.view.layoutIfNeeded()
-        }
-        
+        print("pick drop")
         
     }
+//    @IBAction func clickArrowPickDrop(_ sender: AnyObject) {
+//        
+//        if arrowPickDrop.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
+//            arrowPickDrop.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
+//            textPickDrop.isHidden = true
+//            
+//        }
+//        else{
+//            arrowPickDrop.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
+//            textPickDrop.isHidden = false
+//        }
+//        
+//        UIView.animate(withDuration: 0.3) { () -> Void in
+//            self.view.layoutIfNeeded()
+//        }
+//        
+//        
+//    }
     
     @IBAction func clickArrowPayment(_ sender: AnyObject) {
         
@@ -483,6 +516,29 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     }
     
     @IBAction func searchProduct(_ sender: AnyObject) {
+        
+        //
+        progressBar = MBProgressHUD.showAdded(to: self.view, animated: true);
+        
+        progressBar.mode = MBProgressHUDMode.customView
+        
+        progressBar.label.text = "Loading";
+        
+        progressBar.isUserInteractionEnabled = false;
+    
+        
+        let image : UIImageView = UIImageView()
+        
+        image.image = UIImage(named: "camera")
+                
+        progressBar.customView = image
+        
+        progressBar.customView?.backgroundColor = UIColor.blue
+                
+        progressBar.isSquare = false
+        
+    //
+        
         
         var searchText : String = ""
         
@@ -510,6 +566,9 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                           method: .get, parameters: parameters)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
+                
+                self.progressBar.hide(animated: true)
+                
                 print(response.request)  // original URL request
                 print(response.response) // HTTP URL response
                 print(response.data)     // server data

@@ -20,10 +20,28 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     
     public var searchString : String!
     
+    @IBOutlet weak var searchProdNameField: UITextField!
+    
+    @IBOutlet weak var searchLocationField: UITextField!
+    
+    @IBOutlet weak var searchDateField: UITextField!
+    
+    public var searchProdName : String!
+    
+    public var searchLocation : String!
+    
+    public var searchDate : String!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.view.backgroundColor = UIColor.clear
         
         print(products.count)
         
@@ -43,12 +61,50 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         
         searchTextField.text = searchString
         
+        searchLocationField.leftViewMode = UITextFieldViewMode.always
+        searchDateField.leftViewMode = UITextFieldViewMode.always
+        searchProdNameField.leftViewMode = UITextFieldViewMode.always
+        
+        let imageViewLocation = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        var image = UIImage(named: "location")
+        imageViewLocation.image = image
+        searchLocationField.leftView = imageViewLocation
+        
+        let imageViewDate = UIImageView(frame: CGRect(x: 5, y: 0, width: 20, height: 20))
+        image = UIImage(named : "calendar")
+        imageViewDate.image = image
+        let tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(self.showCalendar))
+        tapRecogniser.numberOfTapsRequired = 1;
+        imageViewDate.addGestureRecognizer(tapRecogniser)
+        imageViewDate.isUserInteractionEnabled = true
+        searchDateField.leftView = imageViewDate
+        
+        tapRecogniser.cancelsTouchesInView = false
+        
+        let imageViewSearch = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        image = UIImage(named : "search")
+        imageViewSearch.image = image
+        searchProdNameField.leftView = imageViewSearch
+        
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func showCalendar () {
+        performSegue(withIdentifier: "datePicker", sender: nil)
+
+    }
+    
+    @IBAction func searchProduct(_ sender: AnyObject) {
+        searchTextField.isHidden = false
+        searchView.isHidden = true
+        
+    }
+    
     
     func openSearchView () {
         searchTextField.isHidden = true
@@ -61,8 +117,15 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
 //       // self.stackView.insertSubview(view, at: 1)
 //        
 //        self.stackView.addSubview(view)
+    
 
         searchView.isHidden = false
+        
+        searchProdNameField.text = searchProdName
+        
+        searchLocationField.text = searchLocation
+        
+        searchDateField.text = searchDate
     }
     
     
@@ -116,6 +179,17 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(products[indexPath.row].product_info?.product_title)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let prodDetailVC = storyboard.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailViewController
+        
+        
+        //let prodDetailVC = ProductDetailViewController()
+        prodDetailVC.userProdId = products[indexPath.row].user_product_info?.user_product_id
+        self.navigationController?.pushViewController(prodDetailVC, animated: true)
     }
 
 }
