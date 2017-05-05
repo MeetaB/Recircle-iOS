@@ -116,12 +116,11 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         imageViewDate.image = image
         let tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(self.showCalendar))
         tapRecogniser.numberOfTapsRequired = 1;
+        tapRecogniser.cancelsTouchesInView = false
         imageViewDate.addGestureRecognizer(tapRecogniser)
         imageViewDate.isUserInteractionEnabled = true
         dateTextField.leftView = imageViewDate
-        
-        tapRecogniser.cancelsTouchesInView = false
-        
+                
         let imageViewSearch = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         image = UIImage(named : "search")
         imageViewSearch.image = image
@@ -381,8 +380,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     override func viewDidLayoutSubviews() {
         
-       // dateTextField.text = dateText
-
         scrollView.isScrollEnabled = true
         scrollView.contentSize=CGSize(width : self.view.frame.width,height : 2000);
         
@@ -656,7 +653,19 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
             print("table row selected ")
-            performSegue(withIdentifier: "searchResult", sender: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let prodDetailVC = storyboard.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailViewController
+        
+        
+        if tableView == self.tableRecentItems {
+            prodDetailVC.userProdId = recentProducts[indexPath.row].user_product_info?.user_product_id
+        }
+        
+        if tableView == self.tablePopularItems {
+             prodDetailVC.userProdId = popularProducts[indexPath.row].user_product_info?.user_product_id
+        }
+        
+        self.navigationController?.pushViewController(prodDetailVC, animated: true)
     }
 
     

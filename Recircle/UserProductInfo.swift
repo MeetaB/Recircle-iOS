@@ -19,6 +19,10 @@ public class UserProductInfo {
     public var user_prod_images : Array<UserProdImages>?
     public var price_per_day : Int
     
+    public var user_prod_reviews : Array<UserProdReviews>?
+    public var user_prod_unavailability : Array<UserProdUnavailability>?
+    public var user_product_discounts : Array<String>?
+    
     /**
      Returns an array of models based on given dictionary.
      
@@ -60,6 +64,18 @@ public class UserProductInfo {
         product_avg_rating = (dictionary["product_avg_rating"] as? Int)!
         if (dictionary["user_prod_images"] != nil) { user_prod_images = UserProdImages.modelsFromDictionaryArray(array: dictionary["user_prod_images"] as! NSArray) }
         price_per_day = (dictionary["price_per_day"] as? Int)!
+        
+        if (dictionary["user_prod_reviews"] != nil) { user_prod_reviews = UserProdReviews
+            .modelsFromDictionaryArray(array: dictionary["user_prod_reviews"] as! NSArray)
+        }
+        
+        if (dictionary["user_prod_unavailability"] != nil) { user_prod_unavailability = UserProdUnavailability
+            .modelsFromDictionaryArray(array: dictionary["user_prod_unavailability"] as! NSArray)
+        }
+        
+        
+        
+        
     }
     
     
@@ -80,6 +96,10 @@ public class UserProductInfo {
         dictionary.setValue(self.avai_to_date, forKey: "avai_to_date")
         dictionary.setValue(self.product_avg_rating, forKey: "product_avg_rating")
         dictionary.setValue(self.price_per_day, forKey: "price_per_day")
+        dictionary.setValue(self.user_prod_reviews, forKey: "user_prod_reviews")
+        dictionary.setValue(self.user_prod_unavailability, forKey: "user_prod_unavailability")
+        dictionary.setValue(self.user_product_discounts, forKey: "user_product_discounts")
+        
         
         return dictionary
     }

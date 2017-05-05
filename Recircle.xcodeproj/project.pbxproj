@@ -18,6 +18,9 @@
 		7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA077131E964FD8001024FF /* DatePickerViewController.swift */; };
 		7EA077161E966A69001024FF /* DateCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EA077151E966A69001024FF /* DateCellView.xib */; };
 		7EA077181E966AF4001024FF /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA077171E966AF4001024FF /* DayCellView.swift */; };
+		7EA9ACB41EBC697000623505 /* UserProdReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9ACB31EBC697000623505 /* UserProdReviews.swift */; };
+		7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9ACB51EBC6A3B00623505 /* UserProdUnavailability.swift */; };
+		7EA9ACB81EBC806400623505 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9ACB71EBC806400623505 /* ReviewTableViewCell.swift */; };
 		7EB486331E9F905900656270 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486321E9F905900656270 /* ProductCell.swift */; };
 		7EB486361EA4AAA300656270 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486351EA4AAA300656270 /* ProductDetails.swift */; };
 		7EB486381EA4AAD600656270 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB486371EA4AAD600656270 /* Product.swift */; };
@@ -41,6 +44,8 @@
 		7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */; };
 		7EDDDEA11EB9FDB500C9DA67 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */; };
 		7EDDDEA71EBB06D700C9DA67 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDDEA61EBB06D700C9DA67 /* MBProgressHUD.m */; };
+		7EDDDEA91EBC4FA100C9DA67 /* AllReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */; };
+		7EDDDEAB1EBC500800C9DA67 /* RenterReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDDEAA1EBC500800C9DA67 /* RenterReviewView.xib */; };
 		7EFCD8971EAF536D00E5D8C4 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFCD8961EAF536D00E5D8C4 /* SearchView.xib */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +63,9 @@
 		7EA077131E964FD8001024FF /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		7EA077151E966A69001024FF /* DateCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCellView.xib; sourceTree = "<group>"; };
 		7EA077171E966AF4001024FF /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
+		7EA9ACB31EBC697000623505 /* UserProdReviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProdReviews.swift; sourceTree = "<group>"; };
+		7EA9ACB51EBC6A3B00623505 /* UserProdUnavailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProdUnavailability.swift; sourceTree = "<group>"; };
+		7EA9ACB71EBC806400623505 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		7EB486321E9F905900656270 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		7EB486351EA4AAA300656270 /* ProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		7EB486371EA4AAD600656270 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -83,6 +91,8 @@
 		7EDDDEA41EBB06D700C9DA67 /* Recircle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recircle-Bridging-Header.h"; sourceTree = "<group>"; };
 		7EDDDEA51EBB06D700C9DA67 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "../../../Downloads/MBProgressHUD-master/MBProgressHUD.h"; sourceTree = "<group>"; };
 		7EDDDEA61EBB06D700C9DA67 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "../../../Downloads/MBProgressHUD-master/MBProgressHUD.m"; sourceTree = "<group>"; };
+		7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllReviewsTableViewController.swift; sourceTree = "<group>"; };
+		7EDDDEAA1EBC500800C9DA67 /* RenterReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RenterReviewView.xib; sourceTree = "<group>"; };
 		7EFCD8961EAF536D00E5D8C4 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		E509DA2ADEF65B45592104AC /* Pods-Recircle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recircle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recircle/Pods-Recircle.debug.xcconfig"; sourceTree = "<group>"; };
 		FE736CD91884B649680498E5 /* Pods-Recircle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recircle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recircle/Pods-Recircle.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,10 +151,10 @@
 		7E8B35861E924F45000B5FF0 /* Recircle */ = {
 			isa = PBXGroup;
 			children = (
+				7EDDDEAC1EBC552100C9DA67 /* Views */,
 				7EB486431EA4DBD200656270 /* Utilities */,
 				7EB486341EA4AA6000656270 /* Models */,
 				7ED4F3DE1E97C25D00E75C53 /* API */,
-				7EA077151E966A69001024FF /* DateCellView.xib */,
 				7E8B359C1E926556000B5FF0 /* ViewControllers */,
 				7E8B35871E924F45000B5FF0 /* AppDelegate.swift */,
 				7E8B35891E924F45000B5FF0 /* ViewController.swift */,
@@ -153,9 +163,6 @@
 				7E8B35931E924F46000B5FF0 /* LaunchScreen.storyboard */,
 				7E8B35961E924F46000B5FF0 /* Info.plist */,
 				7E8B358E1E924F45000B5FF0 /* Recircle.xcdatamodeld */,
-				7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */,
-				7EBD78B91EAF2F3800B80E20 /* ProductCellView.xib */,
-				7EFCD8961EAF536D00E5D8C4 /* SearchView.xib */,
 			);
 			path = Recircle;
 			sourceTree = "<group>";
@@ -170,6 +177,8 @@
 				7EB486321E9F905900656270 /* ProductCell.swift */,
 				7EBD78B31EA8DAE300B80E20 /* SearchResultViewController.swift */,
 				7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */,
+				7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */,
+				7EA9ACB71EBC806400623505 /* ReviewTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +198,8 @@
 				7EB4864C1EA78B0000656270 /* Products.swift */,
 				7EB4864E1EA78B4600656270 /* ProductDetail.swift */,
 				7EBD78B71EAF20DC00B80E20 /* SearchResultProducts.swift */,
+				7EA9ACB31EBC697000623505 /* UserProdReviews.swift */,
+				7EA9ACB51EBC6A3B00623505 /* UserProdUnavailability.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -209,6 +220,18 @@
 				7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		7EDDDEAC1EBC552100C9DA67 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7EA077151E966A69001024FF /* DateCellView.xib */,
+				7EBD78B91EAF2F3800B80E20 /* ProductCellView.xib */,
+				7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */,
+				7EDDDEAA1EBC500800C9DA67 /* RenterReviewView.xib */,
+				7EFCD8961EAF536D00E5D8C4 /* SearchView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +300,7 @@
 			files = (
 				7E8B35951E924F46000B5FF0 /* LaunchScreen.storyboard in Resources */,
 				7EFCD8971EAF536D00E5D8C4 /* SearchView.xib in Resources */,
+				7EDDDEAB1EBC500800C9DA67 /* RenterReviewView.xib in Resources */,
 				7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */,
 				7E8B35921E924F46000B5FF0 /* Assets.xcassets in Resources */,
 				7EBD78BA1EAF2F3800B80E20 /* ProductCellView.xib in Resources */,
@@ -351,6 +375,7 @@
 				7EB4863A1EA4ABF300656270 /* UserProductInfo.swift in Sources */,
 				7EB486451EA4DBEC00656270 /* ImageUtility.swift in Sources */,
 				7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */,
+				7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */,
 				7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */,
 				7E8B35901E924F46000B5FF0 /* Recircle.xcdatamodeld in Sources */,
 				7EB4863C1EA4AC4100656270 /* ProductInfo.swift in Sources */,
@@ -363,8 +388,11 @@
 				7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */,
 				7EB4863E1EA4B3A400656270 /* UserInfo.swift in Sources */,
 				7EB486401EA4B42300656270 /* UserAddresses.swift in Sources */,
+				7EDDDEA91EBC4FA100C9DA67 /* AllReviewsTableViewController.swift in Sources */,
 				7EA077181E966AF4001024FF /* DayCellView.swift in Sources */,
 				7EB4864F1EA78B4600656270 /* ProductDetail.swift in Sources */,
+				7EA9ACB81EBC806400623505 /* ReviewTableViewCell.swift in Sources */,
+				7EA9ACB41EBC697000623505 /* UserProdReviews.swift in Sources */,
 				7EB486491EA78A6300656270 /* ProdNames.swift in Sources */,
 				7EDDDEA71EBB06D700C9DA67 /* MBProgressHUD.m in Sources */,
 			);
