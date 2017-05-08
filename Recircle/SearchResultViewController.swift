@@ -168,11 +168,23 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         cell.prodImage.setImageFromURl(stringImageUrl: (products[indexPath.row].product_info?.product_image_url)!)
         
         
-        cell.prodRating.rating = Double((products[indexPath.row].user_product_info?.product_avg_rating)!)
-        
         if let rating = (products[indexPath.row].user_product_info?.product_avg_rating) {
-            cell.prodRating.text = "(" + String(describing: rating) + ")"
+            if rating > 0 {
+                cell.prodRating.isHidden = false
+                cell.prodRating.rating = Double((products[indexPath.row].user_product_info?.product_avg_rating)!)
+                cell.prodRating.text = "(" + String(describing: rating) + ")"
+            } else {
+                cell.prodRating.isHidden = true
+            }
         }
+        
+    
+        cell.prodFavourite.setImage(UIImage(named:"favourite"), for: .normal)
+        
+        cell.prodFavourite.tag = indexPath.row
+        
+        cell.prodFavourite.addTarget(self, action: #selector(self.favouriteTapped(withSender:)), for: .touchUpInside)
+        
         
         return cell
     }
@@ -185,11 +197,22 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         print(products[indexPath.row].product_info?.product_title)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let prodDetailVC = storyboard.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailViewController
-        
-        
-        //let prodDetailVC = ProductDetailViewController()
         prodDetailVC.userProdId = products[indexPath.row].user_product_info?.user_product_id
         self.navigationController?.pushViewController(prodDetailVC, animated: true)
+    }
+    
+    func favouriteTapped (withSender sender: AnyObject) {
+        
+        let indexPath = NSIndexPath(row: sender.tag, section: 0)
+        let cell = tableProducts.cellForRow(at: indexPath as IndexPath) as! ProductCell
+        
+        if cell.prodFavourite.image(for: .normal) == UIImage(named: "favourite") {
+            cell.prodFavourite.setImage(UIImage(named:"favourite_filled"), for: .normal)
+        } else {
+            cell.prodFavourite.setImage(UIImage(named:"favourite"), for: .normal)
+        }
+        
+        
     }
 
 }

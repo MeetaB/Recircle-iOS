@@ -87,15 +87,17 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
+        let nib = UINib(nibName: "ProductCellView", bundle: nil)
+        
+        tableRecentItems.register(nib, forCellReuseIdentifier: "cell")
+        
+        tablePopularItems.register(nib, forCellReuseIdentifier: "cell")
+        
         tableRecentItems.dataSource = self
         tableRecentItems.delegate = self
         
-        tableRecentItems.allowsSelection = true
-        
         tablePopularItems.dataSource = self
         tablePopularItems.delegate = self
-        
-        scrollView.delegate = self
         
         dateTextField.delegate = self
     
@@ -160,6 +162,15 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             self.prodSearchTextField.resignFirstResponder()
             
         }
+        
+        var tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        
+        // prevents the scroll view from swallowing up the touch event of child buttons
+        tapGesture.cancelsTouchesInView = false;
+        
+        scrollView.addGestureRecognizer(tapGesture)
+        
+
         
         
         buttonSearch.layer.cornerRadius = 5
@@ -281,6 +292,19 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
     }
     
+    func hideKeyboard() {
+        print("hidekeyboard")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesBegan")
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesMoved")
+    }
+    
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.tag == 2 {
             dateTextField.resignFirstResponder()
@@ -331,7 +355,8 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         setUpDate()
-        
+        self.view.bringSubview(toFront: self.tableRecentItems)
+
     }
     
   
@@ -380,14 +405,21 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     override func viewDidLayoutSubviews() {
         
-        scrollView.isScrollEnabled = true
+       // scrollView.isScrollEnabled = true
         scrollView.contentSize=CGSize(width : self.view.frame.width,height : 2000);
         
     }
     
-        
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if touch.view != nil && touch.view!.isDescendant(of: self.scrollView) {
+            return false
+        }
+        return true
+    }
     
     func showCalendar () {
+        
         print("refresh")
 //        let dateVC = DatePickerViewController()
 //        dateVC.delegates = self
@@ -430,11 +462,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
      }
     
-    @IBAction func unwindToSearch(segue: UIStoryboardSegue){
-        print("unwind Search")
-        
-    }
- 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         if identifier == "searchResult" {
@@ -609,7 +636,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             
             print(self.productDetails.popularProducts?[index].product_info?.product_title)
             
-            cell.textProductName.text = self.productDetails.popularProducts?[index].product_info?.product_title
+            cell.prodName.text = self.productDetails.popularProducts?[index].product_info?.product_title
             
         }
         
@@ -617,14 +644,26 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             
             if (self.recentProducts.count > 0) {
                 
-                cell.textProductName.text = self.recentProducts[index].product_info?.product_title
-                cell.textOwnerName.text = (self.recentProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
+                cell.prodName.text = self.recentProducts[index].product_info?.product_title
+                cell.prodOwner.text = (self.recentProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
+                
+                if let userProdInfo = self.recentProducts[indexPath.row].user_product_info {
+                    
+                    cell.prodPrice.text = "$ " + String(describing: userProdInfo.price_per_day) + "/day"
+                    
+                }
+
                 
                 if let rating = self.recentProducts[index].user_product_info?.product_avg_rating
                 {
-                    cell.viewRating.text =  "(" + " " + String(rating) + ")"
+                    if rating > 0 {
+                        cell.prodRating.isHidden = true
+                        cell.prodRating.text =  "(" + " " + String(rating) + ")"
+                    } else {
+                        cell.prodRating.isHidden = true
+                    }
                 }
-                cell.imageProduct.setImageFromURl(stringImageUrl: (self.recentProducts[index].product_info?.product_image_url)!)
+                cell.prodImage.setImageFromURl(stringImageUrl: (self.recentProducts[index].product_info?.product_image_url)!)
             }
             
         }
@@ -633,18 +672,41 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             
             if (self.popularProducts.count > 0) {
                 
-                cell.textProductName.text = self.popularProducts[index].product_info?.product_title
+                cell.prodName.text = self.popularProducts[index].product_info?.product_title
                 
-                cell.textOwnerName.text = (self.popularProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
+                cell.prodOwner.text = (self.popularProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
+                
+                if let userProdInfo = self.popularProducts[indexPath.row].user_product_info {
+                    
+                    cell.prodPrice.text = "$ " + String(describing: userProdInfo.price_per_day) + "/day"
+                    
+                }
+                
+
                 
                 if let rating = self.popularProducts[index].user_product_info?.product_avg_rating
                 {
-                    cell.viewRating.text =  "(" + " " + String(rating) + ")"
+                    if rating > 0 {
+                        cell.prodRating.isHidden = false
+                        cell.prodRating.text =  "(" + " " + String(rating) + ")"
+                    }
+                    else {
+                        cell.prodRating.isHidden = true
+                    }
                 }
-                cell.imageProduct.setImageFromURl(stringImageUrl: (self.popularProducts[index].product_info?.product_image_url)!)
+                cell.prodImage.setImageFromURl(stringImageUrl: (self.popularProducts[index].product_info?.product_image_url)!)
             }
             
+            
         }
+        
+    cell.prodFavourite.setImage(UIImage(named:"favourite"), for: .normal)
+        
+        cell.prodFavourite.tag = indexPath.row
+        
+        cell.prodFavourite.addTarget(self, action: #selector(self.favouriteTapped(withSender:)), for: .touchUpInside)
+        
+
         
         return cell
         
@@ -670,21 +732,39 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.tableRecentItems {
-          //  TODO : changes to be done
-//            let oldFrame = tableView.frame
-//            let newHeight = self.recentProducts.count * 90
+//        if tableView == self.tableRecentItems {
+//          //  TODO : changes to be done
+////            let oldFrame = tableView.frame
+////            let newHeight = self.recentProducts.count * 90
+////        
+////            tableView.frame = CGRect(x: oldFrame.origin.x, y: oldFrame.origin.y, width: oldFrame.size.width, height: CGFloat(newHeight))
+//            return self.recentProducts.count
+//        } else {
+//            return self.popularProducts.count
+//        }
 //        
-//            tableView.frame = CGRect(x: oldFrame.origin.x, y: oldFrame.origin.y, width: oldFrame.size.width, height: CGFloat(newHeight))
-            return self.recentProducts.count
+        return 3;
+    }
+    
+    
+    func favouriteTapped (withSender sender: AnyObject) {
+        
+        let indexPath = NSIndexPath(row: sender.tag, section: 0)
+        let cell = tableRecentItems.cellForRow(at: indexPath as IndexPath) as! ProductCell
+        
+        if cell.prodFavourite.image(for: .normal) == UIImage(named: "favourite") {
+            cell.prodFavourite.setImage(UIImage(named:"favourite_filled"), for: .normal)
         } else {
-            return self.popularProducts.count
+            cell.prodFavourite.setImage(UIImage(named:"favourite"), for: .normal)
         }
         
+        
+    }
+
+    
+    @IBAction func touch(_ sender: AnyObject) {
+        print("touch")
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
-    }
-    
+
 }

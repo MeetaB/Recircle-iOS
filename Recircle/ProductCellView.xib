@@ -26,11 +26,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Das-ZV-Fx2">
-                    <frame key="frameInset" minX="385" minY="7" width="16" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="favourite"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xd-go-qGs">
                     <frame key="frameInset" minX="120" minY="47" width="269" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,8 +42,19 @@
                     <frame key="frameInset" minX="20" minY="18" width="76" height="58"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Das-ZV-Fx2">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="9Ye-4Y-siu"/>
+                        <constraint firstAttribute="width" constant="20" id="w8F-ER-J0o"/>
+                    </constraints>
+                    <state key="normal" image="favourite"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Das-ZV-Fx2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="4H3-Wh-7cy"/>
+                <constraint firstAttribute="trailing" secondItem="Das-ZV-Fx2" secondAttribute="trailing" constant="8" id="lvC-ol-cPc"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="prodFavourite" destination="Das-ZV-Fx2" id="cQJ-vI-Qwz"/>
@@ -58,7 +64,7 @@
                 <outlet property="prodPrice" destination="7FS-jf-b4A" id="10G-QH-MHq"/>
                 <outlet property="prodRating" destination="aBs-CO-LD2" id="HEm-ZJ-3er"/>
             </connections>
-            <point key="canvasLocation" x="180.5" y="-194"/>
+            <point key="canvasLocation" x="207" y="-199"/>
         </view>
     </objects>
     <resources>
