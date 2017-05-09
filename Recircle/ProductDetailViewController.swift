@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import ReadMoreTextView
 import Cosmos
+import MBProgressHUD
 
 class ProductDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -40,10 +41,15 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
     
     @IBOutlet weak var tableReviews: UITableView!
     
+    @IBOutlet weak var btnRent: UIButton!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
     var prodReviews : [UserProdReviews] = []
+    
+    var prodImagesURLs : [String] = []
+    
+    var progressBar : MBProgressHUD!
     
     
     override func viewDidLoad() {
@@ -67,6 +73,16 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
             
         let url = RecircleWebConstants.ProductsApi + "/" + userProdId
         
+        progressBar = MBProgressHUD.showAdded(to: self.view, animated: true);
+        
+        progressBar.mode = MBProgressHUDMode.indeterminate
+        
+        progressBar.label.text = "Loading";
+        
+        progressBar.isUserInteractionEnabled = false;
+        
+
+        
         Alamofire.request(URL(string: url)!,
                           method: .get)
             .validate(contentType: ["application/json"])
@@ -75,6 +91,8 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
                 print(response.response) // HTTP URL response
                 print(response.data)     // server data
                 print(response.result)   // result of response serialization
+                
+                self.progressBar.hide(animated: true)
                 
                 if let dataResponse = response.result.value {
                     
@@ -85,7 +103,19 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
                     
                     self.prodName.text = product?.product_info?.product_title
                     
-                    self.prodImage.setImageFromURl(stringImageUrl: (product?.user_product_info?.user_prod_images?[0].user_prod_image_url)!)
+                   
+                    
+                    if let prodImages = product?.user_product_info?.user_prod_images {
+                        for image in prodImages {
+                            if !(image.user_prod_image_url?.isEmpty)! {
+                            self.prodImagesURLs.append(image.user_prod_image_url!)
+                                
+                            }
+                        }
+                        self.prodImagescollection.reloadData()
+                         self.prodImage.setImageFromURl(stringImageUrl: (prodImages[0].user_prod_image_url)!)
+                    }
+                    
                     
                     self.userImage.setImageFromURl(stringImageUrl: (product?.user_info?.user_image_url)!)
                     
@@ -107,6 +137,12 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
                     self.tableReviews.reloadData()
                     
                     self.navigationController?.title = product?.product_info?.product_title
+                    
+                    if let price = product?.user_product_info?.price_per_day {
+                    let btnText : String = "Rent this item at $ " + String(describing: price) + " per day"
+                    
+                    self.btnRent.setTitle(btnText, for: .normal)
+                    }
                 }
                     
                 else {
@@ -123,12 +159,30 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
         conditionText.maximumNumberOfLines = 2
         conditionText.attributedReadMoreText = NSAttributedString(string: "... See more")
         conditionText.attributedReadLessText = NSAttributedString(string: " See less")
+    
+        let longPressRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageLongPressed(_:)))
+    
+        longPressRecognizer.numberOfTapsRequired = 1
         
+    
+        self.prodImage.isUserInteractionEnabled = true
 
+        self.prodImage.addGestureRecognizer(longPressRecognizer)
         
         
     }
+    
+    func imageLongPressed (_ sender : AnyObject) {
+        
+        self.performSegue(withIdentifier: "imageView", sender: self)
+    }
 
+    @IBAction func locationTapped(_ sender: AnyObject) {
+        
+        UIApplication.shared.canOpenURL(URL(string:"https://www.google.com/maps/@42.585444,13.007813,6z")!)
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -143,23 +197,38 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if CalendarState.productDetail {
+            print(CalendarState.startDate)
+            CalendarState.productDetail = false
+        }
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return prodImagesURLs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProdImageCellView
         
+        cell.productImage.setImageFromURl(stringImageUrl: prodImagesURLs[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProdImageCellView
+        cell.productImage.backgroundColor = UIColor.blue
+        self.prodImage.setImageFromURl(stringImageUrl: prodImagesURLs[indexPath.row])
     }
     
     
     @IBAction func rentItem(_ sender: AnyObject) {
         
+        CalendarState.productDetail = true
         performSegue(withIdentifier: "datePicker", sender: self)
     }
     
@@ -181,6 +250,11 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
         let review = self.prodReviews[indexPath.row]
         
         cell.userImage.setImageFromURl(stringImageUrl: (review.user?.user_image_url)!)
+        
+        cell.userImage.layer.cornerRadius = userImage.frame.size.width/2
+        
+        cell.userImage.layer.masksToBounds = true
+
         
         cell.userName.text = (review.user?.first_name)! + " " + (review.user?.last_name)!
         
@@ -216,15 +290,20 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
 //        
 //        
 //    }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "imageView" {
+           let vc =  segue.destination as! ProdImageViewController
+            vc.prodImagesUrls = self.prodImagesURLs
+            vc.imageUrl = prodImagesURLs[0]
+        }
     }
-    */
+    
 
     
     

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FD4B2420E71D13B76E8D8D8D8C63BF6E'
+               BlueprintIdentifier = 'EFCE255955345A06348BD340A6584266'
                BlueprintName = 'ReadMoreTextView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ReadMoreTextView.framework'>

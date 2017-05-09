@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import MBProgressHUD
+import Alamofire
+import SwiftyJSON
+import SearchTextField
 
 class SearchResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -20,7 +24,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     
     public var searchString : String!
     
-    @IBOutlet weak var searchProdNameField: UITextField!
+    @IBOutlet weak var searchProdNameField: SearchTextField!
     
     @IBOutlet weak var searchLocationField: UITextField!
     
@@ -31,6 +35,20 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     public var searchLocation : String!
     
     public var searchDate : String!
+
+    var progressBar : MBProgressHUD!
+    
+    var searchItems : [SearchTextFieldItem] =  []
+    
+    var autoCompleteProducts : [Products] = []
+    
+    var productId : String = ""
+    
+    var manufactureId : String = ""
+    
+    var searchFromDateString : String = ""
+    
+    var searchToDateString : String = ""
 
     
     override func viewDidLoad() {
@@ -86,6 +104,151 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         imageViewSearch.image = image
         searchProdNameField.leftView = imageViewSearch
         
+        searchProdNameField.theme.font = UIFont.systemFont(ofSize: 16)
+        searchProdNameField.theme.bgColor = UIColor (red: 1, green: 1, blue: 1, alpha: 1)
+        searchProdNameField.theme.borderColor = UIColor (red: 0, green: 0, blue: 0, alpha: 1)
+        searchProdNameField.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
+        searchProdNameField.theme.cellHeight = 50
+
+        
+        searchProdNameField.itemSelectionHandler = { item , itemPosition in
+            
+            self.searchProdNameField.text = item.title
+            
+            print(itemPosition)
+            
+            print(self.autoCompleteProducts[itemPosition].product_title)
+            
+            if let productId = self.autoCompleteProducts[itemPosition].product_id {
+                
+                self.productId = productId
+            }
+            
+            if let manufactureId = self.autoCompleteProducts[itemPosition].manufacturer_id {
+                
+                self.manufactureId = manufactureId
+            }
+            
+            self.searchProdNameField.resignFirstResponder()
+            
+        }
+
+        
+        getAutoCompleteProdsData()
+        
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if CalendarState.searchResult {
+            
+            setUpDate()
+            CalendarState.searchResult = false
+            
+        }
+    }
+    
+    func setUpDate() {
+        
+        if CalendarState.startDate != nil && CalendarState.endDate != nil {
+            
+            let formatter  = DateFormatter()
+            formatter.dateFormat = "dd MMM,yyyy"
+            
+            let fromDate = formatter.string(from: CalendarState.startDate)
+            let endDate = formatter.string(from: CalendarState.endDate)
+            
+            formatter.dateFormat = "yyyy-MM-dd'T'00:00:00Z"
+            searchFromDateString = formatter.string(from: CalendarState.startDate)
+            searchToDateString = formatter.string(from: CalendarState.endDate)
+            
+            let calendar = NSCalendar.current
+            var components = calendar.dateComponents([.day,.month,.year], from: CalendarState.startDate)
+            
+            let startYear =  components.year
+            let startMonth = components.month
+            let startDay = components.day
+            
+            components = calendar.dateComponents([.day,.month,.year], from: CalendarState.endDate)
+            let endYear =  components.year
+            let endMonth = components.month
+            
+            let months = formatter.monthSymbols
+            let monthSymbol = months?[startMonth!-1]
+            
+            if startYear == endYear {
+                if startMonth == endMonth {
+                    searchDateField.text = String(describing: startDay!) + " - " + endDate
+                } else {
+                    searchDateField.text = String(describing: startDay!) + " " + monthSymbol! + " - " + endDate
+                }
+            } else {
+                searchDateField.text = fromDate + " - " + endDate
+                
+            }
+            
+        }
+        
+    }
+
+    
+    func getAutoCompleteProdsData() {
+        
+        Alamofire.request(URL(string: RecircleWebConstants.ProdNamesApi)!,
+                          method: .get)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                
+                if let dataResponse = response.result.value {
+                    let json = JSON(dataResponse)
+                    print("JSON searchText: \(json)")
+                    //               print("name : \(json["productsData"].arrayValue.map({$0["product_manufacturer_name"].stringValue}))")
+                    
+                    let prodName = ProdNames(dictionary: json.object as! NSDictionary)
+                    
+                    for item in (prodName?.productsData)! {
+                        
+                        let product = Products()
+                        product.manufacturer_id = item.product_manufacturer_id
+                        product.manufacturer_name = item.product_manufacturer_name
+                        //self.autoCompleteProducts.append(product)
+                        
+                        self.searchItems.append(SearchTextFieldItem(title: item.product_manufacturer_name!, subtitle: "", image: UIImage(named:"camera")))
+                        
+                      //  self.prodNames.append(item.product_manufacturer_name!)
+                        print(item.product_manufacturer_name)
+                        
+                        
+                        for itemProd in item.products! {
+                            let product = Products()
+                            product.manufacturer_id = item.product_manufacturer_id
+                            product.manufacturer_name = item.product_manufacturer_name
+                            product.product_id = itemProd.product_id
+                            product.product_title = itemProd.product_title
+                            self.autoCompleteProducts.append(product)
+                            print(itemProd.product_title)
+                            let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
+//                            self.prodNames.append(prodName)
+                            if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
+                                if let data = NSData(contentsOf: url as URL) {
+                                    self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
+                                }
+                            }
+                            
+                            
+                            
+                        }
+                    }
+                
+                self.searchProdNameField.filterItems(self.searchItems)
+                    
+                }
+        }
 
     }
 
@@ -95,13 +258,73 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func showCalendar () {
+        CalendarState.searchResult = true
         performSegue(withIdentifier: "datePicker", sender: nil)
 
     }
     
     @IBAction func searchProduct(_ sender: AnyObject) {
+
         searchTextField.isHidden = false
         searchView.isHidden = true
+        
+        progressBar = MBProgressHUD.showAdded(to: self.view, animated: true);
+
+        progressBar.mode = MBProgressHUDMode.indeterminate
+        
+        progressBar.label.text = "Loading";
+        
+        progressBar.isUserInteractionEnabled = false;
+        
+        var searchText : String = ""
+        
+        if products != nil && products.count > 0 {
+            products.removeAll()
+        }
+        
+        if productId.isEmpty && manufactureId.isEmpty {
+            searchText = searchProdNameField.text!
+        }
+        
+        
+        
+        let parameters : [String : AnyObject] = ["manufacturerId" : manufactureId as AnyObject ,
+                                                 "productId" : productId as AnyObject ,
+                                                 "searchText" : searchText as AnyObject,
+                                                 "searchFromDate" : searchFromDateString as AnyObject,
+                                                 "searchToDate" : searchToDateString as AnyObject
+        ]
+        
+        Alamofire.request(URL(string: RecircleWebConstants.SearchApi)!,
+                          method: .get, parameters: parameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                
+                self.progressBar.hide(animated: true)
+                
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let dataResponse = response.result.value {
+                    let json = JSON(dataResponse)
+                    print("JSON SearchApi: \(json)")
+                    
+                    let searchResult = SearchResultProducts(dictionary: json.object as! NSDictionary)
+                    
+                    if let prods = searchResult?.products {
+                        self.products = prods
+                        print(prods.count)
+                        self.tableProducts.reloadData()
+                    }
+                }
+                    
+                else {
+                    
+                }
+        }
+
         
     }
     

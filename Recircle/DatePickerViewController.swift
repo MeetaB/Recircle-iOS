@@ -9,7 +9,17 @@
 import UIKit
 import JTAppleCalendar
 
+struct CalendarState {
+    static var startDate : Date!
+    static var endDate : Date!
+    static var productDetail : Bool = false
+    static var searchProduct : Bool = false
+    static var searchResult : Bool = false
+}
+
+
 class DatePickerViewController: UIViewController {
+
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var textStartDate: UILabel!
@@ -124,6 +134,8 @@ class DatePickerViewController: UIViewController {
             formatter.dateFormat = "EEEE, MMM d, yyyy"
             textStartDate.text = formatter.string(from: (rangeSelectedDates.first)!)
             textEndDate.text = formatter.string(from: (rangeSelectedDates.last)!)
+            CalendarState.startDate = rangeSelectedDates.first
+            CalendarState.endDate = rangeSelectedDates.last
             //
         }
         
@@ -154,15 +166,11 @@ class DatePickerViewController: UIViewController {
     }
 
     
+   
     @IBAction func saveDates(_ sender: AnyObject) {
-        
-//        if let delegate = self.delegates {
-//            delegate.getDate(date: "sss")
-//        }
-        performSegue(withIdentifier: "goBack", sender: self)
-        //self.dismiss(animated: true) {
+        self.dismiss(animated: true) {
             
-        //}
+        }
     }
     /*
     // MARK: - Navigation

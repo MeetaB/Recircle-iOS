@@ -10,6 +10,7 @@ import UIKit
 import SearchTextField
 import Alamofire
 import SwiftyJSON
+import MBProgressHUD
 
 class SearchViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UITextFieldDelegate {
     
@@ -163,7 +164,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             
         }
         
-        var tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
         
         // prevents the scroll view from swallowing up the touch event of child buttons
         tapGesture.cancelsTouchesInView = false;
@@ -544,22 +545,22 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         //
         progressBar = MBProgressHUD.showAdded(to: self.view, animated: true);
         
-        progressBar.mode = MBProgressHUDMode.customView
+        progressBar.mode = MBProgressHUDMode.indeterminate
         
         progressBar.label.text = "Loading";
         
         progressBar.isUserInteractionEnabled = false;
     
         
-        let image : UIImageView = UIImageView()
-        
-        image.image = UIImage(named: "camera")
-                
-        progressBar.customView = image
-        
-        progressBar.customView?.backgroundColor = UIColor.blue
-                
-        progressBar.isSquare = false
+//        let image : UIImageView = UIImageView()
+//        
+//        image.image = UIImage(named: "camera")
+//                
+//        progressBar.customView = image
+//        
+//        progressBar.customView?.backgroundColor = UIColor.blue
+//                
+//        progressBar.isSquare = false
         
     //
         

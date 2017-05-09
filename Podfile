@@ -13,5 +13,6 @@ pod 'JTAppleCalendar', '~> 6.1'
 pod 'Cosmos'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'ReadMoreTextView'
+pod 'ImageScrollView'
 
 end
