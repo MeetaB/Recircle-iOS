@@ -42,6 +42,8 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     
     var autoCompleteProducts : [Products] = []
     
+    var prodNames : [String] = []
+    
     var productId : String = ""
     
     var manufactureId : String = ""
@@ -115,21 +117,19 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
             
             self.searchProdNameField.text = item.title
             
-            print(itemPosition)
+            self.searchProdNameField.resignFirstResponder()
             
-            print(self.autoCompleteProducts[itemPosition].product_title)
+            let index = self.prodNames.index(of: item.title)
             
-            if let productId = self.autoCompleteProducts[itemPosition].product_id {
+            if let productId = self.autoCompleteProducts[index!].product_id {
                 
                 self.productId = productId
             }
             
-            if let manufactureId = self.autoCompleteProducts[itemPosition].manufacturer_id {
+            if let manufactureId = self.autoCompleteProducts[index!].manufacturer_id {
                 
                 self.manufactureId = manufactureId
             }
-            
-            self.searchProdNameField.resignFirstResponder()
             
         }
 
@@ -216,11 +216,12 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
                         let product = Products()
                         product.manufacturer_id = item.product_manufacturer_id
                         product.manufacturer_name = item.product_manufacturer_name
-                        //self.autoCompleteProducts.append(product)
+                        self.autoCompleteProducts.append(product)
                         
                         self.searchItems.append(SearchTextFieldItem(title: item.product_manufacturer_name!, subtitle: "", image: UIImage(named:"camera")))
                         
-                      //  self.prodNames.append(item.product_manufacturer_name!)
+                        self.prodNames.append(item.product_manufacturer_name!)
+                        
                         print(item.product_manufacturer_name)
                         
                         
@@ -233,7 +234,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
                             self.autoCompleteProducts.append(product)
                             print(itemProd.product_title)
                             let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
-//                            self.prodNames.append(prodName)
+                           self.prodNames.append(prodName)
                             if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
                                 if let data = NSData(contentsOf: url as URL) {
                                     self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))

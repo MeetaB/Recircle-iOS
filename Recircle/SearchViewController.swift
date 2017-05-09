@@ -146,21 +146,19 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
             
             self.prodSearchTextField.text = item.title
             
-            print(itemPosition)
+            self.prodSearchTextField.resignFirstResponder()
             
-            print(self.autoCompleteProducts[itemPosition].product_title)
+            let index = self.prodNames.index(of: item.title)
             
-            if let productId = self.autoCompleteProducts[itemPosition].product_id {
+            if let productId = self.autoCompleteProducts[index!].product_id {
                 
-                    self.productId = productId
+                self.productId = productId
             }
             
-            if let manufactureId = self.autoCompleteProducts[itemPosition].manufacturer_id {
-            
+            if let manufactureId = self.autoCompleteProducts[index!].manufacturer_id {
+                
                 self.manufactureId = manufactureId
             }
-            
-            self.prodSearchTextField.resignFirstResponder()
             
         }
         
