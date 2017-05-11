@@ -31,6 +31,7 @@ class ProdImageViewController: UIViewController, UIScrollViewDelegate, UICollect
         let nib = UINib(nibName: "ProductImageCell", bundle: nil)
     
         collectionProdImages.register(nib, forCellWithReuseIdentifier: "cell")
+    
 
     }
     
@@ -42,8 +43,20 @@ class ProdImageViewController: UIViewController, UIScrollViewDelegate, UICollect
             }
             
         }
+        
+       
 
     }
+    
+    override func viewDidLayoutSubviews() {
+        
+        if let flowLayout = collectionProdImages.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.scrollDirection = .horizontal
+            flowLayout.invalidateLayout()
+        }
+        
+    }
+    
+    
     
     @IBAction func crossTapped(_ sender: AnyObject) {
         

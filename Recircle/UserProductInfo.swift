@@ -15,7 +15,7 @@ public class UserProductInfo {
     public var created_at : String?
     public var user_product_id : String?
     public var avai_to_date : String?
-    public var product_avg_rating : Int
+    public var product_avg_rating : Int!
     public var user_prod_images : Array<UserProdImages>?
     public var price_per_day : Int
     
@@ -61,7 +61,7 @@ public class UserProductInfo {
         created_at = dictionary["created_at"] as? String
         user_product_id = dictionary["user_product_id"] as? String
         avai_to_date = dictionary["avai_to_date"] as? String
-        product_avg_rating = (dictionary["product_avg_rating"] as? Int)!
+        product_avg_rating = dictionary["product_avg_rating"] as? Int
         if (dictionary["user_prod_images"] != nil) { user_prod_images = UserProdImages.modelsFromDictionaryArray(array: dictionary["user_prod_images"] as! NSArray) }
         price_per_day = (dictionary["price_per_day"] as? Int)!
         

@@ -79,6 +79,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     var searchItems : [SearchTextFieldItem] =  []
 
+    @IBOutlet weak var textProtectionHeight: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -288,7 +289,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         }
         
         
-        
     }
     
     func hideKeyboard() {
@@ -426,7 +426,9 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
 //        
 //        }
     
-        performSegue(withIdentifier: "datepicker", sender: nil)
+      //  performSegue(withIdentifier: "datepicker", sender: nil)
+        
+        performSegue(withIdentifier: "test", sender: nil)
     }
     
     func getDate(date:String) {
@@ -480,17 +482,20 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
         if arrowProtection.backgroundImage(for: .normal) == UIImage(named: "collapse_arrow") {
             arrowProtection.setBackgroundImage(UIImage(named : "expand_arrow"), for: .normal)
-            textProtection.isHidden = true
+          //  textProtection.isHidden = true
+            textProtectionHeight.constant = 0
             
         }
         else{
             arrowProtection.setBackgroundImage(UIImage(named : "collapse_arrow"), for: .normal)
-            textProtection.isHidden = false
+           // textProtection.isHidden = false
+            textProtectionHeight.constant = 160
         }
         
         UIView.animate(withDuration: 0.3) { () -> Void in
             self.view.layoutIfNeeded()
         }
+        
         
         
     }

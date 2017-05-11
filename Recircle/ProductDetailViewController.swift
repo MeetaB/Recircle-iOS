@@ -82,6 +82,9 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
         progressBar.isUserInteractionEnabled = false;
         
 
+        prodRating.isUserInteractionEnabled = false
+        
+        reviewRating.isUserInteractionEnabled = false
         
         Alamofire.request(URL(string: url)!,
                           method: .get)
@@ -116,8 +119,9 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
                          self.prodImage.setImageFromURl(stringImageUrl: (prodImages[0].user_prod_image_url)!)
                     }
                     
-                    
-                    self.userImage.setImageFromURl(stringImageUrl: (product?.user_info?.user_image_url)!)
+                    if let imageUrl = product?.user_info?.user_image_url {
+                    self.userImage.setImageFromURl(stringImageUrl: imageUrl)
+                    }
                     
                     self.userName.text = (product?.user_info?.first_name)! + " " + (product?.user_info?.last_name)!
                     
@@ -125,10 +129,17 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
                     
                     self.conditionText.text = product?.user_product_info?.user_prod_desc
                     
-                    self.reviewRating.rating = Double((product?.user_product_info?.product_avg_rating)!)
+                    
                     
                     if let rating = product?.user_product_info?.product_avg_rating {
-                        self.reviewRating.text = "(" + String(describing: rating) + ")"
+                        
+                        if rating > 0 {
+                            self.reviewRating.isHidden = false
+                            self.reviewRating.rating = Double(rating)
+                            self.reviewRating.text = "(" + String(describing: rating) + ")"
+                        } else {
+                            self.reviewRating.isHidden = true
+                        }
 
                     }
                     
@@ -237,6 +248,7 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
         return self.prodReviews.count
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -258,7 +270,18 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
         
         cell.userName.text = (review.user?.first_name)! + " " + (review.user?.last_name)!
         
-        cell.userRating.rating = Double(review.prod_rating!)
+        if let rating = review.prod_rating {
+            
+            if rating>0 {
+                cell.userRating.isUserInteractionEnabled = false
+                cell.userRating.isHidden = false
+                cell.userRating.rating = Double(rating)
+                cell.userRating.text = "(" + String(describing: rating) + ")"
+            } else {
+                cell.userRating.isHidden = true
+            }
+        }
+    
         
         cell.userReviewText.text = review.prod_review
         

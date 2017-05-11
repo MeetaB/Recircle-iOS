@@ -420,7 +420,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(products[indexPath.row].product_info?.product_title)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let prodDetailVC = storyboard.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailViewController
+        let prodDetailVC = storyboard.instantiateViewController(withIdentifier: "TestVC") as! TestViewController
         prodDetailVC.userProdId = products[indexPath.row].user_product_info?.user_product_id
         self.navigationController?.pushViewController(prodDetailVC, animated: true)
     }
