@@ -11,7 +11,7 @@ import MBProgressHUD
 import Alamofire
 import SwiftyJSON
 
-class TestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate
+class TestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate
 {
     
     public var userProdId : String!
@@ -27,6 +27,10 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var tapRecognizer : UITapGestureRecognizer!
     
     var product : Product!
+    
+    var indexImageSelected : Int = 0
+    
+    @IBOutlet weak var btnRent: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,7 +112,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                    self.prodReviews = (self.product?.user_product_info?.user_prod_reviews)!
                     
-                    self.navigationController?.title = self.product?.product_info?.product_title
+                self.btnRent.titleLabel?.text = "Rent this item at " + "$ " + String(describing: self.product.user_product_info?.price_per_day) + " per day"
                     
 //                    if let price = product?.user_product_info?.price_per_day {
 //                        let btnText : String = "Rent this item at $ " + String(describing: price) + " per day"
@@ -126,21 +130,30 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
 
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "imageView" {
+            let vc =  segue.destination as! ProdImageViewController
+            vc.prodImagesUrls = self.prodImagesURLs
+            vc.imageUrl = prodImagesURLs[indexImageSelected]
+        }
     }
-    */
+    
+    override func viewDidLayoutSubviews() {
+        print(self.tableView.contentSize.height)
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0  || section == 1 || section == 3 {
         return 1
         } else {
-            return 4
+            let count = min(prodReviews.count,4)
+            return count
         }
     }
     
@@ -158,9 +171,23 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             cell.prodImage.addGestureRecognizer(tapRecognizer)
 
-            cell.prodImagesCollection.reloadData()
+            if prodImagesURLs.count > 0 {
+                
+                cell.prodImagesCollection.delegate = self
             
-            cell.prodImage.setImageFromURl(stringImageUrl: prodImagesURLs[0])
+                cell.prodImagesCollection.dataSource = self
+            
+                cell.prodImagesCollection.reloadData()
+                
+                let nib = UINib(nibName: "ProductImageCell", bundle: nil)
+                
+                cell.prodImagesCollection.register(nib, forCellWithReuseIdentifier: "cell")
+
+            }
+            
+            if prodImagesURLs.count > 0 {
+            cell.prodImage.setImageFromURl(stringImageUrl: prodImagesURLs[indexImageSelected])
+            }
             
             print(cell.frame.maxY)
             
@@ -174,14 +201,18 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             cell1.txtProdName.text = product?.product_info?.product_title
             
+            print(cell1.txtProdName.frame.maxY)
+            
             if let imageUrl = product?.user_info?.user_image_url {
             
             cell1.userImage.setImageFromURl(stringImageUrl: imageUrl)
             
             }
-                
+            
+            if product?.user_info != nil {
             cell1.txtOwnerName.text = (product?.user_info?.first_name)! + " " + (product?.user_info?.last_name)!
                 
+            }
             cell1.descTextView.text = product?.product_info?.product_description
                 
             cell1.condnTextView.text = product?.user_product_info?.user_prod_desc
@@ -195,7 +226,10 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     } else {
                     cell1.renterRatingView.isHidden = true
                     }
-                                        
+                cell1.btnSeeAllReviews.addTarget(self, action: #selector(TestViewController.goToReviews(_:)), for: .touchUpInside)
+                cell1.btnAllReviews.addTarget(self, action: #selector(TestViewController.goToReviews(_:)), for: .touchUpInside)
+            } else {
+                cell1.renterRatingView.isHidden = true
             }
 
             
@@ -206,9 +240,11 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if indexPath.row <= 3 {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellReview", for: indexPath) as! ReviewTableViewCell
             
-            cell2.userName.text = prodReviews[indexPath.row].user?.first_name
-            cell2.userImage.setImageFromURl(stringImageUrl: (prodReviews[indexPath.row].user?.user_image_url!)!)
-            cell2.userReviewText?.text = prodReviews[indexPath.row].prod_review
+                if prodReviews.count > 0 {
+                    cell2.userName.text = prodReviews[indexPath.row].user?.first_name
+                    cell2.userImage.setImageFromURl(stringImageUrl: (prodReviews[indexPath.row].user?.user_image_url!)!)
+                    cell2.userReviewText?.text = prodReviews[indexPath.row].prod_review
+                }
             return cell2
             } else {
                 return UITableViewCell()
@@ -237,10 +273,50 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            print("scroll view")
-        print(tableView.contentOffset.y)
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let indexPathTable = NSIndexPath(row: 0, section: 0)
+        let tableCell = tableView.cellForRow(at: indexPathTable as IndexPath) as! ProdImagesTableViewCell
+        print(prodImagesURLs[indexPath.item])
+        tableCell.prodImage.setImageFromURl(stringImageUrl: prodImagesURLs[indexPath.item])
+        indexImageSelected = indexPath.item
+        tableView.reloadRows(at: [indexPathTable as IndexPath], with: .none)
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.prodImagesURLs.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProdImageCellView
+            if prodImagesURLs.count > 0 {
+                cell.productImage.setImageFromURl(stringImageUrl: prodImagesURLs[indexPath.item])
+                return cell
+            }
+        return UICollectionViewCell()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            print("scroll view")
+        print(tableView.contentOffset.y)
+        if tableView.contentOffset.y >= 324.0 {
+            self.title = "EOS"
+        } else {
+            self.title = ""
+        }
+        
+    }
+    
+    func goToReviews(_ sender: AnyObject){
+        
+        performSegue(withIdentifier: "allReviews", sender: self)
+    }
+    
+  
 }

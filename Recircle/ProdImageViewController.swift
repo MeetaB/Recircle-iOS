@@ -37,7 +37,7 @@ class ProdImageViewController: UIViewController, UIScrollViewDelegate, UICollect
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if let url = NSURL(string: prodImagesUrls[0]) {
+        if let url = NSURL(string: imageUrl) {
             if let data = NSData(contentsOf: url as URL) {
                 imageScrollView.display(image: UIImage(data: data as Data)!)
             }

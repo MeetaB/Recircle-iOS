@@ -358,7 +358,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
 
     }
     
-  
     func setUpDate() {
         
         if searchFromDate != nil && searchToDate != nil {
@@ -426,9 +425,8 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
 //        
 //        }
     
-      //  performSegue(withIdentifier: "datepicker", sender: nil)
+        performSegue(withIdentifier: "datepicker", sender: nil)
         
-        performSegue(withIdentifier: "test", sender: nil)
     }
     
     func getDate(date:String) {
