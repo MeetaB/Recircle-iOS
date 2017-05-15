@@ -418,6 +418,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         print(products[indexPath.row].product_info?.product_title)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let prodDetailVC = storyboard.instantiateViewController(withIdentifier: "TestVC") as! TestViewController

@@ -100,12 +100,21 @@ class DatePickerViewController: UIViewController {
         }
         
         
-        if segue.identifier == "searchResult" {
+        else if segue.identifier == "searchResult" {
         
             let searchVC = segue.destination as! SearchViewController
             searchVC.dateText = textStartDate.text! + " - " + textEndDate.text!
             
         }
+        
+        else if segue.identifier == "rentSummary" {
+            let testVC = segue.destination as! RentSummaryViewController
+            self.navigationController?.pushViewController(testVC, animated: true)
+            
+            
+        }
+        
+        
     }
     
     var rangeSelectedDates: [Date] = []
@@ -168,9 +177,19 @@ class DatePickerViewController: UIViewController {
     
    
     @IBAction func saveDates(_ sender: AnyObject) {
-        self.dismiss(animated: true) {
+        
+        if CalendarState.productDetail {
             
+            self.navigationController?.popViewController(animated: true)
+            self.performSegue(withIdentifier: "rentSummary", sender: self)
+            CalendarState.productDetail = false
+        } else {
+            self.dismiss(animated: true) {
+                
+            }
+
         }
+        
     }
     /*
     // MARK: - Navigation

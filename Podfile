@@ -14,5 +14,6 @@ pod 'Cosmos'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'ReadMoreTextView'
 pod 'ImageScrollView'
+pod 'M13Checkbox'
 
 end

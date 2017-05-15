@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>M13Checkbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3926DA11F178672E4FE2A2AB86669EF8</key>
+		<key>20A9DD9ABBF08BC57372A26C35327BF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3E81C3891EAAB025F0BA7A469563FE5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,27 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>67849FF04BFD1D14B4A1886061F7ED85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C468200CB4A55E775369B0E0AC630B64</key>
+		<key>9DEDAB0E46597734AA6FB1F7C951E0C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6F981297F35D0029A6E432B4B96711C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DA7784E74D1BFF419790CC15877BB381</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EFCE255955345A06348BD340A6584266</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FEB319ECCA99046C32807288B855CCAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

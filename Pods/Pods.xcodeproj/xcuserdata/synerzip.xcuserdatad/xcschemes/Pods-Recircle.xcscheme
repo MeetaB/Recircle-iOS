@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C468200CB4A55E775369B0E0AC630B64"
+               BlueprintIdentifier = "9DEDAB0E46597734AA6FB1F7C951E0C4"
                BuildableName = "Pods_Recircle.framework"
                BlueprintName = "Pods-Recircle"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C468200CB4A55E775369B0E0AC630B64"
+            BlueprintIdentifier = "9DEDAB0E46597734AA6FB1F7C951E0C4"
             BuildableName = "Pods_Recircle.framework"
             BlueprintName = "Pods-Recircle"
             ReferencedContainer = "container:Pods.xcodeproj">

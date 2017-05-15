@@ -3,6 +3,7 @@ PODS:
   - Cosmos (8.0.2)
   - ImageScrollView (1.3)
   - JTAppleCalendar (6.1.6)
+  - M13Checkbox (3.1.3)
   - MBProgressHUD (1.0.0)
   - ReadMoreTextView (2.0.0)
   - SearchTextField (1.1.0)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Cosmos
   - ImageScrollView
   - JTAppleCalendar (~> 6.1)
+  - M13Checkbox
   - MBProgressHUD (~> 1.0.0)
   - ReadMoreTextView
   - SearchTextField (~> 1.1.0)
@@ -23,11 +25,12 @@ SPEC CHECKSUMS:
   Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   ImageScrollView: 2f2d7139fb5a7d0c0b021eb8b086d8c3dc54c233
   JTAppleCalendar: 560fb46421880f53ad54123295072de24bca2b18
+  M13Checkbox: c132a7e0eb964731855eff67b883a0b21b7c0977
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ReadMoreTextView: aefb9ffe11922c87fd39a09a988d7cc74c8438ba
   SearchTextField: 5daab6cecfd90e06f9b08b2814593656c0c99f3d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 196030dbe42869b82ea219b395b9e4dbac4adc21
+PODFILE CHECKSUM: 7ad7bdb3d7f6097f5c3913380b48ef36bcd53440
 
 COCOAPODS: 1.1.1

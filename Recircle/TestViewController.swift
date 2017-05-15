@@ -30,12 +30,26 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var indexImageSelected : Int = 0
     
+    var prodName : String = ""
+    
+    var yOffset : CGFloat = 0.0
+    
+    public var navigation: UINavigationController?
+    
+    
     @IBOutlet weak var btnRent: UIButton!
     
+    
+    func getNavigationController() -> UINavigationController {
+        return self.navigationController!
+    
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print(userProdId)
+        
+        navigation = self.navigationController
         
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
@@ -120,6 +134,8 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //                        self.btnRent.setTitle(btnText, for: .normal)
 //                    }
                     
+                    self.prodName = (self.product.product_info?.product_title)!
+                    
                     self.tableView.reloadData()
                 }
                     
@@ -171,7 +187,9 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             cell.prodImage.addGestureRecognizer(tapRecognizer)
 
-            if prodImagesURLs.count > 0 {
+            if prodImagesURLs.count > 1 {
+                
+                cell.prodImagesCollection.isHidden = false
                 
                 cell.prodImagesCollection.delegate = self
             
@@ -183,6 +201,8 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
                 cell.prodImagesCollection.register(nib, forCellWithReuseIdentifier: "cell")
 
+            } else {
+                cell.prodImagesCollection.isHidden = true
             }
             
             if prodImagesURLs.count > 0 {
@@ -190,6 +210,9 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             
             print(cell.frame.maxY)
+            
+            //calculating this offset to display name of the product after this is scrolled
+            self.yOffset = cell.frame.maxY
             
             
             
@@ -214,24 +237,49 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
             }
             cell1.descTextView.text = product?.product_info?.product_description
-                
+            
+            cell1.descTextView.shouldTrim = true
+            
+            cell1.descTextView.isUserInteractionEnabled = true
+            
+            cell1.descTextView.maximumNumberOfLines = 2
+            
+            cell1.descTextView.attributedReadLessText = NSAttributedString(string : " .. Read Less")
+            
+            cell1.descTextView.attributedReadMoreText = NSAttributedString(string : " .. Read More")
+            
+            cell1.descTextView.setNeedsUpdateTrim()
+            
+            cell1.descTextView.layoutIfNeeded()
+            
             cell1.condnTextView.text = product?.user_product_info?.user_prod_desc
+            
+            
                 
             if let rating = product?.user_product_info?.product_avg_rating {
                 
                 if rating > 0 {
+                    cell1.prodRatingView.isHidden = false
+                    cell1.prodRatingView.isUserInteractionEnabled = false
+                    cell1.prodRatingView.rating = Double(rating)
+                    cell1.prodRatingView.text = "(" + String(describing: rating) + ")"
+                    
                     cell1.renterRatingView.isHidden = false
+                    cell1.renterRatingView.isUserInteractionEnabled = false
                     cell1.renterRatingView.rating = Double(rating)
                     cell1.renterRatingView.text = "(" + String(describing: rating) + ")"
                     } else {
                     cell1.renterRatingView.isHidden = true
+                    cell1.prodRatingView.isHidden = true
                     }
                 cell1.btnSeeAllReviews.addTarget(self, action: #selector(TestViewController.goToReviews(_:)), for: .touchUpInside)
                 cell1.btnAllReviews.addTarget(self, action: #selector(TestViewController.goToReviews(_:)), for: .touchUpInside)
             } else {
                 cell1.renterRatingView.isHidden = true
+                cell1.prodRatingView.isHidden = true
             }
-
+            
+            cell1.selectionStyle = .none
             
             return cell1
         }
@@ -259,7 +307,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 261
@@ -272,7 +320,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return 169
         }
     }
-    
+    //
     
     
     
@@ -305,8 +353,8 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
             print("scroll view")
         print(tableView.contentOffset.y)
-        if tableView.contentOffset.y >= 324.0 {
-            self.title = "EOS"
+        if tableView.contentOffset.y >= self.yOffset {
+            self.title = self.prodName
         } else {
             self.title = ""
         }
@@ -318,5 +366,14 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "allReviews", sender: self)
     }
     
+    @IBAction func rentItem(_ sender: AnyObject) {
+        
+        CalendarState.productDetail = true
+//        performSegue(withIdentifier: "datePicker", sender: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navController2 = storyboard.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+        self.present(navController2, animated: true, completion: nil)
+    }
+  
   
 }
