@@ -7,6 +7,7 @@ PODS:
   - MBProgressHUD (1.0.0)
   - ReadMoreTextView (2.0.0)
   - SearchTextField (1.1.0)
+  - SkyFloatingLabelTextField (3.1.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - ReadMoreTextView
   - SearchTextField (~> 1.1.0)
+  - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -29,8 +31,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ReadMoreTextView: aefb9ffe11922c87fd39a09a988d7cc74c8438ba
   SearchTextField: 5daab6cecfd90e06f9b08b2814593656c0c99f3d
+  SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 7ad7bdb3d7f6097f5c3913380b48ef36bcd53440
+PODFILE CHECKSUM: 45b421dfdd0ac03e3e661fba6a76efd1a84171d7
 
 COCOAPODS: 1.1.1

@@ -63,6 +63,8 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
 //        self.navigationController?.navigationBar.isTranslucent = true
 //        self.navigationController?.view.backgroundColor = UIColor.clear
         
+        self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         print(products.count)
         
         tableProducts.dataSource = self

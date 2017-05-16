@@ -10,12 +10,19 @@ import UIKit
 
 class RentSummaryViewController: UIViewController {
 
+    public var rentItem : RentItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(rentItem.order_from_date)
+        print(rentItem.price_per_day)
+        
        // setUpNavigationBar()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.topItem?.title = "Summary"
 
+        self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
     }
 
@@ -42,7 +49,7 @@ class RentSummaryViewController: UIViewController {
         navigationBar.items = [navigationItem]
         
         // Make the navigation bar a subview of the current view controller
-        self.view.addSubview(navigationBar)
+       // self.view.addSubview(navigationBar)
 
     }
     

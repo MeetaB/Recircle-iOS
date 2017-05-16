@@ -40,6 +40,8 @@ class DatePickerViewController: UIViewController {
 
     var calendarColor : UIColor!
     
+    public var rentItem : RentItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("datepicker")
@@ -75,6 +77,10 @@ class DatePickerViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     
     @IBAction func resetButtonPressed(_ sender: AnyObject) {
         calendarView.deselectAllDates()
@@ -108,8 +114,12 @@ class DatePickerViewController: UIViewController {
         }
         
         else if segue.identifier == "rentSummary" {
-            let testVC = segue.destination as! RentSummaryViewController
-            self.navigationController?.pushViewController(testVC, animated: true)
+            let rentSummaryVC = segue.destination as! RentSummaryViewController
+            
+            rentItem.order_from_date = "2017-02-02"
+            rentItem.order_to_date = "2017-02-02"
+            rentSummaryVC.rentItem = rentItem
+//            self.navigationController?.pushViewController(testVC, animated: true)
             
             
         }
@@ -180,7 +190,7 @@ class DatePickerViewController: UIViewController {
         
         if CalendarState.productDetail {
             
-            self.navigationController?.popViewController(animated: true)
+            _ = self.navigationController?.popViewController(animated: true)
             self.performSegue(withIdentifier: "rentSummary", sender: self)
             CalendarState.productDetail = false
         } else {

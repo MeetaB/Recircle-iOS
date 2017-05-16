@@ -10,6 +10,10 @@
 		274D4ED5E4C4FB1B8F5407D0 /* Pods_Recircle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA2B2E31ECDC8A4F6F0561C /* Pods_Recircle.framework */; };
 		7E1B0EDD1EC1C08B00A882E8 /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */; };
 		7E1B0EDF1EC1C16400A882E8 /* ProdImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */; };
+		7E21F31C1ECAD73400F078C2 /* ListItemPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */; };
+		7E21F31E1ECADBC600F078C2 /* ListItemPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31D1ECADBC600F078C2 /* ListItemPhotosViewController.swift */; };
+		7E21F3201ECAE8F300F078C2 /* ListItemDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */; };
+		7E21F3421ECB29EB00F078C2 /* RentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F3411ECB29EB00F078C2 /* RentItem.swift */; };
 		7E564E541EC9B40B000684C1 /* RentSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */; };
 		7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B35871E924F45000B5FF0 /* AppDelegate.swift */; };
 		7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B35891E924F45000B5FF0 /* ViewController.swift */; };
@@ -63,6 +67,10 @@
 		5CA2B2E31ECDC8A4F6F0561C /* Pods_Recircle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recircle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductImageCell.xib; sourceTree = "<group>"; };
 		7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdImageCellView.swift; sourceTree = "<group>"; };
+		7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemPriceViewController.swift; sourceTree = "<group>"; };
+		7E21F31D1ECADBC600F078C2 /* ListItemPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemPhotosViewController.swift; sourceTree = "<group>"; };
+		7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemDescViewController.swift; sourceTree = "<group>"; };
+		7E21F3411ECB29EB00F078C2 /* RentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentItem.swift; sourceTree = "<group>"; };
 		7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentSummaryViewController.swift; sourceTree = "<group>"; };
 		7E8B35841E924F45000B5FF0 /* Recircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8B35871E924F45000B5FF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +158,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E21F3431ECB2A6300F078C2 /* RentItem */ = {
+			isa = PBXGroup;
+			children = (
+				7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */,
+				7E95D99E1EC3243F006170A7 /* TestViewController.swift */,
+				7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */,
+			);
+			name = RentItem;
+			sourceTree = "<group>";
+		};
+		7E21F3441ECB2A7E00F078C2 /* ListItem */ = {
+			isa = PBXGroup;
+			children = (
+				7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */,
+				7E21F31D1ECADBC600F078C2 /* ListItemPhotosViewController.swift */,
+				7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */,
+			);
+			name = ListItem;
+			sourceTree = "<group>";
+		};
 		7E8B357B1E924F44000B5FF0 = {
 			isa = PBXGroup;
 			children = (
@@ -190,22 +218,21 @@
 		7E8B359C1E926556000B5FF0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7E21F3441ECB2A7E00F078C2 /* ListItem */,
+				7E21F3431ECB2A6300F078C2 /* RentItem */,
 				7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */,
 				7EA077171E966AF4001024FF /* DayCellView.swift */,
 				7E8B359D1E926590000B5FF0 /* SearchViewController.swift */,
 				7EA077131E964FD8001024FF /* DatePickerViewController.swift */,
 				7EB486321E9F905900656270 /* ProductCell.swift */,
 				7EBD78B31EA8DAE300B80E20 /* SearchResultViewController.swift */,
-				7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */,
 				7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */,
 				7EA9ACB71EBC806400623505 /* ReviewTableViewCell.swift */,
 				7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */,
 				7EB7613D1EC1CEEE00684BD5 /* ProdImageViewController.swift */,
-				7E95D99E1EC3243F006170A7 /* TestViewController.swift */,
 				7EF7A0261EC463B4001BFEAA /* ProdAddressTableViewCell.swift */,
 				7EF7A0281EC46467001BFEAA /* ProdDescTableViewCell.swift */,
 				7EF7A02A1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift */,
-				7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -227,6 +254,7 @@
 				7EBD78B71EAF20DC00B80E20 /* SearchResultProducts.swift */,
 				7EA9ACB31EBC697000623505 /* UserProdReviews.swift */,
 				7EA9ACB51EBC6A3B00623505 /* UserProdUnavailability.swift */,
+				7E21F3411ECB29EB00F078C2 /* RentItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -416,8 +444,11 @@
 				7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */,
 				7E8B35901E924F46000B5FF0 /* Recircle.xcdatamodeld in Sources */,
 				7EB4863C1EA4AC4100656270 /* ProductInfo.swift in Sources */,
+				7E21F3201ECAE8F300F078C2 /* ListItemDescViewController.swift in Sources */,
 				7EB4864B1EA78AD600656270 /* ProductsData.swift in Sources */,
+				7E21F31C1ECAD73400F078C2 /* ListItemPriceViewController.swift in Sources */,
 				7EBD78B81EAF20DC00B80E20 /* SearchResultProducts.swift in Sources */,
+				7E21F3421ECB29EB00F078C2 /* RentItem.swift in Sources */,
 				7EF7A0271EC463B4001BFEAA /* ProdAddressTableViewCell.swift in Sources */,
 				7EB486421EA4BE1C00656270 /* UserProdImages.swift in Sources */,
 				7EDDDEA11EB9FDB500C9DA67 /* ProductDetailViewController.swift in Sources */,
@@ -426,6 +457,7 @@
 				7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */,
 				7EB4863E1EA4B3A400656270 /* UserInfo.swift in Sources */,
 				7EB486401EA4B42300656270 /* UserAddresses.swift in Sources */,
+				7E21F31E1ECADBC600F078C2 /* ListItemPhotosViewController.swift in Sources */,
 				7EDDDEA91EBC4FA100C9DA67 /* AllReviewsTableViewController.swift in Sources */,
 				7EA077181E966AF4001024FF /* DayCellView.swift in Sources */,
 				7EB4864F1EA78B4600656270 /* ProductDetail.swift in Sources */,

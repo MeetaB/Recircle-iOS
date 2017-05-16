@@ -15,5 +15,6 @@ pod 'MBProgressHUD', '~> 1.0.0'
 pod 'ReadMoreTextView'
 pod 'ImageScrollView'
 pod 'M13Checkbox'
+pod 'SkyFloatingLabelTextField', '~> 3.0'
 
 end

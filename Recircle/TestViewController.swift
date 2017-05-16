@@ -55,6 +55,11 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationController?.view.backgroundColor = .clear
         
         self.navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.black
+        
+        self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
+        
+        self.navigationController?.navigationBar.backItem?.title = ""
 
         
         let nib = UINib(nibName: "RenterReviewView", bundle: nil)
@@ -127,6 +132,8 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
                    self.prodReviews = (self.product?.user_product_info?.user_prod_reviews)!
                     
                 self.btnRent.titleLabel?.text = "Rent this item at " + "$ " + String(describing: self.product.user_product_info?.price_per_day) + " per day"
+                    
+                self.btnRent.layoutIfNeeded()
                     
 //                    if let price = product?.user_product_info?.price_per_day {
 //                        let btnText : String = "Rent this item at $ " + String(describing: price) + " per day"
@@ -369,10 +376,26 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func rentItem(_ sender: AnyObject) {
         
         CalendarState.productDetail = true
-//        performSegue(withIdentifier: "datePicker", sender: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navController2 = storyboard.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
-        self.present(navController2, animated: true, completion: nil)
+        
+        let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController"))! as! DatePickerViewController
+        let nav = UINavigationController(rootViewController: popoverContent)
+        nav.modalPresentationStyle = UIModalPresentationStyle.popover
+        let popover = nav.popoverPresentationController
+        popoverContent.preferredContentSize = CGSize(width :500,height : 600)
+        // popover?.delegate = self
+        popover?.sourceView = self.view
+        popover?.accessibilityNavigationStyle = .separate
+        popover?.sourceRect = CGRect(x: 0, y : 0, width : 100,height : 100)
+        let rentItem = RentItem()
+        rentItem.user_product_id = product.user_product_info?.user_product_id
+        rentItem.price_per_day = product.user_product_info?.price_per_day
+        rentItem.user_product_discounts = product.user_product_info?.user_product_discounts
+        popoverContent.rentItem = rentItem
+    
+        
+        self.present(nav, animated: true, completion: nil)
+
+
     }
   
   
