@@ -26,7 +26,11 @@ public class RentItem {
     public var days_selected : Int?
     public var price_per_day : Int?
     public var user_product_discounts : Array<String>?
-
+    public var duration : Int?
+    public var product_title : String?
+    public var prod_image_url : String?
+    public var user_name : String?
+    public var user_image_url : String?
     
     
     public init() {

@@ -116,8 +116,11 @@ class DatePickerViewController: UIViewController {
         else if segue.identifier == "rentSummary" {
             let rentSummaryVC = segue.destination as! RentSummaryViewController
             
-            rentItem.order_from_date = "2017-02-02"
-            rentItem.order_to_date = "2017-02-02"
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'00:00:000'Z'"
+            rentItem.order_from_date = formatter.string(from: rangeSelectedDates.first!)
+            rentItem.order_to_date = formatter.string(from: rangeSelectedDates.last!)
+            rentItem.duration = rangeSelectedDates.count
             rentSummaryVC.rentItem = rentItem
 //            self.navigationController?.pushViewController(testVC, animated: true)
             

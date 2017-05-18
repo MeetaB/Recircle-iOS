@@ -131,15 +131,17 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                    self.prodReviews = (self.product?.user_product_info?.user_prod_reviews)!
                     
-                self.btnRent.titleLabel?.text = "Rent this item at " + "$ " + String(describing: self.product.user_product_info?.price_per_day) + " per day"
+//                self.btnRent.titleLabel?.text = "Rent this item at " + "$ " + String(describing: self.product.user_product_info?.price_per_day) + " per day"
+//                    
+//                self.btnRent.setTitle("Rent this item at " + "$ " + String(describing: self.product.user_product_info?.price_per_day) + " per day", for: .normal)
+//                    
+             //   self.btnRent.layoutIfNeeded()
                     
-                self.btnRent.layoutIfNeeded()
-                    
-//                    if let price = product?.user_product_info?.price_per_day {
-//                        let btnText : String = "Rent this item at $ " + String(describing: price) + " per day"
-//                        
-//                        self.btnRent.setTitle(btnText, for: .normal)
-//                    }
+                    if let price = self.product?.user_product_info?.price_per_day {
+                        let btnText : String = "Rent this item at $ " + String(describing: price) + " per day"
+                        
+                        self.btnRent.setTitle(btnText, for: .normal)
+                    }
                     
                     self.prodName = (self.product.product_info?.product_title)!
                     
@@ -390,6 +392,11 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         rentItem.user_product_id = product.user_product_info?.user_product_id
         rentItem.price_per_day = product.user_product_info?.price_per_day
         rentItem.user_product_discounts = product.user_product_info?.user_product_discounts
+        rentItem.product_title = product.product_info?.product_title
+        rentItem.prod_image_url = product.product_info?.product_image_url
+        rentItem.user_name = (product.user_info?.first_name)! + " " + (product.user_info?.last_name)!
+        rentItem.user_image_url = product.user_info?.user_image_url
+        
         popoverContent.rentItem = rentItem
     
         

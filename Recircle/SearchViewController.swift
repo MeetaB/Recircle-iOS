@@ -57,6 +57,8 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     var autoCompleteProducts : [Products] = []
 
+    var searchItems : [SearchTextFieldItem] =  []
+
     var prodDetails : [Product] = []
 
     var dateText : String!
@@ -76,8 +78,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     var searchProducts : [Product]!
     
     var progressBar : MBProgressHUD!
-    
-    var searchItems : [SearchTextFieldItem] =  []
 
     @IBOutlet weak var textProtectionHeight: NSLayoutConstraint!
     
