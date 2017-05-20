@@ -1240,8 +1240,7 @@ Till 12:00 pm
                                                             </constraints>
                                                             <state key="normal" image="forward"/>
                                                         </button>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-f7-Bqf" customClass="CosmosView" customModule="Cosmos">
-                                                            <frame key="frameInset" minY="351" width="364" height="29"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-f7-Bqf" customClass="CosmosView" customModule="Cosmos">
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="TO9-N2-J4Y"/>
@@ -1374,19 +1373,13 @@ Till 12:00 pm
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwd-cD-Uq0">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="S00-68-aCR"/>
-                                                    </constraints>
-                                                    <state key="normal" title="See on Map"/>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C3-Y2-QSt">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="TSw-ZG-Ff3"/>
                                                     </constraints>
                                                     <state key="normal" image="location"/>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fdc-4C-q5F">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fdc-4C-q5F">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="Af1-p4-wSN"/>
@@ -1403,10 +1396,17 @@ Store Hours
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwd-cD-Uq0">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="0VM-W9-2GE"/>
+                                                    </constraints>
+                                                    <state key="normal" title="See on Map"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Fvi-of-ax8" firstAttribute="top" secondItem="RUB-2w-Nrr" secondAttribute="bottom" constant="10" id="1Yb-Bl-oM7"/>
                                                 <constraint firstItem="jwd-cD-Uq0" firstAttribute="leading" secondItem="3C3-Y2-QSt" secondAttribute="trailing" constant="2" id="21s-zW-hQc"/>
+                                                <constraint firstItem="jwd-cD-Uq0" firstAttribute="top" secondItem="U0w-9y-HrT" secondAttribute="bottom" constant="10" id="6lU-XG-e6z"/>
                                                 <constraint firstItem="dne-d1-2D0" firstAttribute="top" secondItem="uJs-7e-opD" secondAttribute="bottom" constant="11" id="BSg-ZX-Do1"/>
                                                 <constraint firstItem="Fdc-4C-q5F" firstAttribute="top" secondItem="W82-be-VB2" secondAttribute="bottom" constant="9" id="BoY-ts-6TH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="U0w-9y-HrT" secondAttribute="trailing" constant="8" id="DAq-uq-NXh"/>
@@ -1415,6 +1415,7 @@ Store Hours
                                                 <constraint firstItem="uJs-7e-opD" firstAttribute="leading" secondItem="0De-hj-fBt" secondAttribute="leadingMargin" constant="8" id="QTa-Tk-SIm"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fvi-of-ax8" secondAttribute="trailing" constant="8" id="UMj-Cc-Bb6"/>
                                                 <constraint firstItem="dne-d1-2D0" firstAttribute="leading" secondItem="0De-hj-fBt" secondAttribute="leadingMargin" constant="8" id="V7M-ur-6C3"/>
+                                                <constraint firstItem="3C3-Y2-QSt" firstAttribute="top" secondItem="U0w-9y-HrT" secondAttribute="bottom" constant="9" id="WxE-ZR-sGe"/>
                                                 <constraint firstItem="jwd-cD-Uq0" firstAttribute="trailing" secondItem="0De-hj-fBt" secondAttribute="trailingMargin" constant="8" id="Z21-q1-h2v"/>
                                                 <constraint firstItem="uJs-7e-opD" firstAttribute="top" secondItem="RUB-2w-Nrr" secondAttribute="bottom" constant="8" id="ZP9-hC-pZO"/>
                                                 <constraint firstItem="3C3-Y2-QSt" firstAttribute="top" secondItem="U0w-9y-HrT" secondAttribute="bottom" constant="9" id="adC-TL-UEV"/>
@@ -1424,12 +1425,12 @@ Store Hours
                                                 <constraint firstItem="W82-be-VB2" firstAttribute="leading" secondItem="0De-hj-fBt" secondAttribute="leadingMargin" constant="8" id="q3U-bv-GbS"/>
                                                 <constraint firstItem="U0w-9y-HrT" firstAttribute="top" secondItem="Fvi-of-ax8" secondAttribute="bottom" constant="11" id="w80-c6-AgG"/>
                                                 <constraint firstItem="Fdc-4C-q5F" firstAttribute="leading" secondItem="0De-hj-fBt" secondAttribute="leadingMargin" constant="8" id="xzb-1w-GDa"/>
-                                                <constraint firstItem="jwd-cD-Uq0" firstAttribute="top" secondItem="U0w-9y-HrT" secondAttribute="bottom" constant="11" id="y6a-ZV-6Ll"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnseeOnMap" destination="jwd-cD-Uq0" id="5Cu-vj-F2E"/>
                                             <outlet property="iconSeeOnMap" destination="3C3-Y2-QSt" id="6Ha-y0-hTy"/>
+                                            <outlet property="txtAddress" destination="Fdc-4C-q5F" id="bLd-H4-zOd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1470,13 +1471,41 @@ Store Hours
                         <outlet property="btnRent" destination="4g5-m5-AMl" id="USQ-vl-5sh"/>
                         <outlet property="tableView" destination="vls-Bu-9Lt" id="Uyu-me-6Oe"/>
                         <segue destination="t99-B2-UgA" kind="presentation" identifier="imageView" id="sl2-Tq-s1Q"/>
-                        <segue destination="ANI-kk-N2S" kind="presentation" identifier="allReviews" id="KIN-jJ-KEY"/>
+                        <segue destination="ANI-kk-N2S" kind="show" identifier="allReviews" id="KIN-jJ-KEY"/>
                         <segue destination="iJg-lo-rWQ" kind="presentation" identifier="datePicker" id="Ff9-lW-zhk"/>
+                        <segue destination="MY9-yM-oyW" kind="show" identifier="mapView" id="5WO-oA-Gbb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAd-5G-rEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4589.6000000000004" y="-513.64317841079469"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="EXu-m5-Glv">
+            <objects>
+                <viewController id="MY9-yM-oyW" customClass="MapViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KGm-X0-UpS"/>
+                        <viewControllerLayoutGuide type="bottom" id="vtN-TQ-ncN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jtS-Wr-83Y">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="1951"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gqb-Fv-JE7">
+                                <frame key="frameInset" minY="60" width="375" height="607"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Gqb-Fv-JE7" id="Ft2-zT-io0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGn-4i-cMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5460" y="309"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vnp-dp-g9q">
@@ -2029,6 +2058,8 @@ Store Hours
                     <connections>
                         <outlet property="minimumRentDays" destination="RBI-Tg-Ryw" id="nTj-7F-EMH"/>
                         <outlet property="prodSearchTextField" destination="iiT-qc-Erz" id="5ad-Z5-pxm"/>
+                        <outlet property="txtMinimumDays" destination="RBI-Tg-Ryw" id="fAD-cl-Kz4"/>
+                        <outlet property="txtPricePerDay" destination="Kuc-sr-kSx" id="lIk-t4-cgS"/>
                         <segue destination="xr6-bF-LR2" kind="presentation" identifier="photos" id="L74-8D-wlF"/>
                     </connections>
                 </viewController>
@@ -2071,19 +2102,25 @@ Store Hours
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="AVz-Py-o8L"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rFa-vs-bqZ">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rFa-vs-bqZ">
                                     <size key="itemSize" width="102" height="123"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jfT-jo-tbl">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="123"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="jfT-jo-tbl" customClass="ProdImageCellView" customModule="Recircle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="4" width="102" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="102" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69q-NS-tqf">
+                                                    <frame key="frameInset" width="102" height="123"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
@@ -2118,6 +2155,9 @@ Store Hours
                                 <frame key="frameInset" minX="196" minY="310" width="47" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="camera"/>
+                                <connections>
+                                    <action selector="galleryTapped:" destination="xr6-bF-LR2" eventType="touchUpInside" id="mNd-aB-AS3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2139,6 +2179,7 @@ Store Hours
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="FrD-Dz-b6r" id="j4H-fw-WcG"/>
                         <segue destination="gkR-mW-c9E" kind="show" identifier="description" id="wtX-QY-PLo"/>
                     </connections>
                 </viewController>
@@ -2238,15 +2279,15 @@ Store Hours
             <objects>
                 <tableViewController storyboardIdentifier="AllReviewsVC" id="ANI-kk-N2S" customClass="AllReviewsTableViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0E3-ff-xpb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="1951"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Lzh-3R-URa">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReview" id="Lzh-3R-URa">
+                                <rect key="frame" x="0.0" y="92" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzh-3R-URa" id="cha-Ta-vft">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="413" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2407,7 +2448,7 @@ Store Hours
         <image name="store" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qlR-fk-I8U"/>
+        <segue reference="Ff9-lW-zhk"/>
         <segue reference="sl2-Tq-s1Q"/>
     </inferredMetricsTieBreakers>
 </document>

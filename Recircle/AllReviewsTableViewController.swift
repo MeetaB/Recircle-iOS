@@ -14,12 +14,20 @@ class AllReviewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = false
 
+        let nib = UINib(nibName: "RenterReviewView", bundle: nil)
+        
+        tableView.register(nib, forCellReuseIdentifier: "cellReview")
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,24 +39,36 @@ class AllReviewsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return allReviews.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReview", for: indexPath) as! ReviewTableViewCell
 
-        // Configure the cell...
+        cell.userName.text = (allReviews[indexPath.row].user?.first_name)! + " " + (allReviews[indexPath.row].user?.last_name)!
 
+        cell.userImage.setImageFromURl(stringImageUrl: (allReviews[indexPath.row].user?.user_image_url!)!)
+        
+        cell.userReviewText?.text = allReviews[indexPath.row].prod_review
+    
+        cell.userRating.rating = Double(allReviews[indexPath.row].prod_rating!)
+        
+        cell.userRating.isUserInteractionEnabled = false
+        
         return cell
     }
-    */
+    
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+        return 157.0
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

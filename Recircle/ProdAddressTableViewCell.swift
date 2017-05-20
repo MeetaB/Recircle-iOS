@@ -14,6 +14,8 @@ class ProdAddressTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconSeeOnMap: UIButton!
     
+    @IBOutlet weak var txtAddress: UITextView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

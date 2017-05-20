@@ -164,6 +164,9 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let vc =  segue.destination as! ProdImageViewController
             vc.prodImagesUrls = self.prodImagesURLs
             vc.imageUrl = prodImagesURLs[indexImageSelected]
+        } else if segue.identifier == "allReviews" {
+            let vc =  segue.destination as! AllReviewsTableViewController
+            vc.allReviews = self.prodReviews
         }
     }
     
@@ -298,9 +301,15 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellReview", for: indexPath) as! ReviewTableViewCell
             
                 if prodReviews.count > 0 {
-                    cell2.userName.text = prodReviews[indexPath.row].user?.first_name
+                    
+                    cell2.userName.text = (prodReviews[indexPath.row].user?.first_name)! + " " + (prodReviews[indexPath.row].user?.last_name)!
+                    
                     cell2.userImage.setImageFromURl(stringImageUrl: (prodReviews[indexPath.row].user?.user_image_url!)!)
                     cell2.userReviewText?.text = prodReviews[indexPath.row].prod_review
+                    
+                    cell2.userRating.rating = Double(prodReviews[indexPath.row].prod_rating!)
+                    
+                    cell2.userRating.isUserInteractionEnabled = false
                 }
             return cell2
             } else {
@@ -310,6 +319,8 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else  {
              let cell3 = tableView.dequeueReusableCell(withIdentifier: "cellAddress", for: indexPath) as! ProdAddressTableViewCell
+            cell3.txtAddress.isEditable = false
+            cell3.btnseeOnMap.addTarget(self, action: #selector(TestViewController.openMapView(_:)), for: .touchUpInside)
             return cell3
         }
         
@@ -322,11 +333,11 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return 261
         }
         else if indexPath.section == 1 {
-        return 381
+        return 440
         } else if indexPath.section == 2 {
             return 157
         } else {
-            return 169
+            return 320
         }
     }
     //
@@ -374,6 +385,12 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         performSegue(withIdentifier: "allReviews", sender: self)
     }
+
+    func openMapView(_ sender: AnyObject){
+        
+        performSegue(withIdentifier: "mapView", sender: self)
+    }
+
     
     @IBAction func rentItem(_ sender: AnyObject) {
         

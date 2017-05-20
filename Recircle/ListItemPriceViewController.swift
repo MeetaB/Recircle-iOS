@@ -22,6 +22,10 @@ class ListItemPriceViewController: UIViewController {
     
     var searchItems : [SearchTextFieldItem] =  []
     
+    @IBOutlet weak var txtPricePerDay: SkyFloatingLabelTextField!
+    
+    @IBOutlet weak var txtMinimumDays: SkyFloatingLabelTextField!
+    
     var productId : String!
     
     @IBOutlet weak var minimumRentDays: SkyFloatingLabelTextField!
@@ -35,6 +39,9 @@ class ListItemPriceViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setUpAutoCompleteProducts()
+        
+        txtPricePerDay.selectedTitleColor = UIColor.black
+        txtMinimumDays.selectedTitleColor = UIColor.black
         
         prodSearchTextField.theme.font = UIFont.systemFont(ofSize: 16)
         prodSearchTextField.theme.bgColor = UIColor (red: 1, green: 1, blue: 1, alpha: 1)
@@ -124,11 +131,11 @@ class ListItemPriceViewController: UIViewController {
                         let product = Products()
                         product.manufacturer_id = item.product_manufacturer_id
                         product.manufacturer_name = item.product_manufacturer_name
-                        self.autoCompleteProducts.append(product)
+                        //self.autoCompleteProducts.append(product)
                         
-                        self.searchItems.append(SearchTextFieldItem(title: item.product_manufacturer_name!, subtitle: "", image: UIImage(named:"camera")))
+//                        self.searchItems.append(SearchTextFieldItem(title: item.product_manufacturer_name!, subtitle: "", image: UIImage(named:"camera")))
                         
-                        self.prodNames.append(item.product_manufacturer_name!)
+                       // self.prodNames.append(item.product_manufacturer_name!)
                         print(item.product_manufacturer_name)
                         
                         

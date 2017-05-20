@@ -14,6 +14,7 @@
 		7E21F31E1ECADBC600F078C2 /* ListItemPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31D1ECADBC600F078C2 /* ListItemPhotosViewController.swift */; };
 		7E21F3201ECAE8F300F078C2 /* ListItemDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */; };
 		7E21F3421ECB29EB00F078C2 /* RentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F3411ECB29EB00F078C2 /* RentItem.swift */; };
+		7E21F3461ECEDE3600F078C2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F3451ECEDE3600F078C2 /* MapViewController.swift */; };
 		7E564E541EC9B40B000684C1 /* RentSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */; };
 		7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B35871E924F45000B5FF0 /* AppDelegate.swift */; };
 		7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B35891E924F45000B5FF0 /* ViewController.swift */; };
@@ -71,6 +72,7 @@
 		7E21F31D1ECADBC600F078C2 /* ListItemPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemPhotosViewController.swift; sourceTree = "<group>"; };
 		7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemDescViewController.swift; sourceTree = "<group>"; };
 		7E21F3411ECB29EB00F078C2 /* RentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentItem.swift; sourceTree = "<group>"; };
+		7E21F3451ECEDE3600F078C2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentSummaryViewController.swift; sourceTree = "<group>"; };
 		7E8B35841E924F45000B5FF0 /* Recircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8B35871E924F45000B5FF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,7 +165,9 @@
 			children = (
 				7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */,
 				7E95D99E1EC3243F006170A7 /* TestViewController.swift */,
+				7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */,
 				7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */,
+				7E21F3451ECEDE3600F078C2 /* MapViewController.swift */,
 			);
 			name = RentItem;
 			sourceTree = "<group>";
@@ -226,7 +230,6 @@
 				7EA077131E964FD8001024FF /* DatePickerViewController.swift */,
 				7EB486321E9F905900656270 /* ProductCell.swift */,
 				7EBD78B31EA8DAE300B80E20 /* SearchResultViewController.swift */,
-				7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */,
 				7EA9ACB71EBC806400623505 /* ReviewTableViewCell.swift */,
 				7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */,
 				7EB7613D1EC1CEEE00684BD5 /* ProdImageViewController.swift */,
@@ -436,6 +439,7 @@
 				7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */,
 				7EB486361EA4AAA300656270 /* ProductDetails.swift in Sources */,
 				7EB4863A1EA4ABF300656270 /* UserProductInfo.swift in Sources */,
+				7E21F3461ECEDE3600F078C2 /* MapViewController.swift in Sources */,
 				7EB486451EA4DBEC00656270 /* ImageUtility.swift in Sources */,
 				7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */,
 				7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */,
