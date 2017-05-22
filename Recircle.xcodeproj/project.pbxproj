@@ -15,6 +15,11 @@
 		7E21F3201ECAE8F300F078C2 /* ListItemDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */; };
 		7E21F3421ECB29EB00F078C2 /* RentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F3411ECB29EB00F078C2 /* RentItem.swift */; };
 		7E21F3461ECEDE3600F078C2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F3451ECEDE3600F078C2 /* MapViewController.swift */; };
+		7E21F3481ED2E4B800F078C2 /* ListItemImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E21F3471ED2E4B800F078C2 /* ListItemImageCell.xib */; };
+		7E21F34A1ED2E52000F078C2 /* ListItemPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F3491ED2E52000F078C2 /* ListItemPhotoCell.swift */; };
+		7E21F34C1ED2F33400F078C2 /* UserProdDiscounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F34B1ED2F33400F078C2 /* UserProdDiscounts.swift */; };
+		7E21F34E1ED2F37D00F078C2 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F34D1ED2F37D00F078C2 /* ListItem.swift */; };
+		7E21F3501ED2F4C600F078C2 /* ListItemSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F34F1ED2F4C600F078C2 /* ListItemSummaryViewController.swift */; };
 		7E564E541EC9B40B000684C1 /* RentSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */; };
 		7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B35871E924F45000B5FF0 /* AppDelegate.swift */; };
 		7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B35891E924F45000B5FF0 /* ViewController.swift */; };
@@ -73,6 +78,11 @@
 		7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemDescViewController.swift; sourceTree = "<group>"; };
 		7E21F3411ECB29EB00F078C2 /* RentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentItem.swift; sourceTree = "<group>"; };
 		7E21F3451ECEDE3600F078C2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7E21F3471ED2E4B800F078C2 /* ListItemImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListItemImageCell.xib; sourceTree = "<group>"; };
+		7E21F3491ED2E52000F078C2 /* ListItemPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemPhotoCell.swift; sourceTree = "<group>"; };
+		7E21F34B1ED2F33400F078C2 /* UserProdDiscounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProdDiscounts.swift; sourceTree = "<group>"; };
+		7E21F34D1ED2F37D00F078C2 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		7E21F34F1ED2F4C600F078C2 /* ListItemSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemSummaryViewController.swift; sourceTree = "<group>"; };
 		7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentSummaryViewController.swift; sourceTree = "<group>"; };
 		7E8B35841E924F45000B5FF0 /* Recircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8B35871E924F45000B5FF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +188,8 @@
 				7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */,
 				7E21F31D1ECADBC600F078C2 /* ListItemPhotosViewController.swift */,
 				7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */,
+				7E21F3491ED2E52000F078C2 /* ListItemPhotoCell.swift */,
+				7E21F34F1ED2F4C600F078C2 /* ListItemSummaryViewController.swift */,
 			);
 			name = ListItem;
 			sourceTree = "<group>";
@@ -258,6 +270,8 @@
 				7EA9ACB31EBC697000623505 /* UserProdReviews.swift */,
 				7EA9ACB51EBC6A3B00623505 /* UserProdUnavailability.swift */,
 				7E21F3411ECB29EB00F078C2 /* RentItem.swift */,
+				7E21F34B1ED2F33400F078C2 /* UserProdDiscounts.swift */,
+				7E21F34D1ED2F37D00F078C2 /* ListItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,6 +305,7 @@
 				7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */,
 				7E95D9A01EC329CE006170A7 /* TestCellView.swift */,
 				7E95D9A21EC32D76006170A7 /* TestCollectionViewCell.swift */,
+				7E21F3471ED2E4B800F078C2 /* ListItemImageCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -359,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E21F3481ED2E4B800F078C2 /* ListItemImageCell.xib in Resources */,
 				7E8B35951E924F46000B5FF0 /* LaunchScreen.storyboard in Resources */,
 				7EFCD8971EAF536D00E5D8C4 /* SearchView.xib in Resources */,
 				7EDDDEAB1EBC500800C9DA67 /* RenterReviewView.xib in Resources */,
@@ -429,6 +445,7 @@
 				7EB486381EA4AAD600656270 /* Product.swift in Sources */,
 				7EBD78B41EA8DAE300B80E20 /* SearchResultViewController.swift in Sources */,
 				7E95D9A11EC329CE006170A7 /* TestCellView.swift in Sources */,
+				7E21F3501ED2F4C600F078C2 /* ListItemSummaryViewController.swift in Sources */,
 				7EF7A02B1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift in Sources */,
 				7E95D99F1EC3243F006170A7 /* TestViewController.swift in Sources */,
 				7EB486471EA5E79100656270 /* RecircleWebConstants.swift in Sources */,
@@ -443,6 +460,7 @@
 				7EB486451EA4DBEC00656270 /* ImageUtility.swift in Sources */,
 				7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */,
 				7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */,
+				7E21F34C1ED2F33400F078C2 /* UserProdDiscounts.swift in Sources */,
 				7E564E541EC9B40B000684C1 /* RentSummaryViewController.swift in Sources */,
 				7EF7A0291EC46467001BFEAA /* ProdDescTableViewCell.swift in Sources */,
 				7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */,
@@ -457,9 +475,11 @@
 				7EB486421EA4BE1C00656270 /* UserProdImages.swift in Sources */,
 				7EDDDEA11EB9FDB500C9DA67 /* ProductDetailViewController.swift in Sources */,
 				7E8B359E1E926590000B5FF0 /* SearchViewController.swift in Sources */,
+				7E21F34A1ED2E52000F078C2 /* ListItemPhotoCell.swift in Sources */,
 				7EB486331E9F905900656270 /* ProductCell.swift in Sources */,
 				7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */,
 				7EB4863E1EA4B3A400656270 /* UserInfo.swift in Sources */,
+				7E21F34E1ED2F37D00F078C2 /* ListItem.swift in Sources */,
 				7EB486401EA4B42300656270 /* UserAddresses.swift in Sources */,
 				7E21F31E1ECADBC600F078C2 /* ListItemPhotosViewController.swift in Sources */,
 				7EDDDEA91EBC4FA100C9DA67 /* AllReviewsTableViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 
 public class RecircleWebConstants {
     
-    public static var RecircleURL : String = "http://7c64d9fe.ngrok.io/api"
+    public static var RecircleURL : String = "http://0760af7b.ngrok.io/api"
     
     public static var ProdNamesApi : String = RecircleURL + "/products/prodNames"
     

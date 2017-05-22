@@ -83,7 +83,6 @@ class ProdImageViewController: UIViewController, UIScrollViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProdImageCellView
         
         cell.productImage.setImageFromURl(stringImageUrl: prodImagesUrls[indexPath.item])
-       
         return cell
     }
     

@@ -634,13 +634,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         
         let index = indexPath.row
         
-        if self.productDetails != nil {
-            
-            print(self.productDetails.popularProducts?[index].product_info?.product_title)
-            
-            cell.prodName.text = self.productDetails.popularProducts?[index].product_info?.product_title
-            
-        }
         
         if tableView == self.tableRecentItems {
             

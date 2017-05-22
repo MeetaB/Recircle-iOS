@@ -391,7 +391,9 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
             
         }
 
-        cell.prodImage.setImageFromURl(stringImageUrl: (products[indexPath.row].product_info?.product_image_url)!)
+        if let imageURL = products[indexPath.row].product_info?.product_image_url {
+            cell.prodImage.setImageFromURl(stringImageUrl: imageURL)
+        }
         
         
         if let rating = (products[indexPath.row].user_product_info?.product_avg_rating) {

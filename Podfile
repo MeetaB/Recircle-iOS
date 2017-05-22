@@ -6,7 +6,7 @@ target 'Recircle' do
  use_frameworks!
 
 # Pods for Recircle
-pod 'SearchTextField', '~> 1.1.0'
+pod 'SearchTextField'
 pod 'Alamofire', '~> 4.4'
 pod 'SwiftyJSON'
 pod 'JTAppleCalendar', '~> 6.1'
@@ -16,6 +16,6 @@ pod 'ReadMoreTextView'
 pod 'ImageScrollView'
 pod 'M13Checkbox'
 pod 'SkyFloatingLabelTextField', '~> 3.0'
-
+pod 'DKImagePickerController'
 
 end

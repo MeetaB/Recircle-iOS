@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Y2e-9x-lz8" customClass="ListItemPhotoCell" customModule="Recircle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="137" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="137" height="125"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cre-Co-ObV"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJo-sp-8FB">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="JkZ-Qt-pbh"/>
+                            <constraint firstAttribute="height" constant="24" id="fDq-mU-fDx"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="cross_image"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Cre-Co-ObV" firstAttribute="leading" secondItem="Y2e-9x-lz8" secondAttribute="leading" constant="8" id="4hg-P4-7pr"/>
+                <constraint firstAttribute="bottom" secondItem="Cre-Co-ObV" secondAttribute="bottom" constant="8" id="9hp-xA-l8p"/>
+                <constraint firstItem="nJo-sp-8FB" firstAttribute="top" secondItem="Y2e-9x-lz8" secondAttribute="top" id="GEL-kN-rCZ"/>
+                <constraint firstAttribute="trailing" secondItem="nJo-sp-8FB" secondAttribute="trailing" id="ZMi-pm-y6E"/>
+                <constraint firstAttribute="trailing" secondItem="Cre-Co-ObV" secondAttribute="trailing" constant="8" id="loa-1P-zUB"/>
+                <constraint firstItem="Cre-Co-ObV" firstAttribute="top" secondItem="Y2e-9x-lz8" secondAttribute="top" constant="8" id="sq2-YH-ApA"/>
+            </constraints>
+            <size key="customSize" width="137" height="125"/>
+            <connections>
+                <outlet property="crossButton" destination="nJo-sp-8FB" id="bI5-gB-IKw"/>
+                <outlet property="productImage" destination="Cre-Co-ObV" id="xpa-2V-MQx"/>
+            </connections>
+            <point key="canvasLocation" x="38.5" y="-2.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cross_image" width="8" height="8"/>
+    </resources>
+</document>

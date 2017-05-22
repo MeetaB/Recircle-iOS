@@ -16,16 +16,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="IyX-FN-b0p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7eo-Rh-Pgf"/>
-                <constraint firstAttribute="trailing" secondItem="IyX-FN-b0p" secondAttribute="trailing" id="GkL-MX-l2R"/>
-                <constraint firstItem="IyX-FN-b0p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HUa-l8-Wm4"/>
-                <constraint firstAttribute="bottom" secondItem="IyX-FN-b0p" secondAttribute="bottom" id="cf0-Z6-crV"/>
+                <constraint firstAttribute="trailing" secondItem="IyX-FN-b0p" secondAttribute="trailing" id="97J-bm-eUS"/>
+                <constraint firstAttribute="bottom" secondItem="IyX-FN-b0p" secondAttribute="bottom" id="DwQ-9x-ZCb"/>
+                <constraint firstItem="IyX-FN-b0p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dZ7-fY-A6v"/>
+                <constraint firstItem="IyX-FN-b0p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x9A-IV-0Ru"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="productImage" destination="IyX-FN-b0p" id="jAd-ts-ggO"/>
             </connections>
-            <point key="canvasLocation" x="-59" y="-227"/>
+            <point key="canvasLocation" x="-37" y="-224"/>
         </view>
     </objects>
 </document>

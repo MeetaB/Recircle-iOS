@@ -7,30 +7,31 @@
 //
 
 import UIKit
+import DKImagePickerController
 
 class ListItemPhotosViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var imagePicker : UIImagePickerController!
     var image : UIImage!
+    
+    var selectedImages : [UIImage] = []
 
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
-        imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        
-        let nib = UINib(nibName: "ProductImageCell", bundle: nil)
+        let nib = UINib(nibName: "ListItemImageCell", bundle: nil)
         
         collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
+    
         self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
+        
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,8 +53,8 @@ class ListItemPhotosViewController: UIViewController, UIImagePickerControllerDel
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             //imageView.contentMode = .ScaleAspectFit
-            image = pickedImage
-            collectionView.reloadData()
+            self.selectedImages.append(pickedImage)
+            self.collectionView.reloadData()
         }
         
         dismiss(animated: true, completion: nil)
@@ -61,12 +62,46 @@ class ListItemPhotosViewController: UIViewController, UIImagePickerControllerDel
         
     }
     
+    @IBAction func cameraTapped(_ sender: AnyObject) {
+        
+        //checking if camera is available
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            self.present(imagePicker, animated: true, completion: nil)
+
+        } else {
+            print("The device has no camera")
+            let alert = UIAlertController(title: "Alert", message: "This device has no camera", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
     @IBAction func galleryTapped(_ sender: AnyObject) {
         
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .photoLibrary
+        let pickerController = DKImagePickerController()
         
-        self.present(imagePicker, animated: true, completion: nil)
+        pickerController.showsCancelButton =  true
+
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            print(assets)
+            
+            for asset in assets {
+                asset.fetchOriginalImage(true, completeBlock: {
+                    (image, info) in
+                    self.image = image
+                    self.selectedImages.append(image!)
+                    self.collectionView.reloadData()
+                })
+            }
+        }
+        
+        self.present(pickerController, animated: true)
+        
     }
     /*
     // MARK: - Navigation
@@ -83,17 +118,39 @@ class ListItemPhotosViewController: UIViewController, UIImagePickerControllerDel
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return selectedImages.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProdImageCellView
-        if image != nil {
-            cell.productImage.image = self.image
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ListItemPhotoCell
+        let image = selectedImages[indexPath.item]
+        cell.productImage.image = image
+        cell.crossButton.isHidden = false
+        cell.crossButton.tag = indexPath.item
+        cell.crossButton.isUserInteractionEnabled = true
+        cell.crossButton.addTarget(self, action: #selector(ListItemPhotosViewController.removeImage(_:)), for: .touchUpInside)
+        
         return cell
         
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        print("select")
+    }
+    
+    
+    
+    func removeImage(_ sender: AnyObject) {
+        let index = sender.tag
+        selectedImages.remove(at: index!)
+        collectionView.reloadData()
     }
 }

@@ -233,6 +233,7 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProdImageCellView
         cell.productImage.backgroundColor = UIColor.blue
+
         self.prodImage.setImageFromURl(stringImageUrl: prodImagesURLs[indexPath.row])
     }
     
