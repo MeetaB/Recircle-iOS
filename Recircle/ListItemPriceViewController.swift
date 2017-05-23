@@ -11,8 +11,9 @@ import Alamofire
 import SearchTextField
 import SwiftyJSON
 import SkyFloatingLabelTextField
+import M13Checkbox
 
-class ListItemPriceViewController: UIViewController {
+class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var prodSearchTextField: SearchTextField!
     
@@ -29,6 +30,12 @@ class ListItemPriceViewController: UIViewController {
     var productId : String!
     
     @IBOutlet weak var minimumRentDays: SkyFloatingLabelTextField!
+    
+    var listItem : ListItem!
+    
+    @IBOutlet weak var checkBox30: M13Checkbox!
+    
+    @IBOutlet weak var checkBox40: M13Checkbox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +77,8 @@ class ListItemPriceViewController: UIViewController {
             
         }
         
+        txtPricePerDay.delegate = self
+        
         addDoneButtonOnKeyboard()
 
     }
@@ -95,14 +104,14 @@ class ListItemPriceViewController: UIViewController {
         doneToolbar.sizeToFit()
         
         self.minimumRentDays.inputAccessoryView = doneToolbar
-       // self.textField.inputAccessoryView = doneToolbar
+        self.txtPricePerDay.inputAccessoryView = doneToolbar
         
     }
     
     func doneButtonAction()
     {
         self.minimumRentDays.resignFirstResponder()
-       // self.textViewDescription.resignFirstResponder()
+        self.txtPricePerDay.resignFirstResponder()
     }
     
 
@@ -170,6 +179,45 @@ class ListItemPriceViewController: UIViewController {
         
 //        performSegue(withIdentifier: "photos", sender: self)
 //        
+        
+        if (txtPricePerDay.text?.isEmpty)! {
+            txtPricePerDay.errorMessage = "Enter value"
+            txtPricePerDay.errorColor = UIColor.red
+        } else {
+        
+        
+        if ListItemObject.listItem != nil {
+            self.listItem = ListItemObject.listItem
+        } else {
+            self.listItem = ListItem()
+        }
+        
+        listItem.product_id = self.productId
+        listItem.price_per_day = Int(self.txtPricePerDay.text!)
+        listItem.min_rental_day = Int(self.txtMinimumDays.text!)
+        
+        var discounts  : [UserProdDiscounts] = []
+        
+        if checkBox30.checkState == .checked {
+            let discount = UserProdDiscounts()
+            discount.discount_for_days = 5
+            discount.percentage = 30
+            discount.isActive = 1
+            discounts.append(discount)
+        }
+        
+        if checkBox40.checkState == .checked {
+            let discount = UserProdDiscounts()
+            discount.discount_for_days = 10
+            discount.percentage = 40
+            discount.isActive = 1
+            discounts.append(discount)
+        }
+        
+        listItem.user_prod_discounts = discounts
+
+        ListItemObject.listItem = listItem
+        
         let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "ListItemPhotosViewController"))! as UIViewController
         let nav = UINavigationController(rootViewController: popoverContent)
         nav.modalPresentationStyle = UIModalPresentationStyle.popover
@@ -181,8 +229,42 @@ class ListItemPriceViewController: UIViewController {
         popover?.sourceRect = CGRect(x: 0, y : 0, width : 100,height : 100)
         
         self.present(nav, animated: true, completion: nil)
+    }
 
     }
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//    
+//        if let text = textField.text {
+//            if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
+//                print(text.characters.count)
+//                if !text.isEmpty {
+//                    floatingLabelTextField.errorMessage = nil
+//                } else {
+//                    floatingLabelTextField.errorMessage = "Enter value"
+//                }
+//            }
+//        }
+//        return true
+//    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
+                print(text.characters.count)
+                if !text.isEmpty {
+                    floatingLabelTextField.errorMessage = nil
+                } else {
+                    floatingLabelTextField.errorMessage = "Enter value"
+                }
+            }
+        }
+
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

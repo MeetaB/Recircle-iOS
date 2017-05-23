@@ -28,6 +28,7 @@
 		7E8B35921E924F46000B5FF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E8B35911E924F46000B5FF0 /* Assets.xcassets */; };
 		7E8B35951E924F46000B5FF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8B35931E924F46000B5FF0 /* LaunchScreen.storyboard */; };
 		7E8B359E1E926590000B5FF0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B359D1E926590000B5FF0 /* SearchViewController.swift */; };
+		7E92D0DB1ED45B3A006E299E /* ListItemSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E92D0DA1ED45B3A006E299E /* ListItemSuccessViewController.swift */; };
 		7E95D99F1EC3243F006170A7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95D99E1EC3243F006170A7 /* TestViewController.swift */; };
 		7E95D9A11EC329CE006170A7 /* TestCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95D9A01EC329CE006170A7 /* TestCellView.swift */; };
 		7E95D9A31EC32D76006170A7 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95D9A21EC32D76006170A7 /* TestCollectionViewCell.swift */; };
@@ -60,9 +61,9 @@
 		7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */; };
 		7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */; };
 		7EDDDEA11EB9FDB500C9DA67 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */; };
-		7EDDDEA71EBB06D700C9DA67 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDDEA61EBB06D700C9DA67 /* MBProgressHUD.m */; };
 		7EDDDEA91EBC4FA100C9DA67 /* AllReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */; };
 		7EDDDEAB1EBC500800C9DA67 /* RenterReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDDEAA1EBC500800C9DA67 /* RenterReviewView.xib */; };
+		7EDEBF871ED40E35001DE5F3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDEBF861ED40E35001DE5F3 /* MBProgressHUD.m */; };
 		7EF7A0271EC463B4001BFEAA /* ProdAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7A0261EC463B4001BFEAA /* ProdAddressTableViewCell.swift */; };
 		7EF7A0291EC46467001BFEAA /* ProdDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7A0281EC46467001BFEAA /* ProdDescTableViewCell.swift */; };
 		7EF7A02B1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7A02A1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift */; };
@@ -93,6 +94,7 @@
 		7E8B35941E924F46000B5FF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E8B35961E924F46000B5FF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E8B359D1E926590000B5FF0 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7E92D0DA1ED45B3A006E299E /* ListItemSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemSuccessViewController.swift; sourceTree = "<group>"; };
 		7E95D99E1EC3243F006170A7 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		7E95D9A01EC329CE006170A7 /* TestCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCellView.swift; sourceTree = "<group>"; };
 		7E95D9A21EC32D76006170A7 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -127,9 +129,9 @@
 		7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		7EDDDEA41EBB06D700C9DA67 /* Recircle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recircle-Bridging-Header.h"; sourceTree = "<group>"; };
 		7EDDDEA51EBB06D700C9DA67 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "../../../Downloads/MBProgressHUD-master/MBProgressHUD.h"; sourceTree = "<group>"; };
-		7EDDDEA61EBB06D700C9DA67 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "../../../Downloads/MBProgressHUD-master/MBProgressHUD.m"; sourceTree = "<group>"; };
 		7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllReviewsTableViewController.swift; sourceTree = "<group>"; };
 		7EDDDEAA1EBC500800C9DA67 /* RenterReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RenterReviewView.xib; sourceTree = "<group>"; };
+		7EDEBF861ED40E35001DE5F3 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "../../../Downloads/MBProgressHUD-master 2/MBProgressHUD.m"; sourceTree = "<group>"; };
 		7EF7A0261EC463B4001BFEAA /* ProdAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdAddressTableViewCell.swift; sourceTree = "<group>"; };
 		7EF7A0281EC46467001BFEAA /* ProdDescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdDescTableViewCell.swift; sourceTree = "<group>"; };
 		7EF7A02A1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdImagesTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				7EDDDEA51EBB06D700C9DA67 /* MBProgressHUD.h */,
-				7EDDDEA61EBB06D700C9DA67 /* MBProgressHUD.m */,
+				7EDEBF861ED40E35001DE5F3 /* MBProgressHUD.m */,
 				5CA2B2E31ECDC8A4F6F0561C /* Pods_Recircle.framework */,
 				7EDDDEA41EBB06D700C9DA67 /* Recircle-Bridging-Header.h */,
 			);
@@ -190,6 +192,7 @@
 				7E21F31F1ECAE8F300F078C2 /* ListItemDescViewController.swift */,
 				7E21F3491ED2E52000F078C2 /* ListItemPhotoCell.swift */,
 				7E21F34F1ED2F4C600F078C2 /* ListItemSummaryViewController.swift */,
+				7E92D0DA1ED45B3A006E299E /* ListItemSuccessViewController.swift */,
 			);
 			name = ListItem;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				7E21F3461ECEDE3600F078C2 /* MapViewController.swift in Sources */,
 				7EB486451EA4DBEC00656270 /* ImageUtility.swift in Sources */,
 				7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */,
+				7EDEBF871ED40E35001DE5F3 /* MBProgressHUD.m in Sources */,
 				7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */,
 				7E21F34C1ED2F33400F078C2 /* UserProdDiscounts.swift in Sources */,
 				7E564E541EC9B40B000684C1 /* RentSummaryViewController.swift in Sources */,
@@ -484,13 +488,13 @@
 				7E21F31E1ECADBC600F078C2 /* ListItemPhotosViewController.swift in Sources */,
 				7EDDDEA91EBC4FA100C9DA67 /* AllReviewsTableViewController.swift in Sources */,
 				7EA077181E966AF4001024FF /* DayCellView.swift in Sources */,
+				7E92D0DB1ED45B3A006E299E /* ListItemSuccessViewController.swift in Sources */,
 				7EB4864F1EA78B4600656270 /* ProductDetail.swift in Sources */,
 				7E95D9A31EC32D76006170A7 /* TestCollectionViewCell.swift in Sources */,
 				7EA9ACB81EBC806400623505 /* ReviewTableViewCell.swift in Sources */,
 				7EA9ACB41EBC697000623505 /* UserProdReviews.swift in Sources */,
 				7EB7613E1EC1CEEE00684BD5 /* ProdImageViewController.swift in Sources */,
 				7EB486491EA78A6300656270 /* ProdNames.swift in Sources */,
-				7EDDDEA71EBB06D700C9DA67 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

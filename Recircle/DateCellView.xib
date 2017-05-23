@@ -15,6 +15,7 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-Dp-QNL">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross_red" translatesAutoresizingMaskIntoConstraints="NO" id="ZBt-jj-fA9"/>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyE-Yu-ujV">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -26,11 +27,15 @@
                 <constraint firstItem="DyE-Yu-ujV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="24v-9l-tdE"/>
                 <constraint firstItem="O8m-Dp-QNL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5qp-ij-TV8"/>
                 <constraint firstAttribute="bottom" secondItem="DyE-Yu-ujV" secondAttribute="bottom" id="5wi-wK-Tb3"/>
+                <constraint firstAttribute="trailing" secondItem="ZBt-jj-fA9" secondAttribute="trailing" id="CRb-vC-Zhu"/>
                 <constraint firstItem="O8m-Dp-QNL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ckn-6Q-SE1"/>
                 <constraint firstAttribute="trailing" secondItem="DyE-Yu-ujV" secondAttribute="trailing" id="Epx-jh-eLA"/>
                 <constraint firstItem="O8m-Dp-QNL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ho8-qY-NP6"/>
                 <constraint firstAttribute="bottom" secondItem="O8m-Dp-QNL" secondAttribute="bottom" id="KWa-kI-w1Q"/>
+                <constraint firstAttribute="bottom" secondItem="ZBt-jj-fA9" secondAttribute="bottom" id="Ku6-rT-DVT"/>
+                <constraint firstItem="ZBt-jj-fA9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PTe-L7-zZy"/>
                 <constraint firstAttribute="trailing" secondItem="O8m-Dp-QNL" secondAttribute="trailing" id="Q6O-fd-9HY"/>
+                <constraint firstItem="ZBt-jj-fA9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cB1-fN-G4e"/>
                 <constraint firstItem="O8m-Dp-QNL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fKT-HB-qe9"/>
                 <constraint firstItem="O8m-Dp-QNL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gxk-9P-l7P"/>
                 <constraint firstItem="O8m-Dp-QNL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yft-oe-3IP"/>
@@ -38,10 +43,14 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cross" destination="ZBt-jj-fA9" id="i7V-fa-dxo"/>
                 <outlet property="selectedView" destination="O8m-Dp-QNL" id="NOW-ug-dUc"/>
                 <outlet property="textDate" destination="DyE-Yu-ujV" id="Kgs-1N-fow"/>
             </connections>
             <point key="canvasLocation" x="-126.5" y="-277"/>
         </view>
     </objects>
+    <resources>
+        <image name="cross_red" width="33" height="33"/>
+    </resources>
 </document>

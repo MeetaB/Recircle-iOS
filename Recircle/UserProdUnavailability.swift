@@ -12,6 +12,10 @@ public class UserProdUnavailability {
     public var unavai_to_date : String?
     public var unavai_from_date : String?
     
+    
+    public init() {
+        
+    }
     /**
      Returns an array of models based on given dictionary.
      

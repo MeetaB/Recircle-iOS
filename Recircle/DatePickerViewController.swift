@@ -15,6 +15,9 @@ struct CalendarState {
     static var productDetail : Bool = false
     static var searchProduct : Bool = false
     static var searchResult : Bool = false
+    static var listItem : Bool = false
+    static var listItemSummary : Bool = false
+    static var unavailableDates : [String] = []
 }
 
 
@@ -25,6 +28,8 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var textStartDate: UILabel!
     
     @IBOutlet weak var textEndDate: UILabel!
+    
+    @IBOutlet weak var btnReset: UIButton!
     
     var currentCalendar: Calendar?
     
@@ -41,6 +46,10 @@ class DatePickerViewController: UIViewController {
     var calendarColor : UIColor!
     
     public var rentItem : RentItem!
+    
+    var unavailableDates : [String] = []
+    
+    @IBOutlet weak var btnSave: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +78,29 @@ class DatePickerViewController: UIViewController {
         calendarColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
         
         
+        if CalendarState.listItemSummary {
+            
+            btnSave.isHidden = true
+            
+            textStartDate.isHidden = true
+            
+            textEndDate.isHidden = true
+            
+            btnReset.isHidden = true
+            
+            var datesSelect : [Date] = []
+            
+            for dateString in CalendarState.unavailableDates {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd'T'00:00:000'Z'"
+                let date = formatter.date(from: dateString)
+                datesSelect.append(date!)
+            }
+            
+            calendarView.selectDates(datesSelect, triggerSelectionDelegate: true, keepSelectionIfMultiSelectionAllowed: false)
+        
+           
+        }
         
     }
     
@@ -81,6 +113,9 @@ class DatePickerViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+         CalendarState.listItemSummary = false
+    }
     
     @IBAction func resetButtonPressed(_ sender: AnyObject) {
         calendarView.deselectAllDates()
@@ -196,7 +231,12 @@ class DatePickerViewController: UIViewController {
             _ = self.navigationController?.popViewController(animated: true)
             self.performSegue(withIdentifier: "rentSummary", sender: self)
             CalendarState.productDetail = false
-        } else {
+        } else if CalendarState.listItem {
+            CalendarState.unavailableDates = self.unavailableDates
+            CalendarState.listItem = false
+            self.dismiss(animated: true, completion: nil)
+        }
+        else {
             self.dismiss(animated: true) {
                 
             }
@@ -263,45 +303,17 @@ class DatePickerViewController: UIViewController {
 
         func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         
-//            let myCustomCell = cell as! DayCellView
-//            
-//             myCustomCell.selectedView.layer.cornerRadius =  20
-//            
-//            if cellState.isSelected {
-////                myCustomCell.textDate.textColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
-//                myCustomCell.selectedView.isHidden = false
-//                
-//
-//            }
+            //change dateformat
+            if CalendarState.listItem {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd'T'00:00:000'Z'"
+                let dateString = formatter.string(from: date)
+                unavailableDates.append(dateString)
+            }
+            
             handleCellSelection(view: cell, cellState: cellState)
             handleCellTextColor(view: cell, cellState: cellState)
-            
-            
-//            switch cellState.selectedPosition() {
-//            case .full, .left, .right:
-//                myCustomCell.selectedView.isHidden = false
-//                
-//               // myCustomCell.selectedView.backgroundColor = UIColor.white // Or you can put what ever you like for your rounded corners, and your stand-alone selected cell
-//                myCustomCell.textDate.textColor = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0)
-//            case .middle:
-//                myCustomCell.selectedView.isHidden = false
-//                myCustomCell.selectedView.backgroundColor = UIColor.blue // Or what ever you want for your dates that land in the middle
-//            default:
-//                myCustomCell.selectedView.isHidden = true
-//                myCustomCell.selectedView.backgroundColor = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0) // Have no selection when a cell is not selected
-//            }
-//            
-//            if cellState.isSelected {
-//                myCustomCell.bringSubview(toFront: myCustomCell.textDate)
-//                myCustomCell.selectedView.layer.cornerRadius =  13
-//                myCustomCell.textDate.textColor = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0)
-//                myCustomCell.selectedView.backgroundColor = UIColor.white
-//                //myCustomCell. = UIColor(colorLiteralRed: 0, green: 151, blue: 167, alpha: 0)
-//                
-//                myCustomCell.selectedView.isHidden = false
-//            } else {
-//                myCustomCell.selectedView.isHidden = true
-//            }
+    
 
         }
         
@@ -331,14 +343,47 @@ class DatePickerViewController: UIViewController {
             if cellState.isSelected {
                 myCustomCell.selectedView.layer.cornerRadius =  10
                 myCustomCell.selectedView.isHidden = false
+                if CalendarState.listItem || CalendarState.listItemSummary {
+                    myCustomCell.cross.isHidden = false
+                }
             } else {
                 myCustomCell.selectedView.isHidden = true
+                myCustomCell.cross.isHidden = true
             }
         }
+        
+        func calendar(_ calendar: JTAppleCalendarView, shouldSelectDate date: Date, cell: JTAppleDayCellView, cellState: CellState) -> Bool {
+            if CalendarState.listItemSummary {
+                return false
+            } else {
+                return true
+            }
+        }
+        
+        func calendar(_ calendar: JTAppleCalendarView, shouldDeselectDate date: Date, cell: JTAppleDayCellView, cellState: CellState) -> Bool {
+            if CalendarState.listItemSummary {
+                return false
+            } else {
+                return true
+            }
+        }
+        
+        
         
         func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         //    let myCustomCell = cell as! DayCellView
            // myCustomCell.selectedView.isHidden = true
+            
+            //change dateformat
+            if CalendarState.listItem {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd'T'00:00:000'Z'"
+                let dateString = formatter.string(from: date)
+                
+                if unavailableDates.contains(dateString) {
+                    unavailableDates.remove(at: unavailableDates.index(of: dateString)!)
+                }
+            }
             
             handleCellSelection(view: cell, cellState: cellState)
             handleCellTextColor(view: cell, cellState: cellState)

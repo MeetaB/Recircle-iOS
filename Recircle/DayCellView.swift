@@ -15,6 +15,8 @@ class DayCellView: JTAppleDayCellView {
     
     @IBOutlet weak var selectedView: UIView!
     
+    @IBOutlet weak var cross: UIImageView!
+    
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

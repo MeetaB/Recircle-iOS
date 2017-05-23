@@ -14,6 +14,11 @@ public class UserProdDiscounts {
     public var isActive : Int?
     public var percentage : Int?
     
+    
+    public init() {
+        
+    }
+    
     /**
      Returns an array of models based on given dictionary.
      

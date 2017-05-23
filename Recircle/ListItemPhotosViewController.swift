@@ -15,6 +15,8 @@ class ListItemPhotosViewController: UIViewController, UIImagePickerControllerDel
     var image : UIImage!
     
     var selectedImages : [UIImage] = []
+    
+    var listItem : ListItem!
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -114,7 +116,36 @@ class ListItemPhotosViewController: UIViewController, UIImagePickerControllerDel
     */
 
     @IBAction func proceed(_ sender: AnyObject) {
-        performSegue(withIdentifier: "description", sender: self)
+        
+        if self.selectedImages.count == 0 {
+            let alert = UIAlertController(title: "Alert", message: "Please upload atleast one image", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            if ListItemObject.listItem != nil {
+                self.listItem = ListItemObject.listItem
+            } else {
+                self.listItem = ListItem()
+            }
+            
+            var prodImages : [UserProdImages] = []
+            
+            let prodImage = UserProdImages()
+            
+            //TODO : hardcoding as not integrated with s3 bucket
+            
+            prodImage.user_prod_image_url = "https://s3.ap-south-1.amazonaws.com/recircleimages/1398934243000_1047081.jpg"
+            
+            prodImages.append(prodImage)
+            
+            self.listItem.user_prod_images = prodImages
+            
+            ListItemObject.listItem = self.listItem
+            
+            ListItemObject.listItemImages = self.selectedImages
+            
+            performSegue(withIdentifier: "description", sender: self)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

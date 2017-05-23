@@ -19,6 +19,10 @@ public class ListItem {
     public var min_rental_day : Int?
     public var price_per_day : Int?
     
+    
+    public init() {
+        
+    }
     /**
      Returns an array of models based on given dictionary.
      

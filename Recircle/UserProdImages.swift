@@ -12,6 +12,10 @@ public class UserProdImages {
     public var created_at : String?
     public var user_prod_image_url : String?
     
+    
+    public init() {
+        
+    }
     /**
      Returns an array of models based on given dictionary.
      
