@@ -543,6 +543,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     
     @IBAction func searchProduct(_ sender: AnyObject) {
         
+        performSegue(withIdentifier: "search", sender: self)
         //
         progressBar = MBProgressHUD.showAdded(to: self.view, animated: true);
         

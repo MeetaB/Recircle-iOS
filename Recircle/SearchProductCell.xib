@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchProductCell" customModule="Recircle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="353"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAD-bm-mh9">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Own Less. Access More." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLM-y2-73y">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="Sjb-Bw-8m2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xtS-Dj-BA8" customClass="SearchTextField" customModule="SearchTextField">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="ZDw-vh-Xya"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Austin, Texas" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGb-kc-HuY">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="eaw-nn-t5s"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="date" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="idK-oc-gh9">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="NIh-DQ-dCN"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SD-HA-Ykn">
+                            <color key="backgroundColor" red="0.1960784314" green="0.47450980390000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="o2P-WL-eOR"/>
+                                <constraint firstAttribute="height" constant="40" id="roy-SC-beL"/>
+                            </constraints>
+                            <state key="normal" title="SEARCH">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People renting from people" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOm-7z-ZoZ">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="88" id="Zce-5d-mjE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="xGb-kc-HuY" secondAttribute="trailing" constant="20" id="2zF-Gu-xQY"/>
+                        <constraint firstAttribute="trailing" secondItem="xtS-Dj-BA8" secondAttribute="trailing" constant="20" id="3b1-ke-Woc"/>
+                        <constraint firstItem="idK-oc-gh9" firstAttribute="top" secondItem="xGb-kc-HuY" secondAttribute="bottom" constant="8" id="4vj-vr-iUi"/>
+                        <constraint firstItem="1SD-HA-Ykn" firstAttribute="top" secondItem="idK-oc-gh9" secondAttribute="bottom" constant="8" id="5XN-FW-RyP"/>
+                        <constraint firstItem="xGb-kc-HuY" firstAttribute="top" secondItem="xtS-Dj-BA8" secondAttribute="bottom" constant="8" id="7RA-1q-dpQ"/>
+                        <constraint firstItem="xtS-Dj-BA8" firstAttribute="leading" secondItem="gAD-bm-mh9" secondAttribute="leading" constant="20" id="9SU-Nr-2HY"/>
+                        <constraint firstItem="idK-oc-gh9" firstAttribute="leading" secondItem="gAD-bm-mh9" secondAttribute="leading" constant="20" id="D9z-Wg-dOY"/>
+                        <constraint firstAttribute="trailing" secondItem="eOm-7z-ZoZ" secondAttribute="trailing" id="H3H-ZW-NSz"/>
+                        <constraint firstItem="eOm-7z-ZoZ" firstAttribute="top" secondItem="gAD-bm-mh9" secondAttribute="top" constant="20" id="RCY-cj-1F1"/>
+                        <constraint firstItem="vLM-y2-73y" firstAttribute="top" secondItem="eOm-7z-ZoZ" secondAttribute="bottom" constant="-7" id="SbP-5n-dO0"/>
+                        <constraint firstItem="vLM-y2-73y" firstAttribute="leading" secondItem="gAD-bm-mh9" secondAttribute="leading" id="SzX-bU-3hs"/>
+                        <constraint firstItem="1SD-HA-Ykn" firstAttribute="centerX" secondItem="gAD-bm-mh9" secondAttribute="centerX" id="TGC-gD-Wdd"/>
+                        <constraint firstItem="xtS-Dj-BA8" firstAttribute="top" secondItem="vLM-y2-73y" secondAttribute="bottom" constant="8" id="V8v-e2-3uD"/>
+                        <constraint firstItem="eOm-7z-ZoZ" firstAttribute="leading" secondItem="gAD-bm-mh9" secondAttribute="leading" id="WTu-G9-wCm"/>
+                        <constraint firstItem="xGb-kc-HuY" firstAttribute="leading" secondItem="gAD-bm-mh9" secondAttribute="leading" constant="20" id="dhc-wC-6Eq"/>
+                        <constraint firstAttribute="trailing" secondItem="idK-oc-gh9" secondAttribute="trailing" constant="20" id="t0C-Jv-njT"/>
+                        <constraint firstAttribute="trailing" secondItem="vLM-y2-73y" secondAttribute="trailing" id="xeH-S7-oIv"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gAD-bm-mh9" secondAttribute="trailing" id="VPO-MC-z6n"/>
+                <constraint firstAttribute="bottom" secondItem="gAD-bm-mh9" secondAttribute="bottom" id="Ysd-BC-fmT"/>
+                <constraint firstAttribute="trailing" secondItem="gAD-bm-mh9" secondAttribute="trailing" id="dXB-eY-xTf"/>
+                <constraint firstItem="gAD-bm-mh9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ezW-42-pWs"/>
+                <constraint firstItem="gAD-bm-mh9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h6c-gR-BsQ"/>
+                <constraint firstItem="gAD-bm-mh9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hci-2C-ecE"/>
+                <constraint firstItem="gAD-bm-mh9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rtD-9p-4gU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnSearch" destination="1SD-HA-Ykn" id="DkX-6T-Qaj"/>
+                <outlet property="prodNameSearchTextField" destination="xtS-Dj-BA8" id="mKy-Lu-tbL"/>
+                <outlet property="txtDate" destination="idK-oc-gh9" id="e3l-rE-2h3"/>
+                <outlet property="txtProdLocation" destination="xGb-kc-HuY" id="oJr-mV-wul"/>
+            </connections>
+            <point key="canvasLocation" x="53.5" y="-63.5"/>
+        </view>
+    </objects>
+</document>
