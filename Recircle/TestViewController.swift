@@ -54,13 +54,16 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
-        self.navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.black
+        self.navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
         
-        self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
 
         
         self.navigationController?.navigationBar.backItem?.title = ""
 
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        
         
         let nib = UINib(nibName: "RenterReviewView", bundle: nil)
         
@@ -68,6 +71,9 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        self.tableView.separatorStyle = .none
+        
         
         getProdDetails()
         
@@ -274,21 +280,29 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     cell1.prodRatingView.isHidden = false
                     cell1.prodRatingView.isUserInteractionEnabled = false
                     cell1.prodRatingView.rating = Double(rating)
-                    cell1.prodRatingView.text = "(" + String(describing: rating) + ")"
-                    
+                    if let reviews = product.user_product_info?.user_prod_reviews {
+                        cell1.prodRatingView.text = "(" + String(reviews.count) + ")"
+                         cell1.renterRatingView.text = "(" + String(reviews.count) + ")"
+                    }
+                    cell1.labelReviews.isHidden = false
                     cell1.renterRatingView.isHidden = false
                     cell1.renterRatingView.isUserInteractionEnabled = false
                     cell1.renterRatingView.rating = Double(rating)
-                    cell1.renterRatingView.text = "(" + String(describing: rating) + ")"
+                   
                     } else {
                     cell1.renterRatingView.isHidden = true
                     cell1.prodRatingView.isHidden = true
                     }
                 cell1.btnSeeAllReviews.addTarget(self, action: #selector(TestViewController.goToReviews(_:)), for: .touchUpInside)
                 cell1.btnAllReviews.addTarget(self, action: #selector(TestViewController.goToReviews(_:)), for: .touchUpInside)
+                cell1.btnAllReviews.isHidden = false
+                cell1.btnSeeAllReviews.isHidden = false
             } else {
+                cell1.labelReviews.isHidden = true
                 cell1.renterRatingView.isHidden = true
                 cell1.prodRatingView.isHidden = true
+                cell1.btnAllReviews.isHidden = true
+                cell1.btnSeeAllReviews.isHidden = true
             }
             
             cell1.selectionStyle = .none

@@ -123,9 +123,6 @@
                                             <constraint firstAttribute="width" constant="20" id="hG4-Mu-caI"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="collapse_arrow"/>
-                                        <connections>
-                                            <action selector="paymentTapped:" destination="KZY-gA-lUk" eventType="touchUpInside" id="Dyj-X2-3qw"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -186,9 +183,6 @@
                                             <constraint firstAttribute="height" constant="20" id="rDM-1h-f7O"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="collapse_arrow"/>
-                                        <connections>
-                                            <action selector="PickUpDropTapped:" destination="KZY-gA-lUk" eventType="touchUpInside" id="fDA-qi-dPp"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

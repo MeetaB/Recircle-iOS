@@ -176,5 +176,9 @@ class RentSummaryViewController: UIViewController,UITextFieldDelegate {
  
 
     
+    @IBAction func confirmOrder(_ sender: AnyObject) {
+        
+        self.performSegue(withIdentifier: "success", sender: self)
+    }
     
 }

@@ -76,7 +76,7 @@ class DatePickerViewController: UIViewController {
         calendarView.isHidden = false
         
         calendarColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
-        
+    
         
         if CalendarState.listItemSummary {
             
@@ -324,13 +324,34 @@ class DatePickerViewController: UIViewController {
                 return
             }
             
+            if cellState.date.compare(Date()) == .orderedAscending || cellState.dateBelongsTo != .thisMonth
+            {
+                myCustomCell.textDate.textColor = UIColor.gray
+            }
+
+            else {
             if cellState.isSelected {
                 myCustomCell.textDate.textColor = UIColor.black
             } else {
+                
                 if cellState.dateBelongsTo == .thisMonth {
                     myCustomCell.textDate.textColor = UIColor.white
                 } else {
                     myCustomCell.textDate.textColor = UIColor.gray
+                }
+                
+                if cellState.date.compare(Date()) == .orderedAscending
+                {
+                    myCustomCell.textDate.textColor = UIColor.lightGray
+                }
+                
+                if Calendar.current.isDateInToday(cellState.date) {
+                    myCustomCell.textDate.backgroundColor = UIColor.black
+                } else {
+                    myCustomCell.textDate.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+                }
+
+               
                 }
             }
         }
@@ -340,6 +361,13 @@ class DatePickerViewController: UIViewController {
             guard let myCustomCell = view as? DayCellView  else {
                 return
             }
+            
+            if cellState.date.compare(Date()) == .orderedAscending || cellState.dateBelongsTo != .thisMonth
+            {
+                myCustomCell.selectedView.isHidden = true
+                myCustomCell.cross.isHidden = true
+            }
+            else {
             if cellState.isSelected {
                 myCustomCell.selectedView.layer.cornerRadius =  10
                 myCustomCell.selectedView.isHidden = false
@@ -351,6 +379,7 @@ class DatePickerViewController: UIViewController {
             } else {
                 myCustomCell.selectedView.isHidden = true
                 myCustomCell.cross.isHidden = true
+            }
             }
         }
         
@@ -396,7 +425,7 @@ class DatePickerViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
-        let startDate = Date()
+        var startDate = Date()
       //  let startDate = formatter.date(from: "2016 02 01")! // You can use date generated from a formatter
         let endDate = formatter.date(from: "2068 01 01")!                               // You can also use dates created from this function
         let parameters = ConfigurationParameters(startDate: startDate,
@@ -406,6 +435,10 @@ class DatePickerViewController: UIViewController {
             generateInDates: .forAllMonths,
             generateOutDates: .off,
             firstDayOfWeek: .sunday)
+        
+        
+        print(startDate)
+        print(Calendar.current)
         return parameters
     }
 }

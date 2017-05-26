@@ -32,6 +32,8 @@ class ProdDescTableViewCell: UITableViewCell {
     
     @IBOutlet weak var btnAllReviews: UIButton!
     
+    @IBOutlet weak var labelReviews: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

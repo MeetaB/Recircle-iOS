@@ -44,6 +44,10 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     
     var searchToDateString : String!
     
+    var userProductId : String!
+    
+    var pickDropText : Bool = false
+    
 
     
     override func viewDidLoad() {
@@ -55,6 +59,16 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
 
         
         self.navigationItem.title = "ReCircle"
+        
+        let rentRequests = UIBarButtonItem(image: UIImage(named : "camera_filled") , style: .plain, target: self, action: nil)
+
+        rentRequests.tintColor = UIColor.white
+        
+        
+        let messages = UIBarButtonItem(image: UIImage(named : "messages") , style: .plain, target: self, action: nil)
+        messages.tintColor = UIColor.white
+        
+        navigationItem.rightBarButtonItems = [rentRequests, messages]
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -119,6 +133,11 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             vc.searchLocation = cell.txtProdLocation.text
             vc.searchDate = cell.txtDate.text
             vc.searchString = cell.txtProdName.text! + " " + cell.txtProdLocation.text! + " " + cell.txtDate.text!
+        }
+        else if segue.identifier == "detail" {
+            
+            let vc = segue.destination as! TestViewController
+            vc.userProdId = self.userProductId
         }
 
     }
@@ -349,11 +368,11 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 || section == 1 || section == 2{
+        if section == 0 || section == 1 || section == 2 || section == 4 {
             return 1
         } else {
             return 6
@@ -365,19 +384,19 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
        
         
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchProductCell
+            let cellSearch = collectionView.dequeueReusableCell(withReuseIdentifier: "cellSearch", for: indexPath) as! SearchProductCell
             
-            cell.txtProdName.filterItems(self.searchItems)
+            cellSearch.txtProdName.filterItems(self.searchItems)
             
             
-            cell.txtProdLocation.leftViewMode = UITextFieldViewMode.always
-            cell.txtDate.leftViewMode = UITextFieldViewMode.always
-            cell.txtProdName.leftViewMode = UITextFieldViewMode.always
+            cellSearch.txtProdLocation.leftViewMode = UITextFieldViewMode.always
+            cellSearch.txtDate.leftViewMode = UITextFieldViewMode.always
+            cellSearch.txtProdName.leftViewMode = UITextFieldViewMode.always
             
             let imageViewLocation = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             var image = UIImage(named: "location")
             imageViewLocation.image = image
-            cell.txtProdLocation.leftView = imageViewLocation
+            cellSearch.txtProdLocation.leftView = imageViewLocation
             
             let imageViewDate = UIImageView(frame: CGRect(x: 5, y: 0, width: 20, height: 20))
             image = UIImage(named : "calendar")
@@ -387,25 +406,25 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             tapRecogniser.cancelsTouchesInView = false
             imageViewDate.addGestureRecognizer(tapRecogniser)
             imageViewDate.isUserInteractionEnabled = true
-            cell.txtDate.leftView = imageViewDate
+            cellSearch.txtDate.leftView = imageViewDate
             
             let imageViewSearch = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             image = UIImage(named : "search")
             imageViewSearch.image = image
-            cell.txtProdName.leftView = imageViewSearch
+            cellSearch.txtProdName.leftView = imageViewSearch
             
             
-            cell.txtProdName.theme.font = UIFont.systemFont(ofSize: 16)
-            cell.txtProdName.theme.bgColor = UIColor (red: 1, green: 1, blue: 1, alpha: 1)
-            cell.txtProdName.theme.borderColor = UIColor (red: 0, green: 0, blue: 0, alpha: 1)
-            cell.txtProdName.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
-            cell.txtProdName.theme.cellHeight = 50
+            cellSearch.txtProdName.theme.font = UIFont.systemFont(ofSize: 16)
+            cellSearch.txtProdName.theme.bgColor = UIColor (red: 1, green: 1, blue: 1, alpha: 1)
+            cellSearch.txtProdName.theme.borderColor = UIColor (red: 0, green: 0, blue: 0, alpha: 1)
+            cellSearch.txtProdName.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
+            cellSearch.txtProdName.theme.cellHeight = 50
             
-            cell.txtProdName.itemSelectionHandler = { item , itemPosition in
+            cellSearch.txtProdName.itemSelectionHandler = { item , itemPosition in
                 
-                cell.txtProdName.text = item.title
+                cellSearch.txtProdName.text = item.title
                 
-                cell.txtProdName.resignFirstResponder()
+                cellSearch.txtProdName.resignFirstResponder()
                 
                 let index = self.prodNames.index(of: item.title)
                 
@@ -422,57 +441,135 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             }
             
 
-            cell.btnSearch.layer.cornerRadius = 5
-            cell.btnSearch.layer.borderWidth = 1
-            cell.btnSearch.layer.borderColor = UIColor.black.cgColor
+            cellSearch.btnSearch.layer.cornerRadius = 5
+            cellSearch.btnSearch.layer.borderWidth = 1
+            cellSearch.btnSearch.layer.borderColor = UIColor.black.cgColor
             
-            cell.btnSearch.addTarget(self, action: #selector(SearchProdViewController.searchProduct(_:)), for: .touchUpInside)
+            cellSearch.btnSearch.addTarget(self, action: #selector(SearchProdViewController.searchProduct(_:)), for: .touchUpInside)
             
-            return cell
+            return cellSearch
         } else if indexPath.section == 1 {
             
-        let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as! SearchProdStaticCell
+        let cellStatic = collectionView.dequeueReusableCell(withReuseIdentifier: "cellStatic", for: indexPath) as! SearchProdStaticCell
         
-        cell1.btnArrowPickDrop.addTarget(self, action: #selector(SearchProdViewController.tappedArrow(_:)), for: .touchUpInside)
+        cellStatic.btnArrowPickDrop.addTarget(self, action: #selector(SearchProdViewController.tappedArrow(_:)), for: .touchUpInside)
             
-        return cell1
+        return cellStatic
         
         } else if indexPath.section == 2 {
-            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! SearchProdLabelCell
-            return cell2
+            let cellRecentLabel = collectionView.dequeueReusableCell(withReuseIdentifier: "cellRecentLabel", for: indexPath) as! SearchProdLabelCell
+            
+            cellRecentLabel.title.text = "RECENTLY ADDED ITEMS"
+            
+            return cellRecentLabel
         }
         
-        else  {
-            let cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! SearchProdGridCell
+        else if indexPath.section == 3 {
+            let cellRecentProds = collectionView.dequeueReusableCell(withReuseIdentifier: "cellRecentProds", for: indexPath) as! SearchProdGridCell
            // cell2.frame.offsetBy(dx: 10.0, dy: 10.0)
             
             let index = indexPath.item
+            if self.recentProducts.count > 0 {
+                cellRecentProds.txtProdName.text = self.recentProducts[index].product_info?.product_title
+                
+                cellRecentProds.txtOwnerName.text = (self.recentProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
             
-            cell3.txtProdName.text = self.recentProducts[index].product_info?.product_title
-            cell3.txtOwnerName.text = (self.recentProducts[index].user_info?.first_name)! + " " + (self.recentProducts[index].user_info?.last_name)!
-            
-            if let price = self.recentProducts[index].user_product_info?.price_per_day {
-            cell3.txtPrice.text = "$ " + String(price) + " /day"
+                if let price = self.recentProducts[index].user_product_info?.price_per_day {
+                    cellRecentProds.txtPrice.text = "$ " + String(price) + " /day"
+                }
+                
+                if let imageUrl = self.recentProducts[index].product_info?.product_image_url {
+                    cellRecentProds.imageProduct.setImageFromURl(stringImageUrl: imageUrl)
+                }
+                
+                if let rating = self.recentProducts[index].user_product_info?.product_avg_rating {
+                    if rating > 0 {
+                        cellRecentProds.ratingView.isHidden = false
+                        cellRecentProds.ratingView.isUserInteractionEnabled = false
+                        cellRecentProds.ratingView.rating = Double(rating)
+                        print(self.recentProducts[index].user_product_info?.user_prod_reviews?.count)
+                    } else {
+                        cellRecentProds.ratingView.isHidden = true
+                    }
+                } else {
+                    cellRecentProds.ratingView.isHidden = true
+                }
+                
             }
             
-            return cell3
+            return cellRecentProds
+        }
+        
+        else if indexPath.section == 4 {
+            
+            let cellPopularLabel = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPopularLabel", for: indexPath) as! SearchProdLabelCell
+            cellPopularLabel.title.text = "POPULAR ITEMS"
+            return cellPopularLabel
+        }
+        else { //indexPath.section == 5
+            let cellPopularProds = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPopularProds", for: indexPath) as! SearchProdGridCell
+            
+            let index = indexPath.item
+            
+            cellPopularProds.txtProdName.text = self.popularProducts[index].product_info?.product_title
+            cellPopularProds.txtOwnerName.text = (self.popularProducts[index].user_info?.first_name)! + " " + (self.popularProducts[index].user_info?.last_name)!
+            
+            if let price = self.popularProducts[index].user_product_info?.price_per_day {
+                cellPopularProds.txtPrice.text = "$ " + String(price) + " /day"
+            }
+            
+            if let imageUrl = self.popularProducts[index].product_info?.product_image_url {
+                cellPopularProds.imageProduct.setImageFromURl(stringImageUrl: imageUrl)
+            }
+            
+            if let rating = self.popularProducts[index].user_product_info?.product_avg_rating {
+                if rating > 0 {
+                cellPopularProds.ratingView.isHidden = false
+                cellPopularProds.ratingView.isUserInteractionEnabled = false
+                cellPopularProds.ratingView.rating = Double(rating)
+                print(self.popularProducts[index].user_product_info?.user_prod_reviews?.count)
+                } else {
+                    cellPopularProds.ratingView.isHidden = true
+                }
+            } else {
+                cellPopularProds.ratingView.isHidden = true
+            }
+            
+            cellPopularProds.tag = index
+            
+            return cellPopularProds
+            
         }
         
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
+        if indexPath.section == 3 {
+            self.userProductId = self.recentProducts[indexPath.item].user_product_info?.user_product_id
+            self.performSegue(withIdentifier: "detail", sender: self)
+            
+        } else if indexPath.section == 5 {
+            self.userProductId = self.popularProducts[indexPath.item].user_product_info?.user_product_id
+            self.performSegue(withIdentifier: "detail", sender: self)
+        }
     }
     
     
     func tappedArrow(_ sender : AnyObject){
         print("tapped")
         let indexPath = NSIndexPath(item: 0, section: 1)
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath as IndexPath) as! SearchProdStaticCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellStatic", for: indexPath as IndexPath) as! SearchProdStaticCell
+        cell.txtPickDrop.isHidden = true
         cell.txtPickDropHeight.constant = 0
+        self.pickDropText = true
+        cell.txtPickDrop.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        self.collectionView.reloadData()
+        self.collectionView.layoutIfNeeded()
         
         self.view.layoutIfNeeded()
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        self.collectionView.invalidateIntrinsicContentSize()
         
     }
 }
@@ -507,8 +604,12 @@ extension SearchProdViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: Int(self.view.frame.width), height: 329)
 
         } else if indexPath.section == 1 {
+            if self.pickDropText {
+                return CGSize(width: self.view.frame.width , height: 1090)
+            }else {
             return CGSize(width: self.view.frame.width , height: 1135)
-        } else if indexPath.section == 2 {
+            }
+        } else if indexPath.section == 2 || indexPath.section == 4 {
             return CGSize(width: self.view.frame.width , height: 80)
         } else {
             return CGSize(width: 150 , height: 180)

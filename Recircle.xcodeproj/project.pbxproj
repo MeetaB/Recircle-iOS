@@ -13,6 +13,7 @@
 		7E0758361ED6CBFC003909DD /* SearchProdGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0758351ED6CBFC003909DD /* SearchProdGridCell.swift */; };
 		7E0758381ED6EC21003909DD /* SearchProdLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0758371ED6EC21003909DD /* SearchProdLabelCell.xib */; };
 		7E07583A1ED6ECE4003909DD /* SearchProdLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0758391ED6ECE4003909DD /* SearchProdLabelCell.swift */; };
+		7E07583C1ED84115003909DD /* RentItemSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E07583B1ED84115003909DD /* RentItemSuccessViewController.swift */; };
 		7E1B0EDD1EC1C08B00A882E8 /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */; };
 		7E1B0EDF1EC1C16400A882E8 /* ProdImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */; };
 		7E21F31C1ECAD73400F078C2 /* ListItemPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */; };
@@ -86,6 +87,7 @@
 		7E0758351ED6CBFC003909DD /* SearchProdGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProdGridCell.swift; sourceTree = "<group>"; };
 		7E0758371ED6EC21003909DD /* SearchProdLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchProdLabelCell.xib; sourceTree = "<group>"; };
 		7E0758391ED6ECE4003909DD /* SearchProdLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProdLabelCell.swift; sourceTree = "<group>"; };
+		7E07583B1ED84115003909DD /* RentItemSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentItemSuccessViewController.swift; sourceTree = "<group>"; };
 		7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductImageCell.xib; sourceTree = "<group>"; };
 		7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdImageCellView.swift; sourceTree = "<group>"; };
 		7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemPriceViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */,
 				7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */,
 				7E21F3451ECEDE3600F078C2 /* MapViewController.swift */,
+				7E07583B1ED84115003909DD /* RentItemSuccessViewController.swift */,
 			);
 			name = RentItem;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				7E0758321ED598E2003909DD /* SearchProdStaticCell.swift in Sources */,
 				7EDEBF871ED40E35001DE5F3 /* MBProgressHUD.m in Sources */,
 				7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */,
+				7E07583C1ED84115003909DD /* RentItemSuccessViewController.swift in Sources */,
 				7E21F34C1ED2F33400F078C2 /* UserProdDiscounts.swift in Sources */,
 				7E92D0E21ED59052006E299E /* SearchProductCell.swift in Sources */,
 				7E564E541EC9B40B000684C1 /* RentSummaryViewController.swift in Sources */,

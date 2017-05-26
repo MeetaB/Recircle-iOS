@@ -25,13 +25,13 @@ class SearchProdStaticCell: UICollectionViewCell {
     @IBAction func paymentTapped(_ sender: AnyObject) {
         
         print("cell")
-        txtPayment.isHidden = true
+       // txtPayment.isHidden = true
     }
 
 
     @IBAction func PickUpDropTapped(_ sender: AnyObject) {
         
-        print(" cell tapped")
+        print("cell tapped")
 //        txtPickDropHeight.constant = 0.0
 //        self.contentView.layoutIfNeeded()
     }
