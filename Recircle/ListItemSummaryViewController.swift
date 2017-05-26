@@ -12,6 +12,7 @@ import UIKit
 struct ListItemObject {
     static var listItem : ListItem!
     static var listItemImages : [UIImage]!
+    static var listItemName : String!
 }
 
 
@@ -83,6 +84,7 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
         
         txtUnavailableDates.text = String(describing: listItem.user_prod_unavailability?.count) + " days"
         
+        txtProdName.text = ListItemObject.listItemName
         
         prodImages = ListItemObject.listItemImages
         
@@ -146,3 +148,24 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
     
     
 }
+
+
+// MARK: UICollectionViewDelegateFlowLayout protocol methods
+extension ListItemSummaryViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+            return CGSize(width: 100 , height: 100)
+        
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        // if section == 2 {
+        let leftRightInset = self.view.frame.size.width / 14.0
+        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
+        //}
+    }
+}
+
+

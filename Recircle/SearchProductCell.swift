@@ -10,13 +10,12 @@ import UIKit
 import SearchTextField
 
 class SearchProductCell: UICollectionViewCell {
-    
-    @IBOutlet weak var prodNameSearchTextField: SearchTextField!
-    
+  
+    @IBOutlet weak var txtProdName: SearchTextField!
     
     @IBOutlet weak var txtProdLocation: UITextField!
-    
     @IBOutlet weak var txtDate: UITextField!
     
     @IBOutlet weak var btnSearch: UIButton!
+    
 }

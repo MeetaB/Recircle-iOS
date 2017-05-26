@@ -217,6 +217,7 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
         listItem.user_prod_discounts = discounts
 
         ListItemObject.listItem = listItem
+        ListItemObject.listItemName =  self.prodSearchTextField.text
         
         let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "ListItemPhotosViewController"))! as UIViewController
         let nav = UINavigationController(rootViewController: popoverContent)
@@ -253,9 +254,9 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
             if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
                 print(text.characters.count)
                 if !text.isEmpty {
-                    floatingLabelTextField.errorMessage = nil
+//                    floatingLabelTextField.errorMessage = nil
                 } else {
-                    floatingLabelTextField.errorMessage = "Enter value"
+//                    floatingLabelTextField.errorMessage = "Enter value"
                 }
             }
         }

@@ -185,11 +185,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
+            timestampString = "517405768.743971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "626"
-            endingLineNumber = "626"
+            startingLineNumber = "624"
+            endingLineNumber = "624"
             landmarkName = "searchProduct(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -201,11 +201,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
+            timestampString = "517405768.743971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "627"
-            endingLineNumber = "627"
+            startingLineNumber = "625"
+            endingLineNumber = "625"
             landmarkName = "searchProduct(_:)"
             landmarkType = "7">
             <Locations>
@@ -249,43 +249,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
+            timestampString = "517405768.743971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "621"
+            endingLineNumber = "621"
+            landmarkName = "searchProduct(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/SearchViewController.swift"
+            timestampString = "517405768.743971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
+            landmarkName = "searchProduct(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/SearchViewController.swift"
+            timestampString = "517405768.743971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "623"
             endingLineNumber = "623"
-            landmarkName = "searchProduct(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "624"
-            endingLineNumber = "624"
-            landmarkName = "searchProduct(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "625"
-            endingLineNumber = "625"
             landmarkName = "searchProduct(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -361,11 +361,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
+            timestampString = "517405768.743971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
+            startingLineNumber = "620"
+            endingLineNumber = "620"
             landmarkName = "searchProduct(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -505,11 +505,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
+            timestampString = "517405768.743971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "727"
-            endingLineNumber = "727"
+            startingLineNumber = "725"
+            endingLineNumber = "725"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -585,11 +585,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
+            timestampString = "517405768.743971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "573"
-            endingLineNumber = "573"
+            startingLineNumber = "571"
+            endingLineNumber = "571"
             landmarkName = "searchProduct(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -777,11 +777,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/DatePickerViewController.swift"
-            timestampString = "517229994.508939"
+            timestampString = "517406365.374185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "calendar(_:didDeselectDate:cell:cellState:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1017,11 +1017,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
+            timestampString = "517405768.743971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "748"
-            endingLineNumber = "748"
+            startingLineNumber = "746"
+            endingLineNumber = "746"
             landmarkName = "favouriteTapped(withSender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1033,11 +1033,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SearchViewController.swift"
-            timestampString = "517297369.952981"
+            timestampString = "517405768.743971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "699"
-            endingLineNumber = "699"
+            startingLineNumber = "697"
+            endingLineNumber = "697"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1351,7 +1351,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ProductDetailViewController.swift"
-                  timestampString = "517238224.459555"
+                  timestampString = "517402958.718458"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -1366,7 +1366,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ProductDetailViewController.swift"
-                  timestampString = "517238224.461473"
+                  timestampString = "517402958.720303"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -1495,11 +1495,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/RentSummaryViewController.swift"
-            timestampString = "516797827.394823"
+            timestampString = "517407963.370379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "setUpData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1527,7 +1527,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/AllReviewsTableViewController.swift"
-                  timestampString = "517238224.475239"
+                  timestampString = "517402958.730887"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -1542,7 +1542,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/AllReviewsTableViewController.swift"
-                  timestampString = "517238224.477177"
+                  timestampString = "517402958.732782"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -1655,11 +1655,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/ListItemPriceViewController.swift"
-            timestampString = "517238219.278634"
+            timestampString = "517407517.740188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "textFieldDidBeginEditing(_:)"
             landmarkType = "7">
             <Locations>
@@ -1671,7 +1671,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ListItemPriceViewController.swift"
-                  timestampString = "517238221.67553"
+                  timestampString = "517402958.757126"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "253"
@@ -1686,7 +1686,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ListItemPriceViewController.swift"
-                  timestampString = "517238221.67879"
+                  timestampString = "517402958.759178"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "253"
@@ -1694,6 +1694,38 @@
                   offsetFromSymbolStart = "460">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/SearchProdViewController.swift"
+            timestampString = "517405768.743971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "getProducts()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/SearchProdViewController.swift"
+            timestampString = "517406365.374185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "438"
+            endingLineNumber = "438"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

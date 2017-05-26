@@ -111,6 +111,8 @@ class ListItemDescViewController: UIViewController, UITextFieldDelegate {
             
             listItem.user_prod_unavailability = userProdUnavailDates
             
+            print(listItem.user_prod_unavailability?.count)
+            
             ListItemObject.listItem = self.listItem
             
             self.performSegue(withIdentifier: "summary", sender: self)

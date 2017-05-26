@@ -345,6 +345,8 @@ class DatePickerViewController: UIViewController {
                 myCustomCell.selectedView.isHidden = false
                 if CalendarState.listItem || CalendarState.listItemSummary {
                     myCustomCell.cross.isHidden = false
+                } else {
+                    myCustomCell.cross.isHidden = true
                 }
             } else {
                 myCustomCell.selectedView.isHidden = true

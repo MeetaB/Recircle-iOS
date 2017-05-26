@@ -8,253 +8,262 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchProdStaticCell" customModule="Recircle" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KZY-gA-lUk" customClass="SearchProdStaticCell" customModule="Recircle" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="1135"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feJ-Do-Rke">
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Use Recircle ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2K-7A-Rzn">
-                            <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="MjI-L1-yvp"/>
-                                <constraint firstAttribute="height" constant="45" id="R5Z-WE-VHT"/>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="b8t-ab-DJK"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ft-5M-8cH">
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="We offer protection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaS-Ya-tDU">
-                                    <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="0y0-hT-hLi"/>
-                                        <constraint firstAttribute="height" constant="35" id="Zf5-lS-QSf"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYV-Xu-nHN">
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="20" id="LqF-Uj-i9i"/>
-                                        <constraint firstAttribute="height" constant="20" id="VVR-dh-Z8y"/>
-                                    </constraints>
-                                    <state key="normal" backgroundImage="collapse_arrow"/>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-x7-Mq3">
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="160" id="jWz-8j-tb7"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="wQ1-Ks-jK8"/>
-                                    </constraints>
-                                    <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="E0f-8I-gS7">
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="NAn-wn-Fbq"/>
-                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="cQf-qF-aW2"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="iHa-KQ-er9"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="jlL-Qi-aPe"/>
-                                        <constraint firstAttribute="height" constant="80" id="sk1-JP-A1u"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="u72-Pd-76v"/>
-                                    </constraints>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" red="0.98787552118301392" green="0.96466833353042603" blue="0.99024981260299683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="zaS-Ya-tDU" secondAttribute="trailing" constant="20" id="6DL-1M-Lrx"/>
-                                <constraint firstItem="E0f-8I-gS7" firstAttribute="centerX" secondItem="0Ft-5M-8cH" secondAttribute="centerX" id="Bae-Ke-zYn"/>
-                                <constraint firstItem="zaS-Ya-tDU" firstAttribute="leading" secondItem="0Ft-5M-8cH" secondAttribute="leading" constant="20" id="E78-si-m2t"/>
-                                <constraint firstItem="fYV-Xu-nHN" firstAttribute="top" secondItem="zaS-Ya-tDU" secondAttribute="bottom" id="I18-DM-6py"/>
-                                <constraint firstItem="zaS-Ya-tDU" firstAttribute="top" secondItem="E0f-8I-gS7" secondAttribute="bottom" constant="8" id="N2r-Tx-GMF"/>
-                                <constraint firstAttribute="height" constant="331" id="Pbg-Dg-NlZ"/>
-                                <constraint firstItem="b5l-x7-Mq3" firstAttribute="leading" secondItem="0Ft-5M-8cH" secondAttribute="leading" constant="20" id="cZ1-wU-b4w"/>
-                                <constraint firstAttribute="trailing" secondItem="b5l-x7-Mq3" secondAttribute="trailing" constant="20" id="hgt-4Z-P9T"/>
-                                <constraint firstItem="E0f-8I-gS7" firstAttribute="centerX" secondItem="0Ft-5M-8cH" secondAttribute="centerX" id="lh6-BA-VHN"/>
-                                <constraint firstItem="fYV-Xu-nHN" firstAttribute="centerX" secondItem="0Ft-5M-8cH" secondAttribute="centerX" id="neh-Ce-Q3u"/>
-                                <constraint firstItem="b5l-x7-Mq3" firstAttribute="top" secondItem="fYV-Xu-nHN" secondAttribute="bottom" constant="8" id="s3T-TT-5Gk"/>
-                                <constraint firstItem="E0f-8I-gS7" firstAttribute="top" secondItem="0Ft-5M-8cH" secondAttribute="top" constant="8" id="xHN-kG-1Zr"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KW1-V5-Xva">
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_card" translatesAutoresizingMaskIntoConstraints="NO" id="zSS-0C-xJb">
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="5Xw-fs-iWO"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="DlE-gk-snD"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="I8c-7i-aVk"/>
-                                        <constraint firstAttribute="height" constant="80" id="IRN-11-RRp"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="fNt-nt-M3i"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="We handle payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQM-yJ-wVo">
-                                    <constraints>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="8gJ-6d-pNC"/>
-                                        <constraint firstAttribute="height" constant="35" id="YDP-Wx-oOM"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="lxZ-lg-JmE"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-Ry-HSh">
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="160" id="31Q-Ho-652"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="48l-zp-8CW"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="6bu-yy-RXk"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="hx2-RU-PRB"/>
-                                    </constraints>
-                                    <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9p-sm-zXl">
-                                    <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="87G-5T-y7Z"/>
-                                        <constraint firstAttribute="height" constant="20" id="WfF-BR-72J"/>
-                                        <constraint firstAttribute="width" constant="20" id="bvc-Tg-J16"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="bwQ-Om-LPy"/>
-                                    </constraints>
-                                    <state key="normal" backgroundImage="collapse_arrow"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" red="0.98787552118301392" green="0.96466833353042603" blue="0.99024981260299683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstItem="VYB-Ry-HSh" firstAttribute="top" secondItem="g9p-sm-zXl" secondAttribute="bottom" constant="8" id="0fQ-gz-m4u"/>
-                                <constraint firstAttribute="trailing" secondItem="VYB-Ry-HSh" secondAttribute="trailing" constant="20" id="324-HW-jtZ"/>
-                                <constraint firstItem="VYB-Ry-HSh" firstAttribute="top" secondItem="g9p-sm-zXl" secondAttribute="bottom" constant="8" id="L86-W4-o1Y"/>
-                                <constraint firstAttribute="trailing" secondItem="JQM-yJ-wVo" secondAttribute="trailing" constant="8" id="RzJ-aY-gLk"/>
-                                <constraint firstItem="VYB-Ry-HSh" firstAttribute="leading" secondItem="KW1-V5-Xva" secondAttribute="leading" constant="20" id="g9W-rc-42W"/>
-                                <constraint firstItem="JQM-yJ-wVo" firstAttribute="leading" secondItem="KW1-V5-Xva" secondAttribute="leading" constant="8" id="hux-eJ-Aog"/>
-                                <constraint firstItem="g9p-sm-zXl" firstAttribute="centerX" secondItem="KW1-V5-Xva" secondAttribute="centerX" id="lRx-y5-i9s"/>
-                                <constraint firstItem="JQM-yJ-wVo" firstAttribute="top" secondItem="zSS-0C-xJb" secondAttribute="bottom" constant="3" id="mXW-mN-0KZ"/>
-                                <constraint firstItem="zSS-0C-xJb" firstAttribute="top" secondItem="KW1-V5-Xva" secondAttribute="top" constant="8" id="nGq-22-a1k"/>
-                                <constraint firstItem="g9p-sm-zXl" firstAttribute="top" secondItem="JQM-yJ-wVo" secondAttribute="bottom" constant="8" id="vbR-5Y-33y"/>
-                                <constraint firstAttribute="height" constant="322" id="xKT-a6-ObI"/>
-                                <constraint firstItem="zSS-0C-xJb" firstAttribute="centerX" secondItem="KW1-V5-Xva" secondAttribute="centerX" id="zbi-V6-Xvz"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skz-ab-BY5">
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_card" translatesAutoresizingMaskIntoConstraints="NO" id="JPN-rY-D4C">
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="X8P-vC-sHj"/>
-                                        <constraint firstAttribute="height" constant="80" id="hx4-GW-wET"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="i7r-VS-qGs"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="v3X-Bo-udz"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="vFb-1X-Drt"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Pick-up/Drop-off at the Recircle Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iM-cK-876">
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="AAv-hI-180"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="IoL-iY-swy"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="rYT-Ol-Kbh"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="tFA-lA-KoP"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCb-1k-pSU">
-                                    <constraints>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="K9p-CG-ce5"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="OgP-KR-gdc"/>
-                                        <constraint firstAttribute="height" constant="160" id="gbr-Gh-2XM"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="iS7-J4-J5S"/>
-                                    </constraints>
-                                    <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aot-3K-Pfy">
-                                    <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="O4g-Qv-nqj"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="SPZ-IS-GDH"/>
-                                        <constraint firstAttribute="height" constant="20" id="qdw-1j-joc"/>
-                                        <constraint firstAttribute="width" constant="20" id="sQe-e6-ffJ"/>
-                                    </constraints>
-                                    <state key="normal" backgroundImage="collapse_arrow"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" red="0.98787552118301392" green="0.96466833353042603" blue="0.99024981260299683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="MCb-1k-pSU" secondAttribute="trailing" constant="20" id="2nk-tO-plV"/>
-                                <constraint firstItem="JPN-rY-D4C" firstAttribute="centerX" secondItem="skz-ab-BY5" secondAttribute="centerX" id="A9z-TB-g46"/>
-                                <constraint firstItem="aot-3K-Pfy" firstAttribute="centerX" secondItem="skz-ab-BY5" secondAttribute="centerX" id="ACU-qe-pzD"/>
-                                <constraint firstItem="MCb-1k-pSU" firstAttribute="leading" secondItem="skz-ab-BY5" secondAttribute="leading" constant="20" id="DSy-kc-1wh"/>
-                                <constraint firstItem="0iM-cK-876" firstAttribute="leading" secondItem="skz-ab-BY5" secondAttribute="leading" constant="20" id="Gad-Qz-vxq"/>
-                                <constraint firstItem="aot-3K-Pfy" firstAttribute="top" secondItem="0iM-cK-876" secondAttribute="bottom" constant="8" id="GdI-aD-M8c"/>
-                                <constraint firstItem="MCb-1k-pSU" firstAttribute="top" secondItem="aot-3K-Pfy" secondAttribute="bottom" constant="-1" id="KXP-8I-2A3"/>
-                                <constraint firstAttribute="trailing" secondItem="0iM-cK-876" secondAttribute="trailing" constant="20" id="Mtb-sz-KoF"/>
-                                <constraint firstItem="0iM-cK-876" firstAttribute="leading" secondItem="skz-ab-BY5" secondAttribute="leading" constant="20" id="VQ7-gm-Lfv"/>
-                                <constraint firstItem="0iM-cK-876" firstAttribute="top" secondItem="JPN-rY-D4C" secondAttribute="bottom" constant="-4" id="bZM-hK-q3X"/>
-                                <constraint firstItem="JPN-rY-D4C" firstAttribute="centerX" secondItem="skz-ab-BY5" secondAttribute="centerX" id="bgm-rZ-pwz"/>
-                                <constraint firstAttribute="height" constant="325" id="jyB-gK-Y1p"/>
-                                <constraint firstAttribute="trailing" secondItem="MCb-1k-pSU" secondAttribute="trailing" constant="20" id="jze-go-GsT"/>
-                                <constraint firstItem="MCb-1k-pSU" firstAttribute="leading" secondItem="skz-ab-BY5" secondAttribute="leading" constant="20" id="rFV-1c-p4h"/>
-                                <constraint firstAttribute="trailing" secondItem="0iM-cK-876" secondAttribute="trailing" constant="20" id="rdZ-0T-tkQ"/>
-                                <constraint firstItem="aot-3K-Pfy" firstAttribute="top" secondItem="0iM-cK-876" secondAttribute="bottom" constant="8" id="sD7-Tx-RbQ"/>
-                                <constraint firstItem="aot-3K-Pfy" firstAttribute="centerX" secondItem="skz-ab-BY5" secondAttribute="centerX" id="tAN-Yp-BhF"/>
-                                <constraint firstItem="MCb-1k-pSU" firstAttribute="leading" secondItem="skz-ab-BY5" secondAttribute="leading" constant="20" id="tPy-fo-zdL"/>
-                                <constraint firstAttribute="trailing" secondItem="MCb-1k-pSU" secondAttribute="trailing" constant="20" id="uPB-E9-owo"/>
-                                <constraint firstItem="MCb-1k-pSU" firstAttribute="leading" secondItem="skz-ab-BY5" secondAttribute="leading" constant="20" id="uZw-rZ-bqm"/>
-                                <constraint firstItem="JPN-rY-D4C" firstAttribute="top" secondItem="skz-ab-BY5" secondAttribute="top" constant="20" id="ufo-LN-xhO"/>
-                                <constraint firstAttribute="trailing" secondItem="MCb-1k-pSU" secondAttribute="trailing" constant="20" id="yBm-qj-OJf"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="KW1-V5-Xva" secondAttribute="trailing" id="0Bj-IM-VKd"/>
-                        <constraint firstAttribute="trailing" secondItem="skz-ab-BY5" secondAttribute="trailing" id="0Wb-Cn-xIi"/>
-                        <constraint firstItem="0Ft-5M-8cH" firstAttribute="top" secondItem="O2K-7A-Rzn" secondAttribute="bottom" constant="8" id="7Rr-8q-RbD"/>
-                        <constraint firstItem="0Ft-5M-8cH" firstAttribute="leading" secondItem="feJ-Do-Rke" secondAttribute="leading" id="9yO-Gf-TH7"/>
-                        <constraint firstItem="0Ft-5M-8cH" firstAttribute="leading" secondItem="feJ-Do-Rke" secondAttribute="leading" id="E2h-Ol-FZM"/>
-                        <constraint firstItem="0Ft-5M-8cH" firstAttribute="top" secondItem="O2K-7A-Rzn" secondAttribute="bottom" constant="8" id="E7g-eT-CJ0"/>
-                        <constraint firstAttribute="trailing" secondItem="skz-ab-BY5" secondAttribute="trailing" id="Ee2-Pi-si1"/>
-                        <constraint firstAttribute="trailing" secondItem="O2K-7A-Rzn" secondAttribute="trailing" constant="8" id="Haa-xv-weh"/>
-                        <constraint firstItem="skz-ab-BY5" firstAttribute="top" secondItem="b5l-x7-Mq3" secondAttribute="bottom" constant="20" id="Hhg-sd-gy0"/>
-                        <constraint firstItem="O2K-7A-Rzn" firstAttribute="top" secondItem="feJ-Do-Rke" secondAttribute="top" constant="8" id="HvY-12-YRz"/>
-                        <constraint firstItem="O2K-7A-Rzn" firstAttribute="top" secondItem="feJ-Do-Rke" secondAttribute="top" constant="8" id="R83-pO-MD8"/>
-                        <constraint firstItem="KW1-V5-Xva" firstAttribute="top" secondItem="skz-ab-BY5" secondAttribute="bottom" constant="20" id="RDq-wl-Wfp"/>
-                        <constraint firstItem="0Ft-5M-8cH" firstAttribute="leading" secondItem="feJ-Do-Rke" secondAttribute="leading" id="br6-cJ-gBq"/>
-                        <constraint firstAttribute="trailing" secondItem="0Ft-5M-8cH" secondAttribute="trailing" id="fwT-GQ-G4e"/>
-                        <constraint firstItem="KW1-V5-Xva" firstAttribute="leading" secondItem="feJ-Do-Rke" secondAttribute="leading" id="gEv-G3-ilJ"/>
-                        <constraint firstItem="O2K-7A-Rzn" firstAttribute="leading" secondItem="feJ-Do-Rke" secondAttribute="leading" constant="8" id="h7X-QT-LQC"/>
-                        <constraint firstAttribute="trailing" secondItem="O2K-7A-Rzn" secondAttribute="trailing" constant="8" id="hdY-32-WxE"/>
-                        <constraint firstAttribute="trailing" secondItem="0Ft-5M-8cH" secondAttribute="trailing" id="ivI-sr-Vuv"/>
-                        <constraint firstItem="O2K-7A-Rzn" firstAttribute="leading" secondItem="feJ-Do-Rke" secondAttribute="leading" constant="8" id="pkW-mP-eFe"/>
-                        <constraint firstItem="skz-ab-BY5" firstAttribute="leading" secondItem="feJ-Do-Rke" secondAttribute="leading" id="qZb-vD-6vp"/>
-                        <constraint firstItem="skz-ab-BY5" firstAttribute="leading" secondItem="feJ-Do-Rke" secondAttribute="leading" id="ray-FR-2yd"/>
-                        <constraint firstAttribute="trailing" secondItem="0Ft-5M-8cH" secondAttribute="trailing" id="trk-Zb-PU5"/>
-                        <constraint firstItem="skz-ab-BY5" firstAttribute="top" secondItem="0Ft-5M-8cH" secondAttribute="bottom" constant="8" id="zQ8-vh-gxR"/>
-                    </constraints>
-                </view>
-            </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="1135"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ipp-W5-QeT">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Use Recircle ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ups-VN-qfq">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="h4Q-45-Dwx"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="juR-p5-KWb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="yh5-LF-Okb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogQ-Gm-Cfg">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="We offer protection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYg-JI-kCr">
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="JL7-7r-luI"/>
+                                            <constraint firstAttribute="height" constant="35" id="rTm-f2-YFy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZK-dd-ChM">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ZV7-jy-tmi"/>
+                                            <constraint firstAttribute="width" constant="20" id="bnB-Jp-I8D"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="collapse_arrow"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Och-O2-Ljq">
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="2af-rD-oIF"/>
+                                            <constraint firstAttribute="height" constant="160" id="HVO-vV-tXg"/>
+                                        </constraints>
+                                        <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="z0t-05-kN0">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Ryx-ct-oY9"/>
+                                            <constraint firstAttribute="width" constant="80" id="SXe-B1-UES"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="ZBx-os-Hm3"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="fdJ-tb-922"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="gsX-Pg-gYc"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="uNZ-Ec-KHg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="SZK-dd-ChM" firstAttribute="centerX" secondItem="ogQ-Gm-Cfg" secondAttribute="centerX" id="1T0-WP-Lky"/>
+                                    <constraint firstItem="zYg-JI-kCr" firstAttribute="leading" secondItem="ogQ-Gm-Cfg" secondAttribute="leading" constant="20" id="DHJ-Dv-qWi"/>
+                                    <constraint firstItem="zYg-JI-kCr" firstAttribute="top" secondItem="z0t-05-kN0" secondAttribute="bottom" constant="8" id="DKz-vK-Zyx"/>
+                                    <constraint firstItem="Och-O2-Ljq" firstAttribute="top" secondItem="SZK-dd-ChM" secondAttribute="bottom" constant="8" id="Zed-8N-xss"/>
+                                    <constraint firstItem="Och-O2-Ljq" firstAttribute="leading" secondItem="ogQ-Gm-Cfg" secondAttribute="leading" constant="20" id="cGX-tc-8gA"/>
+                                    <constraint firstItem="z0t-05-kN0" firstAttribute="top" secondItem="ogQ-Gm-Cfg" secondAttribute="top" constant="8" id="cxM-cV-LnJ"/>
+                                    <constraint firstItem="SZK-dd-ChM" firstAttribute="top" secondItem="zYg-JI-kCr" secondAttribute="bottom" id="gYe-xj-WBW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Och-O2-Ljq" secondAttribute="trailing" constant="20" id="nux-B4-ZWN"/>
+                                    <constraint firstAttribute="trailing" secondItem="zYg-JI-kCr" secondAttribute="trailing" constant="20" id="sgj-Kb-OAQ"/>
+                                    <constraint firstItem="z0t-05-kN0" firstAttribute="centerX" secondItem="ogQ-Gm-Cfg" secondAttribute="centerX" id="u4T-TI-lxI"/>
+                                    <constraint firstItem="z0t-05-kN0" firstAttribute="centerX" secondItem="ogQ-Gm-Cfg" secondAttribute="centerX" id="xQP-d1-cU4"/>
+                                    <constraint firstAttribute="height" constant="331" id="zAT-fe-FOU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUu-Pq-kFL">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_card" translatesAutoresizingMaskIntoConstraints="NO" id="TKP-HA-ePu">
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="2UD-HK-WuF"/>
+                                            <constraint firstAttribute="height" constant="80" id="Hds-AL-Bbg"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="sTt-jg-a9H"/>
+                                            <constraint firstAttribute="width" constant="80" id="vGA-gk-gcd"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="yzI-oK-8zM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="We handle payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alF-0e-uBb">
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="5yZ-W2-kjz"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Rq0-eR-Sx3"/>
+                                            <constraint firstAttribute="height" constant="35" id="Wtn-BW-vny"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmI-3W-CIB">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="3qw-Nm-QUG"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="CaZ-gK-Sit"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="DBq-lc-she"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="eE9-US-1lC"/>
+                                        </constraints>
+                                        <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOe-3R-1TE">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="7Ce-BK-bKv"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="DAC-fp-yIs"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="NDA-Y3-tiN"/>
+                                            <constraint firstAttribute="width" constant="20" id="hG4-Mu-caI"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="collapse_arrow"/>
+                                        <connections>
+                                            <action selector="paymentTapped:" destination="KZY-gA-lUk" eventType="touchUpInside" id="Dyj-X2-3qw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="TKP-HA-ePu" firstAttribute="top" secondItem="ZUu-Pq-kFL" secondAttribute="top" constant="8" id="1tV-vw-3Fl"/>
+                                    <constraint firstItem="TKP-HA-ePu" firstAttribute="centerX" secondItem="ZUu-Pq-kFL" secondAttribute="centerX" id="5dg-BP-u2M"/>
+                                    <constraint firstItem="xmI-3W-CIB" firstAttribute="top" secondItem="uOe-3R-1TE" secondAttribute="bottom" constant="8" id="HQN-cc-K7r"/>
+                                    <constraint firstAttribute="trailing" secondItem="xmI-3W-CIB" secondAttribute="trailing" constant="20" id="HiP-Gf-dEj"/>
+                                    <constraint firstItem="uOe-3R-1TE" firstAttribute="top" secondItem="alF-0e-uBb" secondAttribute="bottom" constant="8" id="JKn-oU-tWU"/>
+                                    <constraint firstItem="uOe-3R-1TE" firstAttribute="centerX" secondItem="ZUu-Pq-kFL" secondAttribute="centerX" id="PKg-nd-ubN"/>
+                                    <constraint firstAttribute="height" constant="322" id="R5k-d7-eHT"/>
+                                    <constraint firstItem="alF-0e-uBb" firstAttribute="top" secondItem="TKP-HA-ePu" secondAttribute="bottom" constant="3" id="XVZ-Zj-bzV"/>
+                                    <constraint firstItem="xmI-3W-CIB" firstAttribute="top" secondItem="uOe-3R-1TE" secondAttribute="bottom" constant="8" id="Yyo-1r-Kbz"/>
+                                    <constraint firstAttribute="trailing" secondItem="alF-0e-uBb" secondAttribute="trailing" constant="8" id="fO5-7k-aVn"/>
+                                    <constraint firstItem="alF-0e-uBb" firstAttribute="leading" secondItem="ZUu-Pq-kFL" secondAttribute="leading" constant="8" id="mbD-nJ-BdI"/>
+                                    <constraint firstItem="xmI-3W-CIB" firstAttribute="leading" secondItem="ZUu-Pq-kFL" secondAttribute="leading" constant="20" id="yYA-K2-m1P"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hJ-Bh-AyZ">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_card" translatesAutoresizingMaskIntoConstraints="NO" id="y8g-rc-g50">
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="7g9-Gg-v0c"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="Gna-Cb-9XI"/>
+                                            <constraint firstAttribute="width" constant="80" id="Kxp-Ha-m24"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Q4q-qT-if5"/>
+                                            <constraint firstAttribute="height" constant="80" id="wwu-xi-cVe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Pick-up/Drop-off at the Recircle Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6P-Kn-AK8">
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="KTL-YL-H7f"/>
+                                            <constraint firstAttribute="height" constant="35" id="UML-t8-HbR"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Zrk-t0-mNU"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="dRZ-Gi-l5c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi0-Yf-A5R">
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="Abp-87-wdb"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="BdQ-hZ-Kdx"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="E5I-wG-Lhl"/>
+                                            <constraint firstAttribute="height" constant="160" id="tR5-55-SNc"/>
+                                        </constraints>
+                                        <string key="text">As a renter, you have the option to add a protection plan to your rentals. This protection plan price will drop as you build a damage-free rental history. Without the protection plan, damages will be covered by your deposit. With the protection plan, damages will be covered by us. Protection plans do not cover lost or stolen items.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAw-mo-W8U">
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="166-2c-pwf"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Paz-Gn-ZuT"/>
+                                            <constraint firstAttribute="width" constant="20" id="ap6-Nt-XN8"/>
+                                            <constraint firstAttribute="height" constant="20" id="rDM-1h-f7O"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="collapse_arrow"/>
+                                        <connections>
+                                            <action selector="PickUpDropTapped:" destination="KZY-gA-lUk" eventType="touchUpInside" id="fDA-qi-dPp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wi0-Yf-A5R" firstAttribute="leading" secondItem="7hJ-Bh-AyZ" secondAttribute="leading" constant="20" id="2We-eX-TQf"/>
+                                    <constraint firstAttribute="trailing" secondItem="wi0-Yf-A5R" secondAttribute="trailing" constant="20" id="4Vs-kE-emR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y6P-Kn-AK8" secondAttribute="trailing" constant="20" id="5KY-8q-aNn"/>
+                                    <constraint firstItem="qAw-mo-W8U" firstAttribute="centerX" secondItem="7hJ-Bh-AyZ" secondAttribute="centerX" id="AZs-Zr-uZT"/>
+                                    <constraint firstItem="wi0-Yf-A5R" firstAttribute="leading" secondItem="7hJ-Bh-AyZ" secondAttribute="leading" constant="20" id="Drm-Uw-eFB"/>
+                                    <constraint firstItem="Y6P-Kn-AK8" firstAttribute="top" secondItem="y8g-rc-g50" secondAttribute="bottom" constant="-4" id="E5t-R2-kKI"/>
+                                    <constraint firstItem="wi0-Yf-A5R" firstAttribute="leading" secondItem="7hJ-Bh-AyZ" secondAttribute="leading" constant="20" id="FMn-wE-Ncc"/>
+                                    <constraint firstItem="Y6P-Kn-AK8" firstAttribute="leading" secondItem="7hJ-Bh-AyZ" secondAttribute="leading" constant="20" id="GEi-15-AUO"/>
+                                    <constraint firstAttribute="trailing" secondItem="wi0-Yf-A5R" secondAttribute="trailing" constant="20" id="H1h-ej-eNx"/>
+                                    <constraint firstItem="wi0-Yf-A5R" firstAttribute="leading" secondItem="7hJ-Bh-AyZ" secondAttribute="leading" constant="20" id="RqL-t3-G1W"/>
+                                    <constraint firstItem="qAw-mo-W8U" firstAttribute="centerX" secondItem="7hJ-Bh-AyZ" secondAttribute="centerX" id="Vl3-ep-mel"/>
+                                    <constraint firstAttribute="height" constant="325" id="YMt-wZ-LQX"/>
+                                    <constraint firstItem="qAw-mo-W8U" firstAttribute="top" secondItem="Y6P-Kn-AK8" secondAttribute="bottom" constant="8" id="b1d-g9-z2k"/>
+                                    <constraint firstItem="y8g-rc-g50" firstAttribute="centerX" secondItem="7hJ-Bh-AyZ" secondAttribute="centerX" id="c5H-Il-ByE"/>
+                                    <constraint firstItem="qAw-mo-W8U" firstAttribute="top" secondItem="Y6P-Kn-AK8" secondAttribute="bottom" constant="8" id="cKq-LL-uXB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y6P-Kn-AK8" secondAttribute="trailing" constant="20" id="ciC-9I-Uzf"/>
+                                    <constraint firstAttribute="trailing" secondItem="wi0-Yf-A5R" secondAttribute="trailing" constant="20" id="h56-M5-OQ1"/>
+                                    <constraint firstItem="Y6P-Kn-AK8" firstAttribute="leading" secondItem="7hJ-Bh-AyZ" secondAttribute="leading" constant="20" id="lCv-TT-EQo"/>
+                                    <constraint firstItem="y8g-rc-g50" firstAttribute="top" secondItem="7hJ-Bh-AyZ" secondAttribute="top" constant="20" id="q6P-Ch-3Yc"/>
+                                    <constraint firstAttribute="trailing" secondItem="wi0-Yf-A5R" secondAttribute="trailing" constant="20" id="sqb-ej-9pu"/>
+                                    <constraint firstItem="wi0-Yf-A5R" firstAttribute="top" secondItem="qAw-mo-W8U" secondAttribute="bottom" constant="-1" id="teE-RK-P5t"/>
+                                    <constraint firstItem="y8g-rc-g50" firstAttribute="centerX" secondItem="7hJ-Bh-AyZ" secondAttribute="centerX" id="zTM-Xy-TbK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7hJ-Bh-AyZ" firstAttribute="top" secondItem="ogQ-Gm-Cfg" secondAttribute="bottom" constant="8" id="4P9-5C-8QR"/>
+                            <constraint firstAttribute="trailing" secondItem="ZUu-Pq-kFL" secondAttribute="trailing" id="5kw-eU-v8e"/>
+                            <constraint firstAttribute="trailing" secondItem="7hJ-Bh-AyZ" secondAttribute="trailing" id="67N-Pe-b6x"/>
+                            <constraint firstItem="ups-VN-qfq" firstAttribute="leading" secondItem="Ipp-W5-QeT" secondAttribute="leading" constant="8" id="7XZ-cy-1Gw"/>
+                            <constraint firstItem="ogQ-Gm-Cfg" firstAttribute="leading" secondItem="Ipp-W5-QeT" secondAttribute="leading" id="DT1-rP-PoH"/>
+                            <constraint firstItem="ogQ-Gm-Cfg" firstAttribute="top" secondItem="ups-VN-qfq" secondAttribute="bottom" constant="8" id="Emq-1D-0Ld"/>
+                            <constraint firstAttribute="trailing" secondItem="ups-VN-qfq" secondAttribute="trailing" constant="8" id="HRX-0f-lxI"/>
+                            <constraint firstItem="7hJ-Bh-AyZ" firstAttribute="top" secondItem="Och-O2-Ljq" secondAttribute="bottom" constant="20" id="HV4-Zc-lGN"/>
+                            <constraint firstItem="7hJ-Bh-AyZ" firstAttribute="leading" secondItem="Ipp-W5-QeT" secondAttribute="leading" id="REK-x8-LWR"/>
+                            <constraint firstAttribute="trailing" secondItem="ogQ-Gm-Cfg" secondAttribute="trailing" id="THa-Ex-Rfc"/>
+                            <constraint firstItem="ZUu-Pq-kFL" firstAttribute="leading" secondItem="Ipp-W5-QeT" secondAttribute="leading" id="VXT-WC-ZYk"/>
+                            <constraint firstItem="ups-VN-qfq" firstAttribute="top" secondItem="Ipp-W5-QeT" secondAttribute="top" constant="8" id="W8W-5C-uNK"/>
+                            <constraint firstItem="ogQ-Gm-Cfg" firstAttribute="leading" secondItem="Ipp-W5-QeT" secondAttribute="leading" id="WlI-EL-W21"/>
+                            <constraint firstItem="ogQ-Gm-Cfg" firstAttribute="top" secondItem="ups-VN-qfq" secondAttribute="bottom" constant="8" id="b1d-2b-hVC"/>
+                            <constraint firstAttribute="trailing" secondItem="ups-VN-qfq" secondAttribute="trailing" constant="8" id="bCN-SS-2Ny"/>
+                            <constraint firstItem="ups-VN-qfq" firstAttribute="top" secondItem="Ipp-W5-QeT" secondAttribute="top" constant="8" id="cWH-T6-Y0J"/>
+                            <constraint firstAttribute="trailing" secondItem="7hJ-Bh-AyZ" secondAttribute="trailing" id="egv-sg-DmN"/>
+                            <constraint firstItem="ups-VN-qfq" firstAttribute="leading" secondItem="Ipp-W5-QeT" secondAttribute="leading" constant="8" id="kD5-jJ-bsq"/>
+                            <constraint firstItem="ZUu-Pq-kFL" firstAttribute="top" secondItem="7hJ-Bh-AyZ" secondAttribute="bottom" constant="20" id="sfu-ml-rZB"/>
+                            <constraint firstItem="ogQ-Gm-Cfg" firstAttribute="leading" secondItem="Ipp-W5-QeT" secondAttribute="leading" id="twt-hm-MHx"/>
+                            <constraint firstAttribute="trailing" secondItem="ogQ-Gm-Cfg" secondAttribute="trailing" id="udp-MZ-ggK"/>
+                            <constraint firstAttribute="trailing" secondItem="ogQ-Gm-Cfg" secondAttribute="trailing" id="v86-zZ-tGH"/>
+                            <constraint firstItem="7hJ-Bh-AyZ" firstAttribute="leading" secondItem="Ipp-W5-QeT" secondAttribute="leading" id="zGc-2h-dNd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
             <constraints>
-                <constraint firstItem="feJ-Do-Rke" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Mo-Mm-Ad5"/>
-                <constraint firstItem="feJ-Do-Rke" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3TM-dq-hHz"/>
-                <constraint firstItem="feJ-Do-Rke" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BCK-qc-P3N"/>
-                <constraint firstAttribute="trailing" secondItem="feJ-Do-Rke" secondAttribute="trailing" id="GHS-ax-V8g"/>
-                <constraint firstAttribute="bottom" secondItem="feJ-Do-Rke" secondAttribute="bottom" id="Gy9-Xt-fKb"/>
-                <constraint firstAttribute="bottom" secondItem="feJ-Do-Rke" secondAttribute="bottom" id="M5l-4X-9wb"/>
-                <constraint firstAttribute="trailing" secondItem="feJ-Do-Rke" secondAttribute="trailing" id="vFP-I8-vO9"/>
+                <constraint firstAttribute="trailing" secondItem="Ipp-W5-QeT" secondAttribute="trailing" id="4Kk-f4-jxc"/>
+                <constraint firstItem="Ipp-W5-QeT" firstAttribute="leading" secondItem="KZY-gA-lUk" secondAttribute="leading" id="P3E-ng-JhE"/>
+                <constraint firstAttribute="bottom" secondItem="Ipp-W5-QeT" secondAttribute="bottom" id="kSr-t6-H3Z"/>
+                <constraint firstItem="Ipp-W5-QeT" firstAttribute="top" secondItem="KZY-gA-lUk" secondAttribute="top" id="uH9-Nf-2i6"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <size key="customSize" width="375" height="1135"/>
             <connections>
-                <outlet property="btnArrowPickDrop" destination="aot-3K-Pfy" id="amb-xA-M0B"/>
-                <outlet property="btnArrowProtection" destination="fYV-Xu-nHN" id="AHc-5o-rBU"/>
-                <outlet property="btnPayments" destination="g9p-sm-zXl" id="b0r-Pj-ffw"/>
+                <outlet property="btnArrowPayments" destination="uOe-3R-1TE" id="xU6-pk-Qvf"/>
+                <outlet property="btnArrowPickDrop" destination="qAw-mo-W8U" id="aIP-tX-QFv"/>
+                <outlet property="btnArrowProtection" destination="SZK-dd-ChM" id="xIL-kO-iTR"/>
+                <outlet property="txtPayment" destination="xmI-3W-CIB" id="TDC-fu-pjx"/>
+                <outlet property="txtPickDrop" destination="wi0-Yf-A5R" id="NZY-fC-O5y"/>
+                <outlet property="txtPickDropHeight" destination="tR5-55-SNc" id="G7J-0T-TMw"/>
             </connections>
-            <point key="canvasLocation" x="140.5" y="398.5"/>
-        </view>
+            <point key="canvasLocation" x="-51.5" y="227.5"/>
+        </collectionViewCell>
     </objects>
     <resources>
         <image name="collapse_arrow" width="16" height="16"/>

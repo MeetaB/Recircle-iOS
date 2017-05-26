@@ -49,6 +49,11 @@ class RentSummaryViewController: UIViewController,UITextFieldDelegate {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.topItem?.title = "Summary"
 
+         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x2C3140)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+
+        
         self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
         txtMessage.delegate = self
