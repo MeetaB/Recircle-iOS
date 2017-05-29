@@ -14,6 +14,11 @@
 		7E0758381ED6EC21003909DD /* SearchProdLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0758371ED6EC21003909DD /* SearchProdLabelCell.xib */; };
 		7E07583A1ED6ECE4003909DD /* SearchProdLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0758391ED6ECE4003909DD /* SearchProdLabelCell.swift */; };
 		7E07583C1ED84115003909DD /* RentItemSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E07583B1ED84115003909DD /* RentItemSuccessViewController.swift */; };
+		7E10B3DA1EDBFD19007B7C21 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10B3D91EDBFD19007B7C21 /* TabBarViewController.swift */; };
+		7E10B3DC1EDC0E27007B7C21 /* DrawerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E10B3DB1EDC0E27007B7C21 /* DrawerCell.xib */; };
+		7E10B3DE1EDC0F4A007B7C21 /* DrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10B3DD1EDC0F4A007B7C21 /* DrawerCell.swift */; };
+		7E10B3E01EDC18B1007B7C21 /* DrawerHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E10B3DF1EDC18B1007B7C21 /* DrawerHeaderCell.xib */; };
+		7E10B3E21EDC1A30007B7C21 /* DrawerHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10B3E11EDC1A30007B7C21 /* DrawerHeaderCell.swift */; };
 		7E1B0EDD1EC1C08B00A882E8 /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */; };
 		7E1B0EDF1EC1C16400A882E8 /* ProdImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */; };
 		7E21F31C1ECAD73400F078C2 /* ListItemPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */; };
@@ -27,6 +32,7 @@
 		7E21F34E1ED2F37D00F078C2 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F34D1ED2F37D00F078C2 /* ListItem.swift */; };
 		7E21F3501ED2F4C600F078C2 /* ListItemSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F34F1ED2F4C600F078C2 /* ListItemSummaryViewController.swift */; };
 		7E564E541EC9B40B000684C1 /* RentSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */; };
+		7E7844231EDBFAE80043EDEC /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7844221EDBFAE80043EDEC /* DrawerViewController.swift */; };
 		7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B35871E924F45000B5FF0 /* AppDelegate.swift */; };
 		7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B35891E924F45000B5FF0 /* ViewController.swift */; };
 		7E8B358D1E924F45000B5FF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8B358B1E924F45000B5FF0 /* Main.storyboard */; };
@@ -88,6 +94,11 @@
 		7E0758371ED6EC21003909DD /* SearchProdLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchProdLabelCell.xib; sourceTree = "<group>"; };
 		7E0758391ED6ECE4003909DD /* SearchProdLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProdLabelCell.swift; sourceTree = "<group>"; };
 		7E07583B1ED84115003909DD /* RentItemSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentItemSuccessViewController.swift; sourceTree = "<group>"; };
+		7E10B3D91EDBFD19007B7C21 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		7E10B3DB1EDC0E27007B7C21 /* DrawerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerCell.xib; sourceTree = "<group>"; };
+		7E10B3DD1EDC0F4A007B7C21 /* DrawerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerCell.swift; sourceTree = "<group>"; };
+		7E10B3DF1EDC18B1007B7C21 /* DrawerHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerHeaderCell.xib; sourceTree = "<group>"; };
+		7E10B3E11EDC1A30007B7C21 /* DrawerHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerHeaderCell.swift; sourceTree = "<group>"; };
 		7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductImageCell.xib; sourceTree = "<group>"; };
 		7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdImageCellView.swift; sourceTree = "<group>"; };
 		7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemPriceViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +112,7 @@
 		7E21F34D1ED2F37D00F078C2 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		7E21F34F1ED2F4C600F078C2 /* ListItemSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemSummaryViewController.swift; sourceTree = "<group>"; };
 		7E564E531EC9B40B000684C1 /* RentSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentSummaryViewController.swift; sourceTree = "<group>"; };
+		7E7844221EDBFAE80043EDEC /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		7E8B35841E924F45000B5FF0 /* Recircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8B35871E924F45000B5FF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E8B35891E924F45000B5FF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +282,10 @@
 				7EF7A0261EC463B4001BFEAA /* ProdAddressTableViewCell.swift */,
 				7EF7A0281EC46467001BFEAA /* ProdDescTableViewCell.swift */,
 				7EF7A02A1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift */,
+				7E7844221EDBFAE80043EDEC /* DrawerViewController.swift */,
+				7E10B3D91EDBFD19007B7C21 /* TabBarViewController.swift */,
+				7E10B3DD1EDC0F4A007B7C21 /* DrawerCell.swift */,
+				7E10B3E11EDC1A30007B7C21 /* DrawerHeaderCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -347,6 +363,8 @@
 				7E92D0E31ED59308006E299E /* SearchProdStaticCell.xib */,
 				7E0758331ED6C386003909DD /* SearchProdGridCell.xib */,
 				7E0758371ED6EC21003909DD /* SearchProdLabelCell.xib */,
+				7E10B3DB1EDC0E27007B7C21 /* DrawerCell.xib */,
+				7E10B3DF1EDC18B1007B7C21 /* DrawerHeaderCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -418,6 +436,7 @@
 				7E21F3481ED2E4B800F078C2 /* ListItemImageCell.xib in Resources */,
 				7E8B35951E924F46000B5FF0 /* LaunchScreen.storyboard in Resources */,
 				7E92D0E01ED58EEA006E299E /* SearchProductCell.xib in Resources */,
+				7E10B3E01EDC18B1007B7C21 /* DrawerHeaderCell.xib in Resources */,
 				7EFCD8971EAF536D00E5D8C4 /* SearchView.xib in Resources */,
 				7E0758341ED6C386003909DD /* SearchProdGridCell.xib in Resources */,
 				7EDDDEAB1EBC500800C9DA67 /* RenterReviewView.xib in Resources */,
@@ -425,6 +444,7 @@
 				7E8B35921E924F46000B5FF0 /* Assets.xcassets in Resources */,
 				7EBD78BA1EAF2F3800B80E20 /* ProductCellView.xib in Resources */,
 				7EA077161E966A69001024FF /* DateCellView.xib in Resources */,
+				7E10B3DC1EDC0E27007B7C21 /* DrawerCell.xib in Resources */,
 				7E8B358D1E924F45000B5FF0 /* Main.storyboard in Resources */,
 				7E1B0EDD1EC1C08B00A882E8 /* ProductImageCell.xib in Resources */,
 				7E92D0E41ED59308006E299E /* SearchProdStaticCell.xib in Resources */,
@@ -489,6 +509,7 @@
 			files = (
 				7EB486381EA4AAD600656270 /* Product.swift in Sources */,
 				7EBD78B41EA8DAE300B80E20 /* SearchResultViewController.swift in Sources */,
+				7E7844231EDBFAE80043EDEC /* DrawerViewController.swift in Sources */,
 				7E95D9A11EC329CE006170A7 /* TestCellView.swift in Sources */,
 				7E21F3501ED2F4C600F078C2 /* ListItemSummaryViewController.swift in Sources */,
 				7EF7A02B1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift in Sources */,
@@ -504,13 +525,16 @@
 				7E21F3461ECEDE3600F078C2 /* MapViewController.swift in Sources */,
 				7EB486451EA4DBEC00656270 /* ImageUtility.swift in Sources */,
 				7E92D0DE1ED55735006E299E /* SearchProdViewController.swift in Sources */,
+				7E10B3DA1EDBFD19007B7C21 /* TabBarViewController.swift in Sources */,
 				7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */,
+				7E10B3DE1EDC0F4A007B7C21 /* DrawerCell.swift in Sources */,
 				7E07583A1ED6ECE4003909DD /* SearchProdLabelCell.swift in Sources */,
 				7E0758321ED598E2003909DD /* SearchProdStaticCell.swift in Sources */,
 				7EDEBF871ED40E35001DE5F3 /* MBProgressHUD.m in Sources */,
 				7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */,
 				7E07583C1ED84115003909DD /* RentItemSuccessViewController.swift in Sources */,
 				7E21F34C1ED2F33400F078C2 /* UserProdDiscounts.swift in Sources */,
+				7E10B3E21EDC1A30007B7C21 /* DrawerHeaderCell.swift in Sources */,
 				7E92D0E21ED59052006E299E /* SearchProductCell.swift in Sources */,
 				7E564E541EC9B40B000684C1 /* RentSummaryViewController.swift in Sources */,
 				7EF7A0291EC46467001BFEAA /* ProdDescTableViewCell.swift in Sources */,

@@ -17,5 +17,6 @@ pod 'ImageScrollView'
 pod 'M13Checkbox'
 pod 'SkyFloatingLabelTextField', '~> 3.0'
 pod 'DKImagePickerController'
+pod 'KYDrawerController'
 
 end

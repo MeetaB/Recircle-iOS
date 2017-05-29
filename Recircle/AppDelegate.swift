@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import KYDrawerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,8 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont(name: "Helvetica", size: 14)!], for: .normal)
         
-
+//        let mainViewController   = SearchProdViewController()
+//        let drawerViewController = DrawerViewController()
+//        let drawerController     = KYDrawerController(drawerDirection: .left, drawerWidth: 200.0)
+//        drawerController.mainViewController = UINavigationController(
+//            rootViewController: mainViewController
+//        )
+//        drawerController.drawerViewController = drawerViewController
+//    
+//        
+//       // window = UIWindow(frame: UIScreen.main.bounds)
+//        window = UIWindow(frame: CGRect(x: 0, y: 0, width: 200, height: UIScreen.main.bounds.height))
+//        window?.rootViewController = drawerController
+//        window?.makeKeyAndVisible()
+        
         return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -10,6 +10,7 @@ import Foundation
 
 public class ListItem {
     public var product_id : String?
+    public var product_title : String?
     public var user_prod_desc : String?
     public var user_prod_discounts : Array<UserProdDiscounts>?
     public var user_prod_images : Array<UserProdImages>?
@@ -56,6 +57,7 @@ public class ListItem {
     required public init?(dictionary: NSDictionary) {
         
         product_id = dictionary["product_id"] as? String
+        product_title = dictionary["product_title"] as? String
         user_prod_desc = dictionary["user_prod_desc"] as? String
         if (dictionary["user_prod_discounts"] != nil) { user_prod_discounts = UserProdDiscounts.modelsFromDictionaryArray(array: dictionary["user_prod_discounts"] as! NSArray) }
         if (dictionary["user_prod_images"] != nil) { user_prod_images = UserProdImages.modelsFromDictionaryArray(array: dictionary["user_prod_images"] as! NSArray) }
@@ -77,6 +79,7 @@ public class ListItem {
         let dictionary = NSMutableDictionary()
         
         dictionary.setValue(self.product_id, forKey: "product_id")
+        dictionary.setValue(self.product_title, forKey: "product_title")
         dictionary.setValue(self.user_prod_desc, forKey: "user_prod_desc")
         dictionary.setValue(self.fromAustin, forKey: "fromAustin")
         dictionary.setValue(self.user_product_zipcode, forKey: "user_product_zipcode")

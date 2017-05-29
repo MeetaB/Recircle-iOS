@@ -117,7 +117,6 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
 
     func setUpAutoCompleteProducts() {
         
-        //testing
         Alamofire.request(URL(string: RecircleWebConstants.ProdNamesApi)!,
                           method: .get)
             .validate(contentType: ["application/json"])
@@ -140,13 +139,6 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
                         let product = Products()
                         product.manufacturer_id = item.product_manufacturer_id
                         product.manufacturer_name = item.product_manufacturer_name
-                        //self.autoCompleteProducts.append(product)
-                        
-//                        self.searchItems.append(SearchTextFieldItem(title: item.product_manufacturer_name!, subtitle: "", image: UIImage(named:"camera")))
-                        
-                       // self.prodNames.append(item.product_manufacturer_name!)
-                        print(item.product_manufacturer_name)
-                        
                         
                         for itemProd in item.products! {
                             let product = Products()
@@ -155,7 +147,6 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
                             product.product_id = itemProd.product_id
                             product.product_title = itemProd.product_title
                             self.autoCompleteProducts.append(product)
-                            print(itemProd.product_title)
                             let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
                             self.prodNames.append(prodName)
                             if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
@@ -163,9 +154,6 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
                                     self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
                                 }
                             }
-                            
-                            
-                            
                         }
                     }
                     
@@ -176,9 +164,6 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func next(_ sender: AnyObject) {
-        
-//        performSegue(withIdentifier: "photos", sender: self)
-//        
         
         if (txtPricePerDay.text?.isEmpty)! {
             txtPricePerDay.errorMessage = "Enter value"
@@ -192,7 +177,12 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
             self.listItem = ListItem()
         }
         
-        listItem.product_id = self.productId
+        if let productId = self.productId {
+            listItem.product_id = productId
+        } else {
+            listItem.product_title = self.prodSearchTextField.text
+        }
+        
         listItem.price_per_day = Int(self.txtPricePerDay.text!)
         listItem.min_rental_day = Int(self.txtMinimumDays.text!)
         

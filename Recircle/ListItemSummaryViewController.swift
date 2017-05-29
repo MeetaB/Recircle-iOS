@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 
 struct ListItemObject {
@@ -123,8 +125,46 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
 
     @IBAction func listItem(_ sender: AnyObject) {
         
-        self.performSegue(withIdentifier: "success", sender: self)
+       
         
+        //Hardcoding as it is not merged with s3 bucket yet
+        let user_prod_images : UserProdImages = UserProdImages(createdAt: "2017-05-29", imageUrl: "https://s3.ap-south-1.amazonaws.com/recircleimages/1398934243000_1047081.jpg")
+        
+        let parameters : [String : AnyObject] = ["product_id" : listItem.product_id as AnyObject ,
+                                                 "product_title" : txtProdName.text as AnyObject,
+                                                 "price_per_day" : listItem.price_per_day as AnyObject,
+                                                 "min_rental_days" : listItem.min_rental_day as AnyObject,
+                                                 "user_prod_desc" : listItem.user_prod_desc as AnyObject,
+                                                 "user_prod_discounts" : listItem.user_prod_discounts as AnyObject,
+                                                 "user_prod_images" : user_prod_images as AnyObject,
+                                                 "user_prod_unavailability" : listItem.user_prod_unavailability as AnyObject,
+                                                 "user_product_zipcode" : listItem.user_product_zipcode as AnyObject,
+                                                 "fromAustin" : 0 as AnyObject]
+        
+        Alamofire.request(URL(string: RecircleWebConstants.ProductsApi)!,
+                          method: .post, parameters: parameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                
+              //  self.progressBar.hide(animated: true)
+                
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let dataResponse = response.result.value {
+                    let json = JSON(dataResponse)
+                    print("JSON SearchApi: \(json)")
+
+                     self.performSegue(withIdentifier: "success", sender: self)
+                }
+                    
+                else {
+                    
+                }
+        }
+
         
     }
     

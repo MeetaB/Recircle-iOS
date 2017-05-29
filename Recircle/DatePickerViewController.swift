@@ -328,7 +328,12 @@ class DatePickerViewController: UIViewController {
             {
                 myCustomCell.textDate.textColor = UIColor.gray
             }
-
+ 
+            if Calendar.current.isDateInToday(cellState.date) {
+                myCustomCell.textDate.backgroundColor = UIColor.black
+                myCustomCell.textDate.textColor = UIColor.white
+            }
+                
             else {
             if cellState.isSelected {
                 myCustomCell.textDate.textColor = UIColor.black
@@ -425,7 +430,7 @@ class DatePickerViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
-        var startDate = Date()
+        let startDate = Date()
       //  let startDate = formatter.date(from: "2016 02 01")! // You can use date generated from a formatter
         let endDate = formatter.date(from: "2068 01 01")!                               // You can also use dates created from this function
         let parameters = ConfigurationParameters(startDate: startDate,

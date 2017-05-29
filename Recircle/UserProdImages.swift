@@ -16,6 +16,12 @@ public class UserProdImages {
     public init() {
         
     }
+    
+    public init(createdAt : String , imageUrl : String) {
+        self.created_at = createdAt
+        self.user_prod_image_url = imageUrl
+    }
+    
     /**
      Returns an array of models based on given dictionary.
      

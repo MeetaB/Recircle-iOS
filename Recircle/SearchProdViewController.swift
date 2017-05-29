@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import SearchTextField
 import MBProgressHUD
+import KYDrawerController
 
 class SearchProdViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -69,6 +70,10 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         messages.tintColor = UIColor.white
         
         navigationItem.rightBarButtonItems = [rentRequests, messages]
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named : "menu"), style: .plain, target: self, action: #selector(didTapOpenButton(_:)))
+        
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -102,11 +107,19 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         
 
         
+        
         getSearchProductTitles()
         getProducts()
         
         // Do any additional setup after loading the view.
     }
+    
+    func didTapOpenButton(_ sender: UIBarButtonItem) {
+        if let drawerController = tabBarController?.parent as? KYDrawerController {
+            drawerController.setDrawerState(.opened, animated: true)
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

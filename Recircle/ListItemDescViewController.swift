@@ -9,6 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 import M13Checkbox
+import Alamofire
 
 class ListItemDescViewController: UIViewController, UITextFieldDelegate {
 
@@ -40,6 +41,8 @@ class ListItemDescViewController: UIViewController, UITextFieldDelegate {
         txtDescription.selectedTitleColor = UIColor.black
         
         txtUnavailbleDates.delegate = self
+        
+        txtZip.delegate = self
         
         addDoneButtonOnKeyboard()
     }
@@ -120,11 +123,30 @@ class ListItemDescViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.resignFirstResponder()
-        CalendarState.listItem = true
-        self.performSegue(withIdentifier: "datePicker", sender: self)
+        
+        if textField == txtUnavailbleDates {
+            textField.resignFirstResponder()
+            self.txtDescription.resignFirstResponder()
+            self.txtZip.resignFirstResponder()
+
+            CalendarState.listItem = true
+            self.performSegue(withIdentifier: "datePicker", sender: self)
+        }
     }
     
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == txtZip {
+            if textField.text?.characters.count == 5 {
+                checkZipCodeValidation(textField.text!)
+            }
+        }
+    }
+    
+    
+    func checkZipCodeValidation(_ zipCode : String) {
+//        Alamofire.request("https://maps.googleapis.com/maps/api/geocode/json?", method: .post, parameters: ["zipcode" : zipcode], encoding: .json, headers: )
+    }
     /*
     // MARK: - Navigation
 
