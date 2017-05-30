@@ -428,6 +428,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         rentItem.user_name = (product.user_info?.first_name)! + " " + (product.user_info?.last_name)!
         rentItem.user_image_url = product.user_info?.user_image_url
         
+        RentItemObject.rentItem = rentItem
         popoverContent.rentItem = rentItem
     
         

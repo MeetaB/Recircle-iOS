@@ -330,8 +330,8 @@ class DatePickerViewController: UIViewController {
             }
  
             if Calendar.current.isDateInToday(cellState.date) {
-                myCustomCell.textDate.backgroundColor = UIColor.black
-                myCustomCell.textDate.textColor = UIColor.white
+                myCustomCell.textDate.backgroundColor = UIColor.white
+                myCustomCell.textDate.textColor = UIColor.blue
             }
                 
             else {

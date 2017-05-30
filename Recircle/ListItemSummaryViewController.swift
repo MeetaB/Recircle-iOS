@@ -15,6 +15,7 @@ struct ListItemObject {
     static var listItem : ListItem!
     static var listItemImages : [UIImage]!
     static var listItemName : String!
+    static var listItemUnavailableCount : Int!
 }
 
 
@@ -85,6 +86,8 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
         txtDescription.text = listItem.user_prod_desc
         
         txtUnavailableDates.text = String(describing: listItem.user_prod_unavailability?.count) + " days"
+        
+        txtUnavailableDates.text = String(ListItemObject.listItemUnavailableCount) + " days"
         
         txtProdName.text = ListItemObject.listItemName
         

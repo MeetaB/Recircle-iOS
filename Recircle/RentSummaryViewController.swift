@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
+
+struct RentItemObject {
+    static var rentItem : RentItem!
+}
 
 class RentSummaryViewController: UIViewController,UITextFieldDelegate {
 
@@ -178,7 +184,43 @@ class RentSummaryViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func confirmOrder(_ sender: AnyObject) {
         
-        self.performSegue(withIdentifier: "success", sender: self)
+        let parameters : [String : AnyObject] = ["user_product_id" : rentItem.user_product_id as AnyObject ,
+                                                 "date_on_order" : rentItem.date_on_order as AnyObject,
+                                                 "order_from_date" : rentItem.order_from_date as AnyObject,
+                                                 "order_to_date" : rentItem.order_to_date as AnyObject,
+                                                 "user_msg" : rentItem.user_msg as AnyObject,
+                                                 "payment_total" : rentItem.payment_total as AnyObject,
+                                                 "payment_discount" : rentItem.payment_discount as AnyObject,
+                                                 "service_fee" : 10 as AnyObject,
+                                                 "protection_plan_fee" : 2 as AnyObject,
+                                                 "final_payment" : 0 as AnyObject,
+                                                 "protection_plan" : 0 as AnyObject]
+        
+        Alamofire.request(URL(string: RecircleWebConstants.RentItemApi)!,
+                          method: .post, parameters: parameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                
+                //  self.progressBar.hide(animated: true)
+                
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let dataResponse = response.result.value {
+                    let json = JSON(dataResponse)
+                    print("JSON SearchApi: \(json)")
+                    
+                    self.performSegue(withIdentifier: "success", sender: self)
+                }
+                    
+                else {
+                    
+                }
+        }
+        
+        
     }
     
 }

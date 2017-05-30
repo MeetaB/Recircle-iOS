@@ -1,22 +1,18 @@
 //
-//  RentItemSuccessViewController.swift
+//  RequestsViewController.swift
 //  Recircle
 //
-//  Created by synerzip on 26/05/17.
+//  Created by synerzip on 30/05/17.
 //  Copyright © 2017 synerzip. All rights reserved.
 //
 
 import UIKit
 
-class RentItemSuccessViewController: UIViewController {
+class RequestsViewController: UIViewController {
 
-    @IBOutlet weak var btnViewRequests: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // self.navigationItem.setHidesBackButton(true, animated:false);
-        
         // Do any additional setup after loading the view.
     }
 
@@ -26,10 +22,6 @@ class RentItemSuccessViewController: UIViewController {
     }
     
 
-    @IBAction func goToAllRequests(_ sender: AnyObject) {
-
-        self.performSegue(withIdentifier: "requests", sender: self)
-    }
     /*
     // MARK: - Navigation
 

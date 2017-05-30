@@ -1135,7 +1135,7 @@ Till 12:00 pm
                                                                 <constraint firstAttribute="width" constant="60" id="he0-R9-USP"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0h-Xa-OF1">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0h-Xa-OF1">
                                                             <frame key="frameInset" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="XKL-AW-Poc"/>
@@ -1621,10 +1621,10 @@ Store Hours
             </objects>
             <point key="canvasLocation" x="4319.1999999999998" y="-3041.8290854572715"/>
         </scene>
-        <!--Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="Vnp-dp-g9q">
             <objects>
-                <tabBarController id="Kol-N5-2TX" customClass="TabBarViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Kol-N5-2TX" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" itemPositioning="fill" id="16R-rD-aUe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2261,6 +2261,14 @@ Store Hours
                                             <action selector="cameraTapped:" destination="xr6-bF-LR2" eventType="touchUpInside" id="3qi-cU-Bja"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYO-SB-OgM">
+                                        <frame key="frameInset" minX="68" minY="12" width="47" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="upload_gallery"/>
+                                        <connections>
+                                            <action selector="galleryTapped:" destination="xr6-bF-LR2" eventType="touchUpInside" id="mNd-aB-AS3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2268,14 +2276,6 @@ Store Hours
                                     <constraint firstAttribute="height" constant="70" id="cFc-CS-27B"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYO-SB-OgM">
-                                <frame key="frameInset" minX="196" minY="310" width="47" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="upload_gallery"/>
-                                <connections>
-                                    <action selector="galleryTapped:" destination="xr6-bF-LR2" eventType="touchUpInside" id="mNd-aB-AS3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2332,12 +2332,6 @@ Store Hours
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9w-dW-5uu" customClass="M13Checkbox" customModule="M13Checkbox">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="An3-8a-Ilt"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By listing an item, I agree to the Recircle terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1u-qP-C8X">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Ev8-bq-7oP"/>
@@ -2373,6 +2367,13 @@ Store Hours
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9w-dW-5uu" customClass="M13Checkbox" customModule="M13Checkbox">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="An3-8a-Ilt"/>
+                                    <constraint firstAttribute="width" constant="30" id="zsl-hp-aVN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -3161,6 +3162,9 @@ your request</string>
                                 <state key="normal" title="VIEW ALL REQUESTS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToAllRequests:" destination="lF6-H1-Tvq" eventType="touchUpInside" id="0IT-hO-4wD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3176,11 +3180,30 @@ your request</string>
                     </view>
                     <connections>
                         <outlet property="btnViewRequests" destination="E4k-qj-VEY" id="p3N-cW-L5u"/>
+                        <segue destination="Mr2-vT-Oza" kind="show" identifier="requests" id="xx4-EN-bbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHY-JT-Q61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7189.6000000000004" y="-454.72263868065971"/>
+        </scene>
+        <!--Requests View Controller-->
+        <scene sceneID="vzH-TC-pUR">
+            <objects>
+                <viewController id="Mr2-vT-Oza" customClass="RequestsViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jpp-34-lDZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="uX6-Kc-9gJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vvh-Iw-7iC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8C-g5-ilR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7996" y="-452"/>
         </scene>
         <!--Search Item-->
         <scene sceneID="bne-VH-R2W">
@@ -3225,8 +3248,8 @@ your request</string>
     <inferredMetricsTieBreakers>
         <segue reference="hTg-DY-wIo"/>
         <segue reference="eH1-ke-eM2"/>
+        <segue reference="kCe-EF-Gkf"/>
         <segue reference="hwN-GI-0SK"/>
         <segue reference="sl2-Tq-s1Q"/>
-        <segue reference="opC-By-j2X"/>
     </inferredMetricsTieBreakers>
 </document>

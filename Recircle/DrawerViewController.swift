@@ -151,5 +151,11 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        if indexPath.section == 1 && indexPath.row == 1 {
+            if let url = NSURL(string:"http://recirkle.com/#/help") {
+                UIApplication.shared.open( url as! URL, options: [:], completionHandler: nil)
+            }
+        }
+
     }
 }

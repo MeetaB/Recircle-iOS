@@ -159,7 +159,9 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewWillAppear(_ animated: Bool) {
     
-        setUpDate()
+        if CalendarState.searchProduct {
+            setUpDate()
+        }
     }
     
     func getSearchProductTitles() {
@@ -266,6 +268,7 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     func setUpDate() {
         
         if CalendarState.startDate != nil && CalendarState.endDate != nil {
+            CalendarState.searchProduct = false
             let formatter = DateFormatter()
             formatter.dateFormat = "dd MMM,yyyy"
             
@@ -291,7 +294,9 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             let monthSymbol = months?[startMonth!-1]
             
             
+            print(searchFromDateString)
             let cell = self.collectionView.cellForItem(at: NSIndexPath(item: 0, section: 0) as IndexPath as IndexPath) as! SearchProductCell
+            
             
             if startYear == endYear {
                 if startMonth == endMonth {
@@ -304,7 +309,13 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                 
             }
             
+            collectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+            collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
+
             collectionView.reloadItems(at: [NSIndexPath(item: 0, section: 0) as IndexPath])
+            
+           print(cell.txtDate.text)
+            collectionView.reloadData()
             
         }
 
@@ -403,6 +414,8 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             
             
             cellSearch.txtProdLocation.leftViewMode = UITextFieldViewMode.always
+            cellSearch.txtProdLocation.leftViewRect(forBounds: CGRect(x: 20, y: 0, width: 20, height: 20))
+            cellSearch.txtProdLocation.isUserInteractionEnabled = false
             cellSearch.txtDate.leftViewMode = UITextFieldViewMode.always
             cellSearch.txtProdName.leftViewMode = UITextFieldViewMode.always
             
@@ -637,5 +650,17 @@ extension SearchProdViewController: UICollectionViewDelegateFlowLayout {
         //}
     }
 }
-       
+
+extension UITextField {
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    func setRightPaddingPoints(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
+}
 

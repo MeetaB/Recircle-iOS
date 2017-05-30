@@ -55,6 +55,7 @@ class ListItemDescViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         if CalendarState.unavailableDates.count > 0 {
             txtUnavailbleDates.text = String(CalendarState.unavailableDates.count) + " days"
+             ListItemObject.listItemUnavailableCount = CalendarState.unavailableDates.count
         }
     }
     
@@ -113,6 +114,8 @@ class ListItemDescViewController: UIViewController, UITextFieldDelegate {
             }
             
             listItem.user_prod_unavailability = userProdUnavailDates
+            
+           
             
             print(listItem.user_prod_unavailability?.count)
             
