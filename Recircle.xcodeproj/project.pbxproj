@@ -20,6 +20,8 @@
 		7E10B3E01EDC18B1007B7C21 /* DrawerHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E10B3DF1EDC18B1007B7C21 /* DrawerHeaderCell.xib */; };
 		7E10B3E21EDC1A30007B7C21 /* DrawerHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10B3E11EDC1A30007B7C21 /* DrawerHeaderCell.swift */; };
 		7E10B3E51EDD8543007B7C21 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10B3E41EDD8543007B7C21 /* RequestsViewController.swift */; };
+		7E10B3E81EDFDFA3007B7C21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10B3E71EDFDFA3007B7C21 /* LoginViewController.swift */; };
+		7E10B3EA1EE032DA007B7C21 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10B3E91EE032DA007B7C21 /* CreateAccountViewController.swift */; };
 		7E1B0EDD1EC1C08B00A882E8 /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */; };
 		7E1B0EDF1EC1C16400A882E8 /* ProdImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */; };
 		7E21F31C1ECAD73400F078C2 /* ListItemPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */; };
@@ -101,6 +103,8 @@
 		7E10B3DF1EDC18B1007B7C21 /* DrawerHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerHeaderCell.xib; sourceTree = "<group>"; };
 		7E10B3E11EDC1A30007B7C21 /* DrawerHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerHeaderCell.swift; sourceTree = "<group>"; };
 		7E10B3E41EDD8543007B7C21 /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		7E10B3E71EDFDFA3007B7C21 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7E10B3E91EE032DA007B7C21 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		7E1B0EDC1EC1C08B00A882E8 /* ProductImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductImageCell.xib; sourceTree = "<group>"; };
 		7E1B0EDE1EC1C16400A882E8 /* ProdImageCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdImageCellView.swift; sourceTree = "<group>"; };
 		7E21F31B1ECAD73400F078C2 /* ListItemPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemPriceViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +218,15 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
+		7E10B3E61EDFDF1D007B7C21 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				7E10B3E71EDFDFA3007B7C21 /* LoginViewController.swift */,
+				7E10B3E91EE032DA007B7C21 /* CreateAccountViewController.swift */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
 		7E21F3431ECB2A6300F078C2 /* RentItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +293,7 @@
 		7E8B359C1E926556000B5FF0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7E10B3E61EDFDF1D007B7C21 /* Account */,
 				7E10B3E31EDD8522007B7C21 /* Requests */,
 				7E92D0DC1ED55719006E299E /* SearchProduct */,
 				7E21F3441ECB2A7E00F078C2 /* ListItem */,
@@ -560,8 +574,10 @@
 				7EF7A0271EC463B4001BFEAA /* ProdAddressTableViewCell.swift in Sources */,
 				7EB486421EA4BE1C00656270 /* UserProdImages.swift in Sources */,
 				7EDDDEA11EB9FDB500C9DA67 /* ProductDetailViewController.swift in Sources */,
+				7E10B3EA1EE032DA007B7C21 /* CreateAccountViewController.swift in Sources */,
 				7E0758361ED6CBFC003909DD /* SearchProdGridCell.swift in Sources */,
 				7E8B359E1E926590000B5FF0 /* SearchViewController.swift in Sources */,
+				7E10B3E81EDFDFA3007B7C21 /* LoginViewController.swift in Sources */,
 				7E21F34A1ED2E52000F078C2 /* ListItemPhotoCell.swift in Sources */,
 				7EB486331E9F905900656270 /* ProductCell.swift in Sources */,
 				7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */,

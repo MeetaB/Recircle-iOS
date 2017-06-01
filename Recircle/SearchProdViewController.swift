@@ -13,7 +13,7 @@ import SearchTextField
 import MBProgressHUD
 import KYDrawerController
 
-class SearchProdViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class SearchProdViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -31,9 +31,9 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     
     var prodNames : [String] = []
 
-    var productId : String!
+    var productId : String = ""
     
-    var manufactureId : String!
+    var manufactureId : String = ""
     
     var progressBar : MBProgressHUD!
     
@@ -49,6 +49,7 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     
     var pickDropText : Bool = false
     
+    var dateText : String = ""
 
     
     override func viewDidLoad() {
@@ -301,20 +302,23 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             if startYear == endYear {
                 if startMonth == endMonth {
                     cell.txtDate.text = String(describing: startDay!) + " - " + endDate
+                    dateText = String(describing: startDay!) + " - " + endDate
                 } else {
                     cell.txtDate.text = String(describing: startDay!) + " " + monthSymbol! + " - " + endDate
+                    dateText = String(describing: startDay!) + " " + monthSymbol! + " - " + endDate
                 }
             } else {
                 cell.txtDate.text = fromDate + " - " + endDate
-                
+                dateText = fromDate + " - " + endDate
             }
             
-            collectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
-            collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
-
-            collectionView.reloadItems(at: [NSIndexPath(item: 0, section: 0) as IndexPath])
+//            collectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+//            collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
+//
+//            collectionView.reloadItems(at: [NSIndexPath(item: 0, section: 0) as IndexPath])
             
            print(cell.txtDate.text)
+            print(dateText)
             collectionView.reloadData()
             
         }
@@ -339,7 +343,7 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             searchProducts.removeAll()
         }
         
-        if productId.isEmpty && manufactureId.isEmpty {
+        if productId.isEmpty && manufactureId.isEmpty { 
             let cell = self.collectionView.cellForItem(at: NSIndexPath(item: 0, section: 0) as IndexPath) as! SearchProductCell
             searchText = cell.txtProdName.text!
         }
@@ -419,25 +423,41 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             cellSearch.txtDate.leftViewMode = UITextFieldViewMode.always
             cellSearch.txtProdName.leftViewMode = UITextFieldViewMode.always
             
-            let imageViewLocation = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+             let imgContainerLocation = UIView(frame: CGRect( x : cellSearch.txtProdLocation.frame.origin.x, y : cellSearch.txtProdLocation.frame.origin.y, width : 30.0, height : 30.0))
+            let imageViewLocation = UIImageView(frame: CGRect(x: 5 , y: 5, width: 20, height: 20))
             var image = UIImage(named: "location")
             imageViewLocation.image = image
-            cellSearch.txtProdLocation.leftView = imageViewLocation
+            imgContainerLocation.addSubview(imageViewLocation)
+            cellSearch.txtProdLocation.leftView = imgContainerLocation
             
-            let imageViewDate = UIImageView(frame: CGRect(x: 5, y: 0, width: 20, height: 20))
+            let imgContainerDate = UIView(frame: CGRect( x : cellSearch.txtDate.frame.origin.x, y : cellSearch.txtDate.frame.origin.y, width : 30.0, height : 30.0))
+            let imageViewDate = UIImageView(frame: CGRect(x: 5, y: 5, width: 20, height: 20))
             image = UIImage(named : "calendar")
             imageViewDate.image = image
+            imgContainerDate.addSubview(imageViewDate)
             let tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(self.showCalendar))
             tapRecogniser.numberOfTapsRequired = 1;
             tapRecogniser.cancelsTouchesInView = false
             imageViewDate.addGestureRecognizer(tapRecogniser)
             imageViewDate.isUserInteractionEnabled = true
-            cellSearch.txtDate.leftView = imageViewDate
+            cellSearch.txtDate.leftView = imgContainerDate
+            cellSearch.txtDate.delegate = self
             
-            let imageViewSearch = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+            if !dateText.isEmpty {
+                
+                cellSearch.txtDate.text = dateText
+                dateText = ""
+            }
+            
+           
+            
+            let imgContainerSearch = UIView(frame: CGRect( x : cellSearch.txtProdName.frame.origin.x, y : cellSearch.txtProdName.frame.origin.y, width : 30.0, height : 30.0))
+            let imageViewSearch = UIImageView(frame: CGRect(x: 5, y: 5, width: 20, height: 20))
             image = UIImage(named : "search")
             imageViewSearch.image = image
-            cellSearch.txtProdName.leftView = imageViewSearch
+            imgContainerSearch.addSubview(imageViewSearch)
+
+            cellSearch.txtProdName.leftView = imgContainerSearch
             
             
             cellSearch.txtProdName.theme.font = UIFont.systemFont(ofSize: 16)
@@ -649,18 +669,12 @@ extension SearchProdViewController: UICollectionViewDelegateFlowLayout {
             return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
         //}
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        showCalendar()
+    }
 }
 
-extension UITextField {
-    func setLeftPaddingPoints(_ amount:CGFloat){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-    func setRightPaddingPoints(_ amount:CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.rightView = paddingView
-        self.rightViewMode = .always
-    }
-}
+
 

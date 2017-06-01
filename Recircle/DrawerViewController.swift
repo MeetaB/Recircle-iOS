@@ -12,12 +12,13 @@ import KYDrawerController
 class DrawerViewController: UIViewController {
 
     var iconImages: [UIImage] = [
+        UIImage(named: "login")!,
         UIImage(named: "settings")!,
         UIImage(named: "help_gray")!,
         UIImage(named: "logout")!
     ]
     
-    var itemName : [String] = ["Settings","FAQ","Logout"]
+    var itemName : [String] = ["Login","Settings","FAQ","Logout"]
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -119,7 +120,7 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             return 1
         } else {
-            return 3
+            return 4
         }
     }
     
@@ -151,10 +152,12 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        if indexPath.section == 1 && indexPath.row == 1 {
+        if indexPath.section == 1 && indexPath.row == 2 {
             if let url = NSURL(string:"http://recirkle.com/#/help") {
                 UIApplication.shared.open( url as! URL, options: [:], completionHandler: nil)
             }
+        } else if indexPath.section == 1 && indexPath.row == 0 {
+            self.performSegue(withIdentifier: "login", sender: self)
         }
 
     }
