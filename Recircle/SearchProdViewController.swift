@@ -41,9 +41,9 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     
     var searchText : String!
     
-    var searchFromDateString : String!
+    var searchFromDateString : String = ""
     
-    var searchToDateString : String!
+    var searchToDateString : String = ""
     
     var userProductId : String!
     

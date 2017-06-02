@@ -154,7 +154,11 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
         print(indexPath.row)
         if indexPath.section == 1 && indexPath.row == 2 {
             if let url = NSURL(string:"http://recirkle.com/#/help") {
-                UIApplication.shared.open( url as! URL, options: [:], completionHandler: nil)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
+                } else {
+                    // Fallback on earlier versions
+                }
             }
         } else if indexPath.section == 1 && indexPath.row == 0 {
             self.performSegue(withIdentifier: "login", sender: self)

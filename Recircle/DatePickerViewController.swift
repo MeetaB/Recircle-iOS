@@ -75,7 +75,11 @@ class DatePickerViewController: UIViewController {
         
         calendarView.isHidden = false
         
-        calendarColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+        if #available(iOS 10.0, *) {
+            calendarColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+        } else {
+            // Fallback on earlier versions
+        }
     
         
         if CalendarState.listItemSummary {
@@ -268,7 +272,11 @@ class DatePickerViewController: UIViewController {
         func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
             let headerCell = (header as? HeaderView)
             formatter.dateFormat = "MMMM yyyy"
-            headerCell?.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+            if #available(iOS 10.0, *) {
+                headerCell?.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+            } else {
+                // Fallback on earlier versions
+            }
             headerCell?.title.textColor = UIColor.white
             headerCell?.title.text = formatter.string(from: range.end)
         }
@@ -353,7 +361,11 @@ class DatePickerViewController: UIViewController {
                 if Calendar.current.isDateInToday(cellState.date) {
                     myCustomCell.textDate.backgroundColor = UIColor.black
                 } else {
-                    myCustomCell.textDate.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+                    if #available(iOS 10.0, *) {
+                        myCustomCell.textDate.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 }
 
                

@@ -241,7 +241,7 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let text = textField.text {
-            if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
+            if textField is SkyFloatingLabelTextField {
                 print(text.characters.count)
                 if !text.isEmpty {
 //                    floatingLabelTextField.errorMessage = nil

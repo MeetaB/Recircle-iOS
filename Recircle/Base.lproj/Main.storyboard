@@ -221,10 +221,10 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="94" id="Owr-mt-LPI" customClass="ProductCell" customModule="Recircle" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="1000" height="94"/>
+                                                        <rect key="frame" x="0.0" y="28" width="397" height="94"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Owr-mt-LPI" id="1tJ-ON-Kw4">
-                                                            <frame key="frameInset" width="1000" height="93"/>
+                                                            <frame key="frameInset" width="397" height="94"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -249,10 +249,10 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="94" id="qjb-hV-0Rs" customClass="ProductCell" customModule="Recircle" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="1000" height="94"/>
+                                                        <rect key="frame" x="0.0" y="28" width="397" height="94"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qjb-hV-0Rs" id="6Od-Th-yW3">
-                                                            <frame key="frameInset" width="1000" height="93"/>
+                                                            <frame key="frameInset" width="397" height="94"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -530,7 +530,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="373" height="94"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJl-Dg-wTv" id="wJ9-pc-cpL">
-                                                    <frame key="frameInset" width="373" height="93"/>
+                                                    <frame key="frameInset" width="373" height="94"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -758,10 +758,10 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Vqj-b4-sOB">
-                                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
+                                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vqj-b4-sOB" id="zTZ-lJ-qNN">
-                                                            <frame key="frameInset" width="1000" height="43"/>
+                                                            <frame key="frameInset" width="335" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -970,7 +970,7 @@ Till 12:00 pm
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="cAc-Ur-NQw" customClass="ProdImageCellView" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="103"/>
+                                        <rect key="frame" x="0.0" y="13.5" width="87" height="103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="87" height="103"/>
@@ -1048,7 +1048,7 @@ Till 12:00 pm
                                         <rect key="frame" x="0.0" y="92" width="373" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NYr-jM-DfF" id="gfZ-9H-LPT">
-                                            <frame key="frameInset" width="373" height="295"/>
+                                            <frame key="frameInset" width="373" height="296"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qol-Ux-OQM">
@@ -1061,7 +1061,7 @@ Till 12:00 pm
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="8c7-S3-Ctc" customClass="ProdImageCellView" customModule="Recircle" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="15" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="14.5" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -1095,7 +1095,7 @@ Till 12:00 pm
                                         <rect key="frame" x="0.0" y="388" width="373" height="451"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgB-fV-x5i" id="9br-XC-mKW">
-                                            <frame key="frameInset" width="373" height="450"/>
+                                            <frame key="frameInset" width="373" height="451"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y94-PX-qYh">
@@ -1319,7 +1319,7 @@ Till 12:00 pm
                                         <rect key="frame" x="0.0" y="839" width="373" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vag-6I-jaL" id="ilV-px-Nok">
-                                            <frame key="frameInset" width="373" height="179"/>
+                                            <frame key="frameInset" width="373" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
@@ -1328,7 +1328,7 @@ Till 12:00 pm
                                         <rect key="frame" x="0.0" y="1019" width="373" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3on-ln-zUh" id="0De-hj-fBt">
-                                            <frame key="frameInset" width="373" height="319"/>
+                                            <frame key="frameInset" width="373" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick-up/Drop-off at the Recircle store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUB-2w-Nrr">
@@ -1561,7 +1561,7 @@ Store Hours
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oWv-Xf-yx8" id="6Mq-hK-FgZ">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1569,7 +1569,7 @@ Store Hours
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9za-FS-enf" id="UUU-4Y-FT9">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1679,9 +1679,11 @@ Store Hours
                                     <action selector="forgotPassword:" destination="Xnu-I2-tNX" eventType="touchUpInside" id="bXp-xW-Prb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAc-6u-5VB">
-                                <frame key="frameInset" minX="16" minY="20" width="22" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAc-6u-5VB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="R1z-G7-ahp"/>
+                                    <constraint firstAttribute="width" constant="30" id="Wjo-SS-ACi"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="cross_black"/>
                                 <connections>
                                     <action selector="crossTapped:" destination="Xnu-I2-tNX" eventType="touchUpInside" id="ifk-Ej-Z2f"/>
@@ -1725,6 +1727,8 @@ Store Hours
                             <constraint firstItem="2HL-Wq-udK" firstAttribute="top" secondItem="CXe-WN-Eg7" secondAttribute="bottom" constant="39" id="jYh-H9-QHr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JLO-KQ-JWw" secondAttribute="trailing" id="kew-bx-pEx"/>
                             <constraint firstItem="2HL-Wq-udK" firstAttribute="leading" secondItem="aa9-pt-FlT" secondAttribute="leadingMargin" id="kv3-vx-WsP"/>
+                            <constraint firstItem="LAc-6u-5VB" firstAttribute="leading" secondItem="aa9-pt-FlT" secondAttribute="leadingMargin" id="ovp-Ua-Njh"/>
+                            <constraint firstItem="LAc-6u-5VB" firstAttribute="top" secondItem="Pou-oc-inL" secondAttribute="bottom" id="sei-mX-qQC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1741,7 +1745,7 @@ Store Hours
         <!--Create Account View Controller-->
         <scene sceneID="lZZ-Tq-55l">
             <objects>
-                <viewController id="0RE-BQ-MNk" customClass="CreateAccountViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0RE-BQ-MNk" customClass="CreateAccountViewController" customModule="Recircle" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x4n-QF-Mra"/>
                         <viewControllerLayoutGuide type="bottom" id="ASf-73-1gZ"/>
@@ -1760,7 +1764,7 @@ Store Hours
                                     <action selector="crossTapped:" destination="0RE-BQ-MNk" eventType="touchUpInside" id="Bgp-St-nfU"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZyC-My-fYk" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZyC-My-fYk" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Umt-35-TW8"/>
                                     <constraint firstAttribute="height" constant="40" id="kfm-HA-VGz"/>
@@ -1772,7 +1776,7 @@ Store Hours
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name*"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4FS-UO-1ce" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4FS-UO-1ce" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PoX-IP-rnC"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="vyf-bG-xbI"/>
@@ -1784,7 +1788,7 @@ Store Hours
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name*"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63C-ts-LAF" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="63C-ts-LAF" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="FRt-J8-C0t"/>
                                     <constraint firstAttribute="height" constant="40" id="YfC-kN-8xh"/>
@@ -1792,12 +1796,12 @@ Store Hours
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email*"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s51-6e-HtI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s51-6e-HtI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="5bc-Ta-RiJ"/>
                                     <constraint firstAttribute="height" constant="40" id="WDQ-JY-2Y2"/>
@@ -1805,12 +1809,12 @@ Store Hours
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password*"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f12-gc-v1D" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f12-gc-v1D" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Bzd-np-EuV"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="fQw-He-bsi"/>
@@ -1818,12 +1822,12 @@ Store Hours
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Mobile*"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lL-70-uhQ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4lL-70-uhQ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="GBR-bj-bda"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="KXy-pt-wIO"/>
@@ -1831,7 +1835,7 @@ Store Hours
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Verification Code*"/>
                                 </userDefinedRuntimeAttributes>
@@ -1845,6 +1849,9 @@ Store Hours
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpTapped:" destination="0RE-BQ-MNk" eventType="touchUpInside" id="dNe-nP-33y"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZR-AV-lBq">
                                 <constraints>
@@ -1860,6 +1867,17 @@ Store Hours
                                     <constraint firstAttribute="width" constant="154" id="zEv-LF-oze"/>
                                 </constraints>
                                 <state key="normal" title="Sign in"/>
+                                <connections>
+                                    <action selector="signInTapped:" destination="0RE-BQ-MNk" eventType="touchUpInside" id="gQt-wV-ne0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pe-9l-0yi">
+                                <frame key="frameInset" minX="283" minY="378" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send OTP"/>
+                                <connections>
+                                    <action selector="sendOTP:" destination="0RE-BQ-MNk" eventType="touchUpInside" id="qlg-9U-Zkl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1894,7 +1912,15 @@ Store Hours
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnSendOTP" destination="3pe-9l-0yi" id="Dxj-dZ-crL"/>
                         <outlet property="btnSignUp" destination="7c6-gm-9tB" id="xS5-6J-Ji3"/>
+                        <outlet property="txtEmail" destination="63C-ts-LAF" id="G6D-wy-fgu"/>
+                        <outlet property="txtFirstName" destination="ZyC-My-fYk" id="S1P-Gs-20i"/>
+                        <outlet property="txtLastName" destination="4FS-UO-1ce" id="xu6-sm-jDS"/>
+                        <outlet property="txtMobileNumber" destination="f12-gc-v1D" id="gXQ-sj-pGz"/>
+                        <outlet property="txtPassword" destination="s51-6e-HtI" id="57Y-d5-1Kk"/>
+                        <outlet property="txtVerificationCode" destination="4lL-70-uhQ" id="tJF-bU-zrI"/>
+                        <segue destination="Xnu-I2-tNX" kind="show" identifier="signin" id="8NC-90-tcT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nu-38-cbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2504,7 +2530,7 @@ Store Hours
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="jfT-jo-tbl" customClass="ProdImageCellView" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="102" height="123"/>
+                                        <rect key="frame" x="0.0" y="3.5" width="102" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="102" height="123"/>
@@ -3128,7 +3154,7 @@ We'll notify you when someone requests
                                 <rect key="frame" x="0.0" y="92" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzh-3R-URa" id="cha-Ta-vft">
-                                    <frame key="frameInset" width="413" height="43"/>
+                                    <frame key="frameInset" width="413" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -3296,7 +3322,7 @@ We'll notify you when someone requests
                                         <size key="customSize" width="411" height="723"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellRecentLabel" id="UZQ-py-5XV">
-                                        <rect key="frame" x="7" y="1076" width="400" height="89"/>
+                                        <rect key="frame" x="6.5" y="1076" width="400" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="89"/>
@@ -3527,9 +3553,10 @@ your request</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hTg-DY-wIo"/>
-        <segue reference="eH1-ke-eM2"/>
         <segue reference="kCe-EF-Gkf"/>
+        <segue reference="eH1-ke-eM2"/>
         <segue reference="hwN-GI-0SK"/>
         <segue reference="sl2-Tq-s1Q"/>
+        <segue reference="8NC-90-tcT"/>
     </inferredMetricsTieBreakers>
 </document>

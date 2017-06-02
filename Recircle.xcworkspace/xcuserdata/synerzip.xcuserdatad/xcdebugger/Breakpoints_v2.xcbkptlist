@@ -1351,7 +1351,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ProductDetailViewController.swift"
-                  timestampString = "518000997.418662"
+                  timestampString = "518078979.859041"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -1366,7 +1366,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ProductDetailViewController.swift"
-                  timestampString = "518000997.420584"
+                  timestampString = "518078979.86094"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -1527,7 +1527,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/AllReviewsTableViewController.swift"
-                  timestampString = "518000997.431278"
+                  timestampString = "518078979.871295"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -1542,7 +1542,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/AllReviewsTableViewController.swift"
-                  timestampString = "518000997.433356"
+                  timestampString = "518078979.873145"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -1662,38 +1662,6 @@
             endingLineNumber = "244"
             landmarkName = "textFieldDidBeginEditing(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Recircle.ListItemPriceViewController.textFieldDidBeginEditing (__ObjC.UITextField) -&gt; ()"
-                  moduleName = "Recircle"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ListItemPriceViewController.swift"
-                  timestampString = "518000997.457918"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "247">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Recircle.ListItemPriceViewController.textFieldDidBeginEditing (__ObjC.UITextField) -&gt; ()"
-                  moduleName = "Recircle"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ListItemPriceViewController.swift"
-                  timestampString = "518000997.45988"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "400">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1879,7 +1847,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/TabBarViewController.swift"
-                  timestampString = "518000997.470873"
+                  timestampString = "518078979.906924"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -1894,7 +1862,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/TabBarViewController.swift"
-                  timestampString = "518000997.472743"
+                  timestampString = "518078979.908956"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -1927,7 +1895,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/SearchProdViewController.swift"
-                  timestampString = "518000997.476685"
+                  timestampString = "518078979.912819"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "119"
@@ -1942,7 +1910,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/SearchProdViewController.swift"
-                  timestampString = "518000997.478596"
+                  timestampString = "518078979.914656"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "119"
@@ -1973,7 +1941,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/RentItem.swift"
-                  timestampString = "518000997.482536"
+                  timestampString = "518078979.918323"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1988,7 +1956,7 @@
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/RentItem.swift"
-                  timestampString = "518000997.484585"
+                  timestampString = "518078979.920282"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -2060,38 +2028,6 @@
             endingLineNumber = "239"
             landmarkName = "saveDates(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Recircle.DatePickerViewController.saveDates (Swift.AnyObject) -&gt; ()"
-                  moduleName = "Recircle"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/DatePickerViewController.swift"
-                  timestampString = "518000997.492096"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "240"
-                  endingLineNumber = "240"
-                  offsetFromSymbolStart = "885">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Recircle.DatePickerViewController.(saveDates (Swift.AnyObject) -&gt; ()).(closure #1)"
-                  moduleName = "Recircle"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/DatePickerViewController.swift"
-                  timestampString = "518000997.493978"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "242"
-                  endingLineNumber = "242"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2251,6 +2187,36 @@
             startingLineNumber = "444"
             endingLineNumber = "444"
             landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/AppDelegate.swift"
+            timestampString = "518074694.204918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/CreateAccountViewController.swift"
+            timestampString = "518083300.449441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "sendOTP(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
