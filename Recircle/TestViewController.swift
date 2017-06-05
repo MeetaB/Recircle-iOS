@@ -51,6 +51,8 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         navigation = self.navigationController
         
+        self.navigationController?.isNavigationBarHidden = false
+        
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         

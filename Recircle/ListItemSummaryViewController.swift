@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MBProgressHUD
 
 
 struct ListItemObject {
@@ -20,7 +21,7 @@ struct ListItemObject {
 
 
 class ListItemSummaryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     var listItem : ListItem!
@@ -29,12 +30,9 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
     
     @IBOutlet weak var txtProdName: UILabel!
     
-    
     @IBOutlet weak var txtRentalPrice: UILabel!
     
-    
     @IBOutlet weak var txtRentDays: UILabel!
-    
     
     @IBOutlet weak var txtDiscount1: UILabel!
     
@@ -46,12 +44,16 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
     
     @IBOutlet weak var txtUnavailableDates: UILabel!
     
+    var listedProductId : String!
+    
     var prodImages : [UIImage] = []
+    
+    var progressBar : MBProgressHUD!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x2C3140)
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -69,11 +71,11 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
         
         
         if let price = listItem.price_per_day {
-        txtRentalPrice.text = String(describing: price)
+            txtRentalPrice.text = String(describing: price)
         }
         
         if let days = listItem.min_rental_day {
-        txtRentDays.text = String(describing: days)
+            txtRentDays.text = String(describing: days)
         }
         
         if (listItem.user_prod_discounts?.count)! == 1 {
@@ -95,7 +97,7 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,9 +106,7 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
     override func viewDidLayoutSubviews() {
         scrollView.contentSize=CGSize(width : self.view.frame.width,height : 700);
     }
-
-    @IBAction func editTapped(_ sender: AnyObject) {
-    }
+    
     
     @IBAction func showDates(_ sender: AnyObject) {
         
@@ -116,58 +116,121 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if segue.identifier == "success" {
+            let vc = segue.destination as! ListItemSuccessViewController
+            vc.listedProductId = self.listedProductId
+        }
+     }
+    
+    
     @IBAction func listItem(_ sender: AnyObject) {
         
-       
+        progressBar = MBProgressHUD.showAdded(to: self.view, animated: true);
+        
+        progressBar.mode = MBProgressHUDMode.indeterminate
+        
+        progressBar.label.text = "Loading";
+        
+        progressBar.isUserInteractionEnabled = false;
         
         //Hardcoding as it is not merged with s3 bucket yet
-        let user_prod_images : UserProdImages = UserProdImages(createdAt: "2017-05-29", imageUrl: "https://s3.ap-south-1.amazonaws.com/recircleimages/1398934243000_1047081.jpg")
-        
-        let parameters : [String : AnyObject] = ["product_id" : listItem.product_id as AnyObject ,
-                                                 "product_title" : txtProdName.text as AnyObject,
-                                                 "price_per_day" : listItem.price_per_day as AnyObject,
-                                                 "min_rental_days" : listItem.min_rental_day as AnyObject,
-                                                 "user_prod_desc" : listItem.user_prod_desc as AnyObject,
-                                                 "user_prod_discounts" : listItem.user_prod_discounts as AnyObject,
-                                                 "user_prod_images" : user_prod_images as AnyObject,
-                                                 "user_prod_unavailability" : listItem.user_prod_unavailability as AnyObject,
-                                                 "user_product_zipcode" : listItem.user_product_zipcode as AnyObject,
-                                                 "fromAustin" : 0 as AnyObject]
-        
-        Alamofire.request(URL(string: RecircleWebConstants.ProductsApi)!,
-                          method: .post, parameters: parameters)
-            .validate(contentType: ["application/json"])
-            .responseJSON { response in
-                
-              //  self.progressBar.hide(animated: true)
-                
-                print(response.request)  // original URL request
-                print(response.response) // HTTP URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let dataResponse = response.result.value {
-                    let json = JSON(dataResponse)
-                    print("JSON SearchApi: \(json)")
+        let user_prod_images : UserProdImages = UserProdImages(createdAt: "2017-06-05", imageUrl: "https://s3.ap-south-1.amazonaws.com/recircleimages/1398934243000_1047081.jpg")
+        let images = user_prod_images.dictionaryRepresentation()
 
-                     self.performSegue(withIdentifier: "success", sender: self)
-                }
-                    
-                else {
-                    
-                }
+        var discountsDict : [NSDictionary] = []
+        
+        if let discounts = listItem.user_prod_discounts {
+
+            for discount in discounts {
+                discountsDict.append (discount.dictionaryRepresentation())
+            }
         }
+        
+        var unavailableDict : [NSDictionary] = []
+        
+        if let unavailableDates = listItem.user_prod_unavailability {
+            
+            for unavailableDate in unavailableDates {
+                unavailableDict.append (unavailableDate.dictionaryRepresentation())
+            }
+        }
+        
+        
+        
+        if let productId = listItem.product_id,
+            let productTitle = txtProdName.text,
+            let price = listItem.price_per_day,
+            let minRentDays = listItem.min_rental_day,
+            let description = listItem.user_prod_desc,
+            let zipcode = listItem.user_product_zipcode,
+            let fromAustin = listItem.fromAustin
+        {
+            let parameters : [String : Any] = ["product_id" : productId as Any ,
+                                                     "product_title" : productTitle as Any,
+                                                     "price_per_day" : price as Any,
+                                                     "min_rental_days" : minRentDays as Any,
+                                                     "user_prod_desc" : description as Any,
+                                                     "user_prod_discounts" : discountsDict as Any,
+                                                     "user_prod_images" : images as Any,
+                                                     "user_prod_unavailability" : unavailableDict as Any,
+                                                     "user_product_zipcode" : zipcode as Any,
+                                                     "fromAustin" : fromAustin as Any]
+            
+            print(parameters)
+            
+            if let token = KeychainWrapper.standard.string(forKey: RecircleAppConstants.TOKENKEY) {
+                
+                print(token)
+                
+                let headers = [
+                    "content-type": "application/json",
+                    "authorization" : "Bearer "+token
+                ]
+                
+                print(headers)
+                
+                //  let headers : [String : String] = ["authorization" : "Bearer "+token]
+                
+                
+                Alamofire.request(URL(string: RecircleWebConstants.ProductsApi)!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+                    //        Alamofire.request(URL(string: RecircleWebConstants.ProductsApi)!,
+                    //                          method: .post, parameters: parameters)
+                    // .validate(contentType: ["application/json"])
+                    .responseJSON { response in
+                        
+                        //  self.progressBar.hide(animated: true)
+                        
+                        print(response.request)  // original URL request
+                        print(response.response) // HTTP URL response
+                        print(response.data)     // server data
+                        print(response.result)   // result of response serialization
+                        
+                        self.progressBar.hide(animated: true)
 
+                        
+                        if let dataResponse = response.result.value {
+                            let json = JSON(dataResponse)
+                            print("JSON SearchApi: \(json)")
+                            
+                            if response.response?.statusCode == 200 {
+                                self.listedProductId = json["user_product_id"].string
+                                self.performSegue(withIdentifier: "success", sender: self)
+                            }
+                        }
+                            
+                        else {
+                            self.progressBar.hide(animated: true)
+
+                        }
+                }
+            }
+        }
         
     }
     
@@ -180,7 +243,7 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProdImageCellView
         
         cell.productImage.image = prodImages[indexPath.item]
@@ -189,6 +252,11 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
     }
     
     
+    @IBAction func editTapped(_ sender: AnyObject) {
+        
+      _ =  self.navigationController?.popViewController(animated: true)
+        
+    }
     
 }
 
@@ -198,7 +266,7 @@ extension ListItemSummaryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-            return CGSize(width: 100 , height: 100)
+        return CGSize(width: 100 , height: 100)
         
         
     }

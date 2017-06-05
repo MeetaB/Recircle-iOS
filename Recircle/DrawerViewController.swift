@@ -78,6 +78,15 @@ class DrawerViewController: UIViewController {
         tableView.bounces = false
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if KeychainWrapper.standard.hasValue(forKey: RecircleAppConstants.ISLOGGEDINKEY) {
+   // if KeychainWrapper.standard.hasValue(forKey: RecircleAppConstants.ISLOGGEDINKEY, withAccessibility: KeychainItemAccessibility.afterFirstUnlock) {
+        if KeychainWrapper.standard.bool(forKey: RecircleAppConstants.ISLOGGEDINKEY)! {
+            print("logged In")
+        }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

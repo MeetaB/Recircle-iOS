@@ -99,7 +99,31 @@ class LoginViewController: UIViewController {
                     if let dataResponse = response.result.value {
                         let json = JSON(dataResponse)
                         print("JSON LoginAPI: \(json)")
+                        let login = Login(dictionary: json.object as! NSDictionary)
+                       
+                        if let userId = login?.user_id {
+                            KeychainWrapper.standard.set(userId, forKey: RecircleAppConstants.USERIDKEY)
+                        }
+                        
+                        if let email = login?.email {
+                            KeychainWrapper.standard.set(email, forKey: RecircleAppConstants.EMAILKEY)
+                        }
+                        
+                        if let token = login?.token {
+                            KeychainWrapper.standard.set(token, forKey: RecircleAppConstants.TOKENKEY)
+                        }
+                        
+                        KeychainWrapper.standard.set(true, forKey: RecircleAppConstants.ISLOGGEDINKEY)
+                        
+                        KeychainWrapper.standard.set(true, forKey:
+                            RecircleAppConstants.ISLOGGEDINKEY, withAccessibility: KeychainItemAccessibility.afterFirstUnlock)
+                        
+                        if let a = KeychainWrapper.standard.bool(forKey: RecircleAppConstants.ISLOGGEDINKEY){
+                            print(a)
+                        }
+                        
                         self.dismiss(animated: true, completion : nil)
+                        
                     }
                     else {
                         self.progressBar.hide(animated: true)

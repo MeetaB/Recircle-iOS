@@ -10,9 +10,16 @@ import UIKit
 
 class ListItemSuccessViewController: UIViewController {
 
+    public var listedProductId : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.isNavigationBarHidden = true
+        
+        
+        print(listedProductId)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +28,29 @@ class ListItemSuccessViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func viewItemTapped(_ sender: AnyObject) {
+        
+        self.performSegue(withIdentifier: "viewProduct", sender: self)
+    }
+    
+    
+    @IBAction func listItemTapped(_ sender: AnyObject) {
+        
+        self.performSegue(withIdentifier: "listItem", sender: self)
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "viewProduct" {
+            let vc = segue.destination as! TestViewController
+            vc.userProdId = self.listedProductId
+        }
     }
-    */
+    
 
 }

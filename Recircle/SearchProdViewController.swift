@@ -194,7 +194,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                         self.searchItems.append(SearchTextFieldItem(title: item.product_manufacturer_name!, subtitle: "", image: UIImage(named:"camera")))
                         
                         self.prodNames.append(item.product_manufacturer_name!)
-                        print(item.product_manufacturer_name)
                         
                         
                         for itemProd in item.products! {
@@ -204,7 +203,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                             product.product_id = itemProd.product_id
                             product.product_title = itemProd.product_title
                             self.autoCompleteProducts.append(product)
-                            print(itemProd.product_title)
                             let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
                             self.prodNames.append(prodName)
                             if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
@@ -295,7 +293,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             let monthSymbol = months?[startMonth!-1]
             
             
-            print(searchFromDateString)
             let cell = self.collectionView.cellForItem(at: NSIndexPath(item: 0, section: 0) as IndexPath as IndexPath) as! SearchProductCell
             
             
@@ -316,9 +313,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
 //            collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
 //
 //            collectionView.reloadItems(at: [NSIndexPath(item: 0, section: 0) as IndexPath])
-            
-           print(cell.txtDate.text)
-            print(dateText)
             collectionView.reloadData()
             
         }
@@ -382,7 +376,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                     
                     if let prods = searchResult?.products {
                         self.searchProducts = prods
-                        print(prods.count)
                     }
                     
                     self.performSegue(withIdentifier: "searchResult", sender: nil)
@@ -533,7 +526,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                         cellRecentProds.ratingView.isHidden = false
                         cellRecentProds.ratingView.isUserInteractionEnabled = false
                         cellRecentProds.ratingView.rating = Double(rating)
-                        print(self.recentProducts[index].user_product_info?.user_prod_reviews?.count)
                     } else {
                         cellRecentProds.ratingView.isHidden = true
                     }
@@ -573,7 +565,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                 cellPopularProds.ratingView.isHidden = false
                 cellPopularProds.ratingView.isUserInteractionEnabled = false
                 cellPopularProds.ratingView.rating = Double(rating)
-                print(self.popularProducts[index].user_product_info?.user_prod_reviews?.count)
                 } else {
                     cellPopularProds.ratingView.isHidden = true
                 }
@@ -603,7 +594,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     
     
     func tappedArrow(_ sender : AnyObject){
-        print("tapped")
         let indexPath = NSIndexPath(item: 0, section: 1)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellStatic", for: indexPath as IndexPath) as! SearchProdStaticCell
         cell.txtPickDrop.isHidden = true

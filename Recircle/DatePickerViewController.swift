@@ -96,7 +96,7 @@ class DatePickerViewController: UIViewController {
             
             for dateString in CalendarState.unavailableDates {
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd'T'00:00:000'Z'"
+                formatter.dateFormat = "yyyy-MM-dd'T'00:00:00.000'Z'"
                 let date = formatter.date(from: dateString)
                 datesSelect.append(date!)
             }
@@ -314,7 +314,7 @@ class DatePickerViewController: UIViewController {
             //change dateformat
             if CalendarState.listItem {
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd'T'00:00:000'Z'"
+                formatter.dateFormat = "yyyy-MM-dd'T'00:00:00.000'Z'"
                 let dateString = formatter.string(from: date)
                 unavailableDates.append(dateString)
             }

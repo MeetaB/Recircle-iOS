@@ -40,6 +40,8 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.isNavigationBarHidden = false
+        
         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x2C3140)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
@@ -203,6 +205,7 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
             discount.isActive = 1
             discounts.append(discount)
         }
+            
         
         listItem.user_prod_discounts = discounts
 
