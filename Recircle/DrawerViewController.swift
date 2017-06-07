@@ -10,15 +10,23 @@ import UIKit
 import KYDrawerController
 
 class DrawerViewController: UIViewController {
+    
+    var isLoggedIn : Bool = false
 
     var iconImages: [UIImage] = [
         UIImage(named: "login")!,
+        UIImage(named: "help_gray")!
+    ]
+    
+    var iconImagesLoggedIn: [UIImage] = [
         UIImage(named: "settings")!,
         UIImage(named: "help_gray")!,
         UIImage(named: "logout")!
     ]
     
-    var itemName : [String] = ["Login","Settings","FAQ","Logout"]
+    var itemName : [String] = ["Login/SignUp","FAQ"]
+    
+    var itemNameLoggedIn : [String] = ["Settings","FAQ","Logout"]
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -83,7 +91,9 @@ class DrawerViewController: UIViewController {
         if KeychainWrapper.standard.hasValue(forKey: RecircleAppConstants.ISLOGGEDINKEY) {
    // if KeychainWrapper.standard.hasValue(forKey: RecircleAppConstants.ISLOGGEDINKEY, withAccessibility: KeychainItemAccessibility.afterFirstUnlock) {
         if KeychainWrapper.standard.bool(forKey: RecircleAppConstants.ISLOGGEDINKEY)! {
+            isLoggedIn = true
             print("logged In")
+            tableView.reloadData()
         }
         }
     }
@@ -117,6 +127,28 @@ class DrawerViewController: UIViewController {
         }
     }
 
+    func showLogoutAlert() {
+        let alertView = UIAlertController(title: "Logout",
+                                          message: "Are you sure you want to logout?" as String, preferredStyle:.alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default){
+            UIAlertAction in
+            self.logout()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertView.addAction(okAction)
+        alertView.addAction(cancelAction)
+        
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
+    func logout() {
+        
+        _ = KeychainWrapper.standard.removeAllKeys()
+        isLoggedIn = false
+        tableView.reloadData()
+    }
 }
 
 extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
@@ -126,10 +158,14 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == 0 && isLoggedIn {
             return 1
+        } else if section == 0 && !isLoggedIn {
+            return 0
+        } else if section == 1 && isLoggedIn {
+            return 3
         } else {
-            return 4
+            return 2
         }
     }
     
@@ -147,30 +183,47 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
             let cellHeader = tableView.dequeueReusableCell(withIdentifier: "cellHeader", for: indexPath) as! DrawerHeaderCell
             
             cellHeader.userImage.image = UIImage(named: "user")
-            cellHeader.userName.text = "Meeta Lalwani"
-            cellHeader.userEmail.text = "meeta.bijlani@synerzip.com"
+            cellHeader.userName.text = KeychainWrapper.standard.string(forKey: RecircleAppConstants.NAMEKEY)
+            cellHeader.userEmail.text = KeychainWrapper.standard.string(forKey: RecircleAppConstants.EMAILKEY)
             
             return cellHeader
         } else {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DrawerCell
-        cell.imageView?.image = iconImages[indexPath.row]
-        cell.label.text = itemName[indexPath.row]
+            
+            if isLoggedIn {
+                cell.imageView?.image = iconImagesLoggedIn[indexPath.row]
+                cell.label.text = itemNameLoggedIn[indexPath.row]
+            } else {
+                cell.imageView?.image = iconImages[indexPath.row]
+                cell.label.text = itemName[indexPath.row]
+
+            }
         return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        if indexPath.section == 1 && indexPath.row == 2 {
-            if let url = NSURL(string:"http://recirkle.com/#/help") {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
-                } else {
-                    // Fallback on earlier versions
+        if isLoggedIn {
+            if indexPath.section == 1 {
+                if indexPath.row == 1 {
+                    if let url = NSURL(string:"http://recirkle.com/#/help") {
+                        UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
+                    }
+                } else if indexPath.row == 2 {
+                    showLogoutAlert()
                 }
             }
-        } else if indexPath.section == 1 && indexPath.row == 0 {
-            self.performSegue(withIdentifier: "login", sender: self)
+        } else {
+            if indexPath.section == 1 {
+                if indexPath.row == 0 {
+                    self.performSegue(withIdentifier: "login", sender: self)
+                } else {
+                    if let url = NSURL(string:"http://recirkle.com/#/help") {
+                        UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
+                    }
+                }
+            }
         }
 
     }

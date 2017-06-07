@@ -22,6 +22,10 @@ class LoginViewController: UIViewController {
     
     var progressBar : MBProgressHUD!
     
+    @IBOutlet weak var btnShowPassword: UIButton!
+    
+    var showPassword : Bool = false
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -29,6 +33,8 @@ class LoginViewController: UIViewController {
         btnSignIn.layer.cornerRadius = 10
         btnSignIn.layer.masksToBounds = true
 
+        txtEmail.selectedTitleColor = UIColor.black
+        txtPassword.selectedTitleColor = UIColor.black
 
         // Do any additional setup after loading the view.
     }
@@ -114,12 +120,11 @@ class LoginViewController: UIViewController {
                         }
                         
                         KeychainWrapper.standard.set(true, forKey: RecircleAppConstants.ISLOGGEDINKEY)
-                        
-                        KeychainWrapper.standard.set(true, forKey:
-                            RecircleAppConstants.ISLOGGEDINKEY, withAccessibility: KeychainItemAccessibility.afterFirstUnlock)
-                        
-                        if let a = KeychainWrapper.standard.bool(forKey: RecircleAppConstants.ISLOGGEDINKEY){
-                            print(a)
+                    
+                        if let firstName = login?.first_name, let lastName = login?.last_name {
+                            
+                            KeychainWrapper.standard.set(firstName + " " + lastName, forKey: RecircleAppConstants.NAMEKEY)
+
                         }
                         
                         self.dismiss(animated: true, completion : nil)
@@ -136,6 +141,19 @@ class LoginViewController: UIViewController {
 
     }
     
+    
+    @IBAction func showHidePassword(_ sender: AnyObject) {
+        
+        if(showPassword == true) {
+            btnShowPassword.setBackgroundImage(UIImage(named : "hide_password"), for: .normal)
+            txtPassword.isSecureTextEntry = false
+            showPassword = false
+        } else {
+            btnShowPassword.setBackgroundImage(UIImage(named : "show_password"), for: .normal)
+            txtPassword.isSecureTextEntry = true
+            showPassword = true
+        }
+    }
     
     @IBAction func createAccount(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "signup", sender: self)

@@ -19,6 +19,8 @@ public class RecircleAppConstants {
     public static var ISLOGGEDINKEY : String = "isLoggedIn"
     
     public static var TOKENKEY : String = "token"
+    
+    public static var NAMEKEY : String = "name"
 
 
 }

@@ -426,7 +426,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         rentItem.price_per_day = product.user_product_info?.price_per_day
         rentItem.user_product_discounts = product.user_product_info?.user_product_discounts
         rentItem.product_title = product.product_info?.product_title
-        rentItem.prod_image_url = product.product_info?.product_image_url
+        rentItem.prod_image_url = product.product_info?.product_image_url?.user_prod_image_url
         rentItem.user_name = (product.user_info?.first_name)! + " " + (product.user_info?.last_name)!
         rentItem.user_image_url = product.user_info?.user_image_url
         

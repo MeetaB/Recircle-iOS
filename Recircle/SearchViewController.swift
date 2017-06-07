@@ -657,7 +657,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                         cell.prodRating.isHidden = true
                     }
                 }
-                cell.prodImage.setImageFromURl(stringImageUrl: (self.recentProducts[index].product_info?.product_image_url)!)
+                cell.prodImage.setImageFromURl(stringImageUrl: (self.recentProducts[index].product_info?.product_image_url?.user_prod_image_url)!)
             }
             
         }
@@ -688,7 +688,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
                         cell.prodRating.isHidden = true
                     }
                 }
-                cell.prodImage.setImageFromURl(stringImageUrl: (self.popularProducts[index].product_info?.product_image_url)!)
+                cell.prodImage.setImageFromURl(stringImageUrl: (self.popularProducts[index].product_info?.product_image_url?.user_prod_image_url)!)
             }
             
             

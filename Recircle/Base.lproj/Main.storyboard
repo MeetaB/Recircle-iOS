@@ -224,7 +224,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="397" height="94"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Owr-mt-LPI" id="1tJ-ON-Kw4">
-                                                            <frame key="frameInset" width="397" height="94"/>
+                                                            <frame key="frameInset" width="397" height="93"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -252,7 +252,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="397" height="94"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qjb-hV-0Rs" id="6Od-Th-yW3">
-                                                            <frame key="frameInset" width="397" height="94"/>
+                                                            <frame key="frameInset" width="397" height="93"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -441,7 +441,7 @@
                         <viewControllerLayoutGuide type="top" id="r3e-F3-EAU"/>
                         <viewControllerLayoutGuide type="bottom" id="IyQ-O8-pkx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="XTN-AJ-V4p">
+                    <view key="view" contentMode="scaleToFill" id="XTN-AJ-V4p">
                         <rect key="frame" x="0.0" y="0.0" width="413" height="1951"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -530,7 +530,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="373" height="94"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJl-Dg-wTv" id="wJ9-pc-cpL">
-                                                    <frame key="frameInset" width="373" height="94"/>
+                                                    <frame key="frameInset" width="373" height="93"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -606,7 +606,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="bjA-GY-aT1" customClass="ProdImageCellView" customModule="Recircle" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="84"/>
+                                                        <rect key="frame" x="0.0" y="3" width="93" height="84"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="93" height="84"/>
@@ -761,7 +761,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vqj-b4-sOB" id="zTZ-lJ-qNN">
-                                                            <frame key="frameInset" width="335" height="44"/>
+                                                            <frame key="frameInset" width="335" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -970,7 +970,7 @@ Till 12:00 pm
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="cAc-Ur-NQw" customClass="ProdImageCellView" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="13.5" width="87" height="103"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="87" height="103"/>
@@ -1035,7 +1035,7 @@ Till 12:00 pm
                         <viewControllerLayoutGuide type="bottom" id="ANL-PM-CyO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AR4-qn-E4Y">
-                        <rect key="frame" x="0.0" y="0.0" width="413" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="1951"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vls-Bu-9Lt">
@@ -1044,11 +1044,11 @@ Till 12:00 pm
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="502" id="dxh-6A-yBk"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellImages" rowHeight="296" id="NYr-jM-DfF" customClass="ProdImagesTableViewCell" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="373" height="296"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellImages" rowHeight="296" id="NYr-jM-DfF" customClass="ProdImagesTableViewCell" customModule="Recircle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="373" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NYr-jM-DfF" id="gfZ-9H-LPT">
-                                            <frame key="frameInset" width="373" height="296"/>
+                                            <frame key="frameInset" width="373" height="295"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qol-Ux-OQM">
@@ -1061,7 +1061,7 @@ Till 12:00 pm
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="8c7-S3-Ctc" customClass="ProdImageCellView" customModule="Recircle" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="14.5" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="14" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -1092,10 +1092,10 @@ Till 12:00 pm
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellDescription" rowHeight="451" id="wgB-fV-x5i" customClass="ProdDescTableViewCell" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="324" width="373" height="451"/>
+                                        <rect key="frame" x="0.0" y="388" width="373" height="451"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="wgB-fV-x5i" id="9br-XC-mKW">
-                                            <frame key="frameInset" width="373" height="451"/>
+                                            <frame key="frameInset" width="373" height="450"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y94-PX-qYh">
@@ -1315,20 +1315,20 @@ Till 12:00 pm
                                             <outlet property="userImage" destination="XoG-hR-13v" id="MBn-sq-yTd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellReview" rowHeight="180" id="vag-6I-jaL" customClass="ReviewTableViewCell" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="775" width="373" height="180"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellReview" rowHeight="180" id="vag-6I-jaL" customClass="ReviewTableViewCell" customModule="Recircle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="839" width="373" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vag-6I-jaL" id="ilV-px-Nok">
-                                            <frame key="frameInset" width="373" height="180"/>
+                                            <frame key="frameInset" width="373" height="179"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellAddress" rowHeight="320" id="3on-ln-zUh" customClass="ProdAddressTableViewCell" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="955" width="373" height="320"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellAddress" rowHeight="320" id="3on-ln-zUh" customClass="ProdAddressTableViewCell" customModule="Recircle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1019" width="373" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3on-ln-zUh" id="0De-hj-fBt">
-                                            <frame key="frameInset" width="373" height="320"/>
+                                            <frame key="frameInset" width="373" height="319"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick-up/Drop-off at the Recircle store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUB-2w-Nrr">
@@ -1495,7 +1495,7 @@ Store Hours
                         <viewControllerLayoutGuide type="bottom" id="vtN-TQ-ncN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jtS-Wr-83Y">
-                        <rect key="frame" x="0.0" y="0.0" width="413" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="1951"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gqb-Fv-JE7">
@@ -1561,7 +1561,7 @@ Store Hours
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oWv-Xf-yx8" id="6Mq-hK-FgZ">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1569,7 +1569,7 @@ Store Hours
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9za-FS-enf" id="UUU-4Y-FT9">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1709,9 +1709,20 @@ Store Hours
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGP-5O-4IC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="XAn-cl-ElS"/>
+                                    <constraint firstAttribute="height" constant="25" id="dKR-se-cSo"/>
+                                </constraints>
+                                <state key="normal" title="Button" backgroundImage="show_password"/>
+                                <connections>
+                                    <action selector="showHidePassword:" destination="Xnu-I2-tNX" eventType="touchUpInside" id="TSZ-z2-o9Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KGP-5O-4IC" firstAttribute="top" secondItem="2HL-Wq-udK" secondAttribute="bottom" constant="-34" id="2JG-fc-NI7"/>
                             <constraint firstItem="O4V-NM-YVI" firstAttribute="leading" secondItem="aa9-pt-FlT" secondAttribute="leadingMargin" id="3r1-GX-sHX"/>
                             <constraint firstItem="YRG-4U-rDV" firstAttribute="centerX" secondItem="aa9-pt-FlT" secondAttribute="centerX" id="54Y-cl-Pgh"/>
                             <constraint firstItem="2HL-Wq-udK" firstAttribute="trailing" secondItem="aa9-pt-FlT" secondAttribute="trailingMargin" id="Adx-7E-NKj"/>
@@ -1728,10 +1739,12 @@ Store Hours
                             <constraint firstAttribute="trailingMargin" secondItem="JLO-KQ-JWw" secondAttribute="trailing" id="kew-bx-pEx"/>
                             <constraint firstItem="2HL-Wq-udK" firstAttribute="leading" secondItem="aa9-pt-FlT" secondAttribute="leadingMargin" id="kv3-vx-WsP"/>
                             <constraint firstItem="LAc-6u-5VB" firstAttribute="leading" secondItem="aa9-pt-FlT" secondAttribute="leadingMargin" id="ovp-Ua-Njh"/>
+                            <constraint firstItem="KGP-5O-4IC" firstAttribute="trailing" secondItem="aa9-pt-FlT" secondAttribute="trailingMargin" id="rdf-lg-AoB"/>
                             <constraint firstItem="LAc-6u-5VB" firstAttribute="top" secondItem="Pou-oc-inL" secondAttribute="bottom" id="sei-mX-qQC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnShowPassword" destination="KGP-5O-4IC" id="CxY-WA-cbP"/>
                         <outlet property="btnSignIn" destination="ZMi-2I-52o" id="Z8g-v4-G6L"/>
                         <outlet property="txtEmail" destination="CXe-WN-Eg7" id="3r3-2h-3En"/>
                         <outlet property="txtPassword" destination="2HL-Wq-udK" id="abl-Qe-7aC"/>
@@ -1926,6 +1939,62 @@ Store Hours
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nu-38-cbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6384.8000000000002" y="-2876.3118440779613"/>
+        </scene>
+        <!--Requests from me-->
+        <scene sceneID="bov-Ju-9sb">
+            <objects>
+                <viewController id="Qy9-aH-vtj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g6s-N1-JtA"/>
+                        <viewControllerLayoutGuide type="bottom" id="oQG-bV-ivb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gom-0Y-bd5">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="2000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Requests from me" id="J1X-yp-SZz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7G-sS-8me" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8127" y="-2537"/>
+        </scene>
+        <!--Request to me-->
+        <scene sceneID="L9c-Pb-UxZ">
+            <objects>
+                <viewController id="RS8-tU-7ZJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="78a-Wj-M4f"/>
+                        <viewControllerLayoutGuide type="bottom" id="DEv-xF-PPl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Xo-so-yTW">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="2000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Request to me" id="a0N-N6-8RI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhJ-cs-0ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8127" y="-3193"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wJ5-Wq-P2G">
+            <objects>
+                <tabBarController id="yNr-vh-Tom" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="eex-5k-DGx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="RS8-tU-7ZJ" kind="relationship" relationship="viewControllers" id="4Q5-uy-syP"/>
+                        <segue destination="Qy9-aH-vtj" kind="relationship" relationship="viewControllers" id="Qwh-l0-3XW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6w-CA-UV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7174" y="-2865"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vnp-dp-g9q">
@@ -2530,7 +2599,7 @@ Store Hours
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="jfT-jo-tbl" customClass="ProdImageCellView" customModule="Recircle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="3.5" width="102" height="123"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="102" height="123"/>
@@ -3151,15 +3220,15 @@ We'll notify you when someone requests
             <objects>
                 <tableViewController storyboardIdentifier="AllReviewsVC" id="ANI-kk-N2S" customClass="AllReviewsTableViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0E3-ff-xpb">
-                        <rect key="frame" x="0.0" y="0.0" width="413" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="1951"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReview" id="Lzh-3R-URa">
-                                <rect key="frame" x="0.0" y="28" width="413" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzh-3R-URa" id="cha-Ta-vft">
-                                    <frame key="frameInset" width="413" height="44"/>
+                                    <frame key="frameInset" width="413" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -3327,7 +3396,7 @@ We'll notify you when someone requests
                                         <size key="customSize" width="411" height="723"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellRecentLabel" id="UZQ-py-5XV">
-                                        <rect key="frame" x="6.5" y="1076" width="400" height="89"/>
+                                        <rect key="frame" x="7" y="1076" width="400" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="89"/>
@@ -3391,6 +3460,7 @@ We'll notify you when someone requests
                         <segue destination="iJg-lo-rWQ" kind="presentation" identifier="datePicker" id="kCe-EF-Gkf"/>
                         <segue destination="Cde-j5-H7M" kind="show" identifier="searchResult" id="eH1-ke-eM2"/>
                         <segue destination="m2D-Qt-WVW" kind="show" identifier="detail" id="hwN-GI-0SK"/>
+                        <segue destination="yNr-vh-Tom" kind="show" identifier="messages" id="mBb-jT-6WM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzV-Pk-2ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3551,6 +3621,7 @@ your request</string>
         <image name="location" width="16" height="16"/>
         <image name="search" width="16" height="16"/>
         <image name="shield" width="36" height="36"/>
+        <image name="show_password" width="16" height="16"/>
         <image name="store" width="36" height="36"/>
         <image name="success" width="26" height="26"/>
         <image name="upload_camera" width="26" height="26"/>
@@ -3558,11 +3629,11 @@ your request</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PYL-S2-jqB"/>
-        <segue reference="ewm-Bs-72l"/>
-        <segue reference="sl2-Tq-s1Q"/>
-        <segue reference="KMY-UZ-Ztq"/>
+        <segue reference="hwN-GI-0SK"/>
         <segue reference="hTg-DY-wIo"/>
         <segue reference="eH1-ke-eM2"/>
+        <segue reference="kCe-EF-Gkf"/>
+        <segue reference="sl2-Tq-s1Q"/>
         <segue reference="8NC-90-tcT"/>
     </inferredMetricsTieBreakers>
 </document>

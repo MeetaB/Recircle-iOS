@@ -14,7 +14,7 @@ public class ProductInfo {
     public var product_manufacturer_name : String?
     public var product_category_description : String?
     public var product_category_name : String?
-    public var product_image_url : String?
+    public var product_image_url : UserProdImages?
     public var product_manufacturer_id : String?
     public var product_description : String?
     public var product_title : String?
@@ -57,7 +57,7 @@ public class ProductInfo {
         product_manufacturer_name = dictionary["product_manufacturer_name"] as? String
         product_category_description = dictionary["product_category_description"] as? String
         product_category_name = dictionary["product_category_name"] as? String
-        product_image_url = dictionary["product_image_url"] as? String
+        product_image_url = dictionary["product_image_url"] as? UserProdImages
         product_manufacturer_id = dictionary["product_manufacturer_id"] as? String
         product_description = dictionary["product_description"] as? String
         product_title = dictionary["product_title"] as? String

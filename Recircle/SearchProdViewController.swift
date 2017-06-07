@@ -37,7 +37,7 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     
     var progressBar : MBProgressHUD!
     
-    var searchProducts : [Product]!
+    var searchProducts : [Product] = []
     
     var searchText : String!
     
@@ -62,12 +62,14 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         
         self.navigationItem.title = "ReCircle"
         
+        self.tabBarController?.tabBar.isHidden = false
+        
         let rentRequests = UIBarButtonItem(image: UIImage(named : "camera_filled") , style: .plain, target: self, action: nil)
 
         rentRequests.tintColor = UIColor.white
         
         
-        let messages = UIBarButtonItem(image: UIImage(named : "messages") , style: .plain, target: self, action: nil)
+        let messages = UIBarButtonItem(image: UIImage(named : "messages") , style: .plain, target: self, action: #selector(openMessages(_:)))
         messages.tintColor = UIColor.white
         
         navigationItem.rightBarButtonItems = [rentRequests, messages]
@@ -121,6 +123,9 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
 
+    func openMessages(_ sender : UIBarButtonItem){
+        self.performSegue(withIdentifier: "messages", sender: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -389,7 +394,11 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 6
+        if recentProducts.count > 0 && popularProducts.count > 0 {
+            return 6
+        } else {
+            return 2
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -517,7 +526,7 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                     cellRecentProds.txtPrice.text = "$ " + String(price) + " /day"
                 }
                 
-                if let imageUrl = self.recentProducts[index].product_info?.product_image_url {
+                if let imageUrl = self.recentProducts[index].product_info?.product_image_url?.user_prod_image_url {
                     cellRecentProds.imageProduct.setImageFromURl(stringImageUrl: imageUrl)
                 }
                 
@@ -556,7 +565,7 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                 cellPopularProds.txtPrice.text = "$ " + String(price) + " /day"
             }
             
-            if let imageUrl = self.popularProducts[index].product_info?.product_image_url {
+            if let imageUrl = self.popularProducts[index].product_info?.product_image_url?.user_prod_image_url {
                 cellPopularProds.imageProduct.setImageFromURl(stringImageUrl: imageUrl)
             }
             
