@@ -80,6 +80,8 @@
 		7EBD78B61EAE259A00B80E20 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD78B51EAE259A00B80E20 /* ColorUtils.swift */; };
 		7EBD78B81EAF20DC00B80E20 /* SearchResultProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD78B71EAF20DC00B80E20 /* SearchResultProducts.swift */; };
 		7EBD78BA1EAF2F3800B80E20 /* ProductCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EBD78B91EAF2F3800B80E20 /* ProductCellView.xib */; };
+		7EBFF6781EE7F44F00341D32 /* ForgotPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFF6771EE7F44F00341D32 /* ForgotPwdViewController.swift */; };
+		7EBFF67A1EE81AEB00341D32 /* ResetPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFF6791EE81AEB00341D32 /* ResetPwdViewController.swift */; };
 		7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */; };
 		7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */; };
 		7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */; };
@@ -170,6 +172,8 @@
 		7EBD78B51EAE259A00B80E20 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		7EBD78B71EAF20DC00B80E20 /* SearchResultProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultProducts.swift; sourceTree = "<group>"; };
 		7EBD78B91EAF2F3800B80E20 /* ProductCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCellView.xib; sourceTree = "<group>"; };
+		7EBFF6771EE7F44F00341D32 /* ForgotPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPwdViewController.swift; sourceTree = "<group>"; };
+		7EBFF6791EE81AEB00341D32 /* ResetPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPwdViewController.swift; sourceTree = "<group>"; };
 		7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAPICall.swift; sourceTree = "<group>"; };
 		7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 			children = (
 				7E10B3E71EDFDFA3007B7C21 /* LoginViewController.swift */,
 				7E10B3E91EE032DA007B7C21 /* CreateAccountViewController.swift */,
+				7EBFF6771EE7F44F00341D32 /* ForgotPwdViewController.swift */,
+				7EBFF6791EE81AEB00341D32 /* ResetPwdViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				7EB486471EA5E79100656270 /* RecircleWebConstants.swift in Sources */,
 				7EBD78B61EAE259A00B80E20 /* ColorUtils.swift in Sources */,
 				7E8B358A1E924F45000B5FF0 /* ViewController.swift in Sources */,
+				7EBFF67A1EE81AEB00341D32 /* ResetPwdViewController.swift in Sources */,
 				7E1B0EDF1EC1C16400A882E8 /* ProdImageCellView.swift in Sources */,
 				7EB4864D1EA78B0000656270 /* Products.swift in Sources */,
 				7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */,
@@ -574,6 +581,7 @@
 				7E10B3DE1EDC0F4A007B7C21 /* DrawerCell.swift in Sources */,
 				7E07583A1ED6ECE4003909DD /* SearchProdLabelCell.swift in Sources */,
 				7E0758321ED598E2003909DD /* SearchProdStaticCell.swift in Sources */,
+				7EBFF6781EE7F44F00341D32 /* ForgotPwdViewController.swift in Sources */,
 				7E350EAC1EE52C3700B7525E /* KeychainItemAccessibility.swift in Sources */,
 				7EDEBF871ED40E35001DE5F3 /* MBProgressHUD.m in Sources */,
 				7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */,

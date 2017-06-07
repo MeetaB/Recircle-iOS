@@ -52,7 +52,13 @@ public class Products {
         
         product_title = dictionary["product_title"] as? String
         product_id = dictionary["product_id"] as? String
-        if (dictionary["product_detail"] != nil) { product_detail = ProductDetail(dictionary: dictionary["product_detail"] as! NSDictionary) }
+        print(dictionary["product_detail"])
+        if dictionary["product_detail"] is NSNull{
+            //do nothing
+        }else{
+        if (dictionary["product_detail"] != nil) { product_detail = ProductDetail(dictionary: dictionary["product_detail"] as! NSDictionary)
+            }
+        }
     }
     
     public init() {

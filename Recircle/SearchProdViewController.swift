@@ -59,7 +59,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
-        
         self.navigationItem.title = "ReCircle"
         
         self.tabBarController?.tabBar.isHidden = false
@@ -67,7 +66,6 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         let rentRequests = UIBarButtonItem(image: UIImage(named : "camera_filled") , style: .plain, target: self, action: nil)
 
         rentRequests.tintColor = UIColor.white
-        
         
         let messages = UIBarButtonItem(image: UIImage(named : "messages") , style: .plain, target: self, action: #selector(openMessages(_:)))
         messages.tintColor = UIColor.white
@@ -97,12 +95,9 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         
         collectionView.register(nibRecentProds, forCellWithReuseIdentifier: "cellRecentProds")
         
-
         let nibPopularLabel = UINib(nibName: "SearchProdLabelCell", bundle: nil)
         
         collectionView.register(nibPopularLabel, forCellWithReuseIdentifier: "cellPopularLabel")
-        
-
         
         let nibPopularProds = UINib(nibName: "SearchProdGridCell", bundle: nil)
         
@@ -210,11 +205,13 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                             self.autoCompleteProducts.append(product)
                             let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
                             self.prodNames.append(prodName)
-                            if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
-                                if let data = NSData(contentsOf: url as URL) {
-                                    self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
-                                }
-                            }
+                            
+                            //Commenting for future if product image needs to be shown in search text
+//                            if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
+//                                if let data = NSData(contentsOf: url as URL) {
+//                                    self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
+//                                }
+//                            }
                             
                             
                             
@@ -404,8 +401,10 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 || section == 1 || section == 2 || section == 4 {
             return 1
+        } else if section == 3 {
+            return min(recentProducts.count, 6)
         } else {
-            return 6
+            return min(popularProducts.count, 6)
         }
     }
     
@@ -416,8 +415,9 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         if indexPath.section == 0 {
             let cellSearch = collectionView.dequeueReusableCell(withReuseIdentifier: "cellSearch", for: indexPath) as! SearchProductCell
             
-            cellSearch.txtProdName.filterItems(self.searchItems)
+            ///cellSearch.txtProdName.filterItems(self.prodNames as! [SearchTextFieldItem])
             
+            cellSearch.txtProdName.filterStrings(self.prodNames)
             
             cellSearch.txtProdLocation.leftViewMode = UITextFieldViewMode.always
             cellSearch.txtProdLocation.leftViewRect(forBounds: CGRect(x: 20, y: 0, width: 20, height: 20))

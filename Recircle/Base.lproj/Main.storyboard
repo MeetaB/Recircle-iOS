@@ -1749,11 +1749,218 @@ Store Hours
                         <outlet property="txtEmail" destination="CXe-WN-Eg7" id="3r3-2h-3En"/>
                         <outlet property="txtPassword" destination="2HL-Wq-udK" id="abl-Qe-7aC"/>
                         <segue destination="0RE-BQ-MNk" kind="show" identifier="signup" id="Zbh-Gw-Vzm"/>
+                        <segue destination="jxI-Ze-Rd2" kind="presentation" identifier="forgotPassword" modalPresentationStyle="overFullScreen" id="Cq9-Nv-xfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KiG-ou-Smq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5664.8000000000002" y="-2876.3118440779613"/>
+        </scene>
+        <!--Forgot Pwd View Controller-->
+        <scene sceneID="MxQ-iF-v1T">
+            <objects>
+                <viewController id="jxI-Ze-Rd2" customClass="ForgotPwdViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Xy-Aj-Bxh"/>
+                        <viewControllerLayoutGuide type="bottom" id="aVz-Uh-aK9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cnQ-Gm-GOo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opZ-zm-shP">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lfm-W3-1fp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give us the email you used to sign up and we'll send you a code to reset your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqf-Q2-n6k">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="yH1-EZ-Isb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jfp-xj-DJE" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uNA-s3-Psb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email*"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTw-1N-xpu">
+                                <color key="backgroundColor" red="0.025857113122739195" green="0.41422020614764588" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Ff-l9-xPQ"/>
+                                    <constraint firstAttribute="width" constant="104" id="tRd-ph-QYQ"/>
+                                </constraints>
+                                <state key="normal" title="Send OTP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendOTPTapped:" destination="jxI-Ze-Rd2" eventType="touchUpInside" id="brA-4d-m16"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKf-6D-zxE">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FJ0-Dz-0gs"/>
+                                    <constraint firstAttribute="width" constant="30" id="c9d-Qd-fLY"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="cross_black"/>
+                                <connections>
+                                    <action selector="crossTapped:" destination="jxI-Ze-Rd2" eventType="touchUpInside" id="wev-an-nN5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jfp-xj-DJE" firstAttribute="leading" secondItem="cnQ-Gm-GOo" secondAttribute="leadingMargin" constant="8" id="5Xe-mc-Kwa"/>
+                            <constraint firstItem="jfp-xj-DJE" firstAttribute="top" secondItem="Sqf-Q2-n6k" secondAttribute="bottom" constant="28" id="9SA-lF-9pD"/>
+                            <constraint firstItem="Sqf-Q2-n6k" firstAttribute="top" secondItem="opZ-zm-shP" secondAttribute="bottom" constant="8" id="EJA-h3-ltf"/>
+                            <constraint firstItem="SKf-6D-zxE" firstAttribute="leading" secondItem="cnQ-Gm-GOo" secondAttribute="leadingMargin" id="Oln-EY-0NI"/>
+                            <constraint firstItem="fTw-1N-xpu" firstAttribute="centerX" secondItem="cnQ-Gm-GOo" secondAttribute="centerX" id="TSL-9c-tAt"/>
+                            <constraint firstItem="Sqf-Q2-n6k" firstAttribute="leading" secondItem="cnQ-Gm-GOo" secondAttribute="leadingMargin" constant="8" id="UHc-V8-nMc"/>
+                            <constraint firstItem="opZ-zm-shP" firstAttribute="trailing" secondItem="cnQ-Gm-GOo" secondAttribute="trailingMargin" id="YlZ-6C-trD"/>
+                            <constraint firstItem="Sqf-Q2-n6k" firstAttribute="trailing" secondItem="cnQ-Gm-GOo" secondAttribute="trailingMargin" constant="8" id="cI4-F2-04V"/>
+                            <constraint firstItem="fTw-1N-xpu" firstAttribute="top" secondItem="jfp-xj-DJE" secondAttribute="bottom" constant="16" id="d3b-Oo-tWO"/>
+                            <constraint firstItem="jfp-xj-DJE" firstAttribute="trailing" secondItem="cnQ-Gm-GOo" secondAttribute="trailingMargin" constant="8" id="eH5-rq-cJs"/>
+                            <constraint firstItem="opZ-zm-shP" firstAttribute="top" secondItem="4Xy-Aj-Bxh" secondAttribute="bottom" constant="25" id="hHB-Gm-ot0"/>
+                            <constraint firstItem="opZ-zm-shP" firstAttribute="leading" secondItem="cnQ-Gm-GOo" secondAttribute="leadingMargin" id="kfY-LU-GSx"/>
+                            <constraint firstItem="SKf-6D-zxE" firstAttribute="top" secondItem="4Xy-Aj-Bxh" secondAttribute="bottom" id="wX5-rF-AKd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSendOTP" destination="fTw-1N-xpu" id="iTv-DY-wgB"/>
+                        <outlet property="txtEmail" destination="jfp-xj-DJE" id="BaF-cz-o9I"/>
+                        <segue destination="PLU-Nn-hCV" kind="presentation" identifier="resetPassword" modalPresentationStyle="overFullScreen" id="iGS-tf-Pfy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wea-Vs-Uzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5654" y="-3786"/>
+        </scene>
+        <!--Reset Pwd View Controller-->
+        <scene sceneID="gxw-dD-fCA">
+            <objects>
+                <viewController id="PLU-Nn-hCV" customClass="ResetPwdViewController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SgZ-7G-uFy"/>
+                        <viewControllerLayoutGuide type="bottom" id="PVR-aP-bo5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WRw-PP-bI4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-Sm-V9Z" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Oek-VB-Vnf"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email*"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1y-dG-OeL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PFN-Gq-tcN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="joB-M5-Fge" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="571-ul-hg3"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="OTP*"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bot-s2-jJX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="DXv-5U-nrG"/>
+                                    <constraint firstAttribute="height" constant="30" id="RWZ-ms-bch"/>
+                                </constraints>
+                                <state key="normal" title="Resend"/>
+                                <connections>
+                                    <action selector="resendOTP:" destination="PLU-Nn-hCV" eventType="touchUpInside" id="AnI-jR-VEo"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EKF-0e-cJI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="k02-BE-GUw"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="New Password*"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZn-ee-i2d">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4gJ-Zv-go7"/>
+                                    <constraint firstAttribute="width" constant="30" id="ofb-yf-kBc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="cross_black"/>
+                                <connections>
+                                    <action selector="crossTapped:" destination="PLU-Nn-hCV" eventType="touchUpInside" id="xUq-Dt-QNN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJQ-6l-tAa">
+                                <frame key="frameInset" minX="145" minY="329" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.025857113120000001" green="0.41422020609999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPassword:" destination="PLU-Nn-hCV" eventType="touchUpInside" id="DcQ-MR-cMf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sZn-ee-i2d" firstAttribute="leading" secondItem="WRw-PP-bI4" secondAttribute="leadingMargin" id="5TY-qg-K2l"/>
+                            <constraint firstItem="sZn-ee-i2d" firstAttribute="top" secondItem="SgZ-7G-uFy" secondAttribute="bottom" id="Aof-eg-Lna"/>
+                            <constraint firstItem="bot-s2-jJX" firstAttribute="bottom" secondItem="joB-M5-Fge" secondAttribute="bottom" id="JKm-Ec-edb"/>
+                            <constraint firstItem="H1y-dG-OeL" firstAttribute="top" secondItem="SgZ-7G-uFy" secondAttribute="bottom" constant="31" id="NB2-BU-wOq"/>
+                            <constraint firstItem="H1y-dG-OeL" firstAttribute="trailing" secondItem="WRw-PP-bI4" secondAttribute="trailingMargin" id="S7n-XG-A8v"/>
+                            <constraint firstItem="joB-M5-Fge" firstAttribute="top" secondItem="Yg5-Sm-V9Z" secondAttribute="bottom" constant="36" id="WhC-uv-Y5K"/>
+                            <constraint firstItem="EKF-0e-cJI" firstAttribute="leading" secondItem="WRw-PP-bI4" secondAttribute="leadingMargin" constant="8" id="XG0-yq-fhP"/>
+                            <constraint firstItem="Yg5-Sm-V9Z" firstAttribute="leading" secondItem="WRw-PP-bI4" secondAttribute="leadingMargin" constant="8" id="dRQ-QZ-wOM"/>
+                            <constraint firstItem="bot-s2-jJX" firstAttribute="trailing" secondItem="WRw-PP-bI4" secondAttribute="trailingMargin" id="gek-yf-47D"/>
+                            <constraint firstItem="Yg5-Sm-V9Z" firstAttribute="trailing" secondItem="WRw-PP-bI4" secondAttribute="trailingMargin" constant="8" id="lHp-dv-WJJ"/>
+                            <constraint firstItem="H1y-dG-OeL" firstAttribute="leading" secondItem="WRw-PP-bI4" secondAttribute="leadingMargin" id="o3w-lO-eKL"/>
+                            <constraint firstItem="Yg5-Sm-V9Z" firstAttribute="top" secondItem="H1y-dG-OeL" secondAttribute="bottom" constant="32" id="qSF-qY-w4X"/>
+                            <constraint firstItem="joB-M5-Fge" firstAttribute="trailing" secondItem="WRw-PP-bI4" secondAttribute="trailingMargin" constant="8" id="qjs-55-uHz"/>
+                            <constraint firstItem="joB-M5-Fge" firstAttribute="leading" secondItem="WRw-PP-bI4" secondAttribute="leadingMargin" constant="8" id="tug-kn-reL"/>
+                            <constraint firstItem="EKF-0e-cJI" firstAttribute="top" secondItem="joB-M5-Fge" secondAttribute="bottom" constant="43" id="uSG-1O-ZAy"/>
+                            <constraint firstItem="EKF-0e-cJI" firstAttribute="trailing" secondItem="WRw-PP-bI4" secondAttribute="trailingMargin" constant="8" id="wKX-JV-wLc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSubmit" destination="vJQ-6l-tAa" id="rdh-1I-5hK"/>
+                        <outlet property="txtEmail" destination="Yg5-Sm-V9Z" id="Obh-4C-RDX"/>
+                        <outlet property="txtNewPassword" destination="EKF-0e-cJI" id="GNy-hL-JKP"/>
+                        <outlet property="txtOTP" destination="joB-M5-Fge" id="FHZ-CZ-R9X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B9V-4p-G2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6357.6000000000004" y="-3786.6566716641682"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="lZZ-Tq-55l">

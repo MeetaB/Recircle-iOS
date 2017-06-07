@@ -237,18 +237,22 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
                             print(itemProd.product_title)
                             let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
                            self.prodNames.append(prodName)
-                            if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
-                                if let data = NSData(contentsOf: url as URL) {
-                                    self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
-                                }
-                            }
+                            
+                            //Commenting for future if product image needs to be shown in search text
+//                            if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
+//                                if let data = NSData(contentsOf: url as URL) {
+//                                    self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
+//                                }
+//                            }
                             
                             
                             
                         }
                     }
                 
-                self.searchProdNameField.filterItems(self.searchItems)
+                    //Commenting for future if product image needs to be shown in search text
+             //   self.searchProdNameField.filterItems(self.searchItems)
+                self.searchProdNameField.filterStrings(self.prodNames)
                     
                 }
         }

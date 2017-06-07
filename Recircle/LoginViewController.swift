@@ -59,6 +59,7 @@ class LoginViewController: UIViewController {
     */
     @IBAction func forgotPassword(_ sender: AnyObject) {
         
+        self.performSegue(withIdentifier: "forgotPassword", sender: self)
     }
 
     @IBAction func login(_ sender: AnyObject) {

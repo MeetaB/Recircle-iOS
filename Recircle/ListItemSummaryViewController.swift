@@ -162,7 +162,6 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
         }
         
         
-        
         if let productId = listItem.product_id,
             let productTitle = txtProdName.text,
             let price = listItem.price_per_day,

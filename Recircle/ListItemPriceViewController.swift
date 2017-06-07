@@ -151,15 +151,18 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
                             self.autoCompleteProducts.append(product)
                             let prodName = item.product_manufacturer_name! + " " + itemProd.product_title!
                             self.prodNames.append(prodName)
-                            if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
-                                if let data = NSData(contentsOf: url as URL) {
-                                    self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
-                                }
-                            }
+                            //Commenting for future if product image needs to be shown in search text
+//                            if let url = NSURL(string: (itemProd.product_detail?.product_image_url)!) {
+//                                if let data = NSData(contentsOf: url as URL) {
+//                                    self.searchItems.append(SearchTextFieldItem(title: prodName, subtitle: "", image: UIImage(data: data as Data)))
+//                                }
+//                            }
                         }
                     }
                     
-                    self.prodSearchTextField.filterItems(self.searchItems)
+                    //Commenting for future if product image needs to be shown in search text
+                   // self.prodSearchTextField.filterItems(self.searchItems)
+                    self.prodSearchTextField.filterStrings(self.prodNames)
                 }
         }
     }
@@ -182,6 +185,7 @@ class ListItemPriceViewController: UIViewController, UITextFieldDelegate {
         if let productId = self.productId {
             listItem.product_id = productId
         } else {
+            listItem.product_id = ""
             listItem.product_title = self.prodSearchTextField.text
         }
         
