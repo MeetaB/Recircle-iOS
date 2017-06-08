@@ -21,6 +21,10 @@ class ResetPwdViewController: UIViewController {
     
     @IBOutlet weak var btnSubmit: UIButton!
     
+    @IBOutlet weak var btnShowPassword: UIButton!
+    
+    var showPassword : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,8 +54,16 @@ class ResetPwdViewController: UIViewController {
     
     @IBAction func resendOTP(_ sender: AnyObject) {
         
-        if let email = txtEmail.text {
+        
+        if (txtEmail.text?.isEmpty)! {
+
+             UIUtils.showAlertNoAction(viewController : self, title: "Alert", message: "Please enter valid email", positiveButton: "Ok", negativeButton: "Cancel")
+        }
+        
+        else if let email = txtEmail.text {
             
+            UIUtils.showProgressBar(self.view)
+
             let url = URL(string: RecircleWebConstants.FORGOTPASSWORDAPI + "?user_name=" + email)
             
             
@@ -60,7 +72,7 @@ class ResetPwdViewController: UIViewController {
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
                     
-                    self.performSegue(withIdentifier: "resetPassword", sender: self)
+                    UIUtils.hideProgresBar()
                     
                     print(response.request)  // original URL request
                     print(response.response) // HTTP URL response
@@ -76,7 +88,6 @@ class ResetPwdViewController: UIViewController {
             
         }
         
-
     }
     /*
     // MARK: - Navigation
@@ -128,4 +139,22 @@ class ResetPwdViewController: UIViewController {
 
         
     }
+    
+    
+    @IBAction func showPasswordTapped(_ sender: AnyObject) {
+        
+        if showPassword {
+            txtNewPassword.isSecureTextEntry = false
+            showPassword = false
+            btnShowPassword.setBackgroundImage(UIImage(named : "hide_password"), for: .normal)
+        } else {
+            txtNewPassword.isSecureTextEntry = true
+            txtNewPassword.allowsEditingTextAttributes = true
+            showPassword = true
+            txtNewPassword.clearsOnBeginEditing = false;
+            btnShowPassword.setBackgroundImage(UIImage(named : "show_password"), for: .normal)
+        }
+        
+    }
+    
 }

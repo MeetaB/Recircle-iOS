@@ -28,6 +28,8 @@ public class RecircleWebConstants {
     
     public static var FORGOTPASSWORDAPI : String = RecircleURL + "/users/forgotPwd"
     
+    public static var MESSAGESAPI : String = RecircleURL + "/user_message"
+    
     
     
 }

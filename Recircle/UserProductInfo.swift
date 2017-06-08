@@ -17,11 +17,12 @@ public class UserProductInfo {
     public var avai_to_date : String?
     public var product_avg_rating : Int!
     public var user_prod_images : Array<UserProdImages>?
-    public var price_per_day : Int
+    public var price_per_day : Int!
     
     public var user_prod_reviews : Array<UserProdReviews>?
     public var user_prod_unavailability : Array<UserProdUnavailability>?
     public var user_product_discounts : Array<String>?
+    public var product : ProductInfo?
     
     /**
      Returns an array of models based on given dictionary.
@@ -63,7 +64,9 @@ public class UserProductInfo {
         avai_to_date = dictionary["avai_to_date"] as? String
         product_avg_rating = dictionary["product_avg_rating"] as? Int
         if (dictionary["user_prod_images"] != nil) { user_prod_images = UserProdImages.modelsFromDictionaryArray(array: dictionary["user_prod_images"] as! NSArray) }
-        price_per_day = (dictionary["price_per_day"] as? Int)!
+        if (dictionary["price_per_day"] != nil) {
+            price_per_day = (dictionary["price_per_day"] as? Int)!
+        }
         
         if (dictionary["user_prod_reviews"] != nil) { user_prod_reviews = UserProdReviews
             .modelsFromDictionaryArray(array: dictionary["user_prod_reviews"] as! NSArray)
@@ -73,6 +76,11 @@ public class UserProductInfo {
             .modelsFromDictionaryArray(array: dictionary["user_prod_unavailability"] as! NSArray)
         }
         
+        
+        if dictionary["product"] != nil {
+            
+            product = dictionary["product"] as? ProductInfo
+        }
         
         
         
@@ -99,6 +107,7 @@ public class UserProductInfo {
         dictionary.setValue(self.user_prod_reviews, forKey: "user_prod_reviews")
         dictionary.setValue(self.user_prod_unavailability, forKey: "user_prod_unavailability")
         dictionary.setValue(self.user_product_discounts, forKey: "user_product_discounts")
+         dictionary.setValue(self.product, forKey: "product")
         
         
         return dictionary

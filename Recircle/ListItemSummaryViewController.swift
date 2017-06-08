@@ -228,6 +228,8 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
 
                         }
                 }
+            } else {
+                self.progressBar.hide(animated: true)
             }
         }
         

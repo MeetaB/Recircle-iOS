@@ -50,7 +50,8 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     var pickDropText : Bool = false
     
     var dateText : String = ""
-
+    
+    var heightTabBar : CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,8 +129,11 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     override func viewDidLayoutSubviews() {
+    
         collectionView.contentSize = CGSize(width: self.view.frame.width, height: 3000)
-        }
+        heightTabBar = self.tabBarController?.tabBar.frame.height
+       
+    }
 
     
     // MARK: - Navigation
@@ -160,6 +164,12 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewWillAppear(_ animated: Bool) {
     
+        self.tabBarController?.tabBar.isHidden = false
+        
+        if heightTabBar != nil {
+            self.tabBarController?.tabBar.frame.size.height = heightTabBar
+        }
+        
         if CalendarState.searchProduct {
             setUpDate()
         }
@@ -565,7 +575,7 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
                 cellPopularProds.txtPrice.text = "$ " + String(price) + " /day"
             }
             
-            if let imageUrl = self.popularProducts[index].product_info?.product_image_url?.user_prod_image_url {
+            if let imageUrl = self.popularProducts[index].user_product_info?.user_prod_images?[0].user_prod_image_url {
                 cellPopularProds.imageProduct.setImageFromURl(stringImageUrl: imageUrl)
             }
             

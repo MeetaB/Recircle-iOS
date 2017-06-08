@@ -10,6 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import Alamofire
 import SwiftyJSON
+import MBProgressHUD
 
 class ForgotPwdViewController: UIViewController {
 
@@ -17,6 +18,8 @@ class ForgotPwdViewController: UIViewController {
     @IBOutlet weak var btnSendOTP: UIButton!
     
     @IBOutlet weak var txtEmail: SkyFloatingLabelTextField!
+    
+    var progressBar : MBProgressHUD!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,14 @@ class ForgotPwdViewController: UIViewController {
 
     @IBAction func sendOTPTapped(_ sender: AnyObject) {
         
+        progressBar = MBProgressHUD.showAdded(to: self.view, animated: true);
+        
+        progressBar.mode = MBProgressHUDMode.indeterminate
+        
+        progressBar.label.text = "Loading";
+        
+        progressBar.isUserInteractionEnabled = false;
+        
         if let email = txtEmail.text {
         
             let url = URL(string: RecircleWebConstants.FORGOTPASSWORDAPI + "?user_name=" + email)
@@ -58,6 +69,8 @@ class ForgotPwdViewController: UIViewController {
                               method: .get)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
+                    
+                    self.progressBar.hide(animated: true)
                     
                     self.performSegue(withIdentifier: "resetPassword", sender: self)
                     
@@ -74,6 +87,10 @@ class ForgotPwdViewController: UIViewController {
             }
             
         }
+
+        
+        self.progressBar.hide(animated: true)
+
         
     }
 }
