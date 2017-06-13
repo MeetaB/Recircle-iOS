@@ -204,9 +204,13 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        
         if isLoggedIn {
             if indexPath.section == 1 {
-                if indexPath.row == 1 {
+                if indexPath.row == 0 {
+                    self.performSegue(withIdentifier: "settings", sender: self)
+                }
+                else if indexPath.row == 1 {
                     if let url = NSURL(string:"http://recirkle.com/#/help") {
                         UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
                     }

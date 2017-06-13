@@ -92,6 +92,15 @@
 		7EBFF67F1EE9219000341D32 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFF67E1EE9219000341D32 /* UIUtils.swift */; };
 		7EBFF6811EE92CA100341D32 /* MessagesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFF6801EE92CA100341D32 /* MessagesTabBarController.swift */; };
 		7EBFF6831EE92CB900341D32 /* FromRenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFF6821EE92CB900341D32 /* FromRenterViewController.swift */; };
+		7EC282171EEC2F44004AC946 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC282161EEC2F44004AC946 /* SettingsViewController.swift */; };
+		7EC282191EEE6668004AC946 /* SettingsPhotoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC282181EEE6668004AC946 /* SettingsPhotoCellView.xib */; };
+		7EC2821B1EEE6ACC004AC946 /* SettingsLabelCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC2821A1EEE6ACC004AC946 /* SettingsLabelCellView.xib */; };
+		7EC2821D1EEE6BC2004AC946 /* NotificationsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC2821C1EEE6BC2004AC946 /* NotificationsCellView.xib */; };
+		7EC2821F1EEE6C93004AC946 /* SettingsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC2821E1EEE6C93004AC946 /* SettingsCellView.xib */; };
+		7EC282211EEE6D96004AC946 /* SettingsPhotoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC282201EEE6D96004AC946 /* SettingsPhotoCellView.swift */; };
+		7EC282231EEE6E33004AC946 /* NotificationsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC282221EEE6E33004AC946 /* NotificationsCellView.swift */; };
+		7EC282251EEE7492004AC946 /* SettingsLabelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC282241EEE7492004AC946 /* SettingsLabelCellView.swift */; };
+		7EC282271EEE74DE004AC946 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC282261EEE74DE004AC946 /* SettingsCellView.swift */; };
 		7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */; };
 		7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */; };
 		7ED4F3E41E9B7E9700E75C53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */; };
@@ -194,6 +203,15 @@
 		7EBFF67E1EE9219000341D32 /* UIUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		7EBFF6801EE92CA100341D32 /* MessagesTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTabBarController.swift; sourceTree = "<group>"; };
 		7EBFF6821EE92CB900341D32 /* FromRenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromRenterViewController.swift; sourceTree = "<group>"; };
+		7EC282161EEC2F44004AC946 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7EC282181EEE6668004AC946 /* SettingsPhotoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsPhotoCellView.xib; sourceTree = "<group>"; };
+		7EC2821A1EEE6ACC004AC946 /* SettingsLabelCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsLabelCellView.xib; sourceTree = "<group>"; };
+		7EC2821C1EEE6BC2004AC946 /* NotificationsCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsCellView.xib; sourceTree = "<group>"; };
+		7EC2821E1EEE6C93004AC946 /* SettingsCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsCellView.xib; sourceTree = "<group>"; };
+		7EC282201EEE6D96004AC946 /* SettingsPhotoCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPhotoCellView.swift; sourceTree = "<group>"; };
+		7EC282221EEE6E33004AC946 /* NotificationsCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsCellView.swift; sourceTree = "<group>"; };
+		7EC282241EEE7492004AC946 /* SettingsLabelCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsLabelCellView.swift; sourceTree = "<group>"; };
+		7EC282261EEE74DE004AC946 /* SettingsCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		7ED4F3DF1E97C33300E75C53 /* AlamofireAPICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAPICall.swift; sourceTree = "<group>"; };
 		7ED4F3E11E9B7E0F00E75C53 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -258,6 +276,11 @@
 				7E10B3E91EE032DA007B7C21 /* CreateAccountViewController.swift */,
 				7EBFF6771EE7F44F00341D32 /* ForgotPwdViewController.swift */,
 				7EBFF6791EE81AEB00341D32 /* ResetPwdViewController.swift */,
+				7EC282161EEC2F44004AC946 /* SettingsViewController.swift */,
+				7EC282201EEE6D96004AC946 /* SettingsPhotoCellView.swift */,
+				7EC282221EEE6E33004AC946 /* NotificationsCellView.swift */,
+				7EC282241EEE7492004AC946 /* SettingsLabelCellView.swift */,
+				7EC282261EEE74DE004AC946 /* SettingsCellView.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -448,6 +471,10 @@
 				7E10B3DB1EDC0E27007B7C21 /* DrawerCell.xib */,
 				7E10B3DF1EDC18B1007B7C21 /* DrawerHeaderCell.xib */,
 				7E28D0401EE95B3900335733 /* MessageCellView.xib */,
+				7EC282181EEE6668004AC946 /* SettingsPhotoCellView.xib */,
+				7EC2821A1EEE6ACC004AC946 /* SettingsLabelCellView.xib */,
+				7EC2821C1EEE6BC2004AC946 /* NotificationsCellView.xib */,
+				7EC2821E1EEE6C93004AC946 /* SettingsCellView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -531,13 +558,17 @@
 				7ED4F3E21E9B7E0F00E75C53 /* HeaderView.xib in Resources */,
 				7E8B35921E924F46000B5FF0 /* Assets.xcassets in Resources */,
 				7EBD78BA1EAF2F3800B80E20 /* ProductCellView.xib in Resources */,
+				7EC282191EEE6668004AC946 /* SettingsPhotoCellView.xib in Resources */,
 				7EA077161E966A69001024FF /* DateCellView.xib in Resources */,
 				7E28D0411EE95B3900335733 /* MessageCellView.xib in Resources */,
 				7E10B3DC1EDC0E27007B7C21 /* DrawerCell.xib in Resources */,
 				7E8B358D1E924F45000B5FF0 /* Main.storyboard in Resources */,
+				7EC2821F1EEE6C93004AC946 /* SettingsCellView.xib in Resources */,
+				7EC2821B1EEE6ACC004AC946 /* SettingsLabelCellView.xib in Resources */,
 				7E1B0EDD1EC1C08B00A882E8 /* ProductImageCell.xib in Resources */,
 				7E92D0E41ED59308006E299E /* SearchProdStaticCell.xib in Resources */,
 				7E0758381ED6EC21003909DD /* SearchProdLabelCell.xib in Resources */,
+				7EC2821D1EEE6BC2004AC946 /* NotificationsCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,9 +643,11 @@
 				7EBFF6831EE92CB900341D32 /* FromRenterViewController.swift in Sources */,
 				7EB4864D1EA78B0000656270 /* Products.swift in Sources */,
 				7ED4F3E01E97C33300E75C53 /* AlamofireAPICall.swift in Sources */,
+				7EC282251EEE7492004AC946 /* SettingsLabelCellView.swift in Sources */,
 				7EB486361EA4AAA300656270 /* ProductDetails.swift in Sources */,
 				7E28D0431EE95CFD00335733 /* MessageCellView.swift in Sources */,
 				7E28D03E1EE93FBE00335733 /* UserProdMsgPools.swift in Sources */,
+				7EC282231EEE6E33004AC946 /* NotificationsCellView.swift in Sources */,
 				7EBFF67F1EE9219000341D32 /* UIUtils.swift in Sources */,
 				7EB4863A1EA4ABF300656270 /* UserProductInfo.swift in Sources */,
 				7E21F3461ECEDE3600F078C2 /* MapViewController.swift in Sources */,
@@ -625,6 +658,7 @@
 				7E10B3DE1EDC0F4A007B7C21 /* DrawerCell.swift in Sources */,
 				7E07583A1ED6ECE4003909DD /* SearchProdLabelCell.swift in Sources */,
 				7E0758321ED598E2003909DD /* SearchProdStaticCell.swift in Sources */,
+				7EC282271EEE74DE004AC946 /* SettingsCellView.swift in Sources */,
 				7EBFF6781EE7F44F00341D32 /* ForgotPwdViewController.swift in Sources */,
 				7E350EAC1EE52C3700B7525E /* KeychainItemAccessibility.swift in Sources */,
 				7EDEBF871ED40E35001DE5F3 /* MBProgressHUD.m in Sources */,
@@ -662,6 +696,7 @@
 				7EB4863E1EA4B3A400656270 /* UserInfo.swift in Sources */,
 				7E21F34E1ED2F37D00F078C2 /* ListItem.swift in Sources */,
 				7EB486401EA4B42300656270 /* UserAddresses.swift in Sources */,
+				7EC282171EEC2F44004AC946 /* SettingsViewController.swift in Sources */,
 				7E21F31E1ECADBC600F078C2 /* ListItemPhotosViewController.swift in Sources */,
 				7EDDDEA91EBC4FA100C9DA67 /* AllReviewsTableViewController.swift in Sources */,
 				7EA077181E966AF4001024FF /* DayCellView.swift in Sources */,
@@ -671,6 +706,7 @@
 				7EA9ACB81EBC806400623505 /* ReviewTableViewCell.swift in Sources */,
 				7EA9ACB41EBC697000623505 /* UserProdReviews.swift in Sources */,
 				7E350EAA1EE52BD800B7525E /* KeychainWrapper.swift in Sources */,
+				7EC282211EEE6D96004AC946 /* SettingsPhotoCellView.swift in Sources */,
 				7EBFF6811EE92CA100341D32 /* MessagesTabBarController.swift in Sources */,
 				7EB7613E1EC1CEEE00684BD5 /* ProdImageViewController.swift in Sources */,
 				7EB486491EA78A6300656270 /* ProdNames.swift in Sources */,

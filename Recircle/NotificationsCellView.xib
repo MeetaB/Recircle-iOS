@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="OlK-Xv-B6z" customClass="NotificationsCellView" customModule="Recircle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="95"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OlK-Xv-B6z" id="Hv4-u5-M3v">
+                <frame key="frameInset" width="379" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GS8-qZ-ZxL">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="zQg-uB-2pq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aP3-Ek-Z1V">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="Cep-cC-3ke"/>
+                            <constraint firstAttribute="height" constant="31" id="ShN-bx-QNU"/>
+                        </constraints>
+                        <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GS8-qZ-ZxL" firstAttribute="top" secondItem="Hv4-u5-M3v" secondAttribute="topMargin" constant="13" id="X2T-Lf-MQ9"/>
+                    <constraint firstItem="aP3-Ek-Z1V" firstAttribute="trailing" secondItem="Hv4-u5-M3v" secondAttribute="trailingMargin" constant="8" id="gN0-hB-MQB"/>
+                    <constraint firstItem="aP3-Ek-Z1V" firstAttribute="leading" secondItem="GS8-qZ-ZxL" secondAttribute="trailing" constant="8" id="qeW-Ks-FOM"/>
+                    <constraint firstItem="aP3-Ek-Z1V" firstAttribute="top" secondItem="Hv4-u5-M3v" secondAttribute="topMargin" constant="16" id="wPK-zc-r9X"/>
+                    <constraint firstItem="GS8-qZ-ZxL" firstAttribute="leading" secondItem="Hv4-u5-M3v" secondAttribute="leadingMargin" constant="8" id="zHH-UO-Avy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="switchNotifications" destination="aP3-Ek-Z1V" id="qPT-OV-Ch7"/>
+                <outlet property="txtNotifications" destination="GS8-qZ-ZxL" id="1wr-mh-342"/>
+            </connections>
+            <point key="canvasLocation" x="104.5" y="-340.5"/>
+        </tableViewCell>
+    </objects>
+</document>
