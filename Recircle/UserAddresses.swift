@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class UserAddresses {
-    public var street2 : String?
+public class UserAddress {
+    public var user_address_id : String?
     public var state : String?
     public var country : String?
-    public var street1 : String?
+    public var street : String?
     public var city : String?
     public var zip : Int?
     
@@ -26,12 +26,12 @@ public class UserAddresses {
      
      - returns: Array of User_addresses Instances.
      */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [UserAddresses]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [UserAddress]
     {
-        var models:[UserAddresses] = []
+        var models:[UserAddress] = []
         for item in array
         {
-            models.append(UserAddresses(dictionary: item as! NSDictionary)!)
+            models.append(UserAddress(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -48,10 +48,10 @@ public class UserAddresses {
      */
     required public init?(dictionary: NSDictionary) {
         
-        street2 = dictionary["street2"] as? String
+        user_address_id = dictionary["user_address_id"] as? String
         state = dictionary["state"] as? String
         country = dictionary["country"] as? String
-        street1 = dictionary["street1"] as? String
+        street = dictionary["street"] as? String
         city = dictionary["city"] as? String
         zip = dictionary["zip"] as? Int
     }
@@ -66,10 +66,10 @@ public class UserAddresses {
         
         let dictionary = NSMutableDictionary()
         
-        dictionary.setValue(self.street2, forKey: "street2")
+        dictionary.setValue(self.user_address_id, forKey: "user_address_id")
         dictionary.setValue(self.state, forKey: "state")
         dictionary.setValue(self.country, forKey: "country")
-        dictionary.setValue(self.street1, forKey: "street1")
+        dictionary.setValue(self.street, forKey: "street")
         dictionary.setValue(self.city, forKey: "city")
         dictionary.setValue(self.zip, forKey: "zip")
         

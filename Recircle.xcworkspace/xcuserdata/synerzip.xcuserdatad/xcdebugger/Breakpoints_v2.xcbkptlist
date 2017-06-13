@@ -1350,13 +1350,13 @@
                   symbolName = "Recircle.ProductDetailViewController.(viewDidLoad () -&gt; ()).(closure #1)"
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ProductDetailViewController.swift"
-                  timestampString = "518942545.793589"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/ProductDetailViewController.swift"
+                  timestampString = "519045640.488544"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
                   endingLineNumber = "134"
-                  offsetFromSymbolStart = "9575">
+                  offsetFromSymbolStart = "9181">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1365,13 +1365,13 @@
                   symbolName = "Recircle.ProductDetailViewController.(viewDidLoad () -&gt; ()).(closure #1)"
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/ProductDetailViewController.swift"
-                  timestampString = "518942545.795341"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/ProductDetailViewController.swift"
+                  timestampString = "519045640.492587"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
                   endingLineNumber = "134"
-                  offsetFromSymbolStart = "9872">
+                  offsetFromSymbolStart = "9478">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1526,8 +1526,8 @@
                   symbolName = "Recircle.AllReviewsTableViewController.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/AllReviewsTableViewController.swift"
-                  timestampString = "518942545.805381"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/AllReviewsTableViewController.swift"
+                  timestampString = "519045640.511656"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -1541,8 +1541,8 @@
                   symbolName = "Recircle.AllReviewsTableViewController.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/AllReviewsTableViewController.swift"
-                  timestampString = "518942545.807213"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/AllReviewsTableViewController.swift"
+                  timestampString = "519045640.514292"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -1830,8 +1830,8 @@
                   symbolName = "Recircle.TabBarViewController.didTapOpenButton (__ObjC.UIBarButtonItem) -&gt; ()"
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/TabBarViewController.swift"
-                  timestampString = "518942545.826667"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/TabBarViewController.swift"
+                  timestampString = "519045640.551203"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -1845,8 +1845,8 @@
                   symbolName = "Recircle.TabBarViewController.didTapOpenButton (__ObjC.UIBarButtonItem) -&gt; ()"
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/TabBarViewController.swift"
-                  timestampString = "518942545.828496"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/TabBarViewController.swift"
+                  timestampString = "519045640.553987"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -1924,8 +1924,8 @@
                   symbolName = "Recircle.RentItem.__deallocating_deinit"
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/RentItem.swift"
-                  timestampString = "518942545.832894"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/RentItem.swift"
+                  timestampString = "519045640.563501"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1939,8 +1939,8 @@
                   symbolName = "Recircle.RentItem.deinit"
                   moduleName = "Recircle"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/synerzip/Documents/Recircle/Recircle/Recircle/RentItem.swift"
-                  timestampString = "518942545.834876"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/RentItem.swift"
+                  timestampString = "519045640.566104"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -2485,12 +2485,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Recircle/SettingsViewController.swift"
-            timestampString = "518947382.103705"
+            timestampString = "519048792.459746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/SettingsViewController.swift"
+            timestampString = "519048792.459746"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/SettingsViewController.swift"
+            timestampString = "519046472.764966"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "getUserData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recircle.SettingsViewController.(getUserData () -&gt; ()).(closure #1)"
+                  moduleName = "Recircle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/SettingsViewController.swift"
+                  timestampString = "519045640.678501"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "3319">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recircle.SettingsViewController.(getUserData () -&gt; ()).(closure #1)"
+                  moduleName = "Recircle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/synerzip/Documents/Recircle-iOS/Recircle/SettingsViewController.swift"
+                  timestampString = "519045640.681233"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "7582">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recircle/SettingsViewController.swift"
+            timestampString = "519046472.764966"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "getUserData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

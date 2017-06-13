@@ -64,6 +64,8 @@
 		7EA077141E964FD8001024FF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA077131E964FD8001024FF /* DatePickerViewController.swift */; };
 		7EA077161E966A69001024FF /* DateCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EA077151E966A69001024FF /* DateCellView.xib */; };
 		7EA077181E966AF4001024FF /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA077171E966AF4001024FF /* DayCellView.swift */; };
+		7EA5DE891EEFBB2500A190A6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5DE881EEFBB2500A190A6 /* MBProgressHUD.m */; };
+		7EA5DE8E1EEFDF6D00A190A6 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5DE8D1EEFDF6D00A190A6 /* EditUserViewController.swift */; };
 		7EA9ACB41EBC697000623505 /* UserProdReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9ACB31EBC697000623505 /* UserProdReviews.swift */; };
 		7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9ACB51EBC6A3B00623505 /* UserProdUnavailability.swift */; };
 		7EA9ACB81EBC806400623505 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9ACB71EBC806400623505 /* ReviewTableViewCell.swift */; };
@@ -107,7 +109,6 @@
 		7EDDDEA11EB9FDB500C9DA67 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */; };
 		7EDDDEA91EBC4FA100C9DA67 /* AllReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */; };
 		7EDDDEAB1EBC500800C9DA67 /* RenterReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDDEAA1EBC500800C9DA67 /* RenterReviewView.xib */; };
-		7EDEBF871ED40E35001DE5F3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDEBF861ED40E35001DE5F3 /* MBProgressHUD.m */; };
 		7EF7A0271EC463B4001BFEAA /* ProdAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7A0261EC463B4001BFEAA /* ProdAddressTableViewCell.swift */; };
 		7EF7A0291EC46467001BFEAA /* ProdDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7A0281EC46467001BFEAA /* ProdDescTableViewCell.swift */; };
 		7EF7A02B1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7A02A1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift */; };
@@ -175,6 +176,9 @@
 		7EA077131E964FD8001024FF /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		7EA077151E966A69001024FF /* DateCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCellView.xib; sourceTree = "<group>"; };
 		7EA077171E966AF4001024FF /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
+		7EA5DE871EEFBB2500A190A6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		7EA5DE881EEFBB2500A190A6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		7EA5DE8D1EEFDF6D00A190A6 /* EditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
 		7EA9ACB31EBC697000623505 /* UserProdReviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProdReviews.swift; sourceTree = "<group>"; };
 		7EA9ACB51EBC6A3B00623505 /* UserProdUnavailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProdUnavailability.swift; sourceTree = "<group>"; };
 		7EA9ACB71EBC806400623505 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -217,10 +221,8 @@
 		7ED4F3E31E9B7E9700E75C53 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		7EDDDEA01EB9FDB500C9DA67 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		7EDDDEA41EBB06D700C9DA67 /* Recircle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recircle-Bridging-Header.h"; sourceTree = "<group>"; };
-		7EDDDEA51EBB06D700C9DA67 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "../../../Downloads/MBProgressHUD-master/MBProgressHUD.h"; sourceTree = "<group>"; };
 		7EDDDEA81EBC4FA100C9DA67 /* AllReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllReviewsTableViewController.swift; sourceTree = "<group>"; };
 		7EDDDEAA1EBC500800C9DA67 /* RenterReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RenterReviewView.xib; sourceTree = "<group>"; };
-		7EDEBF861ED40E35001DE5F3 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "../../../Downloads/MBProgressHUD-master 2/MBProgressHUD.m"; sourceTree = "<group>"; };
 		7EF7A0261EC463B4001BFEAA /* ProdAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdAddressTableViewCell.swift; sourceTree = "<group>"; };
 		7EF7A0281EC46467001BFEAA /* ProdDescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdDescTableViewCell.swift; sourceTree = "<group>"; };
 		7EF7A02A1EC47AE8001BFEAA /* ProdImagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdImagesTableViewCell.swift; sourceTree = "<group>"; };
@@ -253,8 +255,8 @@
 		683E4AC6078D3B8F338F54ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EDDDEA51EBB06D700C9DA67 /* MBProgressHUD.h */,
-				7EDEBF861ED40E35001DE5F3 /* MBProgressHUD.m */,
+				7EA5DE871EEFBB2500A190A6 /* MBProgressHUD.h */,
+				7EA5DE881EEFBB2500A190A6 /* MBProgressHUD.m */,
 				5CA2B2E31ECDC8A4F6F0561C /* Pods_Recircle.framework */,
 				7EDDDEA41EBB06D700C9DA67 /* Recircle-Bridging-Header.h */,
 			);
@@ -281,6 +283,7 @@
 				7EC282221EEE6E33004AC946 /* NotificationsCellView.swift */,
 				7EC282241EEE7492004AC946 /* SettingsLabelCellView.swift */,
 				7EC282261EEE74DE004AC946 /* SettingsCellView.swift */,
+				7EA5DE8D1EEFDF6D00A190A6 /* EditUserViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -661,7 +664,6 @@
 				7EC282271EEE74DE004AC946 /* SettingsCellView.swift in Sources */,
 				7EBFF6781EE7F44F00341D32 /* ForgotPwdViewController.swift in Sources */,
 				7E350EAC1EE52C3700B7525E /* KeychainItemAccessibility.swift in Sources */,
-				7EDEBF871ED40E35001DE5F3 /* MBProgressHUD.m in Sources */,
 				7EA9ACB61EBC6A3B00623505 /* UserProdUnavailability.swift in Sources */,
 				7E07583C1ED84115003909DD /* RentItemSuccessViewController.swift in Sources */,
 				7E28D03F1EE93FBE00335733 /* UserProdOrderDetail.swift in Sources */,
@@ -682,6 +684,7 @@
 				7E21F3421ECB29EB00F078C2 /* RentItem.swift in Sources */,
 				7EF7A0271EC463B4001BFEAA /* ProdAddressTableViewCell.swift in Sources */,
 				7EB486421EA4BE1C00656270 /* UserProdImages.swift in Sources */,
+				7EA5DE891EEFBB2500A190A6 /* MBProgressHUD.m in Sources */,
 				7EDDDEA11EB9FDB500C9DA67 /* ProductDetailViewController.swift in Sources */,
 				7E10B3EA1EE032DA007B7C21 /* CreateAccountViewController.swift in Sources */,
 				7E0758361ED6CBFC003909DD /* SearchProdGridCell.swift in Sources */,
@@ -702,6 +705,7 @@
 				7EA077181E966AF4001024FF /* DayCellView.swift in Sources */,
 				7E92D0DB1ED45B3A006E299E /* ListItemSuccessViewController.swift in Sources */,
 				7EB4864F1EA78B4600656270 /* ProductDetail.swift in Sources */,
+				7EA5DE8E1EEFDF6D00A190A6 /* EditUserViewController.swift in Sources */,
 				7E95D9A31EC32D76006170A7 /* TestCollectionViewCell.swift in Sources */,
 				7EA9ACB81EBC806400623505 /* ReviewTableViewCell.swift in Sources */,
 				7EA9ACB41EBC697000623505 /* UserProdReviews.swift in Sources */,

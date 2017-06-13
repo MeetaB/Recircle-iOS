@@ -10,10 +10,17 @@ import Foundation
 
 public class UserInfo {
     public var email : String?
-    public var user_addresses : Array<UserAddresses>?
+    public var user_address : UserAddress?
     public var last_name : String?
     public var user_image_url : String?
     public var first_name : String?
+    
+    public var customer_id : String?
+    public var user_mob_no : Int?
+    public var user_id : String?
+    public var notification_flag : String?
+    public var userAddress : UserAddress?
+    public var mobile_verified : String?
     
     /**
      Returns an array of models based on given dictionary.
@@ -48,10 +55,30 @@ public class UserInfo {
     required public init?(dictionary: NSDictionary) {
         
         email = dictionary["email"] as? String
-        if (dictionary["user_addresses"] != nil) { user_addresses = UserAddresses.modelsFromDictionaryArray(array: dictionary["user_addresses"] as! NSArray) }
+        
+        if (dictionary["user_addresses"] != nil) {
+            user_address = UserAddress(dictionary: dictionary["user_addresses"] as! NSDictionary)
+        }
+        
         last_name = dictionary["last_name"] as? String
         user_image_url = dictionary["user_image_url"] as? String
         first_name = dictionary["first_name"] as? String
+        customer_id = dictionary["customer_id"] as? String
+        user_mob_no = dictionary["user_mob_no"] as? Int
+        user_id = dictionary["user_id"] as? String
+        notification_flag = dictionary["notification_flag"] as? String
+
+        if dictionary["userAddress"] is NSNull
+        {
+            //do nothing
+        } else {
+            if (dictionary["userAddress"] != nil ) {
+            userAddress = UserAddress(dictionary: dictionary["userAddress"] as! NSDictionary)
+        }
+        }
+
+        
+        mobile_verified = dictionary["mobile_verified"] as? String
     }
     
     
@@ -66,8 +93,16 @@ public class UserInfo {
         
         dictionary.setValue(self.email, forKey: "email")
         dictionary.setValue(self.last_name, forKey: "last_name")
+        dictionary.setValue(self.user_address, forKey: "user_address")
         dictionary.setValue(self.user_image_url, forKey: "user_image_url")
         dictionary.setValue(self.first_name, forKey: "first_name")
+        dictionary.setValue(self.customer_id, forKey: "customer_id")
+        dictionary.setValue(self.user_mob_no, forKey: "user_mob_no")
+        dictionary.setValue(self.user_id, forKey: "user_id")
+        dictionary.setValue(self.notification_flag, forKey: "notification_flag")
+        dictionary.setValue(self.userAddress, forKey: "userAddress")
+        dictionary.setValue(self.mobile_verified, forKey: "mobile_verified")
+
         
         return dictionary
     }
