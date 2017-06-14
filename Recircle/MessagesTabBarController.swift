@@ -53,8 +53,21 @@ class MessagesTabBarController: UITabBarController {
                            let messages = Messages.init(dictionary: json.object as! NSDictionary)
                             self.fromRenterMessages = (messages?.ownerRequestMsgs)!
                             self.fromOwnerMessages = (messages?.ownerProdRelatedMsgs)!
-                            let ownerVC = self.tabBarController?.viewControllers?[0] as! FromOwnerViewController
-                            ownerVC.getOwnerMessages(self.fromOwnerMessages)
+                        
+                        
+                        print(self.tabBarController?.selectedViewController?.childViewControllers[0])
+                        
+                            let ownerVC = self.viewControllers?[1] as! FromOwnerViewController1
+                        
+                            ownerVC.ownerMessages = self.fromOwnerMessages
+                        
+                            let renterVC = self.viewControllers?[0] as! FromRenterViewController
+                        
+                        renterVC.renterMessages = self.fromRenterMessages
+                        
+                        renterVC.getMessages()
+                        
+//                            ownerVC.getOwnerMessages(self.fromOwnerMessages)
                     }
                     
             }

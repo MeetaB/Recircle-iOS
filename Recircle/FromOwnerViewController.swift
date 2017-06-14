@@ -10,7 +10,7 @@ import UIKit
 
 class FromOwnerViewController: UIViewController {
 
-    
+   
     @IBOutlet weak var tableView: UITableView!
     
     var ownerMessages : [ProdMsgs] = []
@@ -18,9 +18,9 @@ class FromOwnerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.parent?.tabBarController?.tabBar.isHidden = true
-        
-        self.parent?.tabBarController?.tabBar.frame.size.height = 0.0
+//        self.parent?.tabBarController?.tabBar.isHidden = true
+//        
+//        self.parent?.tabBarController?.tabBar.frame.size.height = 0.0
         
         let parent = self.tabBarController as! MessagesTabBarController
         
@@ -52,17 +52,20 @@ class FromOwnerViewController: UIViewController {
         
         print("view did appear")
         
-        if tableView != nil {
-        
-        tableView.dataSource = self
-        
         tableView.delegate = self
         
+        tableView.dataSource = self
         
         let nib = UINib(nibName: "MessageCellView", bundle: nil)
         
         tableView.register(nib, forCellReuseIdentifier: "cell")
+        
+        if ownerMessages.count > 0 {
+            tableView.reloadData()
         }
+
+        
+      //  tableView.register(nib, forCellReuseIdentifier: "cell")
         
     }
     
@@ -100,7 +103,7 @@ extension FromOwnerViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.cellForRow(at: indexPath) as! MessageCellView
+       let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessageCellView
         
         let index = indexPath.row
         

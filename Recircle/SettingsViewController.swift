@@ -24,12 +24,13 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        self.navigationController?.isNavigationBarHidden = false
-        //
-        //        self.navigationController?.navigationBar.isHidden = false
-        //
+      
+        
         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x2C3140)
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SettingsViewController.goBack))
+
         
         tableView.dataSource = self
         
@@ -71,6 +72,10 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    
+    func goBack() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func getUserData() {
         

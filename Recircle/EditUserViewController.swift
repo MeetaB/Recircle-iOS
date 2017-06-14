@@ -42,7 +42,8 @@ class EditUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named : "done"), style: .plain, target: self, action: #selector(EditUserViewController.saveData))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(EditUserViewController.saveData))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named : "done"), style: .plain, target: self, action: #selector(EditUserViewController.saveData))
         
         txtFirstName.selectedTitleColor = UIColor.black
         

@@ -1,19 +1,19 @@
 //
-//  FromRenterViewController
+//  FromOwnerViewController1.swift
 //  Recircle
 //
-//  Created by synerzip on 08/06/17.
+//  Created by synerzip on 14/06/17.
 //  Copyright © 2017 synerzip. All rights reserved.
 //
 
 import UIKit
 
-class FromRenterViewController: UIViewController {
-    
+class FromOwnerViewController1: UIViewController {
+
     @IBOutlet weak var tableView: UITableView!
     
-    var renterMessages : [ProdMsgs] = []
-
+    var ownerMessages : [ProdMsgs] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,34 +25,23 @@ class FromRenterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
-        print("did appear")
-        
-        print(renterMessages.count)
-        
-        tableView.delegate = self
         
         tableView.dataSource = self
+        
+        tableView.delegate = self
         
         let nib = UINib(nibName: "MessageCellView", bundle: nil)
         
         tableView.register(nib, forCellReuseIdentifier: "cell")
         
-        if renterMessages.count > 0 {
+        if ownerMessages.count > 0 {
             tableView.reloadData()
         }
+
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        
-        print("will appear")
-    }
-    
-    func getMessages() {
-        print(renterMessages[0].user_prod_msg_id)
-    }
-    
-    
     /*
     // MARK: - Navigation
 
@@ -65,10 +54,11 @@ class FromRenterViewController: UIViewController {
 
 }
 
-extension FromRenterViewController : UITableViewDataSource, UITableViewDelegate {
+
+extension FromOwnerViewController1 : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return renterMessages.count
+        return ownerMessages.count
     }
     
     
@@ -76,22 +66,22 @@ extension FromRenterViewController : UITableViewDataSource, UITableViewDelegate 
         
         if tableView != nil {
             
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessageCellView
-        
-        let index = indexPath.row
-        
-        cell.txtUserName.text = renterMessages[index].user?.first_name
-        
-        cell.txtProdName.text = renterMessages[index].user_product?.product?.product_title
-        
-        cell.txtDate.text = renterMessages[index].created_at
-        
-        if let imageURL = renterMessages[index].user?.user_image_url {
-        cell.userImage.setImageFromURl(stringImageUrl: imageURL)
-        }
-        
-        return cell
-        
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessageCellView
+            
+            let index = indexPath.row
+            
+            cell.txtUserName.text = ownerMessages[index].user?.first_name
+            
+            cell.txtProdName.text = ownerMessages[index].user_product?.product?.product_title
+            
+            cell.txtDate.text = ownerMessages[index].created_at
+            
+            if let imageURL = ownerMessages[index].user?.user_image_url {
+                cell.userImage.setImageFromURl(stringImageUrl: imageURL)
+            }
+            
+            return cell
+            
         } else {
             return UITableViewCell()
         }
