@@ -21,7 +21,9 @@ class MessagesTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        test = "test"
+
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         
         getAllMessages()
         // Do any additional setup after loading the view.
@@ -44,6 +46,14 @@ class MessagesTabBarController: UITabBarController {
             
             Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { response in
+                    
+                    if let status = response.response?.statusCode {
+                        if status == RecircleWebConstants.AUTHENTICATION_FAILED ||
+                            status == RecircleWebConstants.UNAUTHORISED {
+                            AlamofireAPICall.handleSession(false)
+                            return
+                        }
+                    }
                     
                     print(response.data)
                     

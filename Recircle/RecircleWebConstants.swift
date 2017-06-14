@@ -31,5 +31,14 @@ public class RecircleWebConstants {
     public static var MESSAGESAPI : String = RecircleURL + "/user_message"
     
     
+    public static var AUTHENTICATION_FAILED : Int = 401
+    
+    public static var UNAUTHORISED : Int = 403
+    
+    public static var NOT_FOUND : Int = 404
+
+
+    
+    
     
 }

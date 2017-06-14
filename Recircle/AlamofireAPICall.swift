@@ -36,5 +36,15 @@ class AlamofireAPICall {
         
     }
     
+    open static func handleSession( _ value : Bool) {
+        
+        if !value {
+            _ = KeychainWrapper.standard.removeAllKeys()
+            //showLoginDialog()
+        } else {
+            KeychainWrapper.standard.set(true, forKey: RecircleAppConstants.ISLOGGEDINKEY)
+        }
+    }
+    
     
 }

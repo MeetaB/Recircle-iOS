@@ -2567,7 +2567,7 @@ Store Hours
         <!--Messages Tab Bar Controller-->
         <scene sceneID="wJ5-Wq-P2G">
             <objects>
-                <tabBarController id="yNr-vh-Tom" customClass="MessagesTabBarController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="yNr-vh-Tom" customClass="MessagesTabBarController" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="413" height="667"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="eex-5k-DGx">
