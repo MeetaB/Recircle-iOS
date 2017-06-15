@@ -50,6 +50,7 @@ class FromRenterViewController: UIViewController {
     
     func getMessages() {
         print(renterMessages[0].user_prod_msg_id)
+        tableView.reloadData()
     }
     
     

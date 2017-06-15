@@ -140,7 +140,7 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
         progressBar.isUserInteractionEnabled = false;
         
         //Hardcoding as it is not merged with s3 bucket yet
-        let user_prod_images : UserProdImages = UserProdImages(createdAt: "2017-06-05", imageUrl: "https://s3.ap-south-1.amazonaws.com/recircleimages/1398934243000_1047081.jpg")
+        let user_prod_images : UserProdImages = UserProdImages(createdAt: "2017-06-15T06:13:09.000Z", imageUrl: "https://s3.ap-south-1.amazonaws.com/recircleimages/1398934243000_1047081.jpg")
         let images = user_prod_images.dictionaryRepresentation()
 
         var discountsDict : [NSDictionary] = []

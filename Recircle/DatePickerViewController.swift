@@ -140,11 +140,7 @@ class DatePickerViewController: UIViewController {
                 
             vc.searchFromDate = rangeSelectedDates.first
             vc.searchToDate = rangeSelectedDates.last
-            
-
         }
-        
-        
         else if segue.identifier == "searchResult" {
         
             let searchVC = segue.destination as! SearchViewController

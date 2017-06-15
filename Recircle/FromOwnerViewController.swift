@@ -110,8 +110,58 @@ extension FromOwnerViewController : UITableViewDataSource, UITableViewDelegate {
         cell.txtUserName.text = ownerMessages[index].user?.first_name
         
         cell.txtProdName.text = ownerMessages[index].user_product?.product?.product_title
+        //
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'00:00:000'Z'"
         
-        cell.txtDate.text = ownerMessages[index].created_at
+        let date = formatter.date(from: ownerMessages[index].created_at!)
+        
+        formatter.dateFormat = "dd MMM,yyyy"
+        
+        formatter.string(from: date!)
+        
+        formatter.dateFormat = "yyyy-MM-dd'T'00:00:000'Z'"
+        
+        let calendar = NSCalendar.current
+        var components = calendar.dateComponents([.day,.month,.year], from: Date.init())
+        
+        let currentYear =  components.year
+        let currentMonth = components.month
+        let currentDay = components.day
+
+        components = calendar.dateComponents([.day,.month,.year,.hour,.minute], from: date!)
+        let msgDate = components.day
+        let msgMonth = components.month
+        let msgYear =  components.year
+        let msgHour = components.hour
+        let msgMin = components.minute
+        
+        let months = formatter.monthSymbols
+        let monthSymbol = months?[msgMonth!-1]
+        
+        
+        var dateText : String = ""
+        
+        if currentYear == msgYear {
+            
+                if currentDay == msgDate {
+                    
+                    dateText = String(describing: msgHour) + ":" + String(describing: msgMin)
+                } else {
+                    dateText = String(describing: msgDate) + monthSymbol!
+                }
+            
+        } else {
+            dateText = String(describing: msgYear) + String(describing: msgDate) + monthSymbol!
+        }
+        
+        
+        print(dateText)
+        
+        //
+        cell.txtDate.text = dateText
+        
+        cell.txtMessage.text = ownerMessages[index].user_msg
         
         cell.userImage.setImageFromURl(stringImageUrl: (ownerMessages[index].user?.user_image_url!)!)
         

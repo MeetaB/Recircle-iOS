@@ -407,6 +407,27 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "mapView", sender: self)
     }
 
+    func askQuestion () {
+        
+        if let token = KeychainWrapper.standard.string(forKey: RecircleAppConstants.TOKENKEY) {
+        
+            
+        let url = URL(string: RecircleWebConstants.MESSAGESAPI)
+        
+        let parameters : [String : String] = ["user_product_id" : (product.user_product_info?.user_product_id)! ,
+            "user_msg" : "text"]
+        
+            let headers : HTTPHeaders = ["authorization" : "Bearer " + token ,
+                                         "content-type": "application/json"]
+            
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON {
+                response in
+                
+                print(response.data)
+            }
+        }
+    }
     
     @IBAction func rentItem(_ sender: AnyObject) {
         
