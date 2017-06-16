@@ -121,7 +121,9 @@ extension FromOwnerViewController1 : UITableViewDataSource, UITableViewDelegate 
             
             cell.txtUserName.text = (ownerMessages[index].user?.first_name)! + " " + (ownerMessages[index].user?.last_name)!
             
-            cell.txtProdName.text = ownerMessages[index].user_product?.product?.product_title
+            cell.txtProdName.text = ownerMessages[index].user_product_id
+            
+            print(ownerMessages[index].user_product?.user_prod_desc)
             
             if let createdDate = ownerMessages[index].created_at {
                 

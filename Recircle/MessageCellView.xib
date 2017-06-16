@@ -35,13 +35,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross_black" translatesAutoresizingMaskIntoConstraints="NO" id="Uf0-hK-cpf">
-                        <rect key="frame" x="347" y="8" width="25" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="25" id="KCI-77-XfZ"/>
-                            <constraint firstAttribute="height" constant="25" id="LjG-1M-OZa"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rn-sP-xgw">
                         <rect key="frame" x="113" y="32" width="267" height="21"/>
                         <constraints>
@@ -70,6 +63,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inquiry" translatesAutoresizingMaskIntoConstraints="NO" id="Uf0-hK-cpf">
+                        <rect key="frame" x="347" y="8" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="12V-ep-WTC"/>
+                            <constraint firstAttribute="width" constant="25" id="KCI-77-XfZ"/>
+                            <constraint firstAttribute="height" constant="25" id="LjG-1M-OZa"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="jFe-8v-wbV"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="BDX-KY-7rt" firstAttribute="centerY" secondItem="QO9-MM-UO0" secondAttribute="centerY" id="3tr-1z-R9Q"/>
@@ -93,7 +95,6 @@
             <connections>
                 <outlet property="statusImage" destination="Uf0-hK-cpf" id="0fc-JI-8uA"/>
                 <outlet property="txtDate" destination="oGz-5h-Zye" id="hdo-cm-txS"/>
-                <outlet property="txtMessage" destination="uGG-85-HzY" id="pPe-cU-GAF"/>
                 <outlet property="txtProdName" destination="3Rn-sP-xgw" id="vCz-Xe-QPQ"/>
                 <outlet property="txtUserName" destination="3do-iA-DWk" id="cIj-al-eSH"/>
                 <outlet property="userImage" destination="BDX-KY-7rt" id="yt4-4m-iRp"/>
@@ -102,7 +103,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="cross_black" width="16" height="16"/>
+        <image name="inquiry" width="8" height="8"/>
         <image name="user" width="32" height="32"/>
     </resources>
 </document>

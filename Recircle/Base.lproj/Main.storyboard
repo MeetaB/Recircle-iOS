@@ -1169,14 +1169,14 @@ Till 12:00 pm
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellDescription" rowHeight="451" id="wgB-fV-x5i" customClass="ProdDescTableViewCell" customModule="Recircle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="324" width="373" height="451"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgB-fV-x5i" id="9br-XC-mKW">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="wgB-fV-x5i" id="9br-XC-mKW">
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="450.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y94-PX-qYh">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y94-PX-qYh">
                                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm3-hH-nHU">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm3-hH-nHU">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="Q78-F0-YSu"/>
@@ -1184,7 +1184,7 @@ Till 12:00 pm
                                                             </constraints>
                                                             <state key="normal" title="Store Address"/>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDp-zO-EG5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDp-zO-EG5">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="eXb-sT-yF3"/>
@@ -1193,7 +1193,7 @@ Till 12:00 pm
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZA-F5-Hf2" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZA-F5-Hf2" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <accessibility key="accessibilityConfiguration">
@@ -1203,14 +1203,14 @@ Till 12:00 pm
                                                                 <constraint firstAttribute="height" constant="30" id="wfJ-Zg-6HV"/>
                                                             </constraints>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XoG-hR-13v">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XoG-hR-13v">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="eyU-Rg-ZVt"/>
                                                                 <constraint firstAttribute="width" constant="60" id="he0-R9-USP"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0h-Xa-OF1">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0h-Xa-OF1">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="XKL-AW-Poc"/>
@@ -1219,10 +1219,10 @@ Till 12:00 pm
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fB0-5x-QbL">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fB0-5x-QbL">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-cE-7Bu">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-cE-7Bu">
                                                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="WgY-46-OoI"/>
@@ -1231,7 +1231,7 @@ Till 12:00 pm
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QBH-Dj-SS4" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QBH-Dj-SS4" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
                                                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -1253,10 +1253,10 @@ Till 12:00 pm
                                                                 <constraint firstItem="EWj-cE-7Bu" firstAttribute="top" secondItem="fB0-5x-QbL" secondAttribute="top" id="vBX-lG-i4D"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2m-ko-jFl">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2m-ko-jFl">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIV-O4-epc">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIV-O4-epc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="OJb-dr-cD4"/>
@@ -1265,7 +1265,7 @@ Till 12:00 pm
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-u2-u2q" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-u2-u2q" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
                                                                     <rect key="frame" x="8" y="22" width="326" height="60"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -1287,7 +1287,7 @@ Till 12:00 pm
                                                                 <constraint firstAttribute="trailing" secondItem="AIV-O4-epc" secondAttribute="trailing" constant="8" id="pio-WV-Abu"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Renter's Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-pR-u3m">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Renter's Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-pR-u3m">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="44R-it-ZiY"/>
@@ -1296,7 +1296,7 @@ Till 12:00 pm
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dN-UO-vgI">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dN-UO-vgI">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="F6S-yc-CMy"/>
@@ -1304,14 +1304,14 @@ Till 12:00 pm
                                                             </constraints>
                                                             <state key="normal" backgroundImage="help"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-xg-hGo">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-xg-hGo">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="dYG-dr-Jtd"/>
                                                             </constraints>
                                                             <state key="normal" title="See All Reviews"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-Ab-B6K">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-Ab-B6K">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="22" id="Wpi-2X-gBM"/>
@@ -1319,7 +1319,7 @@ Till 12:00 pm
                                                             </constraints>
                                                             <state key="normal" image="forward"/>
                                                         </button>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-f7-Bqf" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-f7-Bqf" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="222" y="376" width="120" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -2528,7 +2528,7 @@ Store Hours
         <!--From Renter-->
         <scene sceneID="bov-Ju-9sb">
             <objects>
-                <viewController id="Qy9-aH-vtj" customClass="FromRenterViewController" customModule="Recircle" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Qy9-aH-vtj" customClass="FromRenterViewController" customModule="Recircle" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g6s-N1-JtA"/>
                         <viewControllerLayoutGuide type="bottom" id="oQG-bV-ivb"/>
@@ -2587,7 +2587,7 @@ Store Hours
         <!--From Owner-->
         <scene sceneID="KPf-rw-hXU">
             <objects>
-                <viewController id="Wk1-Rt-xJu" customClass="FromOwnerViewController1" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Wk1-Rt-xJu" customClass="FromOwnerViewController1" customModule="Recircle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j5e-oS-DjE"/>
                         <viewControllerLayoutGuide type="bottom" id="70J-i1-nJ3"/>
@@ -2596,9 +2596,8 @@ Store Hours
                         <rect key="frame" x="0.0" y="0.0" width="413" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Afu-w0-BoO">
-                                <rect key="frame" x="0.0" y="72" width="413" height="538"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Afu-w0-BoO">
+                                <rect key="frame" x="0.0" y="64" width="413" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="V4D-mx-O4Q">
@@ -2613,6 +2612,13 @@ Store Hours
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Afu-w0-BoO" firstAttribute="leading" secondItem="jo5-BX-dKF" secondAttribute="leading" id="9tF-Lz-S0A"/>
+                            <constraint firstItem="70J-i1-nJ3" firstAttribute="top" secondItem="Afu-w0-BoO" secondAttribute="bottom" id="Nhy-OH-s2r"/>
+                            <constraint firstItem="Afu-w0-BoO" firstAttribute="top" secondItem="j5e-oS-DjE" secondAttribute="bottom" id="ULj-75-2wg"/>
+                            <constraint firstItem="Afu-w0-BoO" firstAttribute="leading" secondItem="jo5-BX-dKF" secondAttribute="leading" id="a2j-BC-hu3"/>
+                            <constraint firstAttribute="trailing" secondItem="Afu-w0-BoO" secondAttribute="trailing" id="rXa-dm-zmd"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="From Owner" image="messages" id="LBO-J9-5Yl"/>
                     <connections>
