@@ -181,7 +181,7 @@ class ListItemSummaryViewController: UIViewController, UICollectionViewDataSourc
                                                      "user_product_zipcode" : zipcode as Any,
                                                      "fromAustin" : fromAustin as Any]
             
-            print(parameters)
+            print(JSON(parameters))
             
             if let token = KeychainWrapper.standard.string(forKey: RecircleAppConstants.TOKENKEY) {
                 

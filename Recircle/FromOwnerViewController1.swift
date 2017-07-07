@@ -136,10 +136,16 @@ extension FromOwnerViewController1 : UITableViewDataSource, UITableViewDelegate 
                 cell.txtDate.text = dateText
             }
             
-            cell.txtMessage.text = ownerMessages[index].user_msg
+            if let msg = ownerMessages[index].user_msg {
+                cell.txtMessage.text = msg
+            }
             
             if let imageURL = ownerMessages[index].user?.user_image_url {
                 cell.userImage.setImageFromURl(stringImageUrl: imageURL)
+            }
+            
+            if !ownerMessages[index].is_read! {
+               cell.backgroundColor = UIColor.darkGray
             }
             
             return cell
@@ -157,7 +163,8 @@ extension FromOwnerViewController1 : UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        
+        ownerMessages[indexPath.row].is_read = true
     }
     
 }

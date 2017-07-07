@@ -24,7 +24,9 @@ class MessageCellView : UITableViewCell {
     
     @IBOutlet weak var statusImage: UIImageView!
     
+    
     @IBOutlet weak var txtMessage: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

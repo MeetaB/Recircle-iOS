@@ -15,7 +15,7 @@ struct RentItemObject {
 }
 
 class RentSummaryViewController: UIViewController,UITextFieldDelegate {
-
+    
     public var rentItem : RentItem!
     
     @IBOutlet weak var txtDuration: UILabel!
@@ -51,19 +51,19 @@ class RentSummaryViewController: UIViewController,UITextFieldDelegate {
         print(rentItem.order_to_date)
         print(rentItem.price_per_day)
         
-       // setUpNavigationBar()
+        // setUpNavigationBar()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.topItem?.title = "Summary"
-
-         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x2C3140)
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x2C3140)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
-
+        
         
         self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
         txtMessage.delegate = self
-
+        
         setUpData()
         
     }
@@ -79,10 +79,12 @@ class RentSummaryViewController: UIViewController,UITextFieldDelegate {
         
         prodTitle.text = rentItem.product_title
         
-        prodImageView.setImageFromURl(stringImageUrl: rentItem.prod_image_url!)
+        if let imageURL = rentItem.prod_image_url {
+            prodImageView.setImageFromURl(stringImageUrl: imageURL)
+        }
         
         if let userImage = rentItem.user_image_url {
-        userImageView.setImageFromURl(stringImageUrl: userImage)
+            userImageView.setImageFromURl(stringImageUrl: userImage)
         }
         
         userImageView.layer.cornerRadius = userImageView.frame.size.width/2
@@ -94,33 +96,33 @@ class RentSummaryViewController: UIViewController,UITextFieldDelegate {
         if let fromDate = rentItem.order_from_date {
             
             if let endDate = rentItem.order_to_date {
-            
-            let dateFrom = formatter.date(from:fromDate)
-             let dateTo = formatter.date(from:endDate)
-            
-            formatter.dateFormat = "MMM d, yyyy"
-            txtFromDate.text = formatter.string(from:dateFrom!)
-            txtEndDate.text = formatter.string(from:dateTo!)
-        }
+                
+                let dateFrom = formatter.date(from:fromDate)
+                let dateTo = formatter.date(from:endDate)
+                
+                formatter.dateFormat = "MMM d, yyyy"
+                txtFromDate.text = formatter.string(from:dateFrom!)
+                txtEndDate.text = formatter.string(from:dateTo!)
+            }
         }
         
-       // txtEndDate.text = formatter.string(for: rentItem.order_to_date)
+        // txtEndDate.text = formatter.string(for: rentItem.order_to_date)
         
         if let duration = rentItem.duration {
-        txtDuration.text =
-            String(describing: duration) + " days"
-        
-        if let price = rentItem.price_per_day {
-            txtPricePerDay.text = "$ " + String(describing: price) + "/day"
-            let subTotal = price * duration
-            txtSubTotal.text = "$" + String(subTotal)
-            txtTotal.text = "$" + String(subTotal)
-            btnPay.setTitle("Pay $" + String(subTotal), for: .normal)
-        }
+            txtDuration.text =
+                String(describing: duration) + " days"
+            
+            if let price = rentItem.price_per_day {
+                txtPricePerDay.text = "$ " + String(describing: price) + "/day"
+                let subTotal = price * duration
+                txtSubTotal.text = "$" + String(subTotal)
+                txtTotal.text = "$" + String(subTotal)
+                btnPay.setTitle("Pay $" + String(subTotal), for: .normal)
+            }
         }
         
     }
-
+    
     func setUpNavigationBar(){
         let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height:44)) // Offset by 20 pixels vertically to take the status bar into account
         
@@ -144,19 +146,19 @@ class RentSummaryViewController: UIViewController,UITextFieldDelegate {
         navigationBar.items = [navigationItem]
         
         // Make the navigation bar a subview of the current view controller
-       // self.view.addSubview(navigationBar)
-
+        // self.view.addSubview(navigationBar)
+        
     }
     
     func btn_clicked(_ sender: UIBarButtonItem) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let testVC = storyboard.instantiateViewController(withIdentifier: "TestVC") as! TestViewController
-//        self.navigationController?.popToViewController(testVC, animated: true)
-//
+        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let testVC = storyboard.instantiateViewController(withIdentifier: "TestVC") as! TestViewController
+        //        self.navigationController?.popToViewController(testVC, animated: true)
+        //
         _ = self.navigationController?.popViewController(animated: true)
         
-//            self.dismiss(animated: true) {
-//       }
+        //            self.dismiss(animated: true) {
+        //       }
     }
     
     override func didReceiveMemoryWarning() {
@@ -164,63 +166,69 @@ class RentSummaryViewController: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
- */
-    
-    
-     @IBAction func editDates(_ sender: AnyObject) {
-        
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
      }
- 
-
+     */
+    
+    
+    @IBAction func editDates(_ sender: AnyObject) {
+        
+    }
+    
+    
     
     @IBAction func confirmOrder(_ sender: AnyObject) {
         
-        let parameters : [String : AnyObject] = ["user_product_id" : rentItem.user_product_id as AnyObject ,
-                                                 "date_on_order" : rentItem.date_on_order as AnyObject,
-                                                 "order_from_date" : rentItem.order_from_date as AnyObject,
-                                                 "order_to_date" : rentItem.order_to_date as AnyObject,
-                                                 "user_msg" : rentItem.user_msg as AnyObject,
-                                                 "payment_total" : rentItem.payment_total as AnyObject,
-                                                 "payment_discount" : rentItem.payment_discount as AnyObject,
-                                                 "service_fee" : 10 as AnyObject,
-                                                 "protection_plan_fee" : 2 as AnyObject,
-                                                 "final_payment" : 0 as AnyObject,
-                                                 "protection_plan" : 0 as AnyObject]
-        
-        Alamofire.request(URL(string: RecircleWebConstants.RentItemApi)!,
-                          method: .post, parameters: parameters)
-            .validate(contentType: ["application/json"])
-            .responseJSON { response in
-                
-                //  self.progressBar.hide(animated: true)
-                
-                print(response.request)  // original URL request
-                print(response.response) // HTTP URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let dataResponse = response.result.value {
-                    let json = JSON(dataResponse)
-                    print("JSON SearchApi: \(json)")
+        if let token = KeychainWrapper.standard.string(forKey: RecircleAppConstants.TOKENKEY) {
+            
+            let parameters : [String : AnyObject] = ["user_product_id" : rentItem.user_product_id as AnyObject ,
+                                                     "date_on_order" : rentItem.date_on_order as AnyObject,
+                                                     "order_from_date" : rentItem.order_from_date as AnyObject,
+                                                     "order_to_date" : rentItem.order_to_date as AnyObject,
+                                                     "user_msg" : rentItem.user_msg as AnyObject,
+                                                     "payment_total" : rentItem.payment_total as AnyObject,
+                                                     "payment_discount" : rentItem.payment_discount as AnyObject,
+                                                     "service_fee" : 10 as AnyObject,
+                                                     "protection_plan_fee" : 2 as AnyObject,
+                                                     "final_payment" : 0 as AnyObject,
+                                                     "protection_plan" : 0 as AnyObject]
+            
+            let headers : HTTPHeaders = ["content-type" : "application/json",
+                                         "authorization" : "Bearer " + token]
+            
+            print(JSON(parameters))
+            
+            Alamofire.request(RecircleWebConstants.RentItemApi, method: .post , parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+                .validate(contentType: ["application/json"])
+                .responseJSON { response in
                     
-                    self.performSegue(withIdentifier: "success", sender: self)
-                }
+                    //  self.progressBar.hide(animated: true)
                     
-                else {
+                    print(response.request)  // original URL request
+                    print(response.response) // HTTP URL response
+                    print(response.data)     // server data
+                    print(response.result)   // result of response serialization
                     
-                }
+                    if let dataResponse = response.result.value {
+                        let json = JSON(dataResponse)
+                        print("JSON SearchApi: \(json)")
+                        
+                        self.performSegue(withIdentifier: "success", sender: self)
+                    }
+                        
+                    else {
+                        
+                    }
+            }
+            
         }
-        
-        
     }
     
 }

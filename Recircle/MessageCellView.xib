@@ -95,6 +95,7 @@
             <connections>
                 <outlet property="statusImage" destination="Uf0-hK-cpf" id="0fc-JI-8uA"/>
                 <outlet property="txtDate" destination="oGz-5h-Zye" id="hdo-cm-txS"/>
+                <outlet property="txtMessage" destination="uGG-85-HzY" id="zmM-Ar-hmp"/>
                 <outlet property="txtProdName" destination="3Rn-sP-xgw" id="vCz-Xe-QPQ"/>
                 <outlet property="txtUserName" destination="3do-iA-DWk" id="cIj-al-eSH"/>
                 <outlet property="userImage" destination="BDX-KY-7rt" id="yt4-4m-iRp"/>

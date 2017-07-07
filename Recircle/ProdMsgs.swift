@@ -19,7 +19,7 @@ public class ProdMsgs {
     public var user_msg : String?
     public var msg_type : String?
     public var created_at : String?
-    public var is_read : String?
+    public var is_read : Bool?
     public var user : UserInfo?
     public var user_prod_order_detail : UserProdOrderDetail?
     public var user_prod_msg_pools : Array<UserProdMsgPools>?
@@ -63,7 +63,7 @@ public class ProdMsgs {
         user_msg = dictionary["user_msg"] as? String
         msg_type = dictionary["msg_type"] as? String
         created_at = dictionary["created_at"] as? String
-        is_read = dictionary["is_read"] as? String
+        is_read = dictionary["is_read"] as? Bool
         if (dictionary["user"] != nil) { user = UserInfo(dictionary: dictionary["user"] as! NSDictionary) }
         if dictionary["user_prod_order_detail"] is NSNull {
             //do nothing

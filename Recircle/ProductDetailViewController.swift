@@ -125,7 +125,7 @@ class ProductDetailViewController: UIViewController, UICollectionViewDataSource,
                     
                     self.userName.text = (product?.user_info?.first_name)! + " " + (product?.user_info?.last_name)!
                     
-                    self.descriptionText.text = product?.product_info?.product_description
+                    self.descriptionText.text = product?.product_info?.product_category_description
                     
                     self.conditionText.text = product?.user_product_info?.user_prod_desc
                     

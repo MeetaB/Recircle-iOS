@@ -9,6 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 import Alamofire
+import SwiftyJSON
 
 class EditUserViewController: UIViewController {
 
@@ -131,6 +132,8 @@ class EditUserViewController: UIViewController {
                                                       "notification_flag" : true,
                                                       "userAddress" : userAddress]
                 
+                print(JSON(parameters))
+                
                 let headers : HTTPHeaders = ["content-type" : "application/json",
                                              "authorization" : "Bearer " + token]
                 
@@ -138,6 +141,8 @@ class EditUserViewController: UIViewController {
                     .responseJSON {
                         response in
                         print(response.result)
+                        print(response.response?.statusCode)
+                        self.navigationController?.popViewController(animated: true)
                 }
             }
         }

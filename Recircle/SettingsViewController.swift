@@ -181,6 +181,8 @@ extension SettingsViewController : UITableViewDelegate, UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SettingsCellView
             
+            cell.txtLabel.text = "Payments"
+            
             return cell
         }
     }
