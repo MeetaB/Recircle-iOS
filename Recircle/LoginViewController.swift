@@ -89,7 +89,12 @@ class LoginViewController: UIViewController {
         
         
         if let email = txtEmail.text , let password = txtPassword.text{
-            let parameters : [String : AnyObject] = ["user_name" : email as AnyObject , "password" : password as AnyObject]
+            
+            //convertToBase64            
+            let encodedPassword = TextUtils.converToBase64(password)
+            
+             let parameters : [String : AnyObject] = ["user_name" : email as AnyObject , "password" : encodedPassword as AnyObject]
+            
             
             Alamofire.request(URL(string: RecircleWebConstants.LoginApi)!,
                               method: .post, parameters: parameters)
@@ -142,6 +147,16 @@ class LoginViewController: UIViewController {
 
     }
     
+//    func converToBase64(_ text : String) -> String{
+//        
+//        let longstring = text + "YXVzdGlucmV6aXBwdW5l"
+//        let data = (longstring).data(using: String.Encoding.utf8)
+//        let base64 = data!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+//        
+//        print(base64)// dGVzdDEyMw==\n
+//        
+//        return base64
+//    }
     
     @IBAction func showHidePassword(_ sender: AnyObject) {
         

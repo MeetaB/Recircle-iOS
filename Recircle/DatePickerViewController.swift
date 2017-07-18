@@ -76,7 +76,7 @@ class DatePickerViewController: UIViewController {
         calendarView.isHidden = false
         
         if #available(iOS 10.0, *) {
-            calendarColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+            calendarColor = UIColor(red: 0, green: 151/255, blue: 167/255, alpha: 0)
         } else {
             // Fallback on earlier versions
         }
@@ -130,10 +130,6 @@ class DatePickerViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-        print("segue prepare datepicker")
-        print(segue.identifier)
-        
         
         if segue.identifier == "goBack" {
            let vc = segue.destination as! SearchViewController
@@ -191,8 +187,11 @@ class DatePickerViewController: UIViewController {
             formatter.dateFormat = "EEEE, MMM d, yyyy"
             textStartDate.text = formatter.string(from: (rangeSelectedDates.first)!)
             textEndDate.text = formatter.string(from: (rangeSelectedDates.last)!)
-            CalendarState.startDate = rangeSelectedDates.first
-            CalendarState.endDate = rangeSelectedDates.last
+            formatter.dateFormat = "yyyy-MM-dd'T'00:00:00.000Z"
+            let startDate = formatter.string(from: rangeSelectedDates.first!)
+            CalendarState.startDate =  formatter.date(from: startDate)
+             let endDate = formatter.string(from: rangeSelectedDates.last!)
+            CalendarState.endDate = formatter.date(from: endDate)
             //
         }
         
@@ -227,7 +226,6 @@ class DatePickerViewController: UIViewController {
     @IBAction func saveDates(_ sender: AnyObject) {
         
         if CalendarState.productDetail {
-            
             _ = self.navigationController?.popViewController(animated: true)
             self.performSegue(withIdentifier: "rentSummary", sender: self)
             CalendarState.productDetail = false
@@ -269,7 +267,7 @@ class DatePickerViewController: UIViewController {
             let headerCell = (header as? HeaderView)
             formatter.dateFormat = "MMMM yyyy"
             if #available(iOS 10.0, *) {
-                headerCell?.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+                headerCell?.backgroundColor = UIColor(red: 0, green: 151/255, blue: 167/255, alpha: 0)
             } else {
                 // Fallback on earlier versions
             }
@@ -358,7 +356,7 @@ class DatePickerViewController: UIViewController {
                     myCustomCell.textDate.backgroundColor = UIColor.black
                 } else {
                     if #available(iOS 10.0, *) {
-                        myCustomCell.textDate.backgroundColor = UIColor(displayP3Red: 0, green: 151, blue: 167, alpha: 0)
+                        myCustomCell.textDate.backgroundColor = UIColor(red: 0, green: 151/255, blue: 167/255, alpha: 0)
                     } else {
                         // Fallback on earlier versions
                     }

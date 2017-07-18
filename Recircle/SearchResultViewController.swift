@@ -389,9 +389,9 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         cell.prodName.text = products[indexPath.row].product_info?.product_title
         cell.prodOwner.text = (products[indexPath.row].user_info?.first_name)! + " " + (products[indexPath.row].user_info?.last_name)!
         
-        if let userProdInfo = products[indexPath.row].user_product_info {
+        if let price = products[indexPath.row].user_product_info?.price_per_day {
         
-            cell.prodPrice.text = "$ " + String(describing: userProdInfo.price_per_day) + "/day"
+            cell.prodPrice.text = "$ " + String(describing: price) + "/day"
             
         }
 

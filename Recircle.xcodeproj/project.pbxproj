@@ -89,6 +89,7 @@
 		7EBD78B61EAE259A00B80E20 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD78B51EAE259A00B80E20 /* ColorUtils.swift */; };
 		7EBD78B81EAF20DC00B80E20 /* SearchResultProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD78B71EAF20DC00B80E20 /* SearchResultProducts.swift */; };
 		7EBD78BA1EAF2F3800B80E20 /* ProductCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EBD78B91EAF2F3800B80E20 /* ProductCellView.xib */; };
+		7EBE2F881F1DDF0D00D33699 /* TextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE2F871F1DDF0D00D33699 /* TextUtils.swift */; };
 		7EBFF6781EE7F44F00341D32 /* ForgotPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFF6771EE7F44F00341D32 /* ForgotPwdViewController.swift */; };
 		7EBFF67A1EE81AEB00341D32 /* ResetPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFF6791EE81AEB00341D32 /* ResetPwdViewController.swift */; };
 		7EBFF67D1EE8293C00341D32 /* FromOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFF67C1EE8293C00341D32 /* FromOwnerViewController.swift */; };
@@ -203,6 +204,7 @@
 		7EBD78B51EAE259A00B80E20 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		7EBD78B71EAF20DC00B80E20 /* SearchResultProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultProducts.swift; sourceTree = "<group>"; };
 		7EBD78B91EAF2F3800B80E20 /* ProductCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCellView.xib; sourceTree = "<group>"; };
+		7EBE2F871F1DDF0D00D33699 /* TextUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextUtils.swift; sourceTree = "<group>"; };
 		7EBFF6771EE7F44F00341D32 /* ForgotPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPwdViewController.swift; sourceTree = "<group>"; };
 		7EBFF6791EE81AEB00341D32 /* ResetPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPwdViewController.swift; sourceTree = "<group>"; };
 		7EBFF67C1EE8293C00341D32 /* FromOwnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromOwnerViewController.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				7EBD78B51EAE259A00B80E20 /* ColorUtils.swift */,
 				7E350EAD1EE52C8B00B7525E /* RecircleAppConstants.swift */,
 				7EBFF67E1EE9219000341D32 /* UIUtils.swift */,
+				7EBE2F871F1DDF0D00D33699 /* TextUtils.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				7EBFF67D1EE8293C00341D32 /* FromOwnerViewController.swift in Sources */,
 				7E350EB01EE52F6D00B7525E /* Login.swift in Sources */,
 				7E8B35881E924F45000B5FF0 /* AppDelegate.swift in Sources */,
+				7EBE2F881F1DDF0D00D33699 /* TextUtils.swift in Sources */,
 				7E10B3E51EDD8543007B7C21 /* RequestsViewController.swift in Sources */,
 				7EB4863E1EA4B3A400656270 /* UserInfo.swift in Sources */,
 				7E21F34E1ED2F37D00F078C2 /* ListItem.swift in Sources */,
@@ -849,7 +853,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 67822934AQ;
 				INFOPLIST_FILE = Recircle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.synerzip.Recircle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -872,7 +876,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 67822934AQ;
 				INFOPLIST_FILE = Recircle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.synerzip.Recircle;
 				PRODUCT_NAME = "$(TARGET_NAME)";

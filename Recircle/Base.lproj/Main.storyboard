@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -124,7 +123,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ggt-uJ-hse">
                                                 <rect key="frame" x="0.0" y="0.0" width="413" height="930"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Use Recircle ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHn-Ng-eib">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Use Recirc ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHn-Ng-eib">
                                                         <rect key="frame" x="20" y="0.0" width="373" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="AEw-nK-Bno"/>
@@ -1169,14 +1168,14 @@ Till 12:00 pm
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellDescription" rowHeight="451" id="wgB-fV-x5i" customClass="ProdDescTableViewCell" customModule="Recircle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="324" width="373" height="451"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgB-fV-x5i" id="9br-XC-mKW">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="wgB-fV-x5i" id="9br-XC-mKW">
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="450.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y94-PX-qYh">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y94-PX-qYh">
                                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm3-hH-nHU">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm3-hH-nHU">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="Q78-F0-YSu"/>
@@ -1184,7 +1183,7 @@ Till 12:00 pm
                                                             </constraints>
                                                             <state key="normal" title="Store Address"/>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDp-zO-EG5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDp-zO-EG5">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="eXb-sT-yF3"/>
@@ -1193,7 +1192,7 @@ Till 12:00 pm
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZA-F5-Hf2" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZA-F5-Hf2" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <accessibility key="accessibilityConfiguration">
@@ -1203,14 +1202,14 @@ Till 12:00 pm
                                                                 <constraint firstAttribute="height" constant="30" id="wfJ-Zg-6HV"/>
                                                             </constraints>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XoG-hR-13v">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XoG-hR-13v">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="eyU-Rg-ZVt"/>
                                                                 <constraint firstAttribute="width" constant="60" id="he0-R9-USP"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0h-Xa-OF1">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0h-Xa-OF1">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="XKL-AW-Poc"/>
@@ -1219,10 +1218,10 @@ Till 12:00 pm
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fB0-5x-QbL">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fB0-5x-QbL">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-cE-7Bu">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-cE-7Bu">
                                                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="WgY-46-OoI"/>
@@ -1231,7 +1230,7 @@ Till 12:00 pm
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QBH-Dj-SS4" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QBH-Dj-SS4" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
                                                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -1253,10 +1252,10 @@ Till 12:00 pm
                                                                 <constraint firstItem="EWj-cE-7Bu" firstAttribute="top" secondItem="fB0-5x-QbL" secondAttribute="top" id="vBX-lG-i4D"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2m-ko-jFl">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2m-ko-jFl">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIV-O4-epc">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIV-O4-epc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="OJb-dr-cD4"/>
@@ -1265,7 +1264,7 @@ Till 12:00 pm
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-u2-u2q" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-u2-u2q" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
                                                                     <rect key="frame" x="8" y="22" width="326" height="60"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -1287,7 +1286,7 @@ Till 12:00 pm
                                                                 <constraint firstAttribute="trailing" secondItem="AIV-O4-epc" secondAttribute="trailing" constant="8" id="pio-WV-Abu"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Renter's Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-pR-u3m">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Renter's Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-pR-u3m">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="44R-it-ZiY"/>
@@ -1296,7 +1295,7 @@ Till 12:00 pm
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dN-UO-vgI">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dN-UO-vgI">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="F6S-yc-CMy"/>
@@ -1304,14 +1303,14 @@ Till 12:00 pm
                                                             </constraints>
                                                             <state key="normal" backgroundImage="help"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-xg-hGo">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-xg-hGo">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="dYG-dr-Jtd"/>
                                                             </constraints>
                                                             <state key="normal" title="See All Reviews"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-Ab-B6K">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-Ab-B6K">
                                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="22" id="Wpi-2X-gBM"/>
@@ -1319,7 +1318,7 @@ Till 12:00 pm
                                                             </constraints>
                                                             <state key="normal" image="forward"/>
                                                         </button>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-f7-Bqf" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-f7-Bqf" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="222" y="376" width="120" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -2659,8 +2658,8 @@ Store Hours
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5nL-8y-Ih3">
-                                <rect key="frame" x="29" y="75" width="70" height="70"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="5nL-8y-Ih3">
+                                <rect key="frame" x="29" y="30" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.1960784314" green="0.47450980390000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="3GJ-0R-A2S"/>
@@ -2668,7 +2667,7 @@ Store Hours
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkV-xN-tuZ">
-                                <rect key="frame" x="134" y="78" width="225" height="21"/>
+                                <rect key="frame" x="134" y="33" width="225" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="C54-sU-XhN"/>
                                 </constraints>
@@ -2677,7 +2676,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTN-2p-YJc">
-                                <rect key="frame" x="182" y="118" width="193" height="21"/>
+                                <rect key="frame" x="182" y="73" width="193" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Cnm-N1-DpL"/>
                                 </constraints>
@@ -2686,7 +2685,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIO-Na-ywx">
-                                <rect key="frame" x="0.0" y="157" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="33"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Dates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziP-p2-QIV">
                                         <rect key="frame" x="8" y="8" width="116.5" height="21"/>
@@ -2720,7 +2719,7 @@ Store Hours
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KrT-H3-XMR">
-                                <rect key="frame" x="16" y="198" width="59" height="21"/>
+                                <rect key="frame" x="16" y="153" width="59" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ivg-nh-oq7"/>
                                 </constraints>
@@ -2729,7 +2728,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dur-fb-fAf">
-                                <rect key="frame" x="308" y="198" width="51" height="21"/>
+                                <rect key="frame" x="308" y="153" width="51" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XKm-vl-snb"/>
                                 </constraints>
@@ -2738,7 +2737,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14th May 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU5-Ix-JD3">
-                                <rect key="frame" x="16" y="227" width="129" height="21"/>
+                                <rect key="frame" x="16" y="182" width="129" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="btN-cc-NrU"/>
                                     <constraint firstAttribute="height" constant="21" id="yGW-ov-WOS"/>
@@ -2748,7 +2747,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14th May 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNQ-SI-YSc">
-                                <rect key="frame" x="234" y="226" width="125" height="21"/>
+                                <rect key="frame" x="234" y="181" width="125" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="3fR-RF-dyN"/>
                                     <constraint firstAttribute="height" constant="21" id="KIy-hf-xOY"/>
@@ -2758,7 +2757,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN1-go-Mpe">
-                                <rect key="frame" x="177.5" y="225" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="180" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="6wF-Wx-5V8"/>
                                     <constraint firstAttribute="width" constant="20" id="NgS-ZI-D0Z"/>
@@ -2766,7 +2765,7 @@ Store Hours
                                 <state key="normal" image="clock"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 pm onwards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-v7-GCH">
-                                <rect key="frame" x="16" y="256" width="114" height="21"/>
+                                <rect key="frame" x="16" y="211" width="114" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="Sog-8H-ecA"/>
                                     <constraint firstAttribute="height" constant="21" id="q2K-EU-zTP"/>
@@ -2776,7 +2775,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Till 12 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-6T-0S8">
-                                <rect key="frame" x="281" y="255" width="78" height="21"/>
+                                <rect key="frame" x="281" y="210" width="78" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="leC-vu-J7O"/>
                                 </constraints>
@@ -2785,7 +2784,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icD-bw-9oX">
-                                <rect key="frame" x="156" y="256" width="66" height="21"/>
+                                <rect key="frame" x="156" y="211" width="66" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4MD-Gs-Dem"/>
                                     <constraint firstAttribute="width" constant="66" id="Edk-tD-SKf"/>
@@ -2795,7 +2794,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QjA-lG-equ">
-                                <rect key="frame" x="0.0" y="285" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="240" width="375" height="33"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uD-vN-Ipr">
                                         <rect key="frame" x="8" y="8" width="110" height="21"/>
@@ -2817,7 +2816,7 @@ Store Hours
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7q-fD-haU">
-                                <rect key="frame" x="14" y="331" width="66" height="21"/>
+                                <rect key="frame" x="14" y="286" width="66" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="60s-je-nRG"/>
                                     <constraint firstAttribute="height" constant="21" id="l58-OJ-1eo"/>
@@ -2827,7 +2826,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqE-kT-hGs">
-                                <rect key="frame" x="14" y="357" width="75" height="21"/>
+                                <rect key="frame" x="14" y="312" width="75" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="T7E-ey-iWc"/>
                                     <constraint firstAttribute="height" constant="21" id="Zp9-tG-H6U"/>
@@ -2837,7 +2836,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEo-3g-kYu">
-                                <rect key="frame" x="14" y="386" width="75" height="21"/>
+                                <rect key="frame" x="14" y="341" width="75" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="njb-GT-o5j"/>
                                     <constraint firstAttribute="width" constant="75" id="t4a-7g-cnn"/>
@@ -2847,7 +2846,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150/day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9t-g5-5Yu">
-                                <rect key="frame" x="272" y="331" width="87" height="21"/>
+                                <rect key="frame" x="272" y="286" width="87" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="PVH-0B-vru"/>
                                     <constraint firstAttribute="width" constant="87" id="gtO-1i-ArK"/>
@@ -2857,7 +2856,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1800" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqm-Rg-Lhc">
-                                <rect key="frame" x="272" y="357" width="87" height="21"/>
+                                <rect key="frame" x="272" y="312" width="87" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="imc-Tt-peF"/>
                                     <constraint firstAttribute="width" constant="87" id="q6i-Zm-Jbq"/>
@@ -2867,7 +2866,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdm-eS-xBq">
-                                <rect key="frame" x="272" y="381" width="87" height="21"/>
+                                <rect key="frame" x="272" y="336" width="87" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="T2q-5u-0cr"/>
                                     <constraint firstAttribute="width" constant="87" id="wcA-GZ-4FR"/>
@@ -2877,7 +2876,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1800" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9C-LV-EOe">
-                                <rect key="frame" x="272" y="420" width="87" height="20.5"/>
+                                <rect key="frame" x="272" y="375" width="87" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="7mb-v3-qR8"/>
                                 </constraints>
@@ -2886,7 +2885,7 @@ Store Hours
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyq-4n-Eta">
-                                <rect key="frame" x="0.0" y="410" width="375" height="2"/>
+                                <rect key="frame" x="0.0" y="365" width="375" height="2"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="bvC-PZ-F5y"/>
@@ -2947,7 +2946,7 @@ Store Hours
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nP7-pQ-LUe">
-                                <rect key="frame" x="134" y="107" width="40" height="40"/>
+                                <rect key="frame" x="134" y="62" width="40" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="8bj-fJ-REy"/>
@@ -2972,12 +2971,14 @@ Store Hours
                             <constraint firstItem="Dur-fb-fAf" firstAttribute="trailing" secondItem="GCO-fj-5eh" secondAttribute="trailingMargin" id="1iQ-KX-seq"/>
                             <constraint firstItem="mkV-xN-tuZ" firstAttribute="trailing" secondItem="GCO-fj-5eh" secondAttribute="trailingMargin" id="2kL-Mq-sb1"/>
                             <constraint firstItem="SNQ-SI-YSc" firstAttribute="top" secondItem="Dur-fb-fAf" secondAttribute="bottom" constant="7" id="2nj-H4-3SE"/>
+                            <constraint firstItem="5nL-8y-Ih3" firstAttribute="top" secondItem="UXW-do-WEd" secondAttribute="bottom" constant="10" id="34C-2W-0mP"/>
                             <constraint firstItem="YJc-v7-GCH" firstAttribute="top" secondItem="eU5-Ix-JD3" secondAttribute="bottom" constant="8" id="53L-ei-0Al"/>
                             <constraint firstItem="YN1-go-Mpe" firstAttribute="top" secondItem="KrT-H3-XMR" secondAttribute="bottom" constant="6" id="5jN-7s-AA4"/>
                             <constraint firstItem="5nL-8y-Ih3" firstAttribute="leading" secondItem="GCO-fj-5eh" secondAttribute="leadingMargin" constant="13" id="5jd-xn-kaN"/>
                             <constraint firstItem="o7q-fD-haU" firstAttribute="top" secondItem="QjA-lG-equ" secondAttribute="bottom" constant="13" id="60V-Ze-zZT"/>
                             <constraint firstItem="c9C-LV-EOe" firstAttribute="top" secondItem="qyq-4n-Eta" secondAttribute="bottom" constant="8" id="66R-N6-30F"/>
                             <constraint firstAttribute="trailing" secondItem="gTN-2p-YJc" secondAttribute="trailing" id="6EC-Vo-7MY"/>
+                            <constraint firstItem="mkV-xN-tuZ" firstAttribute="top" secondItem="UXW-do-WEd" secondAttribute="bottom" constant="13" id="6pE-Td-Cv6"/>
                             <constraint firstItem="wtP-gQ-Tmq" firstAttribute="top" secondItem="HJx-7b-pbp" secondAttribute="bottom" constant="3" id="7Ia-Ox-OPJ"/>
                             <constraint firstItem="qyq-4n-Eta" firstAttribute="top" secondItem="nEo-3g-kYu" secondAttribute="bottom" constant="3" id="7Mq-6R-pHM"/>
                             <constraint firstAttribute="trailing" secondItem="ZT0-fl-GfO" secondAttribute="trailing" id="7s2-kx-eA0"/>
@@ -3000,7 +3001,6 @@ Store Hours
                             <constraint firstItem="QqE-kT-hGs" firstAttribute="top" secondItem="o7q-fD-haU" secondAttribute="bottom" constant="5" id="KxW-7w-GHC"/>
                             <constraint firstAttribute="trailing" secondItem="ZT0-fl-GfO" secondAttribute="trailing" id="LsZ-22-XDh"/>
                             <constraint firstItem="wtP-gQ-Tmq" firstAttribute="leading" secondItem="GCO-fj-5eh" secondAttribute="leading" constant="16" id="MvB-4z-MMt"/>
-                            <constraint firstItem="5nL-8y-Ih3" firstAttribute="top" secondItem="UXW-do-WEd" secondAttribute="bottom" constant="55" id="ORR-GE-yiF"/>
                             <constraint firstItem="3ru-hT-1yR" firstAttribute="top" secondItem="wtP-gQ-Tmq" secondAttribute="bottom" constant="10" id="Q6c-Qu-3bu"/>
                             <constraint firstItem="SNQ-SI-YSc" firstAttribute="trailing" secondItem="GCO-fj-5eh" secondAttribute="trailingMargin" id="RQS-W7-89s"/>
                             <constraint firstItem="YN1-go-Mpe" firstAttribute="centerX" secondItem="GCO-fj-5eh" secondAttribute="centerX" id="TNo-3m-NpO"/>
@@ -3010,7 +3010,6 @@ Store Hours
                             <constraint firstItem="ZT0-fl-GfO" firstAttribute="leading" secondItem="GCO-fj-5eh" secondAttribute="leading" id="Uyf-en-GL8"/>
                             <constraint firstItem="QjA-lG-equ" firstAttribute="leading" secondItem="GCO-fj-5eh" secondAttribute="leading" id="UzD-rA-at0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c9C-LV-EOe" secondAttribute="trailing" id="Vpm-2w-Dcj"/>
-                            <constraint firstItem="mkV-xN-tuZ" firstAttribute="top" secondItem="UXW-do-WEd" secondAttribute="bottom" constant="58" id="W3h-CL-MB4"/>
                             <constraint firstItem="q9t-g5-5Yu" firstAttribute="top" secondItem="QjA-lG-equ" secondAttribute="bottom" constant="13" id="WxG-0H-fm8"/>
                             <constraint firstItem="jqm-Rg-Lhc" firstAttribute="top" secondItem="q9t-g5-5Yu" secondAttribute="bottom" constant="5" id="a6z-Ll-AoZ"/>
                             <constraint firstItem="DcE-e2-qjg" firstAttribute="top" secondItem="UXW-do-WEd" secondAttribute="bottom" constant="400" id="aIf-WT-wKw"/>
@@ -4003,7 +4002,7 @@ We'll notify you when someone requests
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyU-pe-vg0">
                                                     <rect key="frame" x="0.0" y="0.0" width="411" height="723"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Use Recircle ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0S-bd-pav">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Use Recirc ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0S-bd-pav">
                                                             <rect key="frame" x="8" y="8" width="395" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="H3K-po-yek"/>
@@ -4351,12 +4350,12 @@ your request</string>
         <image name="upload_gallery" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kCe-EF-Gkf"/>
-        <segue reference="JT8-ej-CzV"/>
-        <segue reference="hwN-GI-0SK"/>
-        <segue reference="eH1-ke-eM2"/>
-        <segue reference="sl2-Tq-s1Q"/>
         <segue reference="wVH-qR-DP0"/>
-        <segue reference="ern-GZ-Rzk"/>
+        <segue reference="JT8-ej-CzV"/>
+        <segue reference="eH1-ke-eM2"/>
+        <segue reference="hwN-GI-0SK"/>
+        <segue reference="Ff9-lW-zhk"/>
+        <segue reference="sl2-Tq-s1Q"/>
+        <segue reference="8NC-90-tcT"/>
     </inferredMetricsTieBreakers>
 </document>

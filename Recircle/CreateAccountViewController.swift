@@ -10,6 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import Alamofire
 import MBProgressHUD
+import SwiftyJSON
 
 class CreateAccountViewController: UIViewController, UITextFieldDelegate {
 
@@ -104,8 +105,8 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             
             self.progressBar.hide(animated: true)
             
-            let alertView = UIAlertController(title: "Login Problem",
-                                              message: "Wrong username or password." as String, preferredStyle:.alert)
+            let alertView = UIAlertController(title: "Account Creation Problem",
+                                              message: "Please fill all details" as String, preferredStyle:.alert)
             let okAction = UIAlertAction(title: "Try Again!", style: .default, handler: nil)
             alertView.addAction(okAction)
             self.present(alertView, animated: true, completion: nil)
@@ -132,10 +133,12 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             
             progressBar.isUserInteractionEnabled = false;
             
-                let parameters : [String : AnyObject] = [
+            let encodedPassword = TextUtils.converToBase64(password)
+            
+            let parameters : [String : AnyObject] = [
                     "first_name" : firstName as AnyObject,
                     "last_name" :  lastName as AnyObject,
-                    "password" :   password as AnyObject,
+                    "password" :   encodedPassword as AnyObject,
                     "user_mob_no" : mobile as AnyObject,
                     "email" : email as AnyObject,
                     "otp" :  otp as AnyObject
@@ -152,11 +155,42 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                 
                 self.progressBar.hide(animated: true)
 
-                print(response.request)  // original URL request
-                print(response.response) // HTTP URL response
-                print(response.data)     // server data
+                print(response.request!)  // original URL request
+                print(response.response!) // HTTP URL response
+                print(response.data!)     // server data
                 print(response.result)   // result of response serialization
                 
+                if let dataResponse = response.result.value {
+                    let json = JSON(dataResponse)
+                    print("JSON Create Account : \(json)")
+                    let login = Login(dictionary: json.object as! NSDictionary)
+                    
+                    if let userId = login?.user_id {
+                        KeychainWrapper.standard.set(userId, forKey: RecircleAppConstants.USERIDKEY)
+                    }
+                    
+                    if let email = login?.email {
+                        KeychainWrapper.standard.set(email, forKey: RecircleAppConstants.EMAILKEY)
+                    }
+                    
+                    if let token = login?.token {
+                        KeychainWrapper.standard.set(token, forKey: RecircleAppConstants.TOKENKEY)
+                    }
+                    
+                    KeychainWrapper.standard.set(true, forKey: RecircleAppConstants.ISLOGGEDINKEY)
+                    
+                    if let firstName = login?.first_name, let lastName = login?.last_name {
+                        
+                        KeychainWrapper.standard.set(firstName + " " + lastName, forKey: RecircleAppConstants.NAMEKEY)
+                        
+                    }
+                    
+                    self.dismiss(animated: true, completion : nil)
+                    
+                    let searchVC = SearchProdViewController()
+                    self.navigationController?.popToViewController(searchVC, animated: true)
+                    
+                }
             }
         } else{
             
@@ -167,7 +201,9 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInTapped(_ sender: AnyObject) {
         
-        self.performSegue(withIdentifier: "signin", sender: self)
+        self.dismiss(animated: true, completion : nil)
+        
+       // self.performSegue(withIdentifier: "signin", sender: self)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

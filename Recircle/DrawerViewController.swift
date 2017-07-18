@@ -211,8 +211,12 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
                     self.performSegue(withIdentifier: "settings", sender: self)
                 }
                 else if indexPath.row == 1 {
-                    if let url = NSURL(string:"http://recirkle.com/#/help") {
-                        UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
+                    if let url = NSURL(string:"http://recirc.com/#/help") {
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(url as URL)
+                        }
                     }
                 } else if indexPath.row == 2 {
                     showLogoutAlert()
@@ -223,8 +227,12 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
                 if indexPath.row == 0 {
                     self.performSegue(withIdentifier: "login", sender: self)
                 } else {
-                    if let url = NSURL(string:"http://recirkle.com/#/help") {
-                        UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
+                    if let url = NSURL(string:"http://recirc.com/#/help") {
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open( url as URL, options: [:], completionHandler: nil)
+                        } else {
+                           UIApplication.shared.openURL(url as URL)
+                        }
                     }
                 }
             }

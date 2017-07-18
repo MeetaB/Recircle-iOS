@@ -279,6 +279,7 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
     func setUpDate() {
         
         if CalendarState.startDate != nil && CalendarState.endDate != nil {
+            print(CalendarState.startDate)
             CalendarState.searchProduct = false
             let formatter = DateFormatter()
             formatter.dateFormat = "dd MMM,yyyy"
@@ -286,10 +287,10 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
             let fromDate = formatter.string(from: CalendarState.startDate)
             let endDate = formatter.string(from: CalendarState.endDate)
             
-            formatter.dateFormat = "yyyy-MM-dd'T'00:00:00Z"
+            formatter.dateFormat = "yyyy-MM-dd'T'00:00:00.000Z"
             searchFromDateString = formatter.string(from: CalendarState.startDate)
             searchToDateString = formatter.string(from: CalendarState.endDate)
-            
+            print(searchFromDateString)
             let calendar = NSCalendar.current
             var components = calendar.dateComponents([.day,.month,.year], from: CalendarState.startDate)
             
@@ -358,8 +359,8 @@ class SearchProdViewController: UIViewController, UICollectionViewDataSource, UI
         let parameters : [String : AnyObject] = ["manufacturerId" : manufactureId as AnyObject ,
                                                  "productId" : productId as AnyObject ,
                                                  "searchText" : searchText as AnyObject,
-                                                 "searchFromDate" : searchFromDateString as AnyObject,
-                                                 "searchToDate" : searchToDateString as AnyObject
+                                                 "searchFromDate" : "2017-07-21" as AnyObject,
+                                                 "searchToDate" : "2017-07-25" as AnyObject
         ]
         
         Alamofire.request(URL(string: RecircleWebConstants.SearchApi)!,
@@ -660,14 +661,14 @@ extension SearchProdViewController: UICollectionViewDelegateFlowLayout {
 
         } else if indexPath.section == 1 {
             if self.pickDropText {
-                return CGSize(width: self.view.frame.width , height: 1090)
+                return CGSize(width: self.view.frame.width , height: 1071)
             }else {
             return CGSize(width: self.view.frame.width , height: 1135)
             }
         } else if indexPath.section == 2 || indexPath.section == 4 {
             return CGSize(width: self.view.frame.width , height: 80)
         } else {
-            return CGSize(width: 150 , height: 180)
+            return CGSize(width: 160 , height: 180)
         }
       
     }

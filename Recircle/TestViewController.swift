@@ -229,7 +229,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.prodImage.setImageFromURl(stringImageUrl: prodImagesURLs[indexImageSelected])
             }
             
-            print(cell.frame.maxY)
+          //  print(cell.frame.maxY)
             
             //calculating this offset to display name of the product after this is scrolled
             self.yOffset = cell.frame.maxY
@@ -256,7 +256,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell1.txtOwnerName.text = (product?.user_info?.first_name)! + " " + (product?.user_info?.last_name)!
                 
             }
-            cell1.descTextView.text = product?.product_info?.product_description
+            cell1.descTextView.text = product?.product_info?.product_category_description
             
             cell1.descTextView.shouldTrim = true
             
@@ -349,7 +349,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return 261
         }
         else if indexPath.section == 1 {
-        return 440
+        return 400
         } else if indexPath.section == 2 {
             return 157
         } else {

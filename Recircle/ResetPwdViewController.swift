@@ -104,13 +104,14 @@ class ResetPwdViewController: UIViewController {
         if let email = txtEmail.text, let otp = txtOTP.text,
             let password = txtNewPassword.text
         {
+            let encodedPassword = TextUtils.converToBase64(password)
             
             let url = URL(string: RecircleWebConstants.FORGOTPASSWORDAPI)
             
             let parameters : [String : Any] = [
                 "otp" : otp,
                 "user_name" : email,
-                "new_password" : password]
+                "new_password" : encodedPassword]
             
             Alamofire.request(url!,
                               method: .put,
